@@ -1,0 +1,103 @@
+001006de:Runs `foo` for every element in `elms`.
+00101042:`strlen()` for a utf16 string.
+00101042:`strcmp()` for a utf16 string.
+00101042:Inits the 3DSs `cfg:u` service.
+00115198:Creates a colour struct.
+0011ec7c:Clears some item properties.
+0013b8cc:Clears some item properties.
+0013bac4:Plays a sound with a given id.
+0014a24c:Clears some data relating to what seems to be an image loader.
+0017e3f4:Loads Terraria's background images.
+00180054:Draws a background.
+001ab3a0:Equivalent to `Terraria.Projectile.Kill()`.
+001c62a0:Clears some projectiles properties.
+001d802c:Converts `str` to be a `.wav` file name.
+001ef508:Gets a terraria icon name with a given `iconType`.
+00220b5c:Returns the quest fish item id relating to the given `questID`.
+00237b3c:Loads a sound.
+00237c50:Loads a sound.
+002588ec:Equivalent to `Terraria.NPC.ReleaseNPC()`.
+0029d5d4:Somewhat equivalent to `Terraria.Main.HelpText()`.
+0029f858:Gets a town NPC id from the given `npcId`
+002b084c:Exist out of the `cfg:u` service.
+002b2148:Exist out of the `cfg:u` service.
+00300b0c:Returns `true` if `flag` was `false` then sets `flag` to `true`, otherwise (if `flag` is `true`) returns `false`.
+0032ed58:Spawn a bunny and does checks for seasons and stuff.
+00334c78:Equivalent to `Terraria.Item.NPCtoBanner()`.
+00336c38:Equivalent to `Terraria.NPC.SetDefaults(int, float)`.
+00342084:Equivalent to `Terraria.NPC.SetDefaults(string)`.
+0034cdb4:Spawn a snowman from the Frost Legion.
+0034e72c:Equivalent to `Terraria.NPC.CountNPCS()`.
+0037d7b8:Equivalent to `Terraria.NPC.NewNPC()`.
+0038130c:Equivalent to `Terraria.NPC.AnyNPCs()`.
+00387d4c:Equivalent to `Terraria.NPC.NPCLoot()`.
+00393b48:Equivalent to `Terraria.NPC.SpawnWOF()`.
+003ac694:Equivalent to `Terraria.Item.SetDefaults(string)`.
+003adfdc:Equivalent to `Terraria.Item.SetDefaults(int, ...)`.
+003c5c20:Equivalent to `Terraria.Item.netDefaults()`.
+003c76f4:Merges 2 items into a single stack.
+003c77c0:Equivalent to `Terraria.Item.Prefix()`.
+003c9674:Equivalent to `Terraria.Item.NewItem()`.
+003c9e2c:Equivalent to `Terraria.Item.sellPrice()`.
+003ca190:Equivalent to `Terraria.Item.buyPrice()`.
+003d339c:Seems to be a place for debug commands, i think its inaccessible though.
+003d9304:Somewhat equivalent to `Terraria.Main.LoadContent()`, but only for audio.
+003dbfb4:Equivalent to `Terraria.Main.PlaySound()`.
+003f6bd0:Equivalent to `Terraria.Chest.SetupShop()`.
+003f9040:Clears data of a chest.
+00447bdc:Equivalent to `Terraria.Recipe.SetupRecipes()`.
+0045305c:Section 2 of `SetupRecipes`.
+00459044:Section 3 of `SetupRecipes`.
+0045a148:Somewhat equivalent to `Terraria.Recipe.addRecipe()`, but different.
+00464fb4:Sets the array of catchable NPCs.
+0046cf94:Gets the angler reword.
+0046e830:Calls `s32 QuestFishTypeToId(u32 questID)` on the current quest fish.
+004a17a4:Seems to clear world data.
+004a9b1c:Equivalent to `Terraria.WorldGen.GrowPumpkin()`.
+004b75e0:Equivalent to `Terraria.WorldGen.PlacePumpkin()`.
+00524c4c:Returns the number of slots in a store. (ItemCount + 5)
+00532a94:Calls `PlayerHasItem()` with `GetQuestFishId()`.
+00532ab0:Returns if `player` has an item with a given `itemId`.
+00553ae8:Clears a bunch of stuff like, audio, Chests, Items and more.
+005a3cc8:Returns `&imageLoader`, may also call `ClearImageLoader()`.
+
+0088d3c0:Equivalent to `Terraria.Main.soundMech[0]`.
+0088d3dc:Equivalent to `Terraria.Main.soundDig[0]`.
+0088d3f8:Equivalent to `Terraria.Main.soundDig[1]`.
+0088d414:Equivalent to `Terraria.Main.soundDig[2]`.
+0088d430:Equivalent to `Terraria.Main.soundTink[0]`.
+0088d44c:Equivalent to `Terraria.Main.soundTink[1]`.
+0088d468:Equivalent to `Terraria.Main.soundTink[2]`.
+0088d484:Equivalent to `Terraria.Main.soundPlayerHit[0]`.
+0088d4a0:Equivalent to `Terraria.Main.soundPlayerHit[1]`.
+0088d4bc:Equivalent to `Terraria.Main.soundPlayerHit[2]`.
+0088d4d8:Equivalent to `Terraria.Main.soundPlayerHitFemail[0]`.
+0088d4f4:Equivalent to `Terraria.Main.soundPlayerHitFemail[1]`.
+0088d510:Equivalent to `Terraria.Main.soundPlayerHitFemail[2]`.
+0088d52c:Equivalent to `Terraria.Main.soundPlayerKilled`.
+0088d548:Equivalent to `Terraria.Main.soundGrass`.
+0088d564:Equivalent to `Terraria.Main.soundGrab`.
+0088d580:Equivalent to `Terraria.Main.soundPixie`.
+0088d59c:Equivalent to `Terraria.Main.soundItem[]`.
+0088dbbc:Equivalent to `Terraria.Main.soundNPCHit[]`.
+0088dd44:Equivalent to `Terraria.Main.soundNPCKilled[]`.
+0088df74:Equivalent to `Terraria.Main.soundDoorOpen`.
+0088df90:Equivalent to `Terraria.Main.soundDoorClose`.
+0088e01c:Equivalent to `Terraria.Main.soundZombie[]`.
+0088e348:Equivalent to `Terraria.Main.soundChat`.
+0088e850:Equivalent to `Terraria.Main.item[]`.
+00894ff4:Equivalent to `Terraria.Main.projectile[]`.
+082a9ac4:Equivalent to `Terraria.Main.npc[]`.
+300037c4:Equivalent to `Terraria.Main.tile[]`. (Size may be different on old and new 3DSs)
+
+006333f8:*Verify
+0047ace4:*Verify
+0040be30:*Verify
+006333a0:Seems to go unused
+007bc164:Named g_rand on mobile.
+003e8874:Doesn't seem to match mobile.
+003e9084:Doesn't seem to match mobile.
+003e9780:Doesn't seem to match mobile.
+0013f940:In place of FastRandom::Next() from mobile it seems.
+0086d278:Seems to contain a vertex buffer.
+0088e770:Equivalent to `Terraria.Main.musicFade[]`.

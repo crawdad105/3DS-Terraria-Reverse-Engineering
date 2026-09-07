@@ -95,11 +95,26 @@ typedef char s8;
 // "u64"
 typedef uint64_t u64;
 
-// "_Double2"
-struct _Double2
+// "_FileReader"
+struct _FileReader
 {
-	double X;
-	double Y;
+	struct _FileReaderFuncTable* funcs;
+};
+
+// "_Vector2"
+struct _Vector2
+{
+	float X;
+	float Y;
+};
+
+// "u8"
+typedef uint8_t u8;
+
+// "_FileWriter"
+struct _FileWriter
+{
+	struct _FileWriterFuncTable* funcs;
 };
 
 // "_Vector4"
@@ -111,31 +126,21 @@ struct _Vector4
 	float W;
 };
 
-// "u8"
-typedef uint8_t u8;
-
 // "s32"
 typedef int32_t s32;
 
-// "_Vector3"
-struct _Vector3
+// "_Double2"
+struct _Double2
 {
-	float X;
-	float Y;
-	float Z;
+	double X;
+	double Y;
 };
-
-// "u32"
-typedef uint32_t u32;
 
 // "u16"
 typedef uint16_t u16;
 
-// "_FileReader"
-struct _FileReader
-{
-	struct _FileReaderFuncTable* funcs;
-};
+// "u32"
+typedef uint32_t u32;
 
 // "_String"
 struct _String
@@ -146,17 +151,12 @@ struct _String
 	void* data3;
 };
 
-// "_Vector2"
-struct _Vector2
+// "_Vector3"
+struct _Vector3
 {
 	float X;
 	float Y;
-};
-
-// "_FileWriter"
-struct _FileWriter
-{
-	struct _FileWriterFuncTable* funcs;
+	float Z;
 };
 
 // "u8_1"
@@ -712,10 +712,7 @@ struct _Draw_Unk2
 	u8 _19D;
 	u8 _19E;
 	u8 _19F;
-	u8 _1A0;
-	u8 _1A1;
-	u8 _1A2;
-	u8 _1A3;
+	u32 _1A0_1A3;
 	u8 _1A4;
 	u8 _1A5;
 	u8 _1A6;
@@ -976,7 +973,9 @@ struct _String_1
 // "_Player"
 struct _Player
 {
-	u8 _pad0[0xcc];
+	void* ptr1;
+	void* ptr2;
+	u8 _pad0[0xc4];
 	u32 anglerQuestsFinished;
 	u8 _pad1[0x18a];
 	bool zoneEvil;
@@ -985,7 +984,138 @@ struct _Player
 	bool zoneJungle;
 	bool zoneSnow;
 	bool zoneBlood;
-	u8 _pad3[0x90];
+	u8 _260;
+	u8 _261;
+	u8 _262;
+	u8 _263;
+	u8 _264;
+	u8 _265;
+	u8 _266;
+	u8 _267;
+	u8 _268;
+	u8 _269;
+	u8 _26a;
+	u8 _26b;
+	u8 _26c;
+	u8 _26d;
+	u8 _26e;
+	u8 _26f;
+	u8 _270;
+	u8 _271;
+	u8 _272;
+	u8 _273;
+	float _274_277;
+	float _278_27b;
+	u8 _27c;
+	u8 _27d;
+	u8 _27e;
+	u8 _27f;
+	u8 _280;
+	u8 _281;
+	u8 _282;
+	u8 _283;
+	float _284_287;
+	float _288_28b;
+	u8 _28c;
+	u8 _28d;
+	u8 _28e;
+	u8 _28f;
+	u8 _290;
+	u8 _291;
+	u8 _292;
+	u8 _293;
+	u8 _294;
+	u8 _295;
+	u8 _296;
+	u8 _297;
+	u8 _298;
+	u8 _299;
+	u8 _29a;
+	u8 _29b;
+	u8 _29c;
+	u8 _29d;
+	u8 _29e;
+	u8 _29f;
+	u8 _2a0;
+	u8 _2a1;
+	u8 _2a2;
+	u8 _2a3;
+	u8 _2a4;
+	u8 _2a5;
+	u8 _2a6;
+	u8 _2a7;
+	u8 _2a8;
+	u8 _2a9;
+	u8 _2aa;
+	u8 _2ab;
+	u8 _2ac;
+	u8 _2ad;
+	u8 _2ae;
+	u8 _2af;
+	u8 _2b0;
+	u8 _2b1;
+	u8 _2b2;
+	u8 _2b3;
+	u8 _2b4;
+	u8 _2b5;
+	u8 _2b6;
+	u8 _2b7;
+	u8 _2b8;
+	u8 _2b9;
+	u8 _2ba;
+	u8 _2bb;
+	u8 _2bc;
+	u8 _2bd;
+	u8 _2be;
+	u8 _2bf;
+	u8 _2c0;
+	u8 _2c1;
+	u8 _2c2;
+	u8 _2c3;
+	u8 _2c4;
+	u8 _2c5;
+	u8 _2c6;
+	u8 _2c7;
+	u8 _2c8;
+	u8 _2c9;
+	u8 _2ca;
+	u8 _2cb;
+	u8 _2cc;
+	u8 _2cd;
+	u8 _2ce;
+	u8 _2cf;
+	u8 _2d0;
+	u8 _2d1;
+	u8 _2d2;
+	u8 _2d3;
+	u8 _2d4;
+	u8 _2d5;
+	u8 _2d6;
+	u8 _2d7;
+	u8 _2d8;
+	u8 _2d9;
+	u8 _2da;
+	u8 _2db;
+	u8 _2dc;
+	u8 _2dd;
+	u8 _2de;
+	u8 _2df;
+	u8 _2e0;
+	u8 _2e1;
+	u8 _2e2;
+	u8 _2e3;
+	u8 _2e4;
+	u8 _2e5;
+	u8 _2e6;
+	u8 _2e7;
+	u8 _2e8;
+	u8 _2e9;
+	u8 _2ea;
+	u8 _2eb;
+	u8 _2ec;
+	u8 _2ed;
+	u8 _2ee;
+	u8 _2ef;
 	struct _Bytes6 bytes1[0xa];
 	u8 _pad4[0xf8];
 	u32 someField;
@@ -997,10 +1127,38 @@ struct _Player
 	u16 statLife;
 	u8 _5411;
 	u8 _5412;
-	u8 _5413;
-	u8 _5414;
+	u16 statMana;
 	u8 _5415;
 	u16 statManaMax;
+	u8 _pad7[0x90];
+	float SpawnX;
+	float SpawnY;
+	u8 _pad8[0xb4c];
+};
+
+// "_Vertex_0x14"
+struct _Vertex_0x14
+{
+	u8 _0;
+	u8 _1;
+	u8 _2;
+	u8 _3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	u8 _C;
+	u8 _D;
+	u8 _E;
+	u8 _F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
 };
 
 // "_Draw_Unk1"
@@ -1108,11 +1266,11 @@ typedef int32_t s32_1;
 // "String"
 typedef struct _String String;
 
-// "Player"
-typedef struct _Player Player;
-
-// "Draw_Unk1"
-typedef struct _Draw_Unk1 Draw_Unk1;
+// "_FileReader_1"
+struct _FileReader_1
+{
+	struct _FileReaderFuncTable* funcs;
+};
 
 // "_TileFlags1"
 struct _TileFlags1
@@ -1125,23 +1283,17 @@ struct _TileFlags1
 	u8 _7 : 1;
 };
 
-// "_FileReader_1"
-struct _FileReader_1
-{
-	struct _FileReaderFuncTable* funcs;
-};
+// "Player"
+typedef struct _Player Player;
+
+// "Vertex_0x14"
+typedef struct _Vertex_0x14 Vertex_0x14;
+
+// "Draw_Unk1"
+typedef struct _Draw_Unk1 Draw_Unk1;
 
 // "ImageLoader_Data1"
 typedef struct _ImageLoader_Data1 ImageLoader_Data1;
-
-// "_StringHeader"
-struct _StringHeader
-{
-	s32 refcount;
-	u32 unk;
-	u32 length;
-	String string;
-};
 
 // "_World"
 struct _World
@@ -1149,7 +1301,7 @@ struct _World
 	u8 _00;
 	u8 _01;
 	u8 _02;
-	bool _03;
+	bool gen;
 	bool generatingWorld;
 	u8 _05;
 	u8 _06;
@@ -1158,7 +1310,7 @@ struct _World
 	u8 _09;
 	u8 _0A;
 	u8 _0B;
-	u8 _0C;
+	bool destroyObject;
 	bool crimsonWorld;
 	u8 _0E;
 	u8 _0F;
@@ -1199,155 +1351,26 @@ struct _World
 	u16 worldHeight;
 };
 
-// "_PlayerParentPlaceholder"
-struct _PlayerParentPlaceholder
+// "_FileWriter_1"
+struct _FileWriter_1
 {
-	u8 _pad1[0x1c];
-	Player* player;
+	struct _FileWriterFuncTable* funcs;
 };
 
-// "_Draw_Unk0"
-struct _Draw_Unk0
+// "_StringHeader"
+struct _StringHeader
 {
-	u8 _0;
-	u8 _1;
-	u8 _2;
-	u8 _3;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	u8 _C;
-	u8 _D;
-	u8 _E;
-	u8 _F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-	u8 _7A;
-	u8 _7B;
-	u32 _7C_7F;
-	u32 _80_83;
-	u8 _84;
-	u8 _85;
-	u8 _86;
-	u8 _87;
-	Draw_Unk1* unk1;
-	u8 _8C;
-	u8 _8D;
-	u8 _8E;
-	u8 _8F;
-	u8 _90;
-	u8 _91;
-	u8 _92;
-	u8 _93;
+	s32 refcount;
+	u32 unk;
+	u32 length;
+	String string;
+};
+
+// "_Double2_1"
+struct _Double2_1
+{
+	double X;
+	double Y;
 };
 
 // "_NPC"
@@ -1744,13 +1767,6 @@ struct _NPC
 	u8 _292;
 };
 
-// "_Double2_1"
-struct _Double2_1
-{
-	double X;
-	double Y;
-};
-
 // "_SoundEffect"
 struct _SoundEffect
 {
@@ -1780,6 +1796,9 @@ struct _SoundEffect
 	u8 _1A;
 	u8 _1B;
 };
+
+// "FileReader"
+typedef struct _FileReader FileReader;
 
 // "_Tile"
 struct _Tile
@@ -2073,13 +2092,224 @@ struct _Image
 	u8 _FF;
 };
 
-// "_Vector4_1"
-struct _Vector4_1
+// "_PlayerParentPlaceholder"
+struct _PlayerParentPlaceholder
 {
-	float X;
-	float Y;
-	float Z;
-	float W;
+	u8 _pad1[0x1c];
+	Player* player;
+};
+
+// "_Draw_Unk3"
+struct _Draw_Unk3
+{
+	void* _0_3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	Vertex_0x14* vertexBuffer;
+	u32 _10_13;
+	u32 _14_17;
+	u32 _18_1B;
+	void* _1C_1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	float _28_2B;
+	float _2C_2F;
+	float _30_33;
+	float _34_37;
+	float _38_3B;
+	float _3C_3F;
+	float _40_43;
+	float _44_47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	float _58_5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	float _60_63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+};
+
+// "_Draw_Unk0"
+struct _Draw_Unk0
+{
+	u8 _0;
+	u8 _1;
+	u8 _2;
+	u8 _3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	u8 _C;
+	u8 _D;
+	u8 _E;
+	u8 _F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	u32 _7C_7F;
+	u32 _80_83;
+	u8 _84;
+	u8 _85;
+	u8 _86;
+	u8 _87;
+	Draw_Unk1* unk1;
+	u8 _8C;
+	u8 _8D;
+	u8 _8E;
+	u8 _8F;
+	u8 _90;
+	u8 _91;
+	u8 _92;
+	u8 _93;
 };
 
 // "_Projectile"
@@ -2330,37 +2560,6 @@ struct _Projectile
 	u8 _F7;
 };
 
-// "_Vertex_0x14"
-struct _Vertex_0x14
-{
-	u8 _0;
-	u8 _1;
-	u8 _2;
-	u8 _3;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	u8 _C;
-	u8 _D;
-	u8 _E;
-	u8 _F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-};
-
-// "_FileWriter_1"
-struct _FileWriter_1
-{
-	struct _FileWriterFuncTable* funcs;
-};
-
 // "_Recipe"
 struct _Recipe
 {
@@ -2372,122 +2571,6 @@ struct _Recipe
 	Item recipeRequired[0x6];
 };
 
-// "_Draw_Unk3"
-struct _Draw_Unk3
-{
-	u8 _0;
-	u8 _1;
-	u8 _2;
-	u8 _3;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	void* vertexBuffer;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u32 _1C_1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u32 _28_2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-};
-
-// "_Vector3_1"
-struct _Vector3_1
-{
-	float X;
-	float Y;
-	float Z;
-};
-
 // "_IVector4"
 struct _IVector4
 {
@@ -2496,9 +2579,6 @@ struct _IVector4
 	u32 Z;
 	u32 W;
 };
-
-// "FileReader"
-typedef struct _FileReader FileReader;
 
 // "_ImageLoader"
 struct _ImageLoader
@@ -2630,6 +2710,15 @@ struct _ImageLoader
 	u8 _8B;
 };
 
+// "_Vector4_1"
+struct _Vector4_1
+{
+	float X;
+	float Y;
+	float Z;
+	float W;
+};
+
 // "_Chest"
 struct _Chest
 {
@@ -2639,75 +2728,12 @@ struct _Chest
 	u32 other;
 };
 
-// "StringHeader"
-typedef struct _StringHeader StringHeader;
-
-// "World"
-typedef struct _World World;
-
-// "PlayerParentPlaceholder"
-typedef struct _PlayerParentPlaceholder PlayerParentPlaceholder;
-
-// "Draw_Unk0"
-typedef struct _Draw_Unk0 Draw_Unk0;
-
-// "NPC"
-typedef struct _NPC NPC;
-
-// "Double2"
-typedef struct _Double2 Double2;
-
-// "SoundEffect"
-typedef struct _SoundEffect SoundEffect;
-
-// "Tile"
-typedef struct _Tile Tile;
-
-// "Image"
-typedef struct _Image Image;
-
-// "Vector4"
-typedef struct _Vector4 Vector4;
-
-// "__ChestItems"
-struct __ChestItems
+// "_Vector3_1"
+struct _Vector3_1
 {
-	Item items[0x28];
-};
-
-// "Projectile"
-typedef struct _Projectile Projectile;
-
-// "Vertex_0x14"
-typedef struct _Vertex_0x14 Vertex_0x14;
-
-// "FileWriter"
-typedef struct _FileWriter FileWriter;
-
-// "Recipe"
-typedef struct _Recipe Recipe;
-
-// "Draw_Unk3"
-typedef struct _Draw_Unk3 Draw_Unk3;
-
-// "Vector3"
-typedef struct _Vector3 Vector3;
-
-// "IVector4"
-typedef struct _IVector4 IVector4;
-
-// "_FileReaderFuncTable"
-struct _FileReaderFuncTable
-{
-	void* func0;
-	void (* func1)(FileReader* reader);
-	void* func2;
-	void* func3;
-	void* func4;
-	void* func5;
-	void* func6;
-	void* func7;
-	void (* ReadData)(FileReader* reader, void* buffer, u32 size);
+	float X;
+	float Y;
+	float Z;
 };
 
 // "_FileWriterFuncTable"
@@ -2724,9 +2750,77 @@ struct _FileWriterFuncTable
 	void (* WriteData)(void* file, void* buffer, u32 size);
 };
 
+// "World"
+typedef struct _World World;
+
+// "FileWriter"
+typedef struct _FileWriter FileWriter;
+
+// "StringHeader"
+typedef struct _StringHeader StringHeader;
+
+// "Double2"
+typedef struct _Double2 Double2;
+
+// "NPC"
+typedef struct _NPC NPC;
+
+// "SoundEffect"
+typedef struct _SoundEffect SoundEffect;
+
+// "_FileReaderFuncTable"
+struct _FileReaderFuncTable
+{
+	void* func0;
+	void (* func1)(FileReader* reader);
+	void* func2;
+	void* func3;
+	void* func4;
+	void* func5;
+	void* func6;
+	void* func7;
+	void (* ReadData)(FileReader* reader, void* buffer, u32 size);
+};
+
+// "Tile"
+typedef struct _Tile Tile;
+
+// "Image"
+typedef struct _Image Image;
+
+// "PlayerParentPlaceholder"
+typedef struct _PlayerParentPlaceholder PlayerParentPlaceholder;
+
+// "Draw_Unk3"
+typedef struct _Draw_Unk3 Draw_Unk3;
+
+// "Draw_Unk0"
+typedef struct _Draw_Unk0 Draw_Unk0;
+
+// "Projectile"
+typedef struct _Projectile Projectile;
+
+// "Recipe"
+typedef struct _Recipe Recipe;
+
+// "IVector4"
+typedef struct _IVector4 IVector4;
+
 // "ImageLoader"
 typedef struct _ImageLoader ImageLoader;
 
+// "Vector4"
+typedef struct _Vector4 Vector4;
+
+// "__ChestItems"
+struct __ChestItems
+{
+	Item items[0x28];
+};
+
 // "Chest"
 typedef struct _Chest Chest;
+
+// "Vector3"
+typedef struct _Vector3 Vector3;
 

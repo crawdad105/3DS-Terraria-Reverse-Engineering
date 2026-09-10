@@ -21,7 +21,7 @@ namespace ExtractDumpNames
             public bool IsUserDefined { get; set; }
             public string ToStringValue { get; set; }
             public override string ToString() {
-                return ToStringValue = IsFunction ? $"0x{AddressString} {Type} {Name}({Other})" : $"{AddressString} {Type} {Name}"; ;
+                return ToStringValue = IsFunction ? $"0x{AddressString} {Type} {Name}({Other})" : $"0x{AddressString} {Type} {Name}";
             }
         }
 
@@ -45,19 +45,26 @@ namespace ExtractDumpNames
             Console.WriteLine("  ./[UserInput].txt");
             Console.WriteLine("  ./descriptions.txt");
             Console.WriteLine("");
-            Console.WriteLine("Input name of binary ninja export.\nThis must be in the same folder.");
-            Console.ReadLine();
+            Console.WriteLine("Input name of the binary ninja linear export.");
 
-            if (!File.Exists(curDir + "\\BNExport.txt")) {
-                Console.WriteLine($"File at \"{curDir + "\\BNExport.txt"}\" does not exist.");
-                return;
+            var path = "";
+            while(true){
+                var userInput = Console.ReadLine().TrimStart('\"').TrimEnd('\"');
+                if (File.Exists(userInput)) {
+                    path = userInput;
+                    curDir = Directory.GetParent(userInput).ToString();
+                    break;
+                }
+                path = Path.Combine(curDir + userInput);
+                if (File.Exists(path)) break;
+                Console.WriteLine($"File at \"{path}\" does not exist.");
             }
 
             List<string> output = new List<string>();
             List<Entry> data = new List<Entry>();
 
             Console.WriteLine("Reading Lines...");
-            var lines = File.ReadLines(curDir + "\\BNExport.txt").ToArray();
+            var lines = File.ReadLines(path).ToArray();
             var len = lines.Length;
 
             for (int i = 0; i < len; i++) {
@@ -109,25 +116,27 @@ namespace ExtractDumpNames
             var options = new JsonSerializerOptions { WriteIndented = true };
             Console.WriteLine("Saving Data File...");
             List<string> strs = new List<string>();
-            strs.Add("var data = [");
+            strs.Add("[");
             foreach (var item in data) {
                 strs.Add(JsonSerializer.Serialize(item, options) + ",");
             }
-            strs.Add("];");
+            strs[strs.Count - 1] = strs[strs.Count - 1].TrimEnd(',');
+            strs.Add("]");
 
-            File.WriteAllLines(curDir + "\\data.js", strs);
+            File.WriteAllLines(curDir + "\\data.json", strs);
 
 
             Console.WriteLine("Saving User Defined Data File...");
             strs.Clear();
-            strs.Add("var data = [");
+            strs.Add("[");
             foreach (var item in data) {
                 if (item.IsUserDefined) {
                     strs.Add(JsonSerializer.Serialize(item, options) + ",");
                 }
             }
-            strs.Add("];");
-            File.WriteAllLines(curDir + "\\userDefinedData.js", strs);
+            strs[strs.Count - 1] = strs[strs.Count - 1].TrimEnd(',');
+            strs.Add("]");
+            File.WriteAllLines(curDir + "\\userDefinedData.json", strs);
 
 
 

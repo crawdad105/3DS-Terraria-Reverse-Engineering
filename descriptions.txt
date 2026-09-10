@@ -101,3 +101,36 @@
 0013f940:In place of FastRandom::Next() from mobile it seems.
 0086d278:Seems to contain a vertex buffer.
 0088e770:Equivalent to `Terraria.Main.musicFade[]`.
+
+00633127:Seems to check if the world is 4200 blocks wide, this also seems to be 3ds exclusive.
+00145c94:The value for the parameter does not seem to match with a specific type.
+0063303c:Seem to be unused, only ever set in `UI::UpdateCursorColor`.
+00550944:No call references, the name is from the mobile version.
+00633080:Seem to be unused, only ever set in `UI::UpdateCursorColor` and `_INIT_140`.
+006330bc:Accessed from `Main::Update` but never set, ram dump shows its `false`, it is is `true` the user seems to gets disconnected.
+00265758:No call references, no variable reference. Probably close to the entry point.
+002209e8:Matches `SpriteBatch::Global()` but locations are different.
+0086d278:Similar to `SpriteBatch::globalSpriteBatch`.
+001d8228:No call references, seems to be stored at `0x005d64e8`.
+0021b770:*Verify, No call references, no variable reference.
+00300b0c:Seems to be in place of `__cxa_guard_release()` on mobile.
+00633408:Equivalent to `myPlayer`
+008dae70:Matches `Main.quickBG`, does not have a name on mobile. Also does not seem to be used, its only set to `10`/`0x0A`.
+00117ea0:Does not match the mobile function but its only ever called in `UI::UI`
+0029f570:Calls `UI::InitPlayerStorage` on mobile but its expanded out and calls `UI::SetDefaultSettings` directly.
+00204fa4:This is different from on mobile, textures are not loaded the same way.
+005140a4:Does not match the mobile function, but seems to do the same thing. 
+00137c24:Might be 3DS specific popup code.
+00274ab8:No call references, seems to be stored at `0x005d83cc`.
+0048f984:No call references, no variable reference.
+003e90c8:Not the same as mobile.
+002956d8:Loads "UI/texture_touchzoom.png" but this file (the string) exists nowhere in the cartridge dump.
+00633084:Supposed to contain "UI/texture_touchzoom.png", but the files does not exist and the variable is only ever set, not used.
+00633074:Might be unused, set in `UI::Initialize`
+008d5108:*Verify, manually inferred.
+006333b8:No variable reference.
+0017f418:Not an exact match but the name is close enough.
+00149d74:*Verify, definitely not the same compared to mobile but calling seems the same.
+0017dc8c:Seems to be called in the same place as mobile but idk how `printf` works on the 3ds, and idk where the output goes.
+0014e384:*Verify
+002fb6c8:*Verify

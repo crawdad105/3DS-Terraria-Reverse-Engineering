@@ -3,63 +3,144 @@
 | `0x001006de` | `void* ForEach(void* elms, u32 count, u32 elmSize, void (__convention("cdecl")* foo)(void*))` | Runs `foo` for every element in `elms`. |
 | `0x00101042` | `u32 Utf16_strlen(u16* utf16_str)` | `strlen()` for a utf16 string.,`strcmp()` for a utf16 string.,Inits the 3DSs `cfg:u` service. |
 | `0x00101b5c` | `u32 Utf16_strcmp(u16* str1, u16* str2, u32 length)` |  |
+| `0x00102a04` | `int32_t printf(int32_t arg1, int16_t* arg2)` |  |
+| `0x00111a80` | `void* UI::SetDefaultSettings(void* arg1)` |  |
 | `0x00113ce4` | `int32_t _cfguInit()` |  |
 | `0x00115198` | `void CreateColour(Colour* c, u32 R, u32 G, u32 B, u32 A)` | Creates a colour struct. |
-| `0x0011ec7c` | `void ClearItem2(Item* item)` | Clears some item properties. |
-| `0x00137c24` | `void ShowPopup(String* string)` |  |
-| `0x0013b8cc` | `void ClearItem(Item* item)` | Clears some item properties. |
+| `0x00115240` | `int32_t* Timer::Timer(int32_t* arg1)` |  |
+| `0x001157c8` | `void* NetPlayer::NetPlayer(int32_t arg1)` |  |
+| `0x00115870` | `void* WorldView::WorldView(int32_t* arg1)` |  |
+| `0x00118154` | `void Background::Background(int32_t* arg1, int32_t arg2)` |  |
+| `0x00118198` | `int32_t Statistics::Init(void* arg1)` |  |
+| `0x00119830` | `int32_t* ItemTextPool::ItemTextPool(void* arg1, int32_t arg2)` |  |
+| `0x00119dcc` | `void* GraphicsDevice::GraphicsDevice(GraphicsDevice* arg1)` |  |
+| `0x0011ec7c` | `void Item::Init(Item* item)` | Clears some item properties. |
+| `0x0011effc` | `void* Waters::Waters(void* arg1, int32_t arg2)` |  |
+| `0x0011f0c0` | `void* Lighting::Lighting(int32_t* arg1, int32_t arg2)` |  |
+| `0x0011f19c` | `void* RainPool::RainPool(void* arg1)` |  |
+| `0x00127418` | `void Rain::Rain(int64_t* arg1)` |  |
+| `0x00128164` | `char* ItemText::ItemText(void* arg1, int32_t arg2 @ r4)` |  |
+| `0x001326a0` | `int32_t free(int32_t* arg1)` |  |
+| `0x00137c24` | `void ShowPopup(String* string)` | Might be 3DS specific popup code. |
+| `0x00138d30` | `void* UI::UI(int32_t* arg1, int32_t arg2 @ r4)` |  |
+| `0x0013b8cc` | `void Item::Item(Item* item)` | Clears some item properties. |
+| `0x0013ba8c` | `int32_t Main::IsTutorial()` |  |
 | `0x0013bac4` | `void Main::PlaySound(s32 soundId)` | Plays a sound with a given id. |
-| `0x0013f940` | `int32_t RandomNumber(int32_t* arg1, int32_t arg2)` | In place of FastRandom::Next() from mobile it seems. |
+| `0x0013f940` | `int32_t FastRandom::Next(int32_t* arg1, int32_t arg2)` | In place of FastRandom::Next() from mobile it seems. |
 | `0x0013f9b4` | `s32 RandomNumberRange(int128_t* seed, s32 min, s32 max)` |  |
-| `0x00143ef4` | `Player* GetPlayer()` |  |
-| `0x0014a24c` | `ImageLoader* ClearImageLoader(ImageLoader* arg1)` | Clears some data relating to what seems to be an image loader. |
+| `0x00141490` | `int32_t HelperFunctions::loadResourceFile(int32_t arg1, int32_t arg2, int32_t* arg3, int32_t arg4)` |  |
+| `0x00143670` | `int32_t malloc(uint32_t arg1)` |  |
+| `0x00143ef4` | `Player* Player::GetPlayer()` |  |
+| `0x00143f10` | `int32_t Netplay::IsSinglePlayer()` |  |
+| `0x00145c94` | `void* new(uint32_t arg1)` | The value for the parameter does not seem to match with a specific type. |
+| `0x001481fc` | `int32_t NetMessage::SendMessage()` |  |
+| `0x001482dc` | `int32_t NetMessage::CreateMessage0(int32_t arg1)` |  |
+| `0x00149a68` | `int32_t ResourceFile::size(void* arg1)` |  |
+| `0x00149d00` | `int32_t* ResourceFile::close(int32_t* arg1)` |  |
+| `0x00149d74` | `int32_t ResourceFile::readData(void* arg1, char* arg2, int32_t arg3, int32_t arg4)` | *Verify, definitely not the same compared to mobile but calling seems the same. |
+| `0x0014a24c` | `ImageLoader* ContentLoader::ContentLoader(ImageLoader* arg1)` | Clears some data relating to what seems to be an image loader. |
 | `0x0014b3e0` | `int32_t EE::String::Null(void** arg1)` |  |
 | `0x0014b594` | `void EE::String::~String(String* str)` |  |
 | `0x0014b5bc` | `String* EE::String::operator=(String* str, String* arg2, void* arg3)` |  |
+| `0x0014e384` | `int32_t* new[](uint32_t arg1)` | *Verify |
 | `0x0014f7b8` | `void* FreeStringType2(String* str)` |  |
+| `0x00151f48` | `void* LocalNetworkGamer::SendData2(int32_t arg1, void* arg2, int32_t arg3, u32 arg4, int32_t arg5, void* arg6)` |  |
+| `0x00151fa8` | `void LocalNetworkGamer::SendData(int32_t arg1, void* arg2, int32_t arg3, void* arg4)` |  |
 | `0x00152090` | `String* EE::String::String(String* str1, char* rawStr)` |  |
+| `0x001534a0` | `int32_t NetClient::IsReadyToReceive(void* arg1, char* arg2)` |  |
+| `0x00156ea0` | `int32_t NetworkGamer::SendDataToThisGamer(void* arg1, char* arg2, u32 arg3)` |  |
+| `0x00156f44` | `int32_t CriticalSection::Enter(int32_t* arg1)` |  |
+| `0x00156f50` | `void CriticalSection::Leave(int32_t* arg1)` |  |
+| `0x00157330` | `int32_t EE::MemoryFile::Write(int32_t* arg1, char* arg2, u32 arg3, void* arg4)` |  |
 | `0x0015d71c` | `u32 MurmurHash3(String* string, u32 seed)` |  |
+| `0x0015d8a8` | `int32_t Network::SendData(void* arg1, char* arg2, u32 arg3, int32_t* arg4)` |  |
 | `0x0015dcf4` | `int32_t GlyphSet::GetGlyph(void* arg1, int32_t arg2)` |  |
+| `0x00173914` | `int32_t setjmp(int32_t* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5, int32_t arg4 @ r6, int32_t arg5 @ r7, int32_t arg6 @ r8, int32_t arg7 @ r9, int32_t arg8 @ r10, int32_t arg9 @ r11)` |  |
+| `0x0017d97c` | `int32_t pngLoad(void* arg1, int32_t* arg2, int32_t* arg3, int32_t** arg4, int32_t* arg5, int16_t* arg6)` |  |
 | `0x0017e3f4` | `void LoadBackground()` | Loads Terraria's background images. |
+| `0x0017e61c` | `int32_t LoadBackground_2(String* arg1, void* arg2 @ r4, int32_t arg3 @ r5, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7)` |  |
+| `0x0017f418` | `int32_t Background::Draw(void* arg1, int32_t arg2 @ r4)` | Not an exact match but the name is close enough. |
 | `0x00180054` | `void DrawBackground(void* arg1, u32 backgroundType, int32_t arg3, Colour colour1 @ r9, int32_t arg5 @ r11, int32_t arg6, int32_t arg7)` | Draws a background. |
+| `0x001809c8` | `uint32_t WorldView::DrawCursor(void* arg1)` |  |
+| `0x00187c9c` | `int32_t NetMessage::syncPlayer(int32_t arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)` |  |
+| `0x001886d8` | `int32_t NetMessage::syncPlayers()` |  |
+| `0x0018890c` | `int32_t NetMessage::SendPlayerId(void* arg1, int32_t arg2)` |  |
+| `0x00188f04` | `int32_t NetMessage::CreateMessage1(int32_t arg1, int32_t arg2)` |  |
+| `0x0018b164` | `int32_t NetMessage::CreateMessage4(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
+| `0x0018b564` | `int32_t NetMessage::SendNpcCreated(int32_t arg1, int32_t arg2)` |  |
+| `0x0018f69c` | `int32_t NetMessage::SendGoodEvilCount()` |  |
+| `0x0019408c` | `int32_t NetMessage::SendAnnounceSpawning(int32_t arg1)` |  |
+| `0x00194ba0` | `int32_t NetMessage::SendPlayerIDSessionMapping(void* arg1)` |  |
 | `0x001ab3a0` | `uint32_t Projectile::Kill(Projectile* projectile, int128_t arg2 @ q0)` | Equivalent to `Terraria.Projectile.Kill()`. |
+| `0x001c0794` | `int32_t Projectile::Update(Projectile* arg1)` |  |
 | `0x001c62a0` | `void ClearProjectile(Projectile* projectile)` | Clears some projectiles properties. |
 | `0x001d802c` | `void SoundEffect::Load(int32_t* arg1, String* str)` | Converts `str` to be a `.wav` file name. |
+| `0x001d8228` | `int32_t ExtractState::Draw(void* arg1)` | No call references, seems to be stored at `0x005d64e8`. |
+| `0x001d8754` | `float ExtractState::Update(void* arg1, float arg2 @ q4)` |  |
+| `0x001d8be8` | `void SpriteBatch::DecreaseLayer(void* arg1)` |  |
+| `0x001d8bf8` | `void SpriteBatch::IncreaseLayer(void* arg1)` |  |
+| `0x001dc858` | `uint32_t Underground::UpdateOnce()` |  |
 | `0x001dc890` | `void* Underground::LoadContent()` |  |
 | `0x001e3624` | `void Achievements::TriggerSystem::ReadProfile(int32_t arg1, int32_t arg2)` |  |
 | `0x001e366c` | `void* Achievements::TriggerSystem::UpdateAchievements(void* arg1)` |  |
 | `0x001e3b28` | `uint32_t Achievements::AchievementSystem::Award(char* arg1, uint32_t arg2)` |  |
 | `0x001ef508` | `String* GetIconName(String* name, u32 iconType)` | Gets a terraria icon name with a given `iconType`. |
+| `0x001f453c` | `int32_t ResourceFile::readInt(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
+| `0x001f80b0` | `int32_t LoadSomeContent()` |  |
+| `0x001fac4c` | `void* TextureAtlas::GetRegionFromName(void* arg1)` |  |
+| `0x001face8` | `int32_t TextureAtlas::GetIndexFromStrippedName(void* arg1, String* arg2)` |  |
 | `0x001fc97c` | `int32_t* WidgetLoader::loadSprite(void* arg1)` |  |
 | `0x001fccc8` | `void*** WidgetLoader::loadWidget(void* arg1, int32_t arg2 @ r5)` |  |
 | `0x002021f8` | `int32_t WidgetLoader::load(int32_t* arg1, void* arg2 @ r4, int32_t arg3 @ r5)` |  |
+| `0x00204fa4` | `void* ContentLoader::LoadTexture(ImageLoader* loader, String* str, u32 num1, void* pointer, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7)` | This is different from on mobile, textures are not loaded the same way. |
+| `0x0021a088` | `int32_t GraphicsDevice::clear(GraphicsDevice* arg1)` |  |
+| `0x0021a098` | `int32_t GraphicsDevice::set2D(GraphicsDevice* arg1)` |  |
+| `0x0021b770` | `int32_t MenuBackground::Draw(int32_t arg1)` | *Verify, No call references, no variable reference. |
+| `0x002209e8` | `void CreateNewDrawer(Draw_Unk3* drawer)` | Matches `SpriteBatch::Global()` but locations are different. |
 | `0x00220b5c` | `s32 QuestFishTypeToId(u32 questID)` | Returns the quest fish item id relating to the given `questID`. |
 | `0x00237b3c` | `void LoadSound(SoundEffect* sound, String* str, int32_t arg3)` | Loads a sound. |
 | `0x00237c50` | `void LoadSound2(SoundEffect* sound, String* str, int32_t arg3)` | Loads a sound. |
 | `0x00237d6c` | `void ClearSoundEffect(SoundEffect* sound)` |  |
+| `0x00237e58` | `int32_t* StateFullEngine::AddTransition(void* arg1, void* arg2, void* arg3, int32_t arg4 @ q4)` |  |
+| `0x002382bc` | `int32_t StateFullEngine::AddState(void* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r4, int32_t arg6, int32_t arg7)` |  |
 | `0x002588ec` | `void ReleaseNPC(s32 X, s32 Y, s32 npcId, u32 style, s32 who)` | Equivalent to `Terraria.NPC.ReleaseNPC()`. |
 | `0x0025c97c` | `u32 NPC::SpawnFriendlyNPC(int32_t* arg1)` |  |
-| `0x0025cfa0` | `void setFireFlyChance()` |  |
+| `0x0025cfa0` | `void NPC::setFireFlyChance()` |  |
+| `0x00265758` | `int32_t TerrariaInitializer::Run()` | No call references, no variable reference. Probably close to the entry point. |
+| `0x00274ab8` | `char** CharacterCreateMenu::onKeyboardInputDone(int32_t arg1, int32_t* arg2, int32_t arg3 @ r4)` | No call references, seems to be stored at `0x005d83cc`. |
 | `0x0027a0cc` | `void KillFrostLegionEnemy(int32_t arg1, NPC* npc)` |  |
 | `0x002945e0` | `String* EE::String::Format(String* destStr, char* formatStr, void* args)` |  |
 | `0x002946cc` | `String* LoadString(String* arg1, String* dest, char* raw)` |  |
+| `0x00295474` | `void UI::Initialize(void* arg1)` |  |
+| `0x0029550c` | `int32_t UI::UpdateOnce()` |  |
+| `0x002956a8` | `uint32_t UI::JoinSession(void* arg1, u32 arg2)` |  |
+| `0x002956d8` | `int32_t Load_texture_touchzoom(int32_t arg1 @ r4)` | Loads "UI/texture_touchzoom.png" but this file (the string) exists nowhere in the cartridge dump. |
 | `0x002980e0` | `int32_t UI::UpdateNpcChat(PlayerParentPlaceholder* arg1, int32_t arg2 @ r4)` |  |
+| `0x00299760` | `Colour UI::UpdateCursorColor(int64_t arg1 @ q4)` |  |
+| `0x0029d304` | `int32_t UI::Draw(int32_t arg1)` |  |
 | `0x0029d5d4` | `void UI::HelpText(PlayerParentPlaceholder* arg1)` | Somewhat equivalent to `Terraria.Main.HelpText()`. |
+| `0x0029f570` | `int32_t UI::OpenView(void* arg1, int32_t arg2 @ r4)` | Calls `UI::InitPlayerStorage` on mobile but its expanded out and calls `UI::SetDefaultSettings` directly. |
 | `0x0029f858` | `s32 TownNPCFromId(void* arg1, s32 npcId)` | Gets a town NPC id from the given `npcId` |
+| `0x0029f9d4` | `int32_t* UI::setPlayer(void* arg1, void* arg2)` |  |
+| `0x0029fb08` | `uint32_t UI::setPlayer2(void* arg1, u32 arg2)` |  |
 | `0x002b084c` | `void _cfguExit2(int32_t arg1)` | Exist out of the `cfg:u` service. |
 | `0x002b2148` | `int32_t _cfguExit()` | Exist out of the `cfg:u` service. |
 | `0x002fb5e0` | `u32 StringLength(char* raw)` |  |
-| `0x002fb9a8` | `String* SetStringTypeString(String* strType, char* rawStr)` |  |
+| `0x002fb6c8` | `int32_t delete[](int32_t* arg1)` | *Verify |
+| `0x002fb9a8` | `String* SetStringTypeString(String* strType, char* rawStr, void* arg3)` |  |
 | `0x002fba24` | `String* FreeStringType4_2(String* str)` |  |
 | `0x002fba2c` | `String* FreeStringType4(String* str)` |  |
 | `0x002fbfa6` | `char* Memcpy_aligned2(char* dest, char* src, u32 length, void* arg4)` |  |
-| `0x002fd91c` | `void Memcpy_aligned(char* dest, char* src, u32 length, void* arg4, void* arg5 @ r12)` |  |
+| `0x002fd91c` | `void memcpy(char* dest, char* src, u32 length, void* arg4, void* arg5 @ r12)` |  |
 | `0x002fd9bc` | `void* FreeString3_2(String* str)` |  |
 | `0x002fd9c4` | `void* FreeStringType3(String* str)` |  |
-| `0x00300b0c` | `bool CheckOnce(bool* flag)` | Returns `true` if `flag` was `false` then sets `flag` to `true`, otherwise (if `flag` is `true`) returns `false`. |
+| `0x002fe388` | `int32_t __aeabi_idivmod(int32_t arg1, uint32_t arg2)` |  |
+| `0x00300b0c` | `bool CheckOnce(bool* flag)` | Returns `true` if `flag` was `false` then sets `flag` to `true`, otherwise (if `flag` is `true`) returns `false`.,Seems to be in place of `__cxa_guard_release()` on mobile. |
+| `0x00300e10` | `int32_t memset(char* arg1, int32_t arg2)` |  |
 | `0x0032aaa8` | `int32_t Cue::Load(void* arg1, int32_t* arg2)` |  |
 | `0x0032b0d0` | `int32_t Cue::IsPlaying(void* arg1)` |  |
 | `0x0032ed58` | `u32 NPC::SpawnBunny(s32 X, s32 Y)` | Spawn a bunny and does checks for seasons and stuff. |
+| `0x0032eea8` | `uint32_t NPC::BrainBossAI(void* arg1)` |  |
 | `0x00334c78` | `s32 NPCToBanner(s32 npcId)` | Equivalent to `Terraria.Item.NPCtoBanner()`. |
 | `0x00336c38` | `int32_t SetDefaults_NPC(NPC* npc, u16 npcId @ r11, int32_t arg3, int32_t arg4)` | Equivalent to `Terraria.NPC.SetDefaults(int, float)`. |
 | `0x00342084` | `uint16_t SetDefaultName_NPC(void* npc, String* npcName)` | Equivalent to `Terraria.NPC.SetDefaults(string)`. |
@@ -69,45 +150,82 @@
 | `0x0034e728` | `u32 CountNPCs2(u32 npcId)` |  |
 | `0x0034e72c` | `u32 NPC::AnyNPCs(u32 npcId)` | Equivalent to `Terraria.NPC.CountNPCS()`. |
 | `0x00350490` | `u32 NPC::SpawnUniqueNPC(int32_t* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)` |  |
+| `0x003708e8` | `uint32_t NPC::BrainBossOrbitersAI(void* arg1)` |  |
 | `0x00372c1c` | `u32 NPC::SpawnPositionBasedNPC(int32_t* arg1)` |  |
+| `0x003765a8` | `int32_t NPC::AI(NPC* arg1)` |  |
+| `0x0037c908` | `int32_t NPC::Reset(int32_t arg1 @ r4, int32_t arg2 @ r5)` |  |
 | `0x0037d7b8` | `u32 NPC::NewNPC(s32 X, s32 Y, s32 npcId, int32_t arg4, int32_t arg5 @ r4)` | Equivalent to `Terraria.NPC.NewNPC()`. |
 | `0x0038130c` | `bool AnyNPCs(u32 npcId)` | Equivalent to `Terraria.NPC.AnyNPCs()`. |
 | `0x00387d4c` | `void NPCLoot(NPC* npc)` | Equivalent to `Terraria.NPC.NPCLoot()`. |
 | `0x00393b48` | `void SpawnWOF(Vector2 pos)` | Equivalent to `Terraria.NPC.SpawnWOF()`. |
-| `0x003ac694` | `int32_t SetDefaultName_Item(Item* arg1, String* itemName @ r9)` | Equivalent to `Terraria.Item.SetDefaults(string)`. |
-| `0x003adfdc` | `void SetDefault_Item(Item* arg1, u32 id, u32 stack)` | Equivalent to `Terraria.Item.SetDefaults(int, ...)`. |
+| `0x00397100` | `int32_t NPC::setNames()` |  |
+| `0x003a3424` | `int32_t NPC::UpdateAll()` |  |
+| `0x003a3618` | `uint32_t NPC::UpdateNPC(NPC* arg1, int32_t arg2 @ r11, int32_t arg3)` |  |
+| `0x003a6a48` | `void* NPC::Init(int32_t arg1)` |  |
+| `0x003a8af8` | `void DustPool::Init(void* arg1)` |  |
+| `0x003a8b50` | `void Dust::Init(char* arg1)` |  |
+| `0x003a9b68` | `void Gore::Init(void* arg1)` |  |
+| `0x003aae00` | `int32_t* Gore::UpdateAll()` |  |
+| `0x003ac694` | `int32_t Item::SetDefaults_String(Item* arg1, String* itemName @ r9)` | Equivalent to `Terraria.Item.SetDefaults(string)`. |
+| `0x003adfdc` | `void Item::SetDefaults(Item* arg1, u32 id, u32 stack)` | Equivalent to `Terraria.Item.SetDefaults(int, ...)`. |
 | `0x003c5c20` | `void NetDefaults_Item(Item* item, s32 id, u32 stack)` | Equivalent to `Terraria.Item.netDefaults()`. |
 | `0x003c76f4` | `u32 MergeItems(Item* item1, Item* item2)` | Merges 2 items into a single stack. |
 | `0x003c77c0` | `bool Prefix_Item(Item* item, s32 prefix, int128_t arg3 @ q4)` | Equivalent to `Terraria.Item.Prefix()`. |
 | `0x003c9674` | `u32 NewItem_Item(u32 X, u32 Y, s32 width, s32 height, u32 id, u32 stack, int32_t arg7, s32 prefix, int32_t arg9)` | Equivalent to `Terraria.Item.NewItem()`. |
 | `0x003c9e2c` | `u32 GetValueSell(u32 platinum, u32 gold, u32 silver, u32 copper)` | Equivalent to `Terraria.Item.sellPrice()`. |
 | `0x003ca190` | `u32 GetValueBuy(u32 platinum, u32 gold, u32 silver, u32 copper)` | Equivalent to `Terraria.Item.buyPrice()`. |
+| `0x003d1ec0` | `void Main::Initialize()` |  |
 | `0x003d25e4` | `int32_t Main::LoadContent(void* arg1)` |  |
 | `0x003d339c` | `uint32_t DoCommand(String* command @ r7)` | Seems to be a place for debug commands, i think its inaccessible though. |
+| `0x003d8efc` | `int32_t Main::UpdateServer()` |  |
 | `0x003d9304` | `void Main::LoadingThread(void* mainInstance)` | Somewhat equivalent to `Terraria.Main.LoadContent()`, but only for audio. |
+| `0x003da050` | `int32_t* Main::UpdateNetwork()` |  |
+| `0x003daaac` | `int32_t* Main::InitializePostSplash(void* arg1)` |  |
+| `0x003db4fc` | `void Main::Draw(void* arg1)` |  |
+| `0x003db764` | `uint32_t Main::Update(void* arg1)` |  |
+| `0x003dbc30` | `int32_t Main::JoinGame(void* arg1)` |  |
 | `0x003dbf10` | `int32_t Main::PlayMusic(int32_t arg1, int32_t arg2)` |  |
 | `0x003dbfb4` | `void Main::PlaySound_At(u32 type, u32 X, u32 Y, u32 style)` | Equivalent to `Terraria.Main.PlaySound()`. |
 | `0x003dce64` | `void** Main::Main(void** arg1)` |  |
-| `0x003e8874` | `bool Time::IsEaster()` | Doesn't seem to match mobile. |
-| `0x003e9084` | `bool Time::IsHalloween()` | Doesn't seem to match mobile. |
-| `0x003e90c8` | `bool IsValentinesDay()` |  |
-| `0x003e93cc` | `bool IsOktoberfest()` |  |
-| `0x003e9410` | `bool IsThanksgiving()` |  |
-| `0x003e9780` | `bool Time::IsChristmas()` | Doesn't seem to match mobile. |
-| `0x003f6bd0` | `uint32_t SetupShop(Chest* inv, u32 npcType, Player* player)` | Equivalent to `Terraria.Chest.SetupShop()`. |
-| `0x003f9040` | `void ClearChest(Chest* chest)` | Clears data of a chest. |
+| `0x003e01c0` | `int32_t Tile::InitLookupTables()` |  |
+| `0x003e59b4` | `void Tile::InitAnim()` |  |
+| `0x003e8874` | `bool Time::CheckEaster()` | Doesn't seem to match mobile. |
+| `0x003e9084` | `bool Time::CheckHalloween()` | Doesn't seem to match mobile. |
+| `0x003e90c8` | `bool Time::CheckValentine()` | Not the same as mobile. |
+| `0x003e93cc` | `bool Time::CheckOctoberFest()` |  |
+| `0x003e9410` | `bool Time::CheckThanksgiving()` |  |
+| `0x003e9558` | `int32_t Time::reset(void* arg1)` |  |
+| `0x003e9780` | `bool Time::CheckXMas()` | Doesn't seem to match mobile. |
+| `0x003f6bd0` | `uint32_t Chest::SetupShop(Chest* inv, u32 npcType, Player* player)` | Equivalent to `Terraria.Chest.SetupShop()`. |
+| `0x003f9040` | `void Chest::Chest(Chest* chest)` | Clears data of a chest. |
 | `0x003ff494` | `int32_t Mount::Initialize()` |  |
 | `0x004005e0` | `void Mount::AnimState::AnimState(int32_t* arg1)` |  |
 | `0x004005f8` | `int32_t Mount::MountData::MountData(void* arg1)` |  |
-| `0x0040be30` | `void UpdatePlayer(Player* player, u32 playerId)` | *Verify |
-| `0x00447bdc` | `void SetupRecipes()` | Equivalent to `Terraria.Recipe.SetupRecipes()`. |
+| `0x00402f70` | `int32_t Liquid::QuickWater(int32_t arg1 @ r10, int32_t arg2 @ r11, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)` |  |
+| `0x00403b70` | `void Liquid::QuickSettleOn()` |  |
+| `0x00403b88` | `void Liquid::QuickSettleOff()` |  |
+| `0x0040be30` | `void Player::UpdatePlayer(Player* player, u32 playerId)` | *Verify |
+| `0x0041a944` | `int32_t Player::ClearInventory(void* arg1, int32_t arg2 @ r4)` |  |
+| `0x0042e088` | `void* Player::Init(void* arg1)` |  |
+| `0x0042f5c4` | `void Player::Spawn(Player* player, int32_t arg2 @ r4)` |  |
+| `0x00436324` | `int32_t Player::Teleport(void* arg1, int32_t* arg2, int32_t arg3)` |  |
+| `0x00442438` | `int32_t Player::RandColor(int32_t arg1)` |  |
+| `0x0044259c` | `int32_t Player::Randomize(void* arg1)` |  |
+| `0x004427e0` | `void* Player::Player(void*** arg1)` |  |
+| `0x00447bdc` | `void Recipe::SetupRecipes()` | Equivalent to `Terraria.Recipe.SetupRecipes()`. |
 | `0x0045305c` | `void SetupRecipes2(Item* arg1 @ r5, Item* arg2 @ r6, Item* arg3 @ r7, char* arg4 @ r10)` | Section 2 of `SetupRecipes`. |
 | `0x00459044` | `void SetupRecipes3(void* arg1 @ r4, Item* arg2 @ r5, Item* arg3 @ r6, Item* arg4 @ r7, char* arg5 @ r8, int16_t arg6 @ r9, int32_t arg7 @ r10, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)` | Section 3 of `SetupRecipes`. |
-| `0x0045a148` | `void AddRecipe(void* arg1, void* arg2, void* arg3, void* arg4)` | Somewhat equivalent to `Terraria.Recipe.addRecipe()`, but different. |
+| `0x0045a148` | `void Recipe::AddRecipe(void* arg1, void* arg2, void* arg3, void* arg4)` | Somewhat equivalent to `Terraria.Recipe.addRecipe()`, but different. |
+| `0x0045e548` | `int32_t Waters::FindWaterfalls(void* arg1)` |  |
+| `0x0045ea60` | `int32_t Waters::Draw(int32_t* arg1, int32_t arg2)` |  |
+| `0x0045ede0` | `int32_t Waters::DrawStyle(void* arg1, uint32_t arg2 @ r7, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)` |  |
 | `0x00464fb4` | `void SetNpcCatchable()` | Sets the array of catchable NPCs. |
+| `0x00467b40` | `int32_t Tile::InitAnim_2()` |  |
 | `0x0046cf94` | `int32_t GetAnglerReward(Player* player)` | Gets the angler reword. |
 | `0x0046e830` | `u32 GetQuestFishId()` | Calls `s32 QuestFishTypeToId(u32 questID)` on the current quest fish. |
 | `0x00470090` | `void LoadWorldFileHeader2(FileReader* reader, int32_t arg2)` |  |
+| `0x00472c28` | `void MiniMap::onStartGame(void* arg1)` |  |
+| `0x0047724c` | `uint32_t Netplay::GamerJoinedEventHandler(void* arg1)` |  |
 | `0x0047a67c` | `int32_t XMLFile::readString(int32_t arg1, void* arg2, int32_t* arg3)` |  |
 | `0x0047ace4` | `int32_t XMLFile::getAttribute(int32_t arg1, void* arg2, int32_t* arg3)` | *Verify |
 | `0x0047c698` | `int32_t XMLFile::gotoNode(void* arg1, int32_t arg2)` |  |
@@ -115,19 +233,53 @@
 | `0x0047c740` | `int32_t XMLFile::readBool(void* arg1)` |  |
 | `0x0047c8d0` | `int32_t XMLFile::gotoChild(void* arg1, int32_t* arg2)` |  |
 | `0x0047c940` | `int32_t XMLFile::gotoStart(void* arg1)` |  |
+| `0x0047ca3c` | `void* XMLFile::XMLFile(void*** arg1, int32_t arg2)` |  |
+| `0x00481fcc` | `int32_t DustPool::TeleportEffect(void* arg1, int32_t* arg2, int32_t arg3)` |  |
+| `0x004824cc` | `int32_t DustPool::DrawDust(int32_t arg1, void* arg2)` |  |
 | `0x0048e030` | `int32_t* DrawItemSlot(Draw_Unk2* arg1, int32_t* arg2, s32 num1, String* str1, int32_t arg5)` |  |
-| `0x004a17a4` | `void ClearWorld()` | Seems to clear world data. |
+| `0x0048f984` | `int32_t MainMenu::Play()` | No call references, no variable reference. |
+| `0x004974b0` | `void TileAnim::Init(void*** arg1, int16_t arg2, char arg3, int32_t arg4, int32_t arg5, int32_t arg6)` |  |
+| `0x00497810` | `void TileInfo::Init(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4, char arg5, char arg6, char arg7, int16_t arg8, char arg9, int16_t arg10, char arg11, char arg12)` |  |
+| `0x00498510` | `int32_t MainMenu::Tutorial(int32_t arg1 @ r4, int32_t arg2 @ r5)` |  |
+| `0x0049bb04` | `int32_t WorldGen::CountTiles(int32_t arg1)` |  |
+| `0x004a14a0` | `void* WorldGen::WaterCheck()` |  |
+| `0x004a17a4` | `void WorldGen::clearWorld()` | Seems to clear world data. |
 | `0x004a9b1c` | `void WorldGen::GrowPumpkin(u32 X, u32 Y, s32 id)` | Equivalent to `Terraria.WorldGen.GrowPumpkin()`. |
+| `0x004b0324` | `int32_t WorldGen::SmoothWorld()` |  |
 | `0x004b75e0` | `void PlacePumpkin(u32 X, u32 Y)` | Equivalent to `Terraria.WorldGen.PlacePumpkin()`. |
-| `0x004bc550` | `int32_t GenerateWorld()` |  |
+| `0x004bc550` | `int32_t WorldGen::generateWorld()` |  |
 | `0x004cb5dc` | `void LoadWorldFileHeader(FileReader* reader, int32_t arg2)` |  |
 | `0x004d529c` | `void LoadWorldFileHeader2(FileReader* reader, int32_t arg2)` |  |
-| `0x004da27c` | `void RandomBackgrounds()` |  |
-| `0x004fe1e8` | `void LoadWorld(FileReader* reader)` |  |
+| `0x004da27c` | `void WorldGen::randomBackgrounds()` |  |
+| `0x004fe1e8` | `void WorldGen::loadWorld(FileReader* reader)` |  |
+| `0x00502f34` | `void** tinyxml2::XMLDocument::XMLDocument(struct tinyxml2_XMLNode_VTable** arg1, char arg2, char arg3)` |  |
+| `0x00503f28` | `void* tinyxml2::XMLNode::XMLNode(struct tinyxml2_XMLNode_VTable** arg1, int32_t arg2)` |  |
+| `0x0050f170` | `void* GameState::Draw(void* arg1)` |  |
+| `0x0050f540` | `int32_t GameState::Update(int32_t arg1 @ r8)` |  |
 | `0x0050fc9c` | `void* GameState::GameState(void* arg1)` |  |
+| `0x00512d48` | `int32_t Texture2D::loadTexture(Texture* arg1, void* arg2)` |  |
+| `0x005140a4` | `void Texture2D::getPixel(Colour* colour, Texture* texture, int32_t arg3, int32_t arg4, int32_t arg5 @ r6, int32_t arg6 @ r12)` | Does not match the mobile function, but seems to do the same thing.  |
+| `0x005144d8` | `Texture* Texture2D::Texture2D(Texture* arg1, void* arg2)` |  |
+| `0x005186dc` | `uint32_t WorldView::DrawItemText(int32_t arg1, int32_t arg2 @ r9)` |  |
+| `0x0051894c` | `uint32_t WorldView::DrawNPCHouse(void* arg1)` |  |
+| `0x00519594` | `int32_t WorldView::CalculateView(void* arg1, int32_t arg2, int32_t* arg3, int32_t* arg4, int32_t arg5 @ q4)` |  |
+| `0x0051e0e8` | `int32_t WorldView::DrawMinimapVisibility(void* arg1, int32_t arg2 @ r7)` |  |
+| `0x005221f0` | `int32_t WorldView::DrawWires(void* arg1 @ r5)` |  |
+| `0x00522648` | `int32_t WorldView::DrawWorld(void* arg1)` |  |
+| `0x005226bc` | `int32_t WorldView::DrawWorld_2(void* arg1 @ r4, int32_t* arg2 @ r7, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9)` |  |
 | `0x00524c4c` | `s32 ShopItemSlotCount()` | Returns the number of slots in a store. (ItemCount + 5) |
 | `0x005252ec` | `bool StringCompare(String* str1, char* rawString)` |  |
+| `0x0052dd9c` | `int32_t NPC::getHeadTextureId(void* arg1)` |  |
+| `0x005313e8` | `int32_t Tile::left(int32_t arg1, int32_t count)` |  |
+| `0x00531448` | `int32_t Tile::right(int32_t arg1, int32_t count)` |  |
 | `0x00532a94` | `bool PlayerHasQuestFish(int32_t arg1, Player* arg2)` | Calls `PlayerHasItem()` with `GetQuestFishId()`. |
 | `0x00532ab0` | `bool PlayerHasItem(Player* player, u32 itemId)` | Returns if `player` has an item with a given `itemId`. |
+| `0x00550944` | `uint32_t _INIT_140()` | No call references, the name is from the mobile version. |
 | `0x00553ae8` | `uint32_t ClearAll()` | Clears a bunch of stuff like, audio, Chests, Items and more. |
+| `0x005694f0` | `int32_t png_image_begin_read_from_memory(int32_t* arg1, int32_t arg2, int32_t arg3)` |  |
+| `0x0056970c` | `int32_t png_image_error(int32_t* arg1, char* arg2)` |  |
+| `0x00569774` | `void png_image_finish_read(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
+| `0x00569988` | `void png_image_free(int32_t* arg1)` |  |
+| `0x0056d1e8` | `int32_t png_safe_execute(int32_t* arg1, int32_t arg2, int32_t arg3)` |  |
+| `0x0056d2d8` | `int32_t png_safecat(char* arg1, int32_t arg2, int32_t arg3, char* arg4)` |  |
 | `0x005a3cc8` | `ImageLoader* GetImageLoader()` | Returns `&imageLoader`, may also call `ClearImageLoader()`. |

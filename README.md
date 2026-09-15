@@ -3,7 +3,9 @@
 ### This is not a redistribution, no source code/memory is downloadable.
 This is some information about a 3DS Terraria decompaction. The code was analyzed from a ram dump, a cartridge dump would work as well but you don't get get other ram stuff like the heap or other sections.
 The decompilation was done in Binary Ninja because Ghidra can not decompile the ridiculously large jump table Terraria uses.
-Some names were done manually while others were used from the mobile or PC versions of Terraria.
+
+For more up to date info or other progress on mods or hacks go to the [crawdad105 discord](https://crawdad105.com/discord)
+
 # Files
 [data.js](data.js) has exported data from Binary Ninja containing functions and variable names and addresses.<br/>
 [index.html](index.html) also exists with options to show and hide data,
@@ -35,7 +37,7 @@ This can be parsed using [ExtractDumpNames.exe](ExportExtractor/ExtractDumpNames
 # Modding
 There is not much information about 3DS Terraria modding it seems (other them people wanting to port modern Terraria or Calamity for some reason).
 There is some effort to mod it however.<br/>
-[Working vein miner](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (the impressive part is they got UI elements drawn, no ideal how they did that).<br/>
+[Working vein miner](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (the impressive part is they got UI elements drawn, it can be downloaded on [GameBanana](https://gamebanana.com/mods/704537), but may only work on the European versions (not the one this repo is about)).<br/>
 [Rom hack that change the music](https://www.gamebrew.org/wiki/Terratale_3DS)<br/>
 [Inventory Editor](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (not really a mod)<br/>
 There are also some cheats exist through [Checkpoint](https://github.com/JourneyOver/CTRPF-AR-CHEAT-CODES/blob/master/Cheats/Terraria%20(USA)/000400000016A900.txt)
@@ -89,9 +91,8 @@ See [markdownFunctions.md](markdownFunctions.md) (All exported symbols can be fo
 See [markdownVariables.md](markdownVariables.md) (All exported symbols can be found in [extracted.txt](extracted.txt))
 
 # 3ModLoader
-3ModLoader is a mod loader for this versions of 3DS Terraria, build off of a modified versions of Luma3DS (specifically the Rosalina sysmodule) called "cdad Mod" (which is the name at the moment, but i want to change it).
-'cdad Mod' has a built in memory viewer, reader and writer, memory dumper, debugger, file viewer (with a custom ftp like file server), UI system, plugin system and more.
-3Modloader itself is a plugin to 'cdad Mod' that currently just has built in mods and hacks, it cant actually load mods.
-But its not public yet since its very finicky and not user friendly.
-However i (crawdad105) may release a modified boot.firm, with the 3ModLoader plugin but for now im not.
+3ModLoader is a mod loader for this versions of 3DS Terraria, build off of a modified versions of Luma3DS (specifically the Rosalina sysmodule) called [ctn Firmware](https://github.com/crawdad105/ctn-Firmware).
+ctn has a built in memory viewer, reader and writer, memory dumper, debugger, file viewer (with a custom ftp like file server), UI system, plugin system and more.
+3Modloader itself is a plugin for ctn that currently just has built in mods and hacks, it cant actually load mods.
+A versions can technically be recompiled from an accidentally leak which was published with ctn firmware or you can find and download a versions from the crawdad105 discord, but its a prototype and not officially released yet, and it cant load mods yet.
 

@@ -112,7 +112,6 @@
 002209e8:Matches `SpriteBatch::Global()` but locations are different.
 0086d278:Similar to `SpriteBatch::globalSpriteBatch`.
 001d8228:No call references, seems to be stored at `0x005d64e8`.
-0021b770:*Verify, No call references, no variable reference.
 00300b0c:Seems to be in place of `__cxa_guard_release()` on mobile.
 00633408:Equivalent to `myPlayer`
 008dae70:Matches `Main.quickBG`, does not have a name on mobile. Also does not seem to be used, its only set to `10`/`0x0A`.
@@ -128,9 +127,55 @@
 00633084:Supposed to contain "UI/texture_touchzoom.png", but the files does not exist and the variable is only ever set, not used.
 00633074:Might be unused, set in `UI::Initialize`
 008d5108:*Verify, manually inferred.
-006333b8:No variable reference.
-0017f418:Not an exact match but the name is close enough.
+006333b8:No variable reference. Only set in `Main::Main` it seems.
+0017f418:Not an exact match to the mobile version but the name is close enough.
 00149d74:*Verify, definitely not the same compared to mobile but calling seems the same.
 0017dc8c:Seems to be called in the same place as mobile but idk how `printf` works on the 3ds, and idk where the output goes.
 0014e384:*Verify
 002fb6c8:*Verify
+
+00102a28:*Verify
+0056f110:No call references, no variable reference.
+0022b928:*Verify
+001379d8:*Verify
+001f0c14:No call references, no variable reference.
+001ef9f8:No call references, no variable reference. Seems to get skipped/placed inline in `Localization::SetLanguage`.
+0014a99c:*Verify
+001f0c14:No call references, no variable reference. On mobile its called in `NPC::ShowTownSpawnMessage`.
+00219c14:*Verify
+002209e8:This seems to exist where `SpriteBatch::Begin(SpriteBatch::Global())` does on mobile, functionally its the same.
+00230568:*Verify
+0012104c:Wrapper for `GraphicsDevice::GraphicsDevice`
+001f3d7c:*Verify
+00482f34:No call references, no variable reference. On mobile its called in `GlyphSet::GlyphSet`. Also expands mobile function `GlyphSet::ClearBorderColor`.
+002435ac:*Verify, No call references, no variable reference. This does not match the mobile function.
+00246298:Does not match the mobile function.
+00220810:There are a bunch of different functions with this name but difference parameters.
+001d9a44:There are a bunch of different functions with this name but difference parameters.
+002200c4:*Verify
+00210604:Does not entirely match the mobile's function.
+0022096c:Almost identical to `SpriteBatch::Begin(SpriteBatch::Global())` at `0x002209e8`, but seems to return a value and call `SpriteBatch::Begin` differently (`b` instead of `bl`)
+0021b770:*Verify. No call references, no variable reference. According to the mobile versions its apart of a vtable, the ram dump i used is missing this i guess.
+001c8cd8:Expands mobile function `SpriteText::setTextScale`.
+00156f3c:*Verify
+00156f48:*Verify
+00207be4:No call references, no variable reference. On mobile this is called by `AndroidInterface::fjOnSurfaceDestroyed`.
+001eeb84:Expands mobile function `ItemTextPool::Clear`.
+00517628:On mobile its either `WorldSizeMenu::PlayWorld` or `WorldMenu::PlayWorld`
+00474594:Expands mobile function `Color::LinearColorBlend`.
+0010fdbc:Seems to match somewhat to the mobile function.
+008d51dc:Used in place of the mobile function `PlatformDevice::GetOsType`
+00523aac:Only called from `Achievements::AchievementSystem::Award`, on mobile its called from a million other places.
+001e39e0:No call references, no variable reference. Might be named wrong, function at 
+003d92a8:Expands to `player[Main::MainPlayerIndex]`.
+00391d30:Does not match the mobile functions exactly.
+0010fafc:Seems to expand the mobile function `SpriteBatch::RenderSprites`, which itself would call `glDrawElements`, not sure if the 3DS version actually used this. Also expands mobile function `SpriteBatch::SetTexture` and directly calls `GraphicsDevice::SetTextureSlot`.
+0021fa1c:Matches the mobile functions but not called in the same places. Also expands `SpriteBatch::SetGlobalSpriteBatch`.
+00124c98:Seems to match the call location of the mobile function `glDrawElements`, not sure if the 3DS version actually used this. Because its 3DS rendering this could be hard to decipher.
+
+005134fc:Expands the mobile function `Texture2D::ConvertRGB888toRGBA8888`
+0022b4b8:Binary Ninja might be hiding the code, it can be viewed in assembly mode.
+001749dc:Might eventually call the 3ds keyboard menu.
+0012cb80:*Verify, might not be correct.
+0010fda0:Expands the mobile function `Achievements::TriggerSystem::ClearTriggers`
+0023ba04:Probably loads an atlas, it is unknown if it has a mobile version counterpart.

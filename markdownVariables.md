@@ -1,8 +1,18 @@
 | Address | Variables | Description |
 | - | - | - |
 | `0x00246038` | `char en_str[0x3]` |  |
-| `0x005d64bc` | `ExtractState_vtable vtable_5d64bc` |  |
-| `0x005d91dc` | `TextureFuncTable Texture_vtable` |  |
+| `0x005d6390` | `void* FullVersion_vtable` |  |
+| `0x005d64bc` | `ExtractState_vtable ExtractState_vtable` |  |
+| `0x005d64f4` | `SpriteBatch_VTable SpriteBatch_vtable` |  |
+| `0x005d6640` | `BaseDrawable_VTable BaseDrawable_vtable` |  |
+| `0x005d6998` | `GameManager_VTable GameManager_vtable` |  |
+| `0x005d6a68` | `TextureAtlas_VTable TextureAtlas_vtable` |  |
+| `0x005d6e54` | `MiniMapHelper_VTable MiniMapHelper_vtable` |  |
+| `0x005d6e98` | `TerrariaAtlas_VTable TerrariaAtlas_vtable` |  |
+| `0x005d78b8` | `GameStateManager_VTable GameStateManager_vtable` |  |
+| `0x005d8bc8` | `BaseDrawable_VTable Sprite_vtable` |  |
+| `0x005d9058` | `void* GameState_vtable` |  |
+| `0x005d91dc` | `Texture_VTable Texture_vtable` |  |
 | `0x0063165c` | `u32 NPC::fireFlyFriendly` |  |
 | `0x00631660` | `u32 NPC::fireFlyChance` |  |
 | `0x00631664` | `u32 NPC::fireFlyMultiple` |  |
@@ -12,14 +22,25 @@
 | `0x00631c98` | `float cloudBGActive` |  |
 | `0x00631dbc` | `void* GameState::Terraria` |  |
 | `0x00631dc0` | `void* GameState::terrariaLoader` |  |
+| `0x00631fa4` | `char Collision::honey` |  |
+| `0x00631fc4` | `Colour Color::White` |  |
+| `0x00631fec` | `Colour Color::Red` |  |
 | `0x0063213c` | `int32_t Gamer::localSignedInGamer` |  |
+| `0x006321d0` | `int32_t Item::lastItemIndex` |  |
+| `0x00632754` | `void* Lang::setLanguage` |  |
 | `0x006327f6` | `char Liquid::quickSettle` |  |
 | `0x00632804` | `int32_t Liquid::cycles` |  |
 | `0x0063286e` | `int16_t MiniMap::width` |  |
 | `0x00632870` | `int16_t MiniMap::height` |  |
+| `0x00632872` | `int16_t MiniMap::texWidth` |  |
+| `0x00632874` | `int16_t MiniMap::texHeight` |  |
+| `0x00632878` | `int32_t MiniMap::maxScaleLimit` |  |
+| `0x0063287c` | `int32_t MiniMap::minScaleLimit` |  |
+| `0x00632880` | `int32_t MiniMap::exportedMapCount` |  |
 | `0x006328c4` | `int32_t NetMessage::MessagesSendSince` |  |
 | `0x006328c8` | `int32_t NetMessage::TotalMessageSizeSince` |  |
 | `0x006328ec` | `char Netplay::disconnect` |  |
+| `0x006328ed` | `char Netplay::stopSession` |  |
 | `0x006328f0` | `char Netplay::mode` |  |
 | `0x006328f4` | `int32_t Netplay::gamer` |  |
 | `0x00632900` | `int32_t Netplay::session` |  |
@@ -44,6 +65,7 @@
 | `0x00633115` | `char WorldGen::tGood` |  |
 | `0x00633118` | `char WorldGen::gen` |  |
 | `0x0063311a` | `bool WorldGen::shadowOrbSmashed` |  |
+| `0x00633120` | `char WorldGen::destroyObject` |  |
 | `0x00633121` | `char crimsonWorld` |  |
 | `0x00633127` | `bool IsWorldSize_4200` | Seems to check if the world is 4200 blocks wide, this also seems to be 3ds exclusive. |
 | `0x0063313c` | `int16_t copperType` |  |
@@ -61,16 +83,21 @@
 | `0x006332ed` | `char Main::isLocalWorld` |  |
 | `0x00633390` | `bool Main::FirstFrame` |  |
 | `0x0063339c` | `char Main::isGameStarted` |  |
+| `0x0063339d` | `char Main::isGamePaused` |  |
 | `0x0063339e` | `bool Main::hardMode` |  |
 | `0x006333a0` | `bool Main::isHDTV` | Seems to go unused |
 | `0x006333a6` | `u16 Main::maxTilesX` |  |
 | `0x006333a8` | `int16_t Main::maxTilesY` |  |
 | `0x006333ac` | `int32_t Main::screenWidth` |  |
-| `0x006333b8` | `int32_t Main::SheetSpritesOffset` | No variable reference. |
+| `0x006333b0` | `int32_t Main::screenHeight` |  |
+| `0x006333b8` | `int32_t Main::SheetSpritesOffset` | No variable reference. Only set in `Main::Main` it seems. |
 | `0x006333e0` | `int32_t Main::frameCounter` |  |
+| `0x006333f4` | `int32_t Main::SpaceLevel` |  |
 | `0x006333f8` | `u32 Main::worldSurface` | *Verify |
 | `0x00633408` | `u32 Main::MainPlayerIndex` | Equivalent to `myPlayer` |
 | `0x00633430` | `void* Main::AchievementSystem` |  |
+| `0x00633440` | `int32_t Main::worldSurfacePixels` |  |
+| `0x00633f68` | `Vector2 WidgetLoader::WidgetScale` |  |
 | `0x00634bcc` | `u32 cfgu_RefCount` |  |
 | `0x007b9f64` | `Texture* BackgroundPointers[0xa]` |  |
 | `0x007b9f8c` | `bool NPC_catchable[0x406]` |  |
@@ -85,7 +112,8 @@
 | `0x0085569c` | `int128_t WorldGen::genRand` |  |
 | `0x00855c14` | `Chest townNpcInvs[0x12]` |  |
 | `0x0086cfe4` | `Item itemArr_1[0x5]` |  |
-| `0x0086d278` | `Draw_Unk3 drawer_1` | Seems to contain a vertex buffer.,Similar to `SpriteBatch::globalSpriteBatch`. |
+| `0x0086d278` | `XNASpriteBatch XNASpriteBatch::Instance` | Seems to contain a vertex buffer.,Similar to `SpriteBatch::globalSpriteBatch`. |
+| `0x0088d2dc` | `Colour Main::teamColor` |  |
 | `0x0088d394` | `int128_t Main::rand` |  |
 | `0x0088d3c0` | `SoundEffect soundMech` | Equivalent to `Terraria.Main.soundMech[0]`. |
 | `0x0088d3dc` | `SoundEffect soundDig_1` | Equivalent to `Terraria.Main.soundDig[0]`. |
@@ -129,8 +157,14 @@
 | `0x0088e850` | `Item item_Main[0xc9]` | Equivalent to `Terraria.Main.item[]`. |
 | `0x00894ff4` | `Projectile projectile_Main[0x200]` | Equivalent to `Terraria.Main.projectile[]`. |
 | `0x008b4080` | `Player* player[0x4]` |  |
-| `0x008d4ef8` | `ImageLoader imageLoader` |  |
+| `0x008d4b38` | `TextureAtlas UIAtlas::Instance` |  |
+| `0x008d4ef8` | `ContentLoader ContentLoader::Instance` |  |
+| `0x008d5024` | `TerrariaAtlas TerrariaAtlas::Instance` |  |
 | `0x008d5108` | `GraphicsDevice* GraphicsDevice::Instance` | *Verify, manually inferred. |
+| `0x008d51dc` | `u8 osType` | Used in place of the mobile function `PlatformDevice::GetOsType` |
+| `0x008d52ac` | `GameStateManager GameStateManager::Instance` |  |
+| `0x008d55e4` | `UI ui` |  |
+| `0x008d83a0` | `MiniMap* MiniMap::Instance` |  |
 | `0x008dae70` | `u32 Main::quickBG` | Matches `Main.quickBG`, does not have a name on mobile. Also does not seem to be used, its only set to `10`/`0x0A`. |
 | `0x083a9238` | `Item recipeItems1[0x6]` |  |
 | `0x090a2c08` | `Player _player1` |  |

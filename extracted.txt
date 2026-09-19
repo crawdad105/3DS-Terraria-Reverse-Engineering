@@ -50,7 +50,7 @@
 0x00101a14 int32_t data_101a14
 0x00101a18 int32_t data_101a18
 0x00101a1c int32_t sub_101a1c(uint32_t arg1)
-0x00101a3e int32_t sub_101a3e(int32_t* arg1)
+0x00101a3e int32_t delete2(int32_t* arg1)
 0x00101a50 int32_t sub_101a50(int16_t* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
 0x00101ae4 int32_t data_101ae4
 0x00101ae8 uint32_t memcmp(int32_t* arg1, char* rawStr, int32_t arg3)
@@ -83,7 +83,7 @@
 0x0010269e int32_t sub_10269e(int32_t arg1)
 0x001026aa int32_t sub_1026aa(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x001027dc int32_t sub_1027dc(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)
-0x00102800 int32_t* sub_102800(int32_t* arg1, void* arg2, void* arg3)
+0x00102800 int32_t* __dynamic_cast(int32_t* arg1, void* arg2, void* arg3)
 0x00102898 void* data_102898
 0x0010289c int32_t data_10289c
 0x001028a0 int32_t sub_1028a0(int32_t arg1, int32_t arg2, uint32_t arg3, int32_t arg4, int32_t arg5)
@@ -375,7 +375,7 @@
 0x001095d4 int32_t sub_1095d4(int32_t* arg1)
 0x00109608 int32_t data_109608
 0x0010960c int32_t data_10960c
-0x00109610 int32_t StateManager::AddState(GameStateManager* gsm, String* str, void* obj)
+0x00109610 int32_t StateManager::AddState(GameStateManager* gsm, String* str, BaseMenuState* menuState)
 0x00109898 int32_t data_109898
 0x0010989c int32_t sub_10989c(void* arg1, char arg2)
 0x00109968 int32_t data_109968
@@ -642,7 +642,7 @@
 0x0010f19c int32_t sub_10f19c(void** arg1)
 0x0010f288 int32_t data_10f288
 0x0010f28c int32_t sub_10f28c(String* arg1, int32_t arg2 @ r4)
-0x0010f2c8 int32_t* sub_10f2c8(void** arg1, int32_t arg2 @ r4)
+0x0010f2c8 int32_t* sub_10f2c8(int32_t** arg1, int32_t arg2 @ r4)
 0x0010f388 void* data_10f388
 0x0010f38c void* data_10f38c
 0x0010f390 int32_t data_10f390
@@ -655,9 +655,9 @@
 0x0010fa58 int32_t data_10fa58
 0x0010fafc int32_t SpriteBatch::End(SpriteBatch* sb)
 0x0010fd24 int32_t data_10fd24
-0x0010fd28 SpriteInfo* SpriteBatch::Begin(SpriteBatch* sb, bool zoomEnable, int32_t arg3, SpriteInfo* arg4)
+0x0010fd28 SpriteInfo* SpriteBatch::Begin(SpriteBatch* sb, bool zoomEnable)
 0x0010fda0 void Achievements::TriggerSystem::TriggerSystem(int32_t* arg1)
-0x0010fdbc void* CameraZoomer::CameraZoomer(void* arg1)
+0x0010fdbc CameraZoomer* CameraZoomer::CameraZoomer(CameraZoomer* arg1)
 0x0010ff38 int32_t data_10ff38
 0x0010ff3c int32_t data_10ff3c
 0x0010ff40 int32_t data_10ff40
@@ -977,7 +977,7 @@
 0x0011517c void sub_11517c(int32_t* arg1)
 0x00115194 int32_t sub_115194()
 0x00115198 void CreateColour(Colour* c, u32 R, u32 G, u32 B, u32 A)
-0x00115228 void State::State(int32_t* arg1)
+0x00115228 void State::State(State* state)
 0x0011523c int32_t data_11523c
 0x00115240 int32_t* Timer::Timer(int32_t* arg1)
 0x0011527c int32_t data_11527c
@@ -1157,7 +1157,7 @@
 0x0011968c int32_t data_11968c
 0x00119690 void* data_119690
 0x00119694 void* data_119694
-0x00119698 void BaseDrawable::BaseDrawable(BaseDrawable* arg1)
+0x00119698 void* BaseDrawable::BaseDrawable(BaseDrawable* arg1)
 0x001197fc int32_t data_1197fc
 0x00119814 int32_t data_119814
 0x00119818 int32_t data_119818
@@ -1629,7 +1629,7 @@
 0x0011eddc void sub_11eddc(void* arg1)
 0x0011ee4c int32_t data_11ee4c
 0x0011ee50 int32_t data_11ee50
-0x0011ee54 int32_t Sprite::reload(Sprite* sprite, int64_t arg2 @ q0)
+0x0011ee54 int32_t Sprite::reload(Sprite* sprite, String* str)
 0x0011effc void* Waters::Waters(void* arg1, int32_t arg2)
 0x0011f058 int32_t* sub_11f058(int32_t* arg1, int32_t arg2)
 0x0011f0b0 void* data_11f0b0
@@ -1781,7 +1781,7 @@
 0x00122860 void* data_122860
 0x00122864 void* data_122864
 0x00122868 int32_t GraphicsDevice::AddCallback(GraphicsDevice* device, SpriteBatch* sb)
-0x00122ac4 int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* __offset(_GraphicsDevice, 0x5c) arg4)
+0x00122ac4 int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* arg4)
 0x00122e48 int32_t sub_122e48(void* arg1, int32_t arg2)
 0x00122eb4 void* sub_122eb4(void*** arg1, int32_t arg2)
 0x00122f58 void* data_122f58
@@ -2246,7 +2246,7 @@
 0x0012c630 int32_t sub_12c630(int32_t* arg1)
 0x0012c648 int32_t sub_12c648(int32_t* arg1, int32_t arg2)
 0x0012c66c char* sub_12c66c(char* arg1, char* arg2, u32 arg3)
-0x0012c678 void** sub_12c678(void** arg1)
+0x0012c678 int32_t** sub_12c678(int32_t** arg1)
 0x0012c6a0 int32_t data_12c6a0
 0x0012c6a4 int32_t sub_12c6a4(int32_t arg1)
 0x0012c6b0 uint32_t jump_table_12c6b0[0x8]
@@ -2261,14 +2261,14 @@
 0x0012c9c8 uint32_t jump_table_12c9c8[0xb]
 0x0012ca04 void* sub_12ca04(int32_t* arg1, int32_t arg2)
 0x0012ca24 int32_t data_12ca24
-0x0012ca28 int32_t sub_12ca28(GameStateManager* gsm, int32_t* arg2)
+0x0012ca28 int32_t sub_12ca28(GameStateManager* gsm, String* str)
 0x0012cb80 int32_t StateManager::RemoveState(GameStateManager* gsm, int32_t arg2)
 0x0012ccc4 int32_t data_12ccc4
 0x0012ccc8 void* data_12ccc8
 0x0012cccc int32_t sub_12cccc(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4 @ r4)
 0x0012cdd0 int32_t data_12cdd0
 0x0012cdd4 void* data_12cdd4
-0x0012cdd8 void* StateManager::~StateManager(GameManager_VTable** arg1)
+0x0012cdd8 void* StateManager::~StateManager(StateManager_VTable** arg1)
 0x0012cfcc void* data_12cfcc
 0x0012cfd0 void* sub_12cfd0(int32_t* arg1, int32_t arg2, char arg3)
 0x0012d01c int32_t data_12d01c
@@ -2733,8 +2733,7 @@
 0x00137098 int32_t sub_137098(int32_t* arg1 @ r4, int32_t* arg2 @ r5, int32_t* arg3 @ r7, int32_t arg4 @ r8, void* arg5 @ r10, int32_t arg6 @ r11)
 0x0013722c int32_t sub_13722c()
 0x00137234 int32_t sub_137234(int32_t* arg1)
-0x00137280 int32_t sub_137280(int32_t arg1)
-0x00137284 int32_t sub_137284()
+0x00137280 void nanosleep(int32_t arg1)
 0x0013728c int32_t sub_13728c(int32_t arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
 0x0013736c void* data_13736c
 0x00137370 void sub_137370(void* arg1)
@@ -2766,7 +2765,7 @@
 0x00138508 int32_t data_138508
 0x0013850c int32_t data_13850c
 0x00138510 void* data_138510
-0x00138514 void* sub_138514(void** arg1)
+0x00138514 void* sub_138514(int32_t** arg1)
 0x0013859c int32_t data_13859c
 0x001385a0 void* data_1385a0
 0x001385a4 int32_t sub_1385a4(void* arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
@@ -3028,7 +3027,7 @@
 0x00142340 int32_t data_142340
 0x00142344 void* data_142344
 0x00142348 String* sub_142348(String* arg1, String* arg2, String* arg3)
-0x00142390 void* sub_142390(void** arg1, void* arg2, int32_t* arg3, void* arg4)
+0x00142390 void* sub_142390(int32_t** arg1, void* arg2, int32_t* arg3, void* arg4)
 0x001423bc void*** sub_1423bc(void* arg1)
 0x001424f0 int32_t data_1424f0
 0x00142508 void* data_142508
@@ -3322,7 +3321,7 @@
 0x00149908 int32_t data_149908
 0x0014990c void sub_14990c(int32_t* arg1)
 0x00149918 int32_t data_149918
-0x0014991c int32_t sub_14991c(void** arg1, void* arg2)
+0x0014991c int32_t sub_14991c(int32_t** arg1, void* arg2)
 0x00149a60 int32_t data_149a60
 0x00149a64 int32_t data_149a64
 0x00149a68 int32_t ResourceFile::size(void* arg1)
@@ -3332,7 +3331,7 @@
 0x00149cac int32_t sub_149cac(int32_t* arg1 @ r4)
 0x00149d00 int32_t* ResourceFile::close(int32_t* arg1)
 0x00149d74 bool ResourceFile::readData(void* arg1, char* arg2, u32 fileSize, int32_t arg4)
-0x00149f40 void** sub_149f40()
+0x00149f40 int32_t** sub_149f40()
 0x0014a234 void* data_14a234
 0x0014a238 void* data_14a238
 0x0014a23c int32_t data_14a23c
@@ -3377,11 +3376,11 @@
 0x0014b2dc int32_t data_14b2dc
 0x0014b2e0 int32_t data_14b2e0
 0x0014b2e4 int32_t data_14b2e4
-0x0014b2e8 void* sub_14b2e8(void** arg1, int32_t arg2)
+0x0014b2e8 void* sub_14b2e8(int32_t** arg1, int32_t arg2)
 0x0014b3d8 int32_t data_14b3d8
 0x0014b3dc int32_t data_14b3dc
-0x0014b3e0 int32_t EE::String::Null(void** arg1)
-0x0014b3e4 int32_t* sub_14b3e4(void** arg1)
+0x0014b3e0 int32_t EE::String::Null(int32_t** arg1)
+0x0014b3e4 int32_t* sub_14b3e4(int32_t** arg1)
 0x0014b524 int32_t data_14b524
 0x0014b528 int32_t data_14b528
 0x0014b530 void* sub_14b530(void* arg1)
@@ -3452,7 +3451,7 @@
 0x0014d08c int32_t data_14d08c
 0x0014d090 int32_t data_14d090
 0x0014d094 void* data_14d094
-0x0014d098 int32_t* sub_14d098(void** arg1, String* arg2, int32_t arg3, void* arg4)
+0x0014d098 int32_t* sub_14d098(int32_t** arg1, String* arg2, int32_t arg3, void* arg4)
 0x0014d10c int32_t data_14d10c
 0x0014d110 int32_t data_14d110
 0x0014d114 int32_t data_14d114
@@ -3492,10 +3491,10 @@
 0x0014df1c int32_t sub_14df1c(void* arg1)
 0x0014df70 int32_t data_14df70
 0x0014df74 int32_t sub_14df74(u64* time)
-0x0014df8c void** Stopwatch::Stopwatch(void** arg1)
+0x0014df8c int32_t** Stopwatch::Stopwatch(int32_t** arg1)
 0x0014dfcc int32_t data_14dfcc
 0x0014dfd0 int32_t sub_14dfd0()
-0x0014dfdc void* sub_14dfdc(void** arg1, void* arg2, int32_t arg3, void* arg4)
+0x0014dfdc void* sub_14dfdc(int32_t** arg1, void* arg2, int32_t arg3, void* arg4)
 0x0014e0e8 int32_t data_14e0e8
 0x0014e0ec int32_t data_14e0ec
 0x0014e0f0 int32_t data_14e0f0
@@ -3564,7 +3563,7 @@
 0x001508ac int32_t data_1508ac
 0x001508b0 int32_t sub_1508b0(int32_t arg1, int32_t* arg2, int32_t* arg3, int32_t* arg4)
 0x00151080 int32_t sub_151080(int32_t arg1 @ r5, int32_t arg2 @ r6, int32_t arg3 @ r10, int32_t arg4 @ r11, int32_t* arg5, int32_t arg6, int32_t arg7, int32_t arg8, void* arg9)
-0x001511f0 void** sub_1511f0(void** arg1, int32_t arg2, int32_t arg3)
+0x001511f0 int32_t** sub_1511f0(int32_t** arg1, int32_t arg2, int32_t arg3)
 0x001513a0 int32_t data_1513a0
 0x001513a4 int32_t data_1513a4
 0x001513a8 void* data_1513a8
@@ -3587,7 +3586,7 @@
 0x00151644 int32_t sub_151644(void* arg1)
 0x00151670 int32_t data_151670
 0x00151674 int32_t data_151674
-0x00151678 void* sub_151678(void** arg1, int32_t* arg2)
+0x00151678 int32_t* sub_151678(int32_t** arg1, int32_t* arg2)
 0x0015183c int32_t data_15183c
 0x00151840 int32_t data_151840
 0x00151844 void sub_151844(int32_t* arg1, int32_t arg2)
@@ -3736,7 +3735,7 @@
 0x00157228 int32_t sub_157228(int32_t* arg1, int32_t* arg2)
 0x001572b4 int32_t data_1572b4
 0x001572b8 int32_t sub_1572b8()
-0x001572d8 int32_t sub_1572d8(int32_t arg1)
+0x001572d8 int32_t O::Thread::Sleep(int32_t arg1)
 0x00157300 int32_t data_157300
 0x00157304 int32_t sub_157304(void* arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
 0x00157330 int32_t EE::MemoryFile::Write(int32_t* arg1, char* arg2, u32 arg3, void* arg4)
@@ -3775,7 +3774,7 @@
 0x00157a0c int32_t data_157a0c
 0x00157a10 int32_t data_157a10
 0x00157a14 int32_t sub_157a14(int32_t* arg1, int32_t* arg2, int32_t** arg3, int32_t arg4 @ q0, int32_t arg5, int32_t arg6)
-0x00157de4 int32_t* sub_157de4(void* arg1)
+0x00157de4 int32_t* BaseMenu::waitForBackgroundThread(void* arg1)
 0x001580d8 int32_t sub_1580d8(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x00158160 int32_t data_158160
 0x00158164 int32_t sub_158164(void* arg1, int32_t arg2, int32_t arg3)
@@ -3862,7 +3861,7 @@
 0x0015ce44 int32_t sub_15ce44(int32_t* arg1, void* arg2)
 0x0015cf30 int32_t sub_15cf30(int32_t arg1 @ r4, int32_t arg2 @ r5, int32_t* arg3 @ r7, int32_t* arg4 @ r8)
 0x0015cf90 int32_t sub_15cf90(int32_t* arg1, void* arg2)
-0x0015d054 uint32_t sub_15d054(int32_t* arg1)
+0x0015d054 uint32_t O::Runnable::WaitForCompletion(int32_t* arg1)
 0x0015d09c int32_t* sub_15d09c(int32_t* arg1, char* arg2, u32 arg3, void* arg4)
 0x0015d0e8 void sub_15d0e8(void* arg1, int32_t arg2, int32_t arg3)
 0x0015d10c void* sub_15d10c(void*** arg1, int32_t arg2 @ r4)
@@ -5088,8 +5087,8 @@
 0x00173e10 int32_t data_173e10
 0x00173e14 int32_t data_173e14
 0x00173e18 void* data_173e18
-0x00173e1c int32_t sub_173e1c(void** arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
-0x0017436c int32_t sub_17436c(int32_t* arg1 @ r4, int32_t* arg2 @ r6, int32_t arg3 @ r7, int32_t arg4 @ r10, int32_t arg5, char* arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, void** arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21)
+0x00173e1c int32_t sub_173e1c(int32_t** arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
+0x0017436c int32_t sub_17436c(int32_t* arg1 @ r4, int32_t* arg2 @ r6, int32_t arg3 @ r7, int32_t arg4 @ r10, int32_t arg5, char* arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t** arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21)
 0x001743c0 void* data_1743c0
 0x001743c4 void* data_1743c4
 0x001743c8 void* data_1743c8
@@ -5340,14 +5339,12 @@
 0x0017e3d4 void* data_17e3d4
 0x0017e3d8 int32_t sub_17e3d8(int32_t arg1)
 0x0017e3f4 void LoadBackground()
-0x0017e61c int32_t LoadBackground_2(String* arg1, void* arg2 @ r4, int32_t arg3 @ r5, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7)
 0x0017e68c void* data_17e68c
 0x0017e74c void sub_17e74c(void* arg1)
 0x0017e92c int32_t data_17e92c
 0x0017e930 void* data_17e930
 0x0017e934 int32_t data_17e934
 0x0017e938 int32_t data_17e938
-0x0017e93c uint32_t sub_17e93c(void* arg1)
 0x0017ea9c void* data_17ea9c
 0x0017eaa0 int32_t data_17eaa0
 0x0017eaa4 int32_t data_17eaa4
@@ -5415,8 +5412,8 @@
 0x0017f3f0 int32_t sub_17f3f0()
 0x0017f3fc int32_t sub_17f3fc()
 0x0017f400 int32_t sub_17f400()
-0x0017f408 int32_t sub_17f408(int32_t arg1 @ r4)
-0x0017f418 int32_t Background::Draw(void* arg1, int32_t arg2 @ r4)
+0x0017f408 int32_t sub_17f408(BaseMenuState* arg1 @ r4)
+0x0017f418 void Background::Draw(void* arg1, BaseMenuState* menuState @ r4)
 0x0017f578 void* data_17f578
 0x0017f57c void* data_17f57c
 0x0017f580 int32_t data_17f580
@@ -5616,7 +5613,7 @@
 0x00182300 int32_t sub_182300(void*** arg1 @ r4)
 0x00182338 int32_t data_182338
 0x0018233c int32_t sub_18233c(void*** arg1 @ r4)
-0x00182350 int32_t* sub_182350(int32_t* arg1)
+0x00182350 BaseMenuState* sub_182350(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)
 0x001824a8 int32_t data_1824a8
 0x001824ac int32_t data_1824ac
 0x001824b0 int32_t data_1824b0
@@ -5982,7 +5979,7 @@
 0x0018b3a0 int32_t data_18b3a0
 0x0018b3a4 void* data_18b3a4
 0x0018b3a8 void* data_18b3a8
-0x0018b3ac int32_t sub_18b3ac(int32_t arg1, int32_t arg2, int16_t arg3, int16_t arg4, int16_t arg5, int32_t arg6, int32_t arg7)
+0x0018b3ac int32_t NetMessage::CreateMessage5(int32_t arg1, int32_t arg2, int16_t arg3, int16_t arg4, int16_t arg5, int32_t arg6, int32_t arg7)
 0x0018b514 int32_t data_18b514
 0x0018b518 void* data_18b518
 0x0018b51c int32_t sub_18b51c(int32_t arg1)
@@ -6046,7 +6043,7 @@
 0x0018c260 void* data_18c260
 0x0018c28c int32_t sub_18c28c(int32_t* arg1)
 0x0018c2d0 void* data_18c2d0
-0x0018c2e8 int32_t sub_18c2e8(int32_t arg1, int16_t arg2, int16_t arg3, int16_t arg4, int32_t arg5)
+0x0018c2e8 int32_t NetMessage::SendTileChanged(int32_t arg1, int16_t arg2, int16_t arg3, int16_t arg4, int32_t arg5)
 0x0018c348 void* data_18c348
 0x0018c34c int32_t sub_18c34c()
 0x0018c3c0 void* data_18c3c0
@@ -6367,7 +6364,7 @@
 0x00193fc8 int32_t data_193fc8
 0x00193fcc int32_t sub_193fcc()
 0x00193ff4 void* data_193ff4
-0x0019400c int32_t sub_19400c(int32_t arg1, int16_t arg2, int16_t arg3, int16_t arg4, int32_t arg5, int32_t arg6)
+0x0019400c int32_t NetMessage::SendPlayerWasKilled(int32_t arg1, int16_t arg2, int16_t arg3, int16_t arg4, int32_t arg5, int32_t arg6)
 0x00194074 void* data_194074
 0x0019408c int32_t NetMessage::SendAnnounceSpawning(int32_t arg1)
 0x001940bc void* data_1940bc
@@ -6557,14 +6554,14 @@
 0x00196b48 void* data_196b48
 0x00196b4c int32_t sub_196b4c()
 0x00196b6c int32_t sub_196b6c()
-0x00196b78 void** sub_196b78(int32_t* arg1)
+0x00196b78 BaseMenuState* sub_196b78(BaseMenuState* arg1)
 0x00196ca8 int32_t data_196ca8
 0x00196cac int32_t data_196cac
 0x00196cb0 int32_t data_196cb0
 0x00196cb4 int32_t data_196cb4
-0x00196cb8 void sub_196cb8(void*** arg1 @ r5)
+0x00196cb8 void sub_196cb8(State_VTable** arg1 @ r5)
 0x00196cf0 int32_t data_196cf0
-0x00196cf4 int32_t sub_196cf4(void*** arg1)
+0x00196cf4 int32_t sub_196cf4(State_VTable** arg1)
 0x00196d04 float sub_196d04(int16_t* arg1)
 0x00197130 void* data_197130
 0x00197134 void* data_197134
@@ -6936,7 +6933,7 @@
 0x0019c838 int32_t data_19c838
 0x0019c83c int32_t data_19c83c
 0x0019c840 void* data_19c840
-0x0019c8dc int32_t sub_19c8dc(uint32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int16_t* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t arg9 @ r8, int32_t arg10 @ r9, u32 arg11 @ r10, int32_t arg12 @ r12, int32_t arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24)
+0x0019c8dc int32_t sub_19c8dc(uint32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int16_t* arg5 @ r4, int32_t arg6 @ r5, u32 arg7 @ r6, int32_t arg8 @ r7, u32 arg9 @ r8, u32 arg10 @ r9, u32 arg11 @ r10, int32_t arg12 @ r12, int32_t arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24)
 0x0019cd14 void* data_19cd14
 0x0019cd18 int32_t data_19cd18
 0x0019cd1c void* data_19cd1c
@@ -7069,7 +7066,7 @@
 0x001a07c0 int32_t data_1a07c0
 0x001a07c4 int32_t data_1a07c4
 0x001a07c8 int32_t data_1a07c8
-0x001a07d4 uint32_t sub_1a07d4(int16_t* arg1)
+0x001a07d4 uint32_t sub_1a07d4(Projectile* arg1)
 0x001a09fc int32_t data_1a09fc
 0x001a0a00 int32_t data_1a0a00
 0x001a0a04 int32_t data_1a0a04
@@ -7282,7 +7279,7 @@
 0x001a316c int32_t data_1a316c
 0x001a3170 int32_t data_1a3170
 0x001a3174 int32_t data_1a3174
-0x001a3178 int32_t sub_1a3178(int32_t arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q5)
+0x001a3178 int32_t Projectile::NewProjectile(int32_t arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q5)
 0x001a3478 int32_t data_1a3478
 0x001a347c void* data_1a347c
 0x001a3480 void* data_1a3480
@@ -8855,7 +8852,6 @@
 0x001c8cd8 void SpriteText::setScale(void* arg1, Vector2* vec)
 0x001c8d40 int32_t data_1c8d40
 0x001c8d44 void* sub_1c8d44(void* arg1, int32_t* arg2)
-0x001c8da0 BaseDrawable* SpriteText::SpriteText(BaseDrawable* arg1, int32_t arg2, int32_t* arg3)
 0x001c906c int32_t data_1c906c
 0x001c9070 int32_t data_1c9070
 0x001c9074 void* data_1c9074
@@ -9025,16 +9021,16 @@
 0x001cc52c int32_t data_1cc52c
 0x001cc530 int32_t sub_1cc530(void* arg1 @ r4)
 0x001cc558 int32_t sub_1cc558(void* arg1, int32_t* arg2, int32_t arg3, void* arg4)
-0x001cc5a0 int32_t* sub_1cc5a0(void** arg1, int32_t* arg2, int32_t arg3)
+0x001cc5a0 int32_t* sub_1cc5a0(int32_t** arg1, int32_t* arg2, int32_t arg3)
 0x001cc834 int32_t data_1cc834
 0x001cc838 int32_t data_1cc838
 0x001cc83c int32_t data_1cc83c
 0x001cc840 int32_t data_1cc840
 0x001cc844 int32_t sub_1cc844()
-0x001cc880 int32_t* sub_1cc880(void** arg1, int32_t* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
+0x001cc880 int32_t* sub_1cc880(int32_t** arg1, int32_t* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
 0x001cc8fc void sub_1cc8fc(String* arg1 @ r4, String* arg2 @ r6)
-0x001cc91c int32_t* sub_1cc91c(void** arg1, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
-0x001cc9bc int32_t* sub_1cc9bc(void** arg1, void* arg2, char arg3, int32_t arg4 @ r4)
+0x001cc91c int32_t* sub_1cc91c(int32_t** arg1, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
+0x001cc9bc int32_t* sub_1cc9bc(int32_t** arg1, void* arg2, char arg3, int32_t arg4 @ r4)
 0x001cca08 int32_t sub_1cca08(String* arg1 @ r4)
 0x001cca28 int32_t sub_1cca28(String* arg1 @ r4)
 0x001cca2c int32_t sub_1cca2c(String* arg1)
@@ -9067,7 +9063,7 @@
 0x001cd314 void sub_1cd314()
 0x001cd338 int32_t data_1cd338
 0x001cd33c int32_t data_1cd33c
-0x001cd340 int32_t* sub_1cd340(void*** arg1, void** arg2)
+0x001cd340 int32_t* sub_1cd340(void*** arg1, BaseMenu* arg2)
 0x001cd654 int32_t data_1cd654
 0x001cd658 int32_t data_1cd658
 0x001cd65c int32_t data_1cd65c
@@ -9152,7 +9148,7 @@
 0x001cebcc int32_t data_1cebcc
 0x001cebd0 int32_t data_1cebd0
 0x001cebd4 int32_t sub_1cebd4(int32_t arg1 @ r8)
-0x001cebec void** sub_1cebec(int32_t* arg1, char arg2)
+0x001cebec BaseMenuState* CreditsMenu::CreditsMenu(BaseMenuState* arg1, uint8_t arg2)
 0x001cedb8 int32_t data_1cedb8
 0x001cedbc int32_t data_1cedbc
 0x001cedc0 int32_t data_1cedc0
@@ -9168,12 +9164,12 @@
 0x001cede8 int32_t data_1cede8
 0x001cedec int32_t data_1cedec
 0x001cedf0 void* data_1cedf0
-0x001cedf4 void sub_1cedf4(void*** arg1 @ r5)
+0x001cedf4 void sub_1cedf4(State_VTable** arg1 @ r5)
 0x001cee14 void sub_1cee14()
 0x001cee1c void sub_1cee1c()
 0x001cee40 int32_t data_1cee40
 0x001cee44 void* data_1cee44
-0x001cee48 int32_t sub_1cee48(void*** arg1)
+0x001cee48 int32_t sub_1cee48(State_VTable** arg1)
 0x001cee58 void** sub_1cee58(void*** arg1, void** arg2)
 0x001cef30 int32_t data_1cef30
 0x001cef34 int32_t data_1cef34
@@ -9193,7 +9189,6 @@
 0x001cf450 int32_t data_1cf450
 0x001cf460 void sub_1cf460()
 0x001cf4b4 int32_t data_1cf4b4
-0x001cf4b8 void** sub_1cf4b8(int32_t* arg1, char arg2, int32_t* arg3, int32_t* arg4)
 0x001cf788 int32_t data_1cf788
 0x001cf78c int32_t data_1cf78c
 0x001cf790 void* data_1cf790
@@ -9257,16 +9252,16 @@
 0x001d175c void sub_1d175c()
 0x001d17a0 int32_t sub_1d17a0(int32_t arg1, int32_t* arg2)
 0x001d17a4 int32_t sub_1d17a4(void* arg1, void* arg2 @ r4, int32_t arg3, int32_t arg4)
-0x001d17f4 void** sub_1d17f4(int32_t* arg1)
+0x001d17f4 BaseMenuState* sub_1d17f4(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x001d1a48 int32_t data_1d1a48
 0x001d1a4c int32_t data_1d1a4c
 0x001d1a50 int32_t data_1d1a50
 0x001d1a54 int32_t data_1d1a54
-0x001d1a58 void sub_1d1a58(void*** arg1 @ r5)
+0x001d1a58 void sub_1d1a58(State_VTable** arg1 @ r5)
 0x001d1a90 int32_t data_1d1a90
-0x001d1a94 int32_t sub_1d1a94(void*** arg1)
+0x001d1a94 int32_t sub_1d1a94(State_VTable** arg1)
 0x001d1aa4 void sub_1d1aa4(int32_t* arg1, int32_t* arg2)
-0x001d1ab8 int32_t* sub_1d1ab8(void* arg1, int32_t arg2, int32_t arg3, SpriteInfo* arg4)
+0x001d1ab8 int32_t* sub_1d1ab8(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
 0x001d1bd8 void* data_1d1bd8
 0x001d1bdc int32_t data_1d1bdc
 0x001d1be0 int32_t data_1d1be0
@@ -9390,14 +9385,14 @@
 0x001d5440 void sub_1d5440()
 0x001d5474 int32_t sub_1d5474(int32_t arg1, int32_t arg2, int32_t arg3 @ r4)
 0x001d54d8 int32_t sub_1d54d8()
-0x001d54ec void** sub_1d54ec(int32_t* arg1)
+0x001d54ec BaseMenuState* sub_1d54ec(BaseMenuState* arg1)
 0x001d5608 int32_t data_1d5608
 0x001d560c int32_t data_1d560c
 0x001d5610 int32_t data_1d5610
 0x001d5614 int32_t data_1d5614
-0x001d5618 void sub_1d5618(void*** arg1 @ r5)
+0x001d5618 void sub_1d5618(State_VTable** arg1 @ r5)
 0x001d5650 int32_t data_1d5650
-0x001d5654 int32_t sub_1d5654(void*** arg1)
+0x001d5654 int32_t sub_1d5654(State_VTable** arg1)
 0x001d5664 int32_t sub_1d5664(int32_t arg1)
 0x001d5670 uint32_t jump_table_1d5670[0x15]
 0x001d56fc int32_t sub_1d56fc()
@@ -9489,7 +9484,7 @@
 0x001d800c void* data_1d800c
 0x001d802c void SoundEffect::Load(int32_t* arg1, String* str)
 0x001d8084 int32_t sub_1d8084()
-0x001d809c int32_t sub_1d809c()
+0x001d809c int32_t ExtractState::OnActivate()
 0x001d80a0 int32_t sub_1d80a0(int32_t arg1)
 0x001d8190 int32_t data_1d8190
 0x001d8194 int32_t data_1d8194
@@ -9497,7 +9492,8 @@
 0x001d819c void* data_1d819c
 0x001d81a0 int32_t sub_1d81a0()
 0x001d81c0 int32_t sub_1d81c0()
-0x001d8228 int32_t ExtractState::Draw(void* arg1)
+0x001d81cc int32_t* sub_1d81cc(void* arg1)
+0x001d8228 int32_t ExtractState::Draw(ExtractState* arg1)
 0x001d8334 void* data_1d8334
 0x001d8338 int32_t data_1d8338
 0x001d833c int32_t data_1d833c
@@ -9507,6 +9503,7 @@
 0x001d834c void* data_1d834c
 0x001d8350 int32_t sub_1d8350()
 0x001d8370 int32_t LoadSplashSprites(int32_t arg1 @ r4)
+0x001d837c int32_t ExtractState::OnLoad(ExtractState* arg1)
 0x001d8644 int32_t data_1d8644
 0x001d8694 void* data_1d8694
 0x001d8698 int32_t data_1d8698
@@ -9528,7 +9525,7 @@
 0x001d8748 void* data_1d8748
 0x001d874c void* data_1d874c
 0x001d8750 int32_t data_1d8750
-0x001d8754 float ExtractState::Update(void* arg1, float arg2 @ q4)
+0x001d8754 float ExtractState::Update(ExtractState* state, float arg2 @ q4)
 0x001d8a60 void* data_1d8a60
 0x001d8a64 int32_t data_1d8a64
 0x001d8a68 int32_t data_1d8a68
@@ -9551,7 +9548,7 @@
 0x001d8afc void sub_1d8afc()
 0x001d8b0c void* data_1d8b0c
 0x001d8b10 int32_t data_1d8b10
-0x001d8b18 int32_t* ExtractState::ExtractState(int32_t* arg1)
+0x001d8b18 ExtractState* ExtractState::ExtractState(ExtractState* arg1)
 0x001d8ba4 int32_t data_1d8ba4
 0x001d8ba8 int32_t data_1d8ba8
 0x001d8bac void* data_1d8bac
@@ -9573,11 +9570,11 @@
 0x001d8cd4 int32_t data_1d8cd4
 0x001d8ce0 void sub_1d8ce0(SpriteBatch* sb, Vector2* vec)
 0x001d8cf4 int32_t sub_1d8cf4(int32_t arg1 @ r5)
-0x001d8d1c int32_t sub_1d8d1c(SpriteBatch* arg1, Texture* texture, Vector2* vec2)
+0x001d8d1c int32_t sub_1d8d1c(SpriteBatch* arg1)
 0x001d8fac int32_t data_1d8fac
 0x001d8fb0 int32_t data_1d8fb0
 0x001d8fb4 int32_t sub_1d8fb4()
-0x001d8fbc void sub_1d8fbc(SpriteBatch* arg1, Texture* arg2, Vector2* arg3, u32 arg4, int32_t arg5, int32_t arg6)
+0x001d8fbc void sub_1d8fbc(SpriteBatch* arg1, uint32_t arg2, int32_t* arg3, u32 arg4, int32_t arg5, int32_t arg6)
 0x001d90c4 uint32_t SpriteBatch::Draw3(SpriteBatch* arg1, Texture* texture, Vector2* pos, Vector4* vec, int64_t arg5 @ q6, u32 arg6, int32_t arg7, int32_t* arg8)
 0x001d95ac int32_t data_1d95ac
 0x001d95b0 int32_t data_1d95b0
@@ -9588,7 +9585,7 @@
 0x001d9630 void SpriteBatch::Draw2(SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, float Y, float X, int32_t* arg7)
 0x001d9740 int32_t data_1d9740
 0x001d9744 int32_t data_1d9744
-0x001d975c u32 sub_1d975c(SpriteBatch* spriteBatch, Texture* texture, Vector2* arg3, int32_t* arg4, Texture arg5)
+0x001d975c u32 sub_1d975c(SpriteBatch* spriteBatch, Texture* texture, int32_t* arg3, int32_t* arg4, char* arg5, int32_t* arg6, int32_t* arg7)
 0x001d9a34 int32_t data_1d9a34
 0x001d9a38 int32_t data_1d9a38
 0x001d9a3c int32_t data_1d9a3c
@@ -9596,7 +9593,7 @@
 0x001d9a44 void SpriteBatch::Draw(SpriteBatch* arg1, Texture* texture, Vector4* vec, Vector4* vec2, Colour* colour, void* arg6)
 0x001d9ad8 int32_t data_1d9ad8
 0x001d9adc int32_t data_1d9adc
-0x001d9af4 SpriteBatch* sub_1d9af4()
+0x001d9af4 SpriteBatch* SpriteBatch::Global()
 0x001d9b28 int32_t data_1d9b28
 0x001d9b2c int32_t data_1d9b2c
 0x001d9d04 void* data_1d9d04
@@ -9656,7 +9653,7 @@
 0x001da910 int32_t data_1da910
 0x001da914 int32_t sub_1da914(int32_t arg1, int32_t arg2)
 0x001da9d0 int32_t data_1da9d0
-0x001daa00 int32_t* sub_1daa00(int32_t arg1, Vector2* arg2, int32_t* arg3, char* arg4)
+0x001daa00 int32_t* sub_1daa00(int32_t arg1, int32_t* arg2, int32_t* arg3, char* arg4)
 0x001daa54 void* data_1daa54
 0x001daa58 void* data_1daa58
 0x001daa5c void* data_1daa5c
@@ -9667,7 +9664,7 @@
 0x001daaf0 int32_t sub_1daaf0()
 0x001daba0 void* data_1daba0
 0x001daba4 int32_t data_1daba4
-0x001dabbc u32 sub_1dabbc(void* arg1, Vector2* arg2, int64_t* arg3, char* arg4)
+0x001dabbc u32 sub_1dabbc(void* arg1, int32_t* arg2, int64_t* arg3, char* arg4)
 0x001dad50 int32_t data_1dad50
 0x001dad54 int32_t data_1dad54
 0x001dad58 void* data_1dad58
@@ -9688,7 +9685,7 @@
 0x001db008 void sub_1db008(int32_t* arg1, void* arg2)
 0x001db060 int32_t data_1db060
 0x001db064 int32_t sub_1db064(int32_t* arg1, int32_t arg2)
-0x001db0bc u32 sub_1db0bc(int16_t* arg1, Vector2* arg2, int32_t* arg3, char* arg4)
+0x001db0bc u32 sub_1db0bc(int16_t* arg1, int32_t* arg2, int32_t* arg3, char* arg4)
 0x001db214 int32_t data_1db214
 0x001db218 void* data_1db218
 0x001db21c int32_t sub_1db21c()
@@ -9696,18 +9693,18 @@
 0x001db294 void* data_1db294
 0x001db298 void* data_1db298
 0x001db29c int32_t data_1db29c
-0x001db2a0 u32 sub_1db2a0(int16_t* arg1, Vector2* arg2, int64_t* arg3, char* arg4, int32_t arg5, int32_t arg6, int32_t arg7)
+0x001db2a0 u32 sub_1db2a0(int16_t* arg1, int32_t* arg2, int64_t* arg3, char* arg4, int32_t arg5, int32_t arg6, int32_t arg7)
 0x001db3bc int32_t data_1db3bc
 0x001db3c0 void* data_1db3c0
 0x001db3c4 int32_t sub_1db3c4()
-0x001db3dc u32 sub_1db3dc(u32 num, Vector2* arg2, Rect* rect, char* arg4, int32_t arg5, int32_t arg6, int32_t arg7)
+0x001db3dc u32 sub_1db3dc(u32 num, int32_t* arg2, Rect* rect, char* arg4, int32_t arg5, int32_t arg6, int32_t arg7)
 0x001db4b4 void* data_1db4b4
 0x001db4c0 Texture* sub_1db4c0(int32_t* arg1, int16_t* arg2, int32_t arg3, int32_t* arg4, int32_t* arg5)
 0x001db76c int32_t data_1db76c
 0x001db778 void sub_1db778(Rect* rect, int32_t arg2)
 0x001db814 void* data_1db814
 0x001db818 int32_t sub_1db818(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
-0x001db8d8 u32 sub_1db8d8(u32 arg1, Vector2* arg2, int32_t arg3)
+0x001db8d8 u32 sub_1db8d8(u32 arg1, int32_t* arg2, int32_t arg3)
 0x001db928 void* data_1db928
 0x001db92c void* data_1db92c
 0x001db944 int32_t sub_1db944(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int64_t arg5 @ q0, int32_t arg6, int32_t arg7)
@@ -9715,24 +9712,24 @@
 0x001dba50 int32_t XNASpriteBatch::Draw4(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)
 0x001dbaec int32_t sub_1dbaec(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)
 0x001dbb60 void* data_1dbb60
-0x001dbb78 u32 sub_1dbb78(u32 arg1, Vector2* arg2, int32_t arg3, int32_t arg4)
+0x001dbb78 u32 sub_1dbb78(u32 arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
 0x001dbbc8 void* data_1dbbc8
 0x001dbbcc void* data_1dbbcc
-0x001dbbe4 u32 sub_1dbbe4(u32 arg1, Vector2* arg2, Rect* arg3, int32_t arg4)
+0x001dbbe4 u32 sub_1dbbe4(u32 arg1, int32_t* arg2, Rect* arg3, int32_t arg4)
 0x001dbc0c void* data_1dbc0c
 0x001dbc10 void* data_1dbc10
 0x001dbc14 int32_t sub_1dbc14(int32_t arg1, Vector2* arg2, int32_t* arg3, int64_t arg4 @ q0, int32_t arg5)
-0x001dbc64 u32 sub_1dbc64(u32 arg1, Vector2* arg2, Rect* arg3, int32_t arg4, int32_t arg5)
+0x001dbc64 u32 sub_1dbc64(u32 arg1, int32_t* arg2, Rect* arg3, int32_t arg4, int32_t arg5)
 0x001dbc8c void* data_1dbc8c
 0x001dbc90 void* data_1dbc90
 0x001dbc94 int32_t sub_1dbc94(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x001dbd10 void* data_1dbd10
 0x001dbd28 int32_t sub_1dbd28(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int32_t arg5)
-0x001dbdec u32 sub_1dbdec(u32 arg1, Vector2* arg2, int32_t arg3, int32_t arg4)
+0x001dbdec u32 sub_1dbdec(u32 arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
 0x001dbe4c void* data_1dbe4c
 0x001dbe50 void* data_1dbe50
 0x001dbe68 int32_t* sub_1dbe68(int32_t arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int64_t arg5 @ q0, int32_t arg6, int32_t arg7)
-0x001dbeec u32 sub_1dbeec(u32 arg1, Vector2* arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+0x001dbeec u32 sub_1dbeec(u32 arg1, int32_t* arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x001dbf40 void* data_1dbf40
 0x001dbf44 void* data_1dbf44
 0x001dbf48 int32_t sub_1dbf48()
@@ -10011,13 +10008,13 @@
 0x001e3f40 int32_t sub_1e3f40()
 0x001e3f84 int32_t sub_1e3f84(void* arg1 @ r4)
 0x001e3fa4 int32_t sub_1e3fa4()
-0x001e4058 uint32_t BaseDrawable::SetTexture2(BaseDrawable* drawable, Texture* texture)
+0x001e4058 Texture* BaseDrawable::SetTexture2(BaseDrawable* drawable, Texture* texture)
 0x001e41a4 void* data_1e41a4
 0x001e41a8 int32_t data_1e41a8
 0x001e41ac int32_t data_1e41ac
 0x001e41b0 void* data_1e41b0
 0x001e41c8 void* data_1e41c8
-0x001e41cc int32_t BaseDrawable::SetTexture(void* arg1, int32_t* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
+0x001e41cc int32_t BaseDrawable::SetTexture(BaseDrawable* drawable, String* str_2)
 0x001e43a4 void* data_1e43a4
 0x001e43a8 int32_t data_1e43a8
 0x001e43ac int32_t data_1e43ac
@@ -10168,7 +10165,7 @@
 0x001e7bcc int32_t data_1e7bcc
 0x001e7bd0 int32_t data_1e7bd0
 0x001e7bd4 int32_t data_1e7bd4
-0x001e7bd8 int32_t sub_1e7bd8(int32_t* arg1)
+0x001e7bd8 int32_t sub_1e7bd8(void** arg1)
 0x001e7c74 int32_t data_1e7c74
 0x001e7c78 int32_t sub_1e7c78(void*** arg1 @ r5)
 0x001e7d1c int32_t data_1e7d1c
@@ -10188,7 +10185,7 @@
 0x001e7eb4 int32_t data_1e7eb4
 0x001e7eb8 int32_t CameraZoomer::SetZoomDirect()
 0x001e7ec4 void* data_1e7ec4
-0x001e7ec8 float CameraZoomer::ApplyZoomToScreenPos(Vector2* pos, void* cameraZoomer, Vector2* scale)
+0x001e7ec8 float CameraZoomer::ApplyZoomToScreenPos(Vector2* pos, CameraZoomer* cameraZoomer, Vector2* scale)
 0x001e7f9c void* data_1e7f9c
 0x001e7fa0 int32_t data_1e7fa0
 0x001e7fa4 int32_t data_1e7fa4
@@ -10234,7 +10231,7 @@
 0x001e85dc int32_t data_1e85dc
 0x001e85e0 int32_t data_1e85e0
 0x001e85e4 void* data_1e85e4
-0x001e8600 void sub_1e8600(SpriteBatch* arg1, int32_t arg2, int32_t arg3, float arg4 @ q0)
+0x001e8600 void sub_1e8600(CameraZoomer* arg1, int32_t arg2, int32_t arg3, float arg4 @ q0)
 0x001e8650 void* data_1e8650
 0x001e8654 int32_t sub_1e8654(void* arg1, int32_t arg2)
 0x001e86f4 int32_t data_1e86f4
@@ -10449,7 +10446,6 @@
 0x001eb8ac int32_t data_1eb8ac
 0x001eb8b0 int32_t data_1eb8b0
 0x001eb8b4 int32_t data_1eb8b4
-0x001eb8b8 void** sub_1eb8b8(int32_t* arg1)
 0x001eba34 int32_t data_1eba34
 0x001eba38 int32_t data_1eba38
 0x001eba3c void* data_1eba3c
@@ -10461,7 +10457,7 @@
 0x001ebbb4 void* data_1ebbb4
 0x001ebbb8 int32_t data_1ebbb8
 0x001ebbbc int32_t sub_1ebbbc(void* arg1 @ r4)
-0x001ebbe8 int32_t sub_1ebbe8(int32_t* arg1, int32_t* arg2, int32_t arg3, SpriteInfo* arg4)
+0x001ebbe8 int32_t sub_1ebbe8(int32_t* arg1, int32_t* arg2)
 0x001ebfc4 void* data_1ebfc4
 0x001ebfc8 int32_t data_1ebfc8
 0x001ebfcc int32_t data_1ebfcc
@@ -10478,7 +10474,7 @@
 0x001ec01c void sub_1ec01c()
 0x001ec04c int32_t data_1ec04c
 0x001ec050 void* data_1ec050
-0x001ec054 int32_t sub_1ec054(SpriteBatch** arg1)
+0x001ec054 int32_t sub_1ec054(int32_t* arg1)
 0x001ec538 void* data_1ec538
 0x001ec53c int32_t data_1ec53c
 0x001ec540 int32_t data_1ec540
@@ -10563,7 +10559,7 @@
 0x001ed4f4 void* data_1ed4f4
 0x001ed4f8 int32_t data_1ed4f8
 0x001ed7a8 int32_t sub_1ed7a8(void* arg1 @ r8)
-0x001ed81c int32_t* sub_1ed81c(void*** arg1, void** arg2)
+0x001ed81c int32_t* sub_1ed81c(void*** arg1, BaseMenu* arg2, int32_t arg3 @ r4)
 0x001ed974 int32_t data_1ed974
 0x001ed978 int32_t data_1ed978
 0x001ed97c int32_t data_1ed97c
@@ -10588,7 +10584,7 @@
 0x001ee58c int32_t data_1ee58c
 0x001ee590 int32_t sub_1ee590(int32_t arg1)
 0x001ee5fc int32_t sub_1ee5fc(int32_t arg1, int32_t arg2)
-0x001ee610 void* sub_1ee610(void** arg1)
+0x001ee610 void* InputManager::InputManager(void** arg1)
 0x001ee748 int32_t data_1ee748
 0x001ee74c int32_t data_1ee74c
 0x001ee750 int32_t data_1ee750
@@ -10696,7 +10692,7 @@
 0x001f0740 void sub_1f0740()
 0x001f0758 void sub_1f0758(int32_t arg1 @ r5, int32_t arg2 @ r7)
 0x001f0788 void sub_1f0788()
-0x001f07bc int32_t sub_1f07bc(int32_t arg1, void* arg2, int32_t* arg3)
+0x001f07bc int32_t Localization::GetLanguageSpecificFont(int32_t arg1, void* arg2, int32_t* arg3)
 0x001f0bc8 int32_t data_1f0bc8
 0x001f0bcc int32_t data_1f0bcc
 0x001f0bd4 int32_t data_1f0bd4
@@ -10834,11 +10830,11 @@
 0x001f3a90 int32_t sub_1f3a90(int32_t* arg1, void* arg2)
 0x001f3ad4 int32_t data_1f3ad4
 0x001f3ae0 int32_t j_sub_157448(void*** arg1)
-0x001f3ae4 int32_t sub_1f3ae4(char** arg1, void* arg2)
+0x001f3ae4 int32_t sub_1f3ae4(int32_t** arg1, void* arg2)
 0x001f3d60 int32_t data_1f3d60
 0x001f3d64 int32_t data_1f3d64
 0x001f3d7c uint32_t ResourceFile::readUTF16Char(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
-0x001f3da4 int32_t sub_1f3da4(char** arg1, void* arg2)
+0x001f3da4 int32_t sub_1f3da4(int32_t** arg1, void* arg2)
 0x001f4020 int32_t data_1f4020
 0x001f4024 int32_t data_1f4024
 0x001f4028 int32_t sub_1f4028()
@@ -10859,7 +10855,7 @@
 0x001f46c8 void* data_1f46c8
 0x001f46d0 int32_t sub_1f46d0()
 0x001f46f0 int32_t sub_1f46f0()
-0x001f4714 void* sub_1f4714(void** arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t* arg5, int32_t* arg6)
+0x001f4714 void* sub_1f4714(BaseMenu* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t* arg5, int32_t* arg6)
 0x001f48f0 int32_t data_1f48f0
 0x001f48f4 int32_t data_1f48f4
 0x001f48f8 void sub_1f48f8()
@@ -10875,28 +10871,28 @@
 0x001f4de4 void* data_1f4de4
 0x001f51ec int32_t data_1f51ec
 0x001f51f0 void sub_1f51f0()
-0x001f5250 void* sub_1f5250(void** arg1, int32_t arg2, int32_t* arg3)
+0x001f5250 void* sub_1f5250(BaseMenu* arg1, String* arg2, int32_t* foo)
 0x001f54ec int32_t data_1f54ec
 0x001f54f0 int32_t data_1f54f0
 0x001f54f4 void sub_1f54f4()
 0x001f5508 void sub_1f5508()
 0x001f5558 void sub_1f5558()
 0x001f5588 int32_t data_1f5588
-0x001f558c void** sub_1f558c(int32_t* arg1)
+0x001f558c BaseMenuState* OptionsMenuBottom(BaseMenuState* arg1)
 0x001f56ac int32_t data_1f56ac
 0x001f56b0 int32_t data_1f56b0
 0x001f56b4 void* data_1f56b4
 0x001f56b8 int32_t data_1f56b8
-0x001f56bc void sub_1f56bc(void*** arg1 @ r5)
+0x001f56bc void sub_1f56bc(State_VTable** arg1 @ r5)
 0x001f56f4 int32_t data_1f56f4
-0x001f56f8 int32_t sub_1f56f8(void*** arg1)
-0x001f5708 uint32_t sub_1f5708(u32 arg1, int32_t* arg2)
+0x001f56f8 int32_t sub_1f56f8(State_VTable** arg1)
+0x001f5708 uint32_t SpriteWidget::setTexture(void* SpriteWidget, String* str)
 0x001f5814 int32_t data_1f5814
 0x001f5818 int32_t data_1f5818
 0x001f581c int32_t sub_1f581c()
 0x001f5828 int32_t sub_1f5828()
 0x001f582c int32_t sub_1f582c()
-0x001f5848 int32_t* sub_1f5848(void* arg1)
+0x001f5848 int32_t* SpriteWidget::DeleteSprites(void* arg1)
 0x001f5924 void* data_1f5924
 0x001f5928 int32_t data_1f5928
 0x001f592c int32_t data_1f592c
@@ -10904,7 +10900,7 @@
 0x001f5948 void* data_1f5948
 0x001f594c void sub_1f594c(void* arg1)
 0x001f5958 int32_t sub_1f5958(u32 arg1, int32_t arg2)
-0x001f598c int32_t sub_1f598c(u32 arg1)
+0x001f598c int32_t SpriteWidget::setupRollovers(u32 arg1)
 0x001f5d0c void* data_1f5d0c
 0x001f5d10 int32_t data_1f5d10
 0x001f5d14 int32_t data_1f5d14
@@ -10963,7 +10959,7 @@
 0x001f6e50 int32_t* sub_1f6e50(void* arg1)
 0x001f6e8c int32_t sub_1f6e8c(GameStateManager* gsm)
 0x001f6eb8 void sub_1f6eb8(void* arg1)
-0x001f6f14 int32_t StateManager::Draw(void* arg1)
+0x001f6f14 int32_t StateManager::Draw(StateManager* arg1)
 0x001f6fe0 uint32_t StateManager::Update(void* arg1)
 0x001f7160 void* data_1f7160
 0x001f7164 int32_t data_1f7164
@@ -10992,7 +10988,7 @@
 0x001f764c int32_t sub_1f764c()
 0x001f76cc int32_t data_1f76cc
 0x001f76d0 int32_t sub_1f76d0()
-0x001f76fc void* sub_1f76fc(void*** arg1, void* arg2)
+0x001f76fc void* sub_1f76fc(int32_t*** arg1, void* arg2)
 0x001f7828 int32_t data_1f7828
 0x001f782c int32_t data_1f782c
 0x001f7844 int32_t* sub_1f7844(void*** arg1, int32_t* arg2, int32_t arg3)
@@ -11539,7 +11535,7 @@
 0x00204b68 int32_t data_204b68
 0x00204b6c int32_t data_204b6c
 0x00204b70 int32_t data_204b70
-0x00204b74 int32_t sub_204b74(void** arg1)
+0x00204b74 int32_t sub_204b74(int32_t** arg1)
 0x00204c20 int32_t data_204c20
 0x00204c24 int32_t data_204c24
 0x00204c28 int32_t data_204c28
@@ -11551,7 +11547,6 @@
 0x00204d00 int32_t data_204d00
 0x00204d04 void* data_204d04
 0x00204d08 int32_t sub_204d08()
-0x00204d34 int32_t* sub_204d34(int32_t* arg1)
 0x00204dc0 int32_t data_204dc0
 0x00204dc4 int32_t data_204dc4
 0x00204dc8 void sub_204dc8(void*** arg1 @ r4)
@@ -11559,7 +11554,7 @@
 0x00204dfc int32_t sub_204dfc(void*** arg1)
 0x00204e0c int32_t sub_204e0c(char** arg1, int32_t arg2)
 0x00204f90 int32_t data_204f90
-0x00204fa4 void* ContentLoader::LoadTexture(ContentLoader* loader, String* str, u32 num1, void* pointer, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7)
+0x00204fa4 void* ContentLoader::LoadTexture(ContentLoader* loader, String* str, u32 num1, String* str2, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7)
 0x00205598 void* data_205598
 0x0020559c void* data_20559c
 0x002055a0 int32_t data_2055a0
@@ -11698,25 +11693,25 @@
 0x00208a28 int32_t data_208a28
 0x00208a2c int32_t data_208a2c
 0x00208a30 int32_t sub_208a30()
-0x00208a44 int32_t sub_208a44(void* arg1)
+0x00208a44 int32_t sub_208a44(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5, int32_t arg4 @ r6)
 0x00208b74 int32_t data_208b74
 0x00208b78 int32_t data_208b78
 0x00208b7c int32_t data_208b7c
 0x00208b80 void* data_208b80
 0x00208b98 int32_t data_208b98
-0x00208b9c int32_t sub_208b9c(void* arg1)
+0x00208b9c int32_t sub_208b9c(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5, int32_t arg4 @ r6)
 0x00208c70 int32_t data_208c70
 0x00208c74 int32_t data_208c74
 0x00208c78 int32_t data_208c78
 0x00208c7c void* data_208c7c
 0x00208c94 int32_t data_208c94
-0x00208c98 void sub_208c98(void* arg1, int32_t arg2)
+0x00208c98 void sub_208c98(void* arg1, int32_t arg2, int32_t arg3 @ r4, int32_t arg4 @ r5, int32_t arg5 @ r6)
 0x00208da8 int32_t data_208da8
 0x00208dac int32_t data_208dac
 0x00208db0 int32_t data_208db0
 0x00208db4 void* data_208db4
-0x00208dd0 int32_t sub_208dd0(void* arg1)
-0x00208ea0 int32_t sub_208ea0(void* arg1, void* arg2)
+0x00208dd0 int32_t sub_208dd0(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5, int32_t arg4 @ r6)
+0x00208ea0 int32_t sub_208ea0(void* arg1, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5, int32_t arg5 @ r6)
 0x00208f0c int32_t data_208f0c
 0x00208f10 int32_t data_208f10
 0x00208f14 int32_t data_208f14
@@ -11732,7 +11727,7 @@
 0x002092b4 int32_t data_2092b4
 0x002092b8 void* data_2092b8
 0x002092bc int32_t sub_2092bc(int32_t arg1 @ r8)
-0x002092d4 void*** sub_2092d4(int32_t* arg1)
+0x002092d4 BaseMenuState* sub_2092d4(BaseMenuState* arg1)
 0x002096ac int32_t data_2096ac
 0x002096b0 int32_t data_2096b0
 0x002096b4 int32_t data_2096b4
@@ -11744,10 +11739,10 @@
 0x002097a4 void sub_2097a4(int32_t* arg1 @ r5, void* arg2 @ r6)
 0x00209818 void sub_209818()
 0x0020982c void sub_20982c()
-0x00209838 void sub_209838(void*** arg1 @ r4)
+0x00209838 void sub_209838(State_VTable** arg1 @ r4)
 0x00209840 void sub_209840()
 0x00209864 int32_t data_209864
-0x00209868 int32_t sub_209868(void*** arg1)
+0x00209868 int32_t sub_209868(State_VTable** arg1)
 0x00209878 int32_t sub_209878(void* arg1)
 0x002099bc int32_t sub_2099bc()
 0x002099c8 int32_t sub_2099c8()
@@ -11777,8 +11772,7 @@
 0x0020a5a4 int32_t data_20a5a4
 0x0020a5bc void sub_20a5bc()
 0x0020a5e4 int32_t data_20a5e4
-0x0020a5e8 int32_t sub_20a5e8(void* arg1)
-0x0020a648 void** sub_20a648(int32_t* arg1)
+0x0020a5e8 int32_t sub_20a5e8(BaseMenuState* arg1)
 0x0020a7b8 int32_t data_20a7b8
 0x0020a7bc int32_t data_20a7bc
 0x0020a7c0 void* data_20a7c0
@@ -11790,7 +11784,7 @@
 0x0020a818 int32_t sub_20a818(void*** arg1)
 0x0020a830 int32_t sub_20a830(void*** arg1)
 0x0020a8c8 void* data_20a8c8
-0x0020a8cc int32_t sub_20a8cc(void*** arg1 @ r5)
+0x0020a8cc int32_t sub_20a8cc(State_VTable** arg1 @ r5)
 0x0020ac08 int32_t data_20ac08
 0x0020ac0c int32_t data_20ac0c
 0x0020ac24 int32_t data_20ac24
@@ -11921,15 +11915,15 @@
 0x0020c0d0 void* data_20c0d0
 0x0020c108 int32_t sub_20c108()
 0x0020c144 int32_t sub_20c144()
-0x0020c150 void** sub_20c150(int32_t* arg1)
+0x0020c150 BaseMenuState* sub_20c150(BaseMenuState* arg1)
 0x0020c26c int32_t data_20c26c
 0x0020c270 int32_t data_20c270
 0x0020c274 int32_t data_20c274
 0x0020c278 int32_t data_20c278
-0x0020c27c void sub_20c27c(void*** arg1 @ r5)
+0x0020c27c void sub_20c27c(State_VTable** arg1 @ r5)
 0x0020c2b4 int32_t data_20c2b4
-0x0020c2b8 int32_t sub_20c2b8(void*** arg1)
-0x0020c2c8 int32_t* sub_20c2c8(int32_t* arg1)
+0x0020c2b8 int32_t sub_20c2b8(State_VTable** arg1)
+0x0020c2c8 BaseMenuState* sub_20c2c8(BaseMenuState* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)
 0x0020c41c int32_t data_20c41c
 0x0020c420 int32_t data_20c420
 0x0020c424 int32_t data_20c424
@@ -11938,6 +11932,7 @@
 0x0020c474 int32_t sub_20c474(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
 0x0020c4c0 int32_t data_20c4c0
 0x0020c4c4 int32_t sub_20c4c4()
+0x0020c4e0 uint32_t sub_20c4e0(BaseMenuState* arg1)
 0x0020c668 void* data_20c668
 0x0020c66c int32_t data_20c66c
 0x0020c670 int32_t data_20c670
@@ -11952,7 +11947,7 @@
 0x0020c840 int32_t data_20c840
 0x0020c844 int32_t data_20c844
 0x0020c848 int32_t sub_20c848()
-0x0020c85c int32_t* sub_20c85c(int32_t* arg1)
+0x0020c85c BaseMenuState* sub_20c85c(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x0020c9b4 int32_t data_20c9b4
 0x0020c9b8 int32_t data_20c9b8
 0x0020c9bc int32_t data_20c9bc
@@ -12002,9 +11997,8 @@
 0x0020dde8 int32_t data_20dde8
 0x0020ddec void* data_20ddec
 0x0020de00 void sub_20de00()
-0x0020de3c int32_t sub_20de3c(void* arg1)
+0x0020de3c int32_t sub_20de3c(BaseMenuState* arg1)
 0x0020df14 void* data_20df14
-0x0020df18 void** sub_20df18(int32_t* arg1)
 0x0020e08c int32_t data_20e08c
 0x0020e090 int32_t data_20e090
 0x0020e094 int32_t data_20e094
@@ -12013,9 +12007,9 @@
 0x0020e0e0 int32_t data_20e0e0
 0x0020e0e4 int32_t sub_20e0e4(int32_t* arg1)
 0x0020e158 int32_t data_20e158
-0x0020e15c int32_t sub_20e15c(void*** arg1 @ r5)
+0x0020e15c int32_t sub_20e15c(State_VTable** arg1 @ r5)
 0x0020e1d0 int32_t data_20e1d0
-0x0020e1d4 int32_t sub_20e1d4(void*** arg1 @ r5)
+0x0020e1d4 int32_t sub_20e1d4(State_VTable** arg1 @ r5)
 0x0020e1f0 int32_t sub_20e1f0(int32_t arg1)
 0x0020e578 void* data_20e578
 0x0020e57c int32_t data_20e57c
@@ -12053,15 +12047,15 @@
 0x0020e994 int32_t data_20e994
 0x0020e998 int32_t data_20e998
 0x0020e99c int32_t sub_20e99c()
-0x0020e9b8 void** sub_20e9b8(int32_t* arg1)
+0x0020e9b8 BaseMenuState* sub_20e9b8(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x0020eb3c int32_t data_20eb3c
 0x0020eb40 int32_t data_20eb40
 0x0020eb44 int32_t data_20eb44
 0x0020eb48 int32_t data_20eb48
 0x0020eb4c int32_t data_20eb4c
-0x0020eb50 void sub_20eb50(void*** arg1 @ r5)
+0x0020eb50 void sub_20eb50(State_VTable** arg1 @ r5)
 0x0020eb88 int32_t data_20eb88
-0x0020eb8c int32_t sub_20eb8c(void*** arg1)
+0x0020eb8c int32_t sub_20eb8c(State_VTable** arg1)
 0x0020eb9c int32_t MinimapHelper::Run(MiniMapHelper* helper)
 0x0020ebb4 int32_t sub_20ebb4(char** arg1)
 0x0020ec3c int32_t data_20ec3c
@@ -12225,7 +12219,7 @@
 0x0021264c void sub_21264c()
 0x00212678 u32 sub_212678(void* arg1, int64_t* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
 0x002126fc void sub_2126fc()
-0x00212738 u32 sub_212738(int32_t arg1, Vector2* arg2, void* arg3)
+0x00212738 u32 sub_212738(int32_t arg1, int32_t* arg2, void* arg3)
 0x00212868 int32_t data_212868
 0x0021286c void* data_21286c
 0x00212870 void* data_212870
@@ -12323,7 +12317,7 @@
 0x00213c80 void* data_213c80
 0x00213c84 void* data_213c84
 0x00213c90 void sub_213c90()
-0x00213ce0 void* sub_213ce0(int32_t arg1)
+0x00213ce0 float sub_213ce0(int32_t arg1)
 0x00213de8 void* data_213de8
 0x00213df4 int32_t data_213df4
 0x00213df8 int32_t data_213df8
@@ -12336,7 +12330,7 @@
 0x002141b4 void* data_2141b4
 0x002141b8 int32_t data_2141b8
 0x00214250 void sub_214250()
-0x00214288 void** sub_214288(int32_t* arg1)
+0x00214288 void** sub_214288(BaseMenuState* arg1)
 0x00214558 int32_t data_214558
 0x0021455c int32_t data_21455c
 0x00214560 void* data_214560
@@ -12351,9 +12345,9 @@
 0x00214614 int32_t data_214614
 0x00214618 int32_t sub_214618(void** arg1)
 0x00214648 void* data_214648
-0x0021464c int32_t sub_21464c(void*** arg1 @ r4)
+0x0021464c int32_t sub_21464c(State_VTable** arg1 @ r4)
 0x0021468c void* data_21468c
-0x00214690 int32_t sub_214690(void*** arg1 @ r4)
+0x00214690 int32_t sub_214690(State_VTable** arg1 @ r4)
 0x0021470c int32_t sub_21470c(void* arg1, int32_t arg2)
 0x00214778 int32_t sub_214778(void* arg1, int32_t arg2)
 0x002148c0 int32_t data_2148c0
@@ -12373,17 +12367,17 @@
 0x00214d34 void sub_214d34()
 0x00214d50 void sub_214d50()
 0x00214d88 int32_t data_214d88
-0x00214d8c void*** sub_214d8c(int32_t* arg1, char arg2)
+0x00214d8c BaseMenuState* sub_214d8c(BaseMenuState* arg1, uint8_t arg2)
 0x00214f50 int32_t data_214f50
 0x00214f54 int32_t data_214f54
 0x00214f58 void* data_214f58
 0x00214f5c int32_t data_214f5c
 0x00214f60 int32_t data_214f60
 0x00214f64 int32_t data_214f64
-0x00214f6c void sub_214f6c(void*** arg1 @ r5)
+0x00214f6c void sub_214f6c(State_VTable** arg1 @ r5)
 0x00214f9c void sub_214f9c()
 0x00214fb8 int32_t data_214fb8
-0x00214fbc int32_t sub_214fbc(void*** arg1)
+0x00214fbc int32_t sub_214fbc(State_VTable** arg1)
 0x00214fcc int32_t sub_214fcc(void* arg1)
 0x002150f0 int32_t data_2150f0
 0x002150f4 int32_t data_2150f4
@@ -12420,7 +12414,7 @@
 0x002156e4 int32_t data_2156e4
 0x002156e8 void* data_2156e8
 0x002156ec int32_t sub_2156ec()
-0x0021570c int32_t sub_21570c(int32_t arg1 @ r8)
+0x0021570c int32_t sub_21570c(int32_t arg1 @ r4, int32_t arg2 @ r5, int32_t arg3 @ r6, int32_t arg4 @ r8)
 0x002157b8 int32_t data_2157b8
 0x002157bc int32_t data_2157bc
 0x002157c0 int32_t data_2157c0
@@ -12455,14 +12449,14 @@
 0x00216094 int32_t sub_216094()
 0x002160b4 int32_t sub_2160b4(int32_t arg1 @ r8)
 0x0021611c int32_t sub_21611c()
-0x00216130 void*** sub_216130(int32_t* arg1)
+0x00216130 BaseMenuState* sub_216130(BaseMenuState* arg1)
 0x002162b8 int32_t data_2162b8
 0x002162bc int32_t data_2162bc
 0x002162c0 void* data_2162c0
 0x002162c4 int32_t data_2162c4
-0x002162c8 void sub_2162c8(void*** arg1 @ r5)
+0x002162c8 void sub_2162c8(State_VTable** arg1 @ r5)
 0x00216300 int32_t data_216300
-0x00216304 int32_t sub_216304(void*** arg1)
+0x00216304 int32_t sub_216304(State_VTable** arg1)
 0x00216314 int32_t sub_216314(Draw_Unk0* arg1)
 0x00216518 int32_t data_216518
 0x0021651c int32_t data_21651c
@@ -12532,7 +12526,7 @@
 0x002173ec int32_t data_2173ec
 0x002173f0 void* data_2173f0
 0x002173f4 int32_t sub_2173f4(int32_t arg1 @ r8)
-0x0021740c void*** sub_21740c(int32_t* arg1)
+0x0021740c BaseMenuState* sub_21740c(BaseMenuState* arg1)
 0x002177e8 int32_t data_2177e8
 0x002177ec int32_t data_2177ec
 0x002177f0 int32_t data_2177f0
@@ -12544,10 +12538,10 @@
 0x00217928 void sub_217928(int32_t* arg1 @ r5, void* arg2 @ r7)
 0x0021799c void sub_21799c()
 0x002179b0 void sub_2179b0()
-0x002179bc void sub_2179bc(void*** arg1 @ r4)
+0x002179bc void sub_2179bc(State_VTable** arg1 @ r4)
 0x002179c4 void sub_2179c4()
 0x002179e8 int32_t data_2179e8
-0x002179ec int32_t sub_2179ec(void*** arg1)
+0x002179ec int32_t sub_2179ec(State_VTable** arg1)
 0x002179fc char* sub_2179fc(void* arg1, int32_t arg2)
 0x00217d60 int32_t data_217d60
 0x00217d64 int32_t data_217d64
@@ -12583,7 +12577,7 @@
 0x00218d68 int32_t sub_218d68(void* arg1 @ r6)
 0x00218da4 void* sub_218da4(void*** arg1)
 0x00218e28 void* data_218e28
-0x00218e2c int32_t sub_218e2c(void* arg1, int32_t arg2)
+0x00218e2c int32_t FlowSchemeNode::getNeighbour(void* arg1, int32_t arg2)
 0x00218ec4 void sub_218ec4(void* arg1, int32_t arg2, int32_t arg3)
 0x00218ef4 void sub_218ef4(void*** arg1, int32_t arg2)
 0x00218f20 void* data_218f20
@@ -12623,9 +12617,8 @@
 0x00219640 int32_t sub_219640(GraphicsDevice* device, bool flag)
 0x00219840 int32_t data_219840
 0x00219858 int32_t GraphicsDevice::RemoveCallback(GraphicsDevice* device, int32_t arg2)
-0x00219964 void sub_219964(void* arg1)
-0x00219978 int32_t sub_219978(void* arg1)
-0x00219988 int32_t sub_219988(void* arg1)
+0x00219978 int32_t GraphicsDevice::GetZBufferState(GraphicsDevice* device)
+0x00219988 int32_t GraphicsDevice::SetZBufferState(GraphicsDevice* device)
 0x0021999c int32_t Texture2D::IsQueuedForBinding(Texture* arg1)
 0x002199d0 int32_t GraphicsDevice::IsTextureInQueue(void* arg1, int32_t arg2, int32_t arg3)
 0x00219a40 int32_t sub_219a40(void* arg1)
@@ -12660,13 +12653,14 @@
 0x0021a584 void* data_21a584
 0x0021a6d0 void* data_21a6d0
 0x0021a794 int32_t data_21a794
-0x0021a7a8 int32_t sub_21a7a8(void* arg1)
+0x0021a7a8 int32_t sub_21a7a8(BaseMenuState* menuState)
 0x0021a8b4 int32_t data_21a8b4
 0x0021a8b8 int32_t data_21a8b8
 0x0021a8bc void* data_21a8bc
 0x0021a8c0 void* data_21a8c0
 0x0021a964 void* data_21a964
 0x0021a96c int32_t data_21a96c
+0x0021a970 void* sub_21a970(BaseMenuState* menuState)
 0x0021ab48 int32_t data_21ab48
 0x0021ab4c int32_t data_21ab4c
 0x0021ab50 int32_t data_21ab50
@@ -12706,6 +12700,7 @@
 0x0021b504 int32_t data_21b504
 0x0021b520 void sub_21b520(void* arg1, char arg2)
 0x0021b540 int32_t data_21b540
+0x0021b544 int32_t sub_21b544(BaseMenuState* menuState)
 0x0021b630 int32_t data_21b630
 0x0021b634 int32_t data_21b634
 0x0021b638 void* data_21b638
@@ -12715,14 +12710,15 @@
 0x0021b65c void* data_21b65c
 0x0021b660 void* sub_21b660(void* arg1, void* arg2)
 0x0021b67c int32_t data_21b67c
-0x0021b680 int32_t sub_21b680(int32_t* arg1, void* arg2, int32_t* arg3)
+0x0021b680 int32_t sub_21b680(float* arg1, BaseMenuState* menuState, int32_t* arg3)
 0x0021b73c void* data_21b73c
 0x0021b740 int32_t data_21b740
 0x0021b744 int32_t data_21b744
 0x0021b748 void* data_21b748
 0x0021b74c int32_t data_21b74c
 0x0021b764 int32_t data_21b764
-0x0021b770 int32_t MenuBackground::Draw(int32_t arg1)
+0x0021b768 int32_t MenuBackground::Draw2(int32_t arg1)
+0x0021b770 uint32_t MenuBackground::Draw(BaseMenuState* menuState)
 0x0021b908 void* data_21b908
 0x0021b90c int32_t data_21b90c
 0x0021b910 int32_t data_21b910
@@ -12739,6 +12735,8 @@
 0x0021b978 int32_t data_21b978
 0x0021b97c int32_t data_21b97c
 0x0021b980 int32_t data_21b980
+0x0021b984 int32_t MenuBackground::Update2(int32_t arg1)
+0x0021b98c uint32_t MenuBackground::Update(BaseMenuState* menuState)
 0x0021be58 void* data_21be58
 0x0021be5c int32_t data_21be5c
 0x0021be60 int32_t data_21be60
@@ -12767,7 +12765,7 @@
 0x0021c03c int32_t data_21c03c
 0x0021c0ac int32_t data_21c0ac
 0x0021c0b0 int32_t data_21c0b0
-0x0021c0bc int32_t sub_21c0bc(void* arg1)
+0x0021c0bc int32_t sub_21c0bc(BaseMenuState* menuState)
 0x0021c29c int32_t data_21c29c
 0x0021c2a0 void* data_21c2a0
 0x0021c2a4 void* data_21c2a4
@@ -12779,7 +12777,6 @@
 0x0021c2bc void* data_21c2bc
 0x0021c2c0 int32_t data_21c2c0
 0x0021c334 void* data_21c334
-0x0021c338 void** sub_21c338(int32_t* arg1)
 0x0021c574 int32_t data_21c574
 0x0021c578 int32_t data_21c578
 0x0021c57c int32_t data_21c57c
@@ -12790,7 +12787,7 @@
 0x0021c590 int32_t data_21c590
 0x0021c594 int32_t data_21c594
 0x0021c5fc int32_t data_21c5fc
-0x0021c618 int32_t sub_21c618(void*** arg1)
+0x0021c610 int32_t MenuBackground::~MenuBackground(int32_t arg1)
 0x0021c694 void* data_21c694
 0x0021c698 int32_t data_21c698
 0x0021c6c8 void* data_21c6c8
@@ -12912,7 +12909,7 @@
 0x0021fa60 int32_t data_21fa60
 0x0021fa64 int32_t data_21fa64
 0x0021fa7c int32_t data_21fa7c
-0x0021fa80 int32_t* sub_21fa80(int32_t* arg1)
+0x0021fa80 SpriteBatch* XNASpriteBatch::Unitialize(XNASpriteBatch* arg1)
 0x0021fac8 int32_t sub_21fac8(void* arg1, int32_t* arg2)
 0x0021fbec int32_t XNASpriteBatch::MeasureString(int32_t* arg1, XNASpriteBatch* arg2, void* arg3)
 0x0021fc50 int32_t data_21fc50
@@ -12922,7 +12919,6 @@
 0x0021fd78 int32_t data_21fd78
 0x0021fd7c int32_t data_21fd7c
 0x0021fd80 int32_t data_21fd80
-0x0021fd8c BaseDrawable* XNASpriteBatch::CreateSpriteText()
 0x00220024 int32_t data_220024
 0x00220028 int32_t data_220028
 0x00220030 int32_t data_220030
@@ -12944,11 +12940,11 @@
 0x00220198 int32_t data_220198
 0x0022019c int32_t XNASpriteBatch::End(XNASpriteBatch* drawer)
 0x002203b4 int32_t data_2203b4
-0x002203ec u32 sub_2203ec(SpriteBatch** arg1, Texture* arg2, Vector2* arg3, int32_t* arg4, char* arg5, int32_t* arg6)
+0x002203ec u32 sub_2203ec(SpriteBatch** arg1, Texture* arg2, int32_t* arg3, int32_t* arg4, char* arg5, int32_t* arg6)
 0x00220484 int32_t data_220484
 0x00220488 int32_t data_220488
 0x0022048c void* data_22048c
-0x002204a4 u32 sub_2204a4(XNASpriteBatch* arg1, Texture* texture, Vector2* arg3, int32_t* arg4, char* arg5, int32_t* arg6, int32_t* arg7, int32_t arg8)
+0x002204a4 u32 sub_2204a4(XNASpriteBatch* arg1, Texture* texture, int32_t* arg3, void* arg4, char* arg5, int32_t* arg6, int32_t* arg7, int32_t arg8)
 0x00220590 int32_t* XNASpriteBatch::Draw2(XNASpriteBatch* arg1, Texture* arg2, Vector2* arg3, void* arg4, char* arg5, int32_t* arg6, int32_t* arg7, int32_t arg8)
 0x00220718 void* data_220718
 0x00220730 void sub_220730(SpriteBatch** arg1, int32_t* arg2, int32_t* arg3, char* arg4)
@@ -12956,7 +12952,7 @@
 0x00220810 void XNASpriteBatch::Draw(XNASpriteBatch* arg1, Texture* texture, IVector4* src, IVector4* dest, Colour* colour)
 0x0022094c int32_t data_22094c
 0x00220950 int32_t data_220950
-0x0022096c void* SpriteBatch::Begin(SpriteBatch::Global())_2(XNASpriteBatch* drawer, bool zoomEnable, int32_t arg3, SpriteInfo* arg4)
+0x0022096c void* SpriteBatch::Begin(SpriteBatch::Global())_2(XNASpriteBatch* drawer, bool zoomEnable, int32_t arg3, int32_t arg4)
 0x002209c8 int32_t data_2209c8
 0x002209cc int32_t data_2209cc
 0x002209e8 void SpriteBatch::Begin(SpriteBatch::Global())(XNASpriteBatch* drawer)
@@ -13099,7 +13095,7 @@
 0x00222a50 int32_t data_222a50
 0x00222ab4 int32_t data_222ab4
 0x00222acc int32_t data_222acc
-0x00222ad4 void** sub_222ad4(int32_t* arg1)
+0x00222ad4 BaseMenuState* sub_222ad4(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x00222ca4 int32_t data_222ca4
 0x00222ca8 int32_t data_222ca8
 0x00222cac int32_t data_222cac
@@ -13157,9 +13153,9 @@
 0x00224158 void* data_224158
 0x0022415c int32_t data_22415c
 0x00224214 void* data_224214
-0x00224218 void*** sub_224218(int32_t* arg1, char arg2, int32_t arg3, int32_t* arg4, int32_t arg5, int32_t arg6)
+0x00224218 BaseMenuState* sub_224218(BaseMenuState* arg1, char arg2, String* arg3, int32_t* arg4, uint32_t arg5, int32_t arg6)
 0x00224258 void* data_224258
-0x0022426c int32_t j_sub_510c14(void*** arg1)
+0x0022426c int32_t j_sub_510c14(State_VTable** arg1)
 0x002244b8 int32_t data_2244b8
 0x002244cc int32_t data_2244cc
 0x00224df4 void* data_224df4
@@ -13224,7 +13220,7 @@
 0x00226308 int32_t data_226308
 0x0022630c int32_t data_22630c
 0x002263ac int32_t data_2263ac
-0x002263b0 void*** sub_2263b0(int32_t* arg1)
+0x002263b0 BaseMenuState* sub_2263b0(BaseMenuState* arg1)
 0x00226790 int32_t data_226790
 0x00226794 int32_t data_226794
 0x00226798 void* data_226798
@@ -13269,7 +13265,7 @@
 0x0022835c int32_t data_22835c
 0x00228360 void* data_228360
 0x00228378 int32_t data_228378
-0x00228380 int32_t* sub_228380(int32_t* arg1)
+0x00228380 BaseMenuState* sub_228380(BaseMenuState* arg1)
 0x00228488 int32_t data_228488
 0x0022848c int32_t data_22848c
 0x00228490 int32_t data_228490
@@ -13320,11 +13316,11 @@
 0x002299bc int32_t data_2299bc
 0x002299c0 int32_t data_2299c0
 0x00229a74 int32_t data_229a74
-0x00229a78 int32_t* sub_229a78(int32_t* arg1)
+0x00229a78 BaseMenuState* sub_229a78(BaseMenuState* arg1)
 0x00229b38 int32_t data_229b38
 0x00229b3c int32_t data_229b3c
 0x00229b78 int32_t data_229b78
-0x00229b7c int32_t sub_229b7c(void*** arg1)
+0x00229b7c int32_t sub_229b7c(State_VTable** arg1)
 0x00229b8c int32_t sub_229b8c(int32_t* arg1, int32_t arg2, int32_t arg3, char* arg4)
 0x00229c78 int32_t data_229c78
 0x00229c7c int32_t data_229c7c
@@ -13485,8 +13481,8 @@
 0x0022cb10 int32_t data_22cb10
 0x0022cb14 int32_t data_22cb14
 0x0022cb18 int32_t data_22cb18
-0x0022cb1c int32_t sub_22cb1c(void*** arg1, int32_t arg2, int64_t arg3 @ q4, int32_t arg4, int32_t arg5)
-0x0022cc54 int32_t sub_22cc54(int32_t* arg1 @ r4, void*** arg2 @ r5, int32_t arg3 @ r6, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10)
+0x0022cb1c int32_t sub_22cb1c(int32_t*** arg1, int32_t arg2, int64_t arg3 @ q4, int32_t arg4, int32_t arg5)
+0x0022cc54 int32_t sub_22cc54(int32_t* arg1 @ r4, int32_t*** arg2 @ r5, int32_t arg3 @ r6, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10)
 0x0022ccb4 int32_t sub_22ccb4(int32_t* arg1 @ r4)
 0x0022cd08 void* data_22cd08
 0x0022cd0c void* data_22cd0c
@@ -13500,7 +13496,7 @@
 0x0022ce24 int32_t data_22ce24
 0x0022ce28 int32_t sub_22ce28(int32_t* arg1, int32_t* arg2)
 0x0022cec0 int32_t data_22cec0
-0x0022cec4 int32_t sub_22cec4(int32_t* arg1, int32_t* arg2)
+0x0022cec4 int32_t HelperFunctions::stringContains(int32_t* arg1, int32_t* arg2)
 0x0022cf5c int32_t data_22cf5c
 0x0022cf60 int32_t sub_22cf60(int64_t arg1 @ q0)
 0x0022cf9c int32_t data_22cf9c
@@ -13528,7 +13524,7 @@
 0x0022d61c int32_t data_22d61c
 0x0022d620 int32_t data_22d620
 0x0022d624 int32_t sub_22d624(int16_t arg1 @ r9)
-0x0022d650 int32_t sub_22d650(int32_t arg1, int32_t* arg2, int32_t* arg3, int32_t* arg4, int32_t arg5)
+0x0022d650 int32_t HelperFunctions::replaceSubString(int32_t arg1, int32_t* arg2, int32_t* arg3, int32_t* arg4, int32_t arg5)
 0x0022d7c0 int32_t data_22d7c0
 0x0022d7c4 int32_t sub_22d7c4()
 0x0022dd76 int32_t j_sub_22e298(int32_t arg1, int32_t arg2)
@@ -13596,7 +13592,7 @@
 0x0022efb4 void* sub_22efb4(int32_t arg1, int32_t arg2 @ q4)
 0x0022efe4 int32_t data_22efe4
 0x0022efe8 int32_t HelperFunctions::nearestPowerOfTwoGreater(int32_t arg1)
-0x0022f008 int32_t sub_22f008(int32_t arg1, int32_t* arg2, int32_t* arg3, u32 arg4 @ r4)
+0x0022f008 int32_t HelperFunctions::insertStringPreFileExtension(int32_t arg1, int32_t* arg2, int32_t* arg3, u32 arg4 @ r4)
 0x0022f0d0 int32_t* sub_22f0d0(int32_t* arg1, int32_t* arg2, int32_t* arg3)
 0x0022f186 int32_t j_sub_22f4ca()
 0x0022f330 int32_t data_22f330
@@ -13646,7 +13642,7 @@
 0x00230030 char* sub_230030(int32_t* arg1, int32_t* arg2, int32_t arg3, int32_t arg4)
 0x00230138 int32_t data_230138
 0x00230140 void sub_230140(int32_t* arg1, int32_t* arg2, int32_t* arg3)
-0x0023019c char* sub_23019c(void** arg1, int32_t* arg2)
+0x0023019c char* sub_23019c(int32_t** arg1, int32_t* arg2)
 0x0023029c int32_t data_23029c
 0x002302a0 int32_t data_2302a0
 0x002302a4 void* data_2302a4
@@ -13757,7 +13753,7 @@
 0x00233d1c int32_t sub_233d1c(void* arg1 @ r4)
 0x00233d38 int32_t sub_233d38(int32_t arg1)
 0x00233d5c void* data_233d5c
-0x00233d60 uint32_t sub_233d60(BaseDrawable* arg1, Texture* arg2)
+0x00233d60 Texture* sub_233d60(BaseDrawable* arg1, Texture* arg2)
 0x00233d88 void sub_233d88(int32_t* arg1, void* arg2)
 0x00233d98 int32_t sub_233d98()
 0x00233d9c int32_t sub_233d9c(void* arg1)
@@ -13772,7 +13768,7 @@
 0x00234294 int32_t data_234294
 0x00234298 void sub_234298(int32_t* arg1)
 0x002342b0 int32_t sub_2342b0()
-0x002342b4 int32_t sub_2342b4(int32_t* arg1, int32_t* arg2)
+0x002342b4 int32_t sub_2342b4(BaseDrawable* arg1, String* arg2)
 0x002342cc int32_t sub_2342cc(int32_t* arg1)
 0x0023441c int32_t sub_23441c()
 0x00234814 int32_t data_234814
@@ -13817,7 +13813,7 @@
 0x00235480 void* data_235480
 0x00235484 int32_t sub_235484(BaseDrawable* arg1 @ r4)
 0x002354bc void* data_2354bc
-0x002354d4 int32_t sub_2354d4(int32_t* arg1)
+0x002354d4 int32_t PlatformHelpers::GetXmlPostfixes(int32_t* arg1)
 0x002355a8 uint32_t jump_table_2355a8[0xa]
 0x002358e4 int32_t data_2358e4
 0x002358e8 int32_t data_2358e8
@@ -13899,14 +13895,14 @@
 0x00237480 void* data_237480
 0x00237484 int32_t sub_237484()
 0x002374a4 int32_t sub_2374a4()
-0x002374b0 int32_t sub_2374b0(int32_t* arg1)
-0x002374f4 int32_t sub_2374f4(int32_t arg1, int32_t arg2, int32_t arg3, int32_t* arg4, void** arg5 @ r4, void** arg6 @ r5, int64_t* arg7 @ r6, int32_t* arg8 @ r8, int32_t arg9 @ r9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18)
+0x002374b0 int32_t sub_2374b0(BaseMenuState* arg1)
+0x002374f4 int32_t sub_2374f4(int32_t arg1, int32_t arg2, int32_t arg3, int32_t* arg4, BaseMenu* arg5 @ r4, void** arg6 @ r5, int64_t* arg7 @ r6, int32_t* arg8 @ r8, int32_t arg9 @ r9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18)
 0x00237928 void* data_237928
 0x0023792c int32_t data_23792c
 0x00237930 void* data_237930
 0x00237a08 int32_t sub_237a08()
 0x00237a34 int32_t sub_237a34()
-0x00237a58 int32_t sub_237a58(int32_t* arg1, void*** arg2 @ r4)
+0x00237a58 int32_t sub_237a58(int32_t* arg1, State_VTable** arg2 @ r4)
 0x00237a7c uint32_t sub_237a7c(int32_t* arg1)
 0x00237b38 void* data_237b38
 0x00237b3c void LoadSound(SoundEffect* sound, String* str, int32_t arg3)
@@ -14192,8 +14188,7 @@
 0x0023de40 void sub_23de40()
 0x0023de54 void sub_23de54()
 0x0023de60 int32_t data_23de60
-0x0023de64 int32_t sub_23de64(void* arg1)
-0x0023dea0 void** sub_23dea0(int32_t* arg1)
+0x0023de64 int32_t sub_23de64(BaseMenuState* arg1)
 0x0023e1d0 int32_t data_23e1d0
 0x0023e1d4 int32_t data_23e1d4
 0x0023e1d8 void* data_23e1d8
@@ -14207,10 +14202,10 @@
 0x0023e208 void sub_23e208(void* arg1 @ r4)
 0x0023e28c int32_t data_23e28c
 0x0023e290 int32_t data_23e290
-0x0023e294 int32_t sub_23e294(void*** arg1)
-0x0023e2ac int32_t sub_23e2ac(void*** arg1)
+0x0023e294 int32_t sub_23e294(State_VTable** arg1)
+0x0023e2ac int32_t sub_23e2ac(State_VTable** arg1)
 0x0023e3e4 void* data_23e3e4
-0x0023e3e8 int32_t sub_23e3e8(void*** arg1 @ r4)
+0x0023e3e8 int32_t sub_23e3e8(State_VTable** arg1 @ r4)
 0x0023e404 void sub_23e404(int32_t* arg1)
 0x0023e410 int32_t data_23e410
 0x0023e414 int32_t j_delete(int32_t* arg1)
@@ -14304,7 +14299,7 @@
 0x0023f524 int32_t data_23f524
 0x0023f528 void* data_23f528
 0x0023f52c void* data_23f52c
-0x0023f530 int32_t sub_23f530(int32_t arg1)
+0x0023f530 uint32_t sub_23f530(int32_t arg1)
 0x0023f768 void* data_23f768
 0x0023f76c int32_t data_23f76c
 0x0023f770 int32_t data_23f770
@@ -14350,19 +14345,19 @@
 0x0023fbdc void sub_23fbdc()
 0x0023fc5c void* data_23fc5c
 0x0023fc60 int32_t data_23fc60
-0x0023fc64 int32_t sub_23fc64(void* arg1)
+0x0023fc64 int32_t sub_23fc64(BaseMenuState* arg1)
 0x0023fcce int32_t sub_23fcce(int32_t arg1, int32_t arg2)
 0x0023fd1c int32_t sub_23fd1c(int32_t arg1, int32_t arg2, int32_t arg3, char* arg4 @ r4, int32_t arg5 @ r7, int32_t arg6 @ r8)
 0x0023fd48 int32_t data_23fd48
-0x0023fd4c int32_t sub_23fd4c(int32_t* arg1)
-0x0023fe54 int32_t sub_23fe54(int32_t arg1, int32_t arg2, int32_t* arg3, void** arg4 @ r5, int32_t arg5 @ r7, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11)
+0x0023fd4c int32_t sub_23fd4c(BaseMenuState* arg1)
+0x0023fe54 int32_t sub_23fe54(int32_t arg1, int32_t arg2, int32_t* arg3, BaseMenu* arg4 @ r5, int32_t arg5 @ r7, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11)
 0x0023fe8c int32_t data_23fe8c
 0x0023fe90 int32_t data_23fe90
 0x0023fe94 void* data_23fe94
 0x0023fe98 int32_t data_23fe98
 0x0023fe9c int32_t data_23fe9c
 0x0023fea0 int32_t data_23fea0
-0x0023fea4 void sub_23fea4(void*** arg1 @ r5)
+0x0023fea4 void sub_23fea4(State_VTable** arg1 @ r5)
 0x0023fedc int32_t data_23fedc
 0x0023fee0 int32_t sub_23fee0(void*** arg1)
 0x0023ff00 void* data_23ff00
@@ -14565,7 +14560,7 @@
 0x00246230 int32_t sub_246230(void* arg1 @ r9, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10)
 0x00246260 int32_t data_246260
 0x00246268 void sub_246268()
-0x00246298 int32_t GameStateManager::draw(void* arg1)
+0x00246298 int32_t GameStateManager::draw(GameStateManager* arg1)
 0x002464e4 void* data_2464e4
 0x002464e8 int32_t data_2464e8
 0x002464ec int32_t data_2464ec
@@ -14624,7 +14619,7 @@
 0x00246acc int32_t data_246acc
 0x00246ad0 int32_t data_246ad0
 0x00246ad4 int32_t sub_246ad4()
-0x00246aec int32_t sub_246aec(void* arg1)
+0x00246aec int32_t sub_246aec(BaseMenuState* arg1)
 0x00246b14 void sub_246b14(void* arg1)
 0x00246b54 int32_t data_246b54
 0x00246b58 int32_t* sub_246b58(int32_t* arg1, int32_t arg2, char* arg3, char* arg4, void* arg5 @ r5, char* arg6)
@@ -14651,7 +14646,7 @@
 0x002478a4 int32_t* sub_2478a4(Texture* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8)
 0x00247938 int32_t data_247938
 0x0024793c void sub_24793c(Texture_VTable** arg1 @ r4)
-0x00247964 Texture* sub_247964(Texture* arg1, void* arg2)
+0x00247964 Texture* sub_247964(Texture* arg1, String* arg2)
 0x00247990 int32_t data_247990
 0x00247994 int32_t sub_247994(Texture_VTable** arg1 @ r4)
 0x002479b8 void* sub_2479b8(void*** arg1)
@@ -14709,11 +14704,11 @@
 0x002481ac void sub_2481ac()
 0x002481c0 int32_t data_2481c0
 0x002481c4 int32_t data_2481c4
-0x002481c8 void** sub_2481c8(int32_t* arg1)
+0x002481c8 BaseMenuState* OptionsMenu::OptionsMenu(BaseMenuState menu @ r0)
 0x002484bc void* data_2484bc
 0x002484c0 int32_t data_2484c0
 0x002484c4 void* data_2484c4
-0x00248518 int32_t sub_248518(void*** arg1 @ r4)
+0x00248518 int32_t sub_248518(State_VTable** arg1 @ r4)
 0x0024854c int32_t sub_24854c(void* arg1, void* arg2)
 0x002485e8 int32_t sub_2485e8()
 0x002485f0 int32_t sub_2485f0(void* arg1, GameStateManager* arg2)
@@ -14833,9 +14828,9 @@
 0x0024a290 int32_t sub_24a290(void*** arg1 @ r4)
 0x0024a2d8 int32_t data_24a2d8
 0x0024a2dc int32_t sub_24a2dc(void*** arg1 @ r4)
-0x0024a2f4 int32_t j_sub_510a0c(void* arg1)
-0x0024a2f8 int32_t j_sub_510b38(void* arg1)
-0x0024a2fc int32_t* sub_24a2fc(int32_t* arg1, int32_t arg2)
+0x0024a2f4 uint32_t j_BaseMenu::Draw2(BaseMenuState* arg1)
+0x0024a2f8 int32_t j_BaseMenuState::Draw(BaseMenuState* menuState)
+0x0024a2fc BaseMenuState* sub_24a2fc(BaseMenuState* arg1, int32_t arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
 0x0024a488 int32_t data_24a488
 0x0024a48c int32_t data_24a48c
 0x0024a490 int32_t data_24a490
@@ -14900,13 +14895,13 @@
 0x0024b88c int32_t data_24b88c
 0x0024b890 void* data_24b890
 0x0024b894 int32_t sub_24b894()
-0x0024b8c0 void** sub_24b8c0(int32_t* arg1)
+0x0024b8c0 BaseMenuState* sub_24b8c0(BaseMenuState* arg1)
 0x0024bc24 void* data_24bc24
 0x0024bc28 int32_t data_24bc28
 0x0024bc2c void* data_24bc2c
 0x0024bc70 int32_t sub_24bc70()
 0x0024bc9c int32_t sub_24bc9c()
-0x0024bcc0 int32_t sub_24bcc0(int32_t* arg1, void*** arg2 @ r4)
+0x0024bcc0 int32_t sub_24bcc0(int32_t* arg1, State_VTable** arg2 @ r4)
 0x0024bce4 void sub_24bce4()
 0x0024bd34 int32_t data_24bd34
 0x0024bd38 void sub_24bd38()
@@ -15016,7 +15011,6 @@
 0x0024e1d4 int32_t data_24e1d4
 0x0024e1d8 int32_t data_24e1d8
 0x0024e1dc void sub_24e1dc()
-0x0024e218 void* sub_24e218(int32_t* arg1)
 0x0024e370 int32_t data_24e370
 0x0024e374 int32_t data_24e374
 0x0024e378 int32_t data_24e378
@@ -15024,11 +15018,11 @@
 0x0024e380 int32_t data_24e380
 0x0024e384 int32_t sub_24e384()
 0x0024e3d0 int32_t data_24e3d0
-0x0024e3d4 int32_t sub_24e3d4(void*** arg1 @ r4)
+0x0024e3d4 int32_t sub_24e3d4(State_VTable** arg1 @ r4)
 0x0024e414 int32_t data_24e414
-0x0024e418 int32_t sub_24e418(void*** arg1 @ r4)
+0x0024e418 int32_t sub_24e418(State_VTable** arg1 @ r4)
 0x0024e4d8 int32_t data_24e4d8
-0x0024e4f0 int32_t* sub_24e4f0(void*** arg1, void** arg2)
+0x0024e4f0 int32_t* InitBackgroundDirt(void*** arg1, BaseMenu* menu, int32_t arg3 @ r4)
 0x0024e640 int32_t data_24e640
 0x0024e644 int32_t data_24e644
 0x0024e648 int32_t data_24e648
@@ -15077,7 +15071,7 @@
 0x0024fa74 int32_t sub_24fa74()
 0x0024fa80 void* sub_24fa80(void*** arg1, void** arg2)
 0x0024fad4 void* data_24fad4
-0x0024faec void* sub_24faec(void*** arg1, void** arg2, int32_t* arg3, int32_t* arg4)
+0x0024faec void* sub_24faec(void*** arg1, BaseMenu* menu, String* str, int32_t* arg4)
 0x0024fc14 void* data_24fc14
 0x0024fc1c int32_t data_24fc1c
 0x0024fc20 void* data_24fc20
@@ -15319,7 +15313,7 @@
 0x002546cc void sub_2546cc()
 0x0025473c int32_t sub_25473c(int32_t, int32_t, int32_t arg3, int32_t arg4 @ r9, int32_t arg5)
 0x00254744 int32_t data_254744
-0x00254748 void* sub_254748(void*** arg1, void** arg2, int32_t arg3)
+0x00254748 void* sub_254748(void*** arg1, BaseMenu* arg2, int32_t arg3)
 0x00254784 int32_t sub_254784(int32_t arg1, int32_t arg2)
 0x0025486c int32_t sub_25486c(int32_t arg1, int32_t arg2, int32_t arg3)
 0x002548a4 int32_t sub_2548a4(int32_t arg1, int32_t arg2, int32_t arg3)
@@ -15369,16 +15363,16 @@
 0x002550c0 void* data_2550c0
 0x002550c4 void* data_2550c4
 0x002550f4 int32_t sub_2550f4(int32_t arg1)
-0x0025510c void** sub_25510c(int32_t* arg1)
+0x0025510c BaseMenuState* sub_25510c(BaseMenuState* arg1)
 0x002551f0 int32_t sub_2551f0(int32_t arg1, int32_t arg2, int32_t arg3)
-0x002551f4 int32_t sub_2551f4(void** arg1 @ r5, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)
+0x002551f4 int32_t sub_2551f4(BaseMenu* arg1 @ r5, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)
 0x00255234 int32_t data_255234
 0x00255238 int32_t data_255238
 0x0025523c int32_t data_25523c
 0x00255240 int32_t data_255240
-0x00255244 void sub_255244(void*** arg1 @ r5)
+0x00255244 void sub_255244(State_VTable** arg1 @ r5)
 0x0025527c int32_t data_25527c
-0x00255280 int32_t sub_255280(void*** arg1)
+0x00255280 int32_t sub_255280(State_VTable** arg1)
 0x00255290 uint32_t sub_255290(void* arg1)
 0x00255340 int32_t data_255340
 0x00255344 int32_t data_255344
@@ -15396,7 +15390,7 @@
 0x0025569c int32_t data_25569c
 0x002556a0 void* data_2556a0
 0x002556b8 int32_t data_2556b8
-0x002556bc void** sub_2556bc(void*** arg1, void** arg2)
+0x002556bc void** sub_2556bc(void*** arg1, BaseMenu* arg2, int32_t arg3 @ r4)
 0x00255704 int32_t sub_255704(int32_t arg1)
 0x00255810 int32_t data_255810
 0x00255814 int32_t data_255814
@@ -15573,7 +15567,7 @@
 0x0025811c void sub_25811c()
 0x00258120 void sub_258120()
 0x00258234 int32_t sub_258234()
-0x00258250 void** sub_258250(int32_t* arg1)
+0x00258250 BaseMenuState* sub_258250(BaseMenuState* arg1)
 0x00258628 int32_t data_258628
 0x0025862c int32_t data_25862c
 0x00258630 int32_t data_258630
@@ -15586,10 +15580,10 @@
 0x00258818 void sub_258818()
 0x0025882c void sub_25882c()
 0x00258834 void sub_258834()
-0x00258848 void sub_258848(void*** arg1 @ r4)
+0x00258848 void sub_258848(State_VTable** arg1 @ r4)
 0x002588b4 void sub_2588b4()
 0x002588d8 int32_t data_2588d8
-0x002588dc int32_t sub_2588dc(void*** arg1)
+0x002588dc int32_t sub_2588dc(State_VTable** arg1)
 0x002588ec void ReleaseNPC(s32 X, s32 Y, s32 npcId, u32 style, s32 who)
 0x002589d0 void* data_2589d0
 0x002589d4 void* data_2589d4
@@ -16404,7 +16398,7 @@
 0x00267b40 int32_t sub_267b40()
 0x00267b64 int32_t sub_267b64()
 0x00267b70 int32_t sub_267b70()
-0x00267b84 void* sub_267b84(int32_t* arg1)
+0x00267b84 void* sub_267b84(BaseMenuState* arg1)
 0x00267d68 int32_t data_267d68
 0x00267d6c int32_t data_267d6c
 0x00267d70 void* data_267d70
@@ -16414,7 +16408,7 @@
 0x00267d80 void sub_267d80(void* arg1 @ r6)
 0x00267db0 void sub_267db0()
 0x00267dc4 void sub_267dc4(void* arg1 @ r4)
-0x00267ddc void sub_267ddc(void*** arg1 @ r5)
+0x00267ddc void sub_267ddc(State_VTable** arg1 @ r5)
 0x00267de4 void sub_267de4()
 0x00267e08 int32_t sub_267e08(void*** arg1)
 0x00267e20 int32_t sub_267e20(void*** arg1)
@@ -16438,7 +16432,7 @@
 0x0026817c int32_t sub_26817c(void* arg1)
 0x00268190 int32_t sub_268190(void* arg1)
 0x002681a8 int32_t sub_2681a8(int32_t* arg1)
-0x002681d0 int32_t sub_2681d0(void* arg1)
+0x002681d0 int32_t O::Runnable::IsDoneOrInterupted(void* arg1)
 0x002681e4 int32_t sub_2681e4(char** arg1)
 0x0026826c int32_t data_26826c
 0x00268270 void sub_268270(void* arg1, char arg2)
@@ -16541,7 +16535,7 @@
 0x0026b8f0 int32_t data_26b8f0
 0x0026b8f4 uint32_t sub_26b8f4(void* arg1)
 0x0026b94c void* sub_26b94c(int32_t arg1, int32_t* arg2, int32_t* arg3)
-0x0026ba00 uint32_t sub_26ba00(void* arg1, int32_t arg2)
+0x0026ba00 uint32_t ControllerFlowScheme::move(void* arg1, int32_t arg2)
 0x0026ba6c void* sub_26ba6c(void*** arg1, int32_t* arg2)
 0x0026bad8 void* data_26bad8
 0x0026badc int32_t sub_26badc(void* arg1 @ r4)
@@ -16582,7 +16576,7 @@
 0x0026c650 int32_t sub_26c650()
 0x0026c664 int32_t sub_26c664()
 0x0026c674 int32_t sub_26c674()
-0x0026c6ac void** sub_26c6ac(int32_t* arg1)
+0x0026c6ac BaseMenuState* sub_26c6ac(BaseMenuState* arg1)
 0x0026c834 int32_t data_26c834
 0x0026c838 int32_t data_26c838
 0x0026c83c int32_t data_26c83c
@@ -16592,11 +16586,11 @@
 0x0026c84c int32_t data_26c84c
 0x0026c850 int32_t data_26c850
 0x0026c854 void sub_26c854()
-0x0026c86c void sub_26c86c(void*** arg1 @ r5)
+0x0026c86c void sub_26c86c(State_VTable** arg1 @ r5)
 0x0026c880 void sub_26c880()
 0x0026c8a4 int32_t data_26c8a4
 0x0026c8a8 int32_t data_26c8a8
-0x0026c8ac int32_t sub_26c8ac(void*** arg1)
+0x0026c8ac int32_t sub_26c8ac(State_VTable** arg1)
 0x0026c8bc int32_t sub_26c8bc(int32_t arg1, int32_t arg2, int32_t arg3, s32 arg4, int32_t arg5 @ r4, int32_t arg6 @ r5)
 0x0026c964 int32_t sub_26c964(int32_t arg1, int32_t arg2, int32_t arg3, char arg4, s32 arg5)
 0x0026ca18 String* sub_26ca18(int32_t arg1, int32_t arg2, char arg3, String* arg4, int32_t arg5 @ r4)
@@ -16764,13 +16758,13 @@
 0x00270b18 int32_t sub_270b18()
 0x00270b28 int32_t sub_270b28()
 0x00270b30 int32_t sub_270b30(int32_t arg1)
-0x00270b40 void* sub_270b40(void*** arg1, void** arg2)
+0x00270b40 void* sub_270b40(void*** arg1, BaseMenu* arg2)
 0x00270cdc int32_t data_270cdc
 0x00270ce0 int32_t data_270ce0
 0x00270ce4 void* data_270ce4
 0x00270ce8 void* data_270ce8
 0x00270cec int32_t data_270cec
-0x00270d0c void* sub_270d0c(void*** arg1, void** arg2, int32_t* arg3)
+0x00270d0c void* sub_270d0c(void*** arg1, BaseMenu* arg2, int32_t* arg3)
 0x00270e90 int32_t data_270e90
 0x00270e94 int32_t data_270e94
 0x00270e98 void* data_270e98
@@ -16823,13 +16817,13 @@
 0x0027139c int32_t data_27139c
 0x002713a0 void* data_2713a0
 0x002713a4 int32_t sub_2713a4()
-0x002713d0 void** sub_2713d0(int32_t* arg1)
+0x002713d0 BaseMenuState* sub_2713d0(BaseMenuState* arg1)
 0x002717ec void* data_2717ec
 0x002717f0 int32_t data_2717f0
 0x002717f4 void* data_2717f4
 0x0027183c void* data_27183c
-0x00271848 void sub_271848(void*** arg1 @ r4)
-0x002718cc int32_t sub_2718cc(void*** arg1)
+0x00271848 void sub_271848(State_VTable** arg1 @ r4)
+0x002718cc int32_t sub_2718cc(State_VTable** arg1)
 0x002718dc int32_t sub_2718dc(void* arg1, char arg2)
 0x002718e8 uint32_t sub_2718e8(void* arg1)
 0x00271c00 int32_t data_271c00
@@ -16863,7 +16857,7 @@
 0x00272710 int32_t sub_272710()
 0x00272718 int32_t sub_272718()
 0x00272728 int32_t sub_272728()
-0x00272730 void* sub_272730(void*** arg1, void** arg2)
+0x00272730 void* sub_272730(void*** arg1, BaseMenu* arg2)
 0x002728ec int32_t data_2728ec
 0x002728f0 void* data_2728f0
 0x002728f4 int32_t data_2728f4
@@ -17023,12 +17017,12 @@
 0x002761bc void sub_2761bc()
 0x002761d8 void sub_2761d8()
 0x002761e4 void sub_2761e4()
-0x00276240 int32_t sub_276240(void* arg1)
+0x00276240 int32_t sub_276240(BaseMenuState* arg1)
 0x0027629c int32_t sub_27629c(void* arg1, int32_t arg2)
 0x002762d0 void* sub_2762d0(void* arg1)
 0x00276444 void* data_276444
-0x0027645c void** sub_27645c(int32_t* arg1)
-0x00276694 int32_t sub_276694(void** arg1 @ r4, void*** arg2 @ r6, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8)
+0x0027645c BaseMenu* sub_27645c(BaseMenuState* arg1)
+0x00276694 int32_t sub_276694(BaseMenu* arg1 @ r4, void*** arg2 @ r6, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8)
 0x00276700 int32_t data_276700
 0x00276704 int32_t data_276704
 0x00276708 void* data_276708
@@ -17037,7 +17031,7 @@
 0x00276714 int32_t data_276714
 0x00276718 int32_t data_276718
 0x0027671c int32_t data_27671c
-0x00276720 void sub_276720(void* arg1 @ r4, void*** arg2 @ r6)
+0x00276720 void sub_276720(void* arg1 @ r4, State_VTable** arg2 @ r6)
 0x002767ac int32_t data_2767ac
 0x002767b0 int32_t data_2767b0
 0x002767b4 int32_t sub_2767b4(void** arg1)
@@ -17079,7 +17073,7 @@
 0x002771e8 void* data_2771e8
 0x002771ec void* data_2771ec
 0x00277204 int32_t data_277204
-0x00277208 uint32_t sub_277208(void* arg1)
+0x00277208 uint32_t sub_277208(BaseMenuState* arg1)
 0x00277288 int32_t data_277288
 0x0027728c int32_t data_27728c
 0x00277290 int32_t data_277290
@@ -17101,7 +17095,7 @@
 0x00277834 int32_t data_277834
 0x00277838 int32_t data_277838
 0x0027783c void sub_27783c()
-0x00277864 void*** sub_277864(int32_t* arg1)
+0x00277864 BaseMenuState* sub_277864(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x002779e8 int32_t data_2779e8
 0x002779ec int32_t data_2779ec
 0x002779f0 void* data_2779f0
@@ -17415,7 +17409,6 @@
 0x0027c810 void* data_27c810
 0x0027c814 void* data_27c814
 0x0027c82c void sub_27c82c()
-0x0027c85c void* sub_27c85c(int32_t* arg1, int32_t arg2, int32_t arg3)
 0x0027c96c int32_t data_27c96c
 0x0027c970 int32_t data_27c970
 0x0027c974 void* data_27c974
@@ -17470,7 +17463,7 @@
 0x0027d5c8 int32_t data_27d5c8
 0x0027d5cc int32_t data_27d5cc
 0x0027d5d0 int32_t data_27d5d0
-0x0027d5ec void*** sub_27d5ec(void*** arg1, void** arg2, int32_t arg3)
+0x0027d5ec void*** sub_27d5ec(void*** arg1, BaseMenu* arg2, int32_t arg3)
 0x0027d75c int32_t data_27d75c
 0x0027d760 int32_t data_27d760
 0x0027d764 void* data_27d764
@@ -17483,7 +17476,7 @@
 0x0027d794 void sub_27d794(void*** arg1 @ r5)
 0x0027d79c void sub_27d79c()
 0x0027d7c0 int32_t data_27d7c0
-0x0027d7c4 void*** sub_27d7c4(void*** arg1, void** arg2, char arg3)
+0x0027d7c4 void*** sub_27d7c4(void*** arg1, BaseMenu* arg2, char arg3)
 0x0027d8e4 int32_t data_27d8e4
 0x0027d8e8 int32_t data_27d8e8
 0x0027d8ec void* data_27d8ec
@@ -17605,7 +17598,7 @@
 0x0027f148 void* data_27f148
 0x0027f14c void* data_27f14c
 0x0027f2c4 void sub_27f2c4(int32_t* arg1 @ r5)
-0x0027f314 void* sub_27f314(void*** arg1, void** arg2)
+0x0027f314 void* sub_27f314(void*** arg1, BaseMenu* arg2)
 0x0027f470 int32_t data_27f470
 0x0027f474 int32_t data_27f474
 0x0027f478 void* data_27f478
@@ -17951,7 +17944,7 @@
 0x00284698 int32_t j_delete(int32_t* arg1)
 0x0028469c int32_t sub_28469c(void* arg1, void* arg2)
 0x002846b4 int32_t sub_2846b4()
-0x002846bc uint8_t* sub_2846bc(void* arg1, GameStateManager* arg2)
+0x002846bc State*** sub_2846bc(void* arg1, GameStateManager* arg2)
 0x00284b74 int32_t j_delete(int32_t* arg1)
 0x00284b78 int32_t sub_284b78(void* arg1, int32_t arg2 @ r4)
 0x00284bb0 int32_t data_284bb0
@@ -17970,7 +17963,7 @@
 0x00285208 void sub_285208()
 0x00285220 void sub_285220()
 0x00285240 void sub_285240()
-0x00285290 int32_t* sub_285290(int32_t* arg1, void* arg2)
+0x00285290 BaseMenuState* sub_285290(BaseMenuState* arg1, uint32_t arg2, int32_t arg3 @ r4)
 0x00285404 int32_t data_285404
 0x00285408 int32_t data_285408
 0x0028540c int32_t data_28540c
@@ -18866,16 +18859,16 @@
 0x002949b4 String* sub_2949b4(String* arg1, String* arg2, int32_t arg3)
 0x00294b68 int32_t data_294b68
 0x00294b6c int32_t data_294b6c
-0x00294b84 void* sub_294b84(void** arg1, void* arg2, int32_t arg3, void* arg4, int32_t arg5 @ r4)
+0x00294b84 void* sub_294b84(int32_t** arg1, void* arg2, int32_t arg3, void* arg4, int32_t arg5 @ r4)
 0x00294cd0 int32_t data_294cd0
 0x00294cd4 int32_t data_294cd4
-0x00294cf4 void* sub_294cf4(void** arg1, void* arg2, void* arg3, void* arg4)
+0x00294cf4 void* sub_294cf4(int32_t** arg1, void* arg2, void* arg3, void* arg4)
 0x00294d4c char* sub_294d4c(int32_t* arg1, int32_t arg2, int32_t arg3)
 0x00294d7c void sub_294d7c(char** arg1, int32_t arg2)
 0x00294dec int32_t sub_294dec(int32_t* arg1, int32_t arg2, int32_t arg3)
 0x00294e58 int32_t* sub_294e58(int32_t* arg1)
-0x00294e74 int32_t sub_294e74(void** arg1, int32_t arg2, int32_t* arg3, int32_t arg4 @ r4)
-0x00294f70 int32_t sub_294f70(void** arg1, int32_t arg2, String* arg3, int32_t arg4 @ r4, int32_t arg5 @ r5)
+0x00294e74 int32_t sub_294e74(int32_t** arg1, int32_t arg2, int32_t* arg3, int32_t arg4 @ r4)
+0x00294f70 int32_t sub_294f70(int32_t** arg1, int32_t arg2, String* arg3, int32_t arg4 @ r4, int32_t arg5 @ r5)
 0x00295278 uint32_t sub_295278(int32_t arg1)
 0x002952c4 void* data_2952c4
 0x002952c8 void* data_2952c8
@@ -18966,7 +18959,7 @@
 0x002975e0 void* data_2975e0
 0x00297664 void* data_297664
 0x002976e0 void* data_2976e0
-0x002976e4 uint32_t sub_2976e4(void* arg1, int32_t arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
+0x002976e4 uint32_t sub_2976e4(void* arg1, int32_t arg2, BaseMenuState* menuState @ r4, int32_t arg4 @ r5)
 0x00297828 int32_t data_297828
 0x0029782c void* data_29782c
 0x00297830 void* data_297830
@@ -18978,7 +18971,7 @@
 0x00297b94 void* data_297b94
 0x00297b98 int32_t data_297b98
 0x00297c80 int32_t data_297c80
-0x00297c84 int32_t UI::DrawInterface(void* arg1)
+0x00297c84 void UI::DrawInterface(void* arg1)
 0x0029806c int32_t data_29806c
 0x00298070 int32_t data_298070
 0x00298074 void* data_298074
@@ -19038,7 +19031,6 @@
 0x002991e4 void* data_2991e4
 0x00299210 int32_t data_299210
 0x00299214 int32_t data_299214
-0x0029921c int32_t sub_29921c(int32_t arg1, int32_t arg2)
 0x00299240 int32_t UI::DrawStringScaled(String* arg1, Vector2* arg2, Colour arg3, void* arg4)
 0x00299284 int32_t data_299284
 0x00299288 void* data_299288
@@ -19220,7 +19212,7 @@
 0x0029d2bc void* data_29d2bc
 0x0029d2f8 int32_t data_29d2f8
 0x0029d2fc int32_t data_29d2fc
-0x0029d304 int32_t UI::Draw(int32_t arg1)
+0x0029d304 int32_t UI::Draw(BaseMenuState* arg1)
 0x0029d360 void* data_29d360
 0x0029d364 int32_t sub_29d364(void* arg1, void* arg2, int32_t arg3 @ r4)
 0x0029d3a8 int32_t data_29d3a8
@@ -24842,10 +24834,10 @@
 0x002fd4a8 void* data_2fd4a8
 0x002fd4ac int32_t* sub_2fd4ac(void* arg1, int32_t* arg2)
 0x002fd528 char* sub_2fd528(char* arg1, char* arg2, u32 arg3, void* arg4)
-0x002fd534 void sub_2fd534(void** arg1)
+0x002fd534 void sub_2fd534(int32_t** arg1)
 0x002fd540 int32_t data_2fd540
 0x002fd544 int32_t sub_2fd544(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)
-0x002fd558 void** sub_2fd558(void** arg1, String* str2)
+0x002fd558 String* EE::String::operator=2(String* str1, String* str2)
 0x002fd594 char* sub_2fd594(int32_t arg1, char* arg2)
 0x002fd5a4 int32_t data_2fd5a4
 0x002fd5a8 int32_t sub_2fd5a8(void* arg1, int32_t arg2)
@@ -29550,7 +29542,7 @@
 0x0036e058 void* data_36e058
 0x0036e05c void* data_36e05c
 0x0036e148 void* data_36e148
-0x0036e14c uint32_t sub_36e14c(void* arg1, int32_t arg2, int32_t arg3)
+0x0036e14c uint32_t sub_36e14c(void* arg1, u32 arg2, int32_t arg3)
 0x0036e3ac int32_t data_36e3ac
 0x0036e3b0 int32_t data_36e3b0
 0x0036e3b4 int32_t data_36e3b4
@@ -33377,14 +33369,14 @@
 0x003ca630 void* data_3ca630
 0x003ca634 int32_t sub_3ca634(String* arg1)
 0x003ca63c void* data_3ca63c
-0x003ca640 int32_t sub_3ca640(void** arg1, s32 arg2)
+0x003ca640 int32_t sub_3ca640(int32_t** arg1, s32 arg2)
 0x003ca6d4 void sub_3ca6d4()
-0x003ca700 void* sub_3ca700(void** arg1, int32_t arg2)
+0x003ca700 void* sub_3ca700(int32_t** arg1, int32_t arg2)
 0x003ca8e8 void* data_3ca8e8
 0x003ca8f8 int32_t data_3ca8f8
 0x003ca90c int32_t data_3ca90c
 0x003ca934 void sub_3ca934()
-0x003ca9d4 int32_t sub_3ca9d4(void** arg1, s32 arg2, void* arg3, int32_t arg4 @ r4)
+0x003ca9d4 int32_t sub_3ca9d4(int32_t** arg1, s32 arg2, void* arg3, int32_t arg4 @ r4)
 0x003cb228 void sub_3cb228()
 0x003cb234 void sub_3cb234(String* arg1 @ r7)
 0x003cb270 void sub_3cb270()
@@ -33393,7 +33385,7 @@
 0x003cb294 void sub_3cb294()
 0x003cb2a8 void sub_3cb2a8()
 0x003cb344 void sub_3cb344()
-0x003cb378 int32_t sub_3cb378(void** arg1, Item* item)
+0x003cb378 int32_t Lang::itemAffixName(int32_t** arg1, Item* item)
 0x003cb7d0 int32_t sub_3cb7d0()
 0x003cb804 int32_t sub_3cb804(String* arg1 @ r6)
 0x003cb82c int32_t sub_3cb82c()
@@ -33401,7 +33393,7 @@
 0x003cb874 int32_t sub_3cb874()
 0x003cb88c int32_t sub_3cb88c()
 0x003cb8a8 int32_t sub_3cb8a8(String* arg1)
-0x003cb904 int32_t j_EE::String::Null(void** arg1)
+0x003cb904 int32_t j_EE::String::Null(int32_t** arg1)
 0x003cb908 int32_t sub_3cb908(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r4, void* arg6)
 0x003cbd0c int32_t data_3cbd0c
 0x003cbd2c void* data_3cbd2c
@@ -33428,17 +33420,17 @@
 0x003ccd74 int32_t sub_3ccd74()
 0x003ccd90 int32_t sub_3ccd90(String* arg1)
 0x003ccdf8 int32_t sub_3ccdf8()
-0x003ccea0 int32_t sub_3ccea0(void** arg1, s32 arg2)
+0x003ccea0 int32_t sub_3ccea0(int32_t** arg1, s32 arg2)
 0x003ccf34 void* data_3ccf34
 0x003ccf38 int32_t sub_3ccf38()
 0x003ccf64 int32_t* sub_3ccf64(int32_t* arg1, String* arg2)
 0x003cd364 void* data_3cd364
 0x003cdc34 int32_t sub_3cdc34()
-0x003cdc88 int32_t sub_3cdc88(void** arg1, Player* arg2, s32 arg3, int32_t arg4 @ r4)
+0x003cdc88 int32_t sub_3cdc88(int32_t** arg1, Player* arg2, s32 arg3, int32_t arg4 @ r4)
 0x003cdd60 void sub_3cdd60()
 0x003cdd9c int32_t Lang::IsRomanAlphabet()
 0x003cde24 int32_t data_3cde24
-0x003cde3c int32_t sub_3cde3c(void** arg1)
+0x003cde3c int32_t sub_3cde3c(int32_t** arg1)
 0x003cdfe4 void* data_3cdfe4
 0x003cdfe8 int32_t data_3cdfe8
 0x003cdfec int32_t data_3cdfec
@@ -33495,7 +33487,7 @@
 0x003cf124 void* data_3cf124
 0x003cf128 int32_t sub_3cf128(String* arg1)
 0x003cf130 void* data_3cf130
-0x003cf134 int32_t sub_3cf134(void** arg1, Player* player, s32 arg3, int32_t arg4 @ r4, int32_t arg5 @ r5)
+0x003cf134 int32_t sub_3cf134(int32_t** arg1, Player* player, s32 arg3, int32_t arg4 @ r4, int32_t arg5 @ r5)
 0x003cf144 int32_t sub_3cf144()
 0x003cf238 void sub_3cf238()
 0x003cf288 int32_t sub_3cf288(String* arg1)
@@ -33504,7 +33496,7 @@
 0x003cf29c void* data_3cf29c
 0x003cf2a0 int32_t sub_3cf2a0(String* arg1)
 0x003cf2a8 void* data_3cf2a8
-0x003cf2ac int32_t sub_3cf2ac(void** arg1, s32 arg2, int32_t arg3 @ r4)
+0x003cf2ac int32_t sub_3cf2ac(int32_t** arg1, s32 arg2, int32_t arg3 @ r4)
 0x003cf33c int32_t sub_3cf33c()
 0x003cf368 int32_t Lang::setLang(int32_t arg1)
 0x003cf48a int32_t j_sub_3cf7ce()
@@ -33544,12 +33536,12 @@
 0x003d07dc void sub_3d07dc()
 0x003d07f0 void sub_3d07f0()
 0x003d07fc void sub_3d07fc()
-0x003d080c int32_t sub_3d080c(void** arg1, s32 arg2, int32_t arg3 @ r4)
+0x003d080c int32_t sub_3d080c(int32_t** arg1, s32 arg2, int32_t arg3 @ r4)
 0x003d09a4 void sub_3d09a4()
-0x003d0a00 int32_t sub_3d0a00(void** arg1, s32 arg2, int32_t arg3 @ r4)
+0x003d0a00 int32_t sub_3d0a00(int32_t** arg1, s32 arg2, int32_t arg3 @ r4)
 0x003d0ac4 void sub_3d0ac4()
 0x003d0b00 int32_t sub_3d0b00(char arg1, int32_t arg2, int16_t arg3, int32_t arg4, int32_t arg5)
-0x003d0b44 void* sub_3d0b44(void** arg1)
+0x003d0b44 void* sub_3d0b44(int32_t** arg1)
 0x003d0f38 void* data_3d0f38
 0x003d0f3c void* data_3d0f3c
 0x003d0f88 int32_t data_3d0f88
@@ -33562,14 +33554,14 @@
 0x003d10ec int32_t sub_3d10ec(String* str, Item* item)
 0x003d10f4 int32_t sub_3d10f4(String* str, s32 itemId, int32_t arg3 @ r4, int32_t arg4 @ r5)
 0x003d1464 void sub_3d1464(String* arg1 @ r4)
-0x003d14e0 int32_t sub_3d14e0(void** arg1, s32 arg2, int32_t arg3 @ r4)
+0x003d14e0 int32_t sub_3d14e0(int32_t** arg1, s32 arg2, int32_t arg3 @ r4)
 0x003d156c void sub_3d156c()
-0x003d1598 int32_t sub_3d1598(void** arg1, s32 arg2)
+0x003d1598 int32_t sub_3d1598(int32_t** arg1, s32 arg2)
 0x003d1628 void sub_3d1628()
-0x003d1654 int32_t sub_3d1654(void** arg1, s32 arg2, int32_t arg3 @ r4)
+0x003d1654 int32_t sub_3d1654(int32_t** arg1, s32 arg2, int32_t arg3 @ r4)
 0x003d17f0 void sub_3d17f0()
 0x003d183c void sub_3d183c()
-0x003d184c int32_t sub_3d184c(void** arg1, s32 arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
+0x003d184c int32_t sub_3d184c(int32_t** arg1, s32 arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)
 0x003d19f4 int32_t data_3d19f4
 0x003d19f8 int32_t data_3d19f8
 0x003d19fc int32_t data_3d19fc
@@ -33583,7 +33575,7 @@
 0x003d1a3c void sub_3d1a3c()
 0x003d1a88 int32_t data_3d1a88
 0x003d1a8c void* data_3d1a8c
-0x003d1a90 int32_t sub_3d1a90(String* arg1, int32_t* arg2)
+0x003d1a90 int32_t Lang::getGender(String* arg1, int32_t* arg2)
 0x003d1db8 void* data_3d1db8
 0x003d1ddc int32_t data_3d1ddc
 0x003d1de0 int32_t data_3d1de0
@@ -34121,7 +34113,7 @@
 0x003dce44 void* data_3dce44
 0x003dce48 int32_t data_3dce48
 0x003dce4c int32_t Main::Main_2()
-0x003dce64 void** Main::Main(void** arg1)
+0x003dce64 Main* Main::Main(Main* main)
 0x003dd198 void* data_3dd198
 0x003dd19c int32_t data_3dd19c
 0x003dd1b0 void* data_3dd1b0
@@ -34141,7 +34133,7 @@
 0x003dd238 int32_t sub_3dd238()
 0x003dd24c int32_t sub_3dd24c()
 0x003dd270 int32_t sub_3dd270(int32_t arg1 @ r4)
-0x003dd27c int32_t sub_3dd27c()
+0x003dd27c int32_t Main::~Main()
 0x003dd298 void* data_3dd298
 0x003dd29c int32_t sub_3dd29c()
 0x003dd2c4 int32_t sub_3dd2c4(int32_t* arg1, void* arg2)
@@ -34655,7 +34647,7 @@
 0x003e57ac void* data_3e57ac
 0x003e57b0 int32_t sub_3e57b0(void* arg1)
 0x003e5858 int32_t data_3e5858
-0x003e585c void sub_3e585c(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
+0x003e585c void Tile::kill(Tile* t, int32_t arg2, int32_t arg3, int32_t arg4)
 0x003e58dc void* data_3e58dc
 0x003e58e0 int32_t sub_3e58e0(int32_t arg1, int32_t arg2)
 0x003e58f8 void* data_3e58f8
@@ -36108,10 +36100,10 @@
 0x0040091c int32_t data_40091c
 0x00400920 int32_t sub_400920(int32_t arg1)
 0x00400938 int32_t sub_400938(int32_t* arg1 @ r4)
-0x00400964 int32_t sub_400964()
+0x00400964 int32_t State::HandleInput()
 0x00400968 int32_t sub_400968()
 0x00400970 int32_t sub_400970()
-0x00400974 int32_t sub_400974()
+0x00400974 int32_t State::GetStateFlags()
 0x0040097c int32_t sub_40097c()
 0x00400980 int32_t sub_400980()
 0x00400984 uint32_t sub_400984(int32_t* arg1)
@@ -36121,7 +36113,7 @@
 0x004009c0 int32_t j_delete(int32_t* arg1)
 0x004009c4 void* sub_4009c4(void* arg1, int32_t* arg2)
 0x00400cf8 void sub_400cf8(void* arg1)
-0x00400d54 int32_t sub_400d54(void** arg1, void* arg2)
+0x00400d54 int32_t sub_400d54(int32_t** arg1, void* arg2)
 0x00400f30 int32_t data_400f30
 0x00400f34 int32_t data_400f34
 0x00400f40 int32_t sub_400f40()
@@ -36235,7 +36227,7 @@
 0x00402c18 void* data_402c18
 0x00402c1c int32_t sub_402c1c()
 0x00402c2c void* data_402c2c
-0x00402c30 Tile* sub_402c30(int32_t arg1, int32_t arg2)
+0x00402c30 Tile* sub_402c30(u32 arg1, int32_t arg2)
 0x00402f64 void* data_402f64
 0x00402f68 void* data_402f68
 0x00402f6c void* data_402f6c
@@ -36294,7 +36286,7 @@
 0x00405674 int32_t data_405674
 0x00405b78 int32_t data_405b78
 0x00405b7c int32_t data_405b7c
-0x00405be8 void sub_405be8(int32_t arg1, int32_t arg2)
+0x00405be8 void sub_405be8(u32 arg1, int32_t arg2)
 0x00405e78 void* data_405e78
 0x00405e7c void* data_405e7c
 0x00405e80 void* data_405e80
@@ -36315,7 +36307,7 @@
 0x004062f4 void* data_4062f4
 0x004062f8 void* data_4062f8
 0x004062fc void* data_4062fc
-0x00406300 void* sub_406300(int32_t arg1, int32_t arg2)
+0x00406300 void* sub_406300(u32 arg1, int32_t arg2)
 0x004066e0 void* data_4066e0
 0x004066e4 void* data_4066e4
 0x004066e8 void* data_4066e8
@@ -36376,7 +36368,7 @@
 0x004083c0 void* data_4083c0
 0x004083c4 int32_t data_4083c4
 0x004083d0 void* sub_4083d0(void* arg1, int16_t arg2)
-0x004083dc void* sub_4083dc(void* arg1, void* arg2, void* arg3)
+0x004083dc void* Player::UsePickaxe(Player* player, Item* item, void* arg3)
 0x00408718 int32_t data_408718
 0x0040871c void* data_40871c
 0x00408720 int32_t data_408720
@@ -37016,7 +37008,7 @@
 0x0041c448 int32_t data_41c448
 0x0041c44c int32_t data_41c44c
 0x0041c450 int32_t data_41c450
-0x0041c468 int32_t sub_41c468(void* arg1, int32_t arg2 @ r9, int32_t arg3, int32_t arg4)
+0x0041c468 int32_t sub_41c468(Player* arg1, int32_t arg2 @ r9, int32_t arg3, int32_t arg4)
 0x0041c900 int32_t data_41c900
 0x0041c904 void* data_41c904
 0x0041c908 int32_t data_41c908
@@ -37114,7 +37106,7 @@
 0x0041eae8 void* data_41eae8
 0x0041eaec int32_t data_41eaec
 0x0041eaf0 int32_t data_41eaf0
-0x0041eb10 u32 sub_41eb10(void* arg1, int32_t* arg2, int32_t arg3)
+0x0041eb10 uint32_t sub_41eb10(void* arg1, int32_t* arg2, int32_t arg3)
 0x0041edd4 void* data_41edd4
 0x0041edd8 int32_t data_41edd8
 0x0041eddc int32_t data_41eddc
@@ -37620,7 +37612,7 @@
 0x0042a124 int32_t sub_42a124(int32_t arg1, int32_t arg2)
 0x0042a158 uint32_t jump_table_42a158[0x9]
 0x0042a1b8 uint32_t jump_table_42a1b8[0x8]
-0x0042a350 int32_t sub_42a350(void* arg1, void* arg2, int32_t arg3, int32_t arg4)
+0x0042a350 int32_t sub_42a350(void* arg1, void* arg2, u32 arg3, u32 arg4)
 0x0042a560 void* data_42a560
 0x0042a564 int32_t data_42a564
 0x0042a568 int32_t data_42a568
@@ -37640,8 +37632,8 @@
 0x0042ab7c void* data_42ab7c
 0x0042ab80 int32_t data_42ab80
 0x0042ab84 int32_t data_42ab84
-0x0042ab9c int32_t sub_42ab9c(void* arg1)
-0x0042ac10 int32_t sub_42ac10(void* arg1, int32_t arg2)
+0x0042ab9c int32_t Player::GetCurrentlyMinedTileDamage(Player* player)
+0x0042ac10 int32_t Player::SetCurrentlyMinedTileDamage(void* arg1, int32_t arg2)
 0x0042ac68 int32_t sub_42ac68(void* arg1, int32_t arg2 @ q1)
 0x0042ad14 int32_t data_42ad14
 0x0042ad18 void* data_42ad18
@@ -37750,7 +37742,7 @@
 0x0042d5a8 void sub_42d5a8()
 0x0042d5b8 void sub_42d5b8()
 0x0042d5d4 int32_t data_42d5d4
-0x0042d5d8 uint32_t sub_42d5d8(void* arg1, float arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+0x0042d5d8 uint32_t Player::Hurt(Player* arg1, float arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x0042d9d4 void* data_42d9d4
 0x0042d9d8 void* data_42d9d8
 0x0042d9dc int32_t data_42d9dc
@@ -37821,7 +37813,7 @@
 0x0042fdf8 int32_t data_42fdf8
 0x0042fdfc int32_t data_42fdfc
 0x0042fe00 int32_t data_42fe00
-0x0042fe14 void sub_42fe14_KillMe(void* item, int32_t arg2 @ r7, int32_t arg3 @ r11, int32_t arg4, int32_t arg5, int64_t arg6)
+0x0042fe14 void Player::KillMe(Player* player_1, int32_t arg2 @ r7, int32_t arg3 @ r11, int32_t arg4, int32_t arg5, int64_t arg6)
 0x00430274 void* data_430274
 0x00430278 void* data_430278
 0x0043027c int32_t data_43027c
@@ -37916,7 +37908,7 @@
 0x00433efc int32_t data_433efc
 0x00433f00 int32_t data_433f00
 0x00433f68 int32_t data_433f68
-0x00433f6c int16_t sub_433f6c(void* arg1)
+0x00433f6c int16_t sub_433f6c(Player* arg1)
 0x00434148 int32_t data_434148
 0x0043414c int32_t data_43414c
 0x00434150 int32_t data_434150
@@ -38852,7 +38844,7 @@
 0x0045b9a0 int32_t data_45b9a0
 0x0045b9a4 int32_t sub_45b9a4(int32_t arg1 @ r4)
 0x0045b9e4 int32_t Sprite::SetTexture2(Sprite* sprite, Texture* texture)
-0x0045ba54 int32_t Sprite::SetTexture(int32_t* arg1, int32_t* arg2)
+0x0045ba54 int32_t Sprite::SetTexture(Sprite* sprite, String* str)
 0x0045bbcc int32_t data_45bbcc
 0x0045bbd0 int32_t data_45bbd0
 0x0045bbd4 int32_t sub_45bbd4()
@@ -38880,7 +38872,7 @@
 0x0045c210 void sub_45c210(int32_t* arg1, void* arg2)
 0x0045c21c int32_t sub_45c21c(int32_t* arg1, int32_t* arg2, int32_t arg3 @ q1)
 0x0045c26c void sub_45c26c(int32_t* arg1, int32_t* arg2, char arg3, int128_t arg4 @ q0)
-0x0045c314 void sub_45c314(Sprite* arg1, char* arg2)
+0x0045c314 void BaseDrawable::setColor2(Sprite* arg1, char* arg2)
 0x0045c364 int32_t sub_45c364(int32_t* arg1)
 0x0045c3ec int32_t sub_45c3ec()
 0x0045c428 void sub_45c428(void* arg1, int32_t* arg2)
@@ -39050,7 +39042,7 @@
 0x00460930 void sub_460930()
 0x00460974 void sub_460974()
 0x00460990 int32_t data_460990
-0x00460994 void sub_460994(int32_t arg1)
+0x00460994 void Widget::PlayClickSound(int32_t arg1)
 0x004609c8 void* data_4609c8
 0x004609cc void sub_4609cc(void* arg1)
 0x004609d8 void sub_4609d8(void* arg1)
@@ -39659,7 +39651,7 @@
 0x00470f14 int32_t data_470f14
 0x00470f18 void* data_470f18
 0x00470f1c int32_t sub_470f1c(int32_t arg1 @ r8)
-0x00470f40 uint32_t sub_470f40(void* arg1, int32_t arg2, u32 iconType, int32_t arg4)
+0x00470f40 uint32_t sub_470f40(void* arg1, int32_t arg2, u32 iconType, int32_t arg4, int32_t arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6)
 0x00470f6a int32_t sub_470f6a(int32_t arg1, int32_t arg2, int32_t arg3)
 0x00470fa2 int32_t j_j_sub_4703e0(int32_t arg1, int32_t arg2, int32_t arg3)
 0x004711b0 int32_t data_4711b0
@@ -39710,7 +39702,7 @@
 0x00471d88 int32_t sub_471d88()
 0x00471dac int32_t data_471dac
 0x00471db0 void sub_471db0(void* arg1)
-0x00471dd8 void* sub_471dd8(void*** arg1, void** arg2)
+0x00471dd8 void* sub_471dd8(void*** arg1, BaseMenu* arg2)
 0x00472190 int32_t data_472190
 0x00472194 int32_t data_472194
 0x00472198 void* data_472198
@@ -40395,7 +40387,7 @@
 0x0047cd28 int32_t* sub_47cd28(int32_t* arg1)
 0x0047cd40 int32_t* sub_47cd40(void* arg1, void* arg2)
 0x0047d49c int32_t sub_47d49c(int32_t arg1 @ r5, void* arg2 @ r6, int32_t arg3 @ r7, int32_t arg4 @ r8, int32_t arg5 @ r9, int32_t arg6 @ r10, int32_t arg7, int32_t arg8)
-0x0047d728 int32_t sub_47d728(int32_t* arg1)
+0x0047d728 int32_t BaseMenu::HandleInput(BaseMenu* arg1)
 0x0047d90c void* data_47d90c
 0x0047d910 int32_t data_47d910
 0x0047d914 int32_t data_47d914
@@ -40412,7 +40404,7 @@
 0x0047dfb0 int32_t sub_47dfb0(void* arg1, int32_t arg2, void* arg3, void* arg4, void* arg5 @ r4, int32_t* arg6 @ r5, int32_t arg7 @ r12, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12)
 0x0047e034 int32_t data_47e034
 0x0047e038 int32_t sub_47e038(void* arg1)
-0x0047e068 int32_t sub_47e068(int32_t* arg1, int32_t arg2, int32_t arg3)
+0x0047e068 int32_t BaseMenu::applyGamepadInput(BaseMenu* menu, int32_t arg2, int32_t arg3)
 0x0047e1a8 void* data_47e1a8
 0x0047e1ac int32_t data_47e1ac
 0x0047e1b0 int32_t data_47e1b0
@@ -40427,33 +40419,33 @@
 0x0047e71c int32_t sub_47e71c(void* arg1, int32_t arg2)
 0x0047e788 int32_t sub_47e788()
 0x0047e7b0 int32_t sub_47e7b0(void* arg1, int32_t arg2)
-0x0047e83c int32_t sub_47e83c(void* arg1)
+0x0047e838 int32_t BaseMenu::WidgetSelectedByController()
+0x0047e83c int32_t BaseMenu::IsControllerMenuTraversalEnabled(BaseMenu* arg1)
 0x0047e8b0 void* data_47e8b0
 0x0047e8b4 int32_t data_47e8b4
 0x0047e8b8 int32_t data_47e8b8
 0x0047e8bc void* data_47e8bc
 0x0047e8d4 void* data_47e8d4
-0x0047e8d8 int32_t sub_47e8d8(void* arg1)
+0x0047e8d8 uint32_t BaseMenu::Draw(BaseMenu* menu)
 0x0047ea10 void* data_47ea10
 0x0047ea14 int32_t data_47ea14
 0x0047ea18 int32_t data_47ea18
 0x0047ea1c void* data_47ea1c
 0x0047ea34 int32_t data_47ea34
-0x0047ea38 int32_t sub_47ea38(void* arg1)
-0x0047ea8c int32_t sub_47ea8c(int32_t* arg1)
-0x0047eb58 int32_t sub_47eb58(void* arg1)
+0x0047ea38 int32_t BaseMenu::Exit(BaseMenu* menu)
+0x0047ea8c int32_t BaseMenu::Enter(BaseMenu* baseManue)
+0x0047eb58 int32_t BaseMenu::Update(void* arg1)
 0x0047ebb0 int32_t sub_47ebb0(void* arg1, void* arg2, int32_t arg3)
 0x0047ec4c int32_t sub_47ec4c(void* arg1 @ r5)
 0x0047ec9c int32_t sub_47ec9c(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)
-0x0047ecec void* sub_47ecec(void*** arg1, int32_t arg2, int32_t* arg3, int32_t arg4)
 0x0047ef28 void* data_47ef28
 0x0047ef2c int32_t data_47ef2c
 0x0047ef30 int32_t data_47ef30
 0x0047ef34 void sub_47ef34(void* arg1 @ r4)
 0x0047ef48 void sub_47ef48(void* arg1 @ r4)
 0x0047efc4 int32_t data_47efc4
-0x0047efc8 int32_t sub_47efc8(void*** arg1)
-0x0047efd8 int32_t sub_47efd8(void*** arg1)
+0x0047efc8 int32_t sub_47efc8(BaseMenu_VTable** arg1)
+0x0047efd8 int32_t sub_47efd8(BaseMenu_VTable** arg1)
 0x0047f1dc void* data_47f1dc
 0x0047f1e0 int32_t data_47f1e0
 0x0047f1e4 int32_t sub_47f1e4(void* arg1 @ r4)
@@ -40712,7 +40704,7 @@
 0x004840d0 int32_t j_sub_510970(void* arg1)
 0x004840d4 int32_t sub_4840d4()
 0x004840dc int32_t j_sub_510af0(void* arg1)
-0x004840e0 int32_t* sub_4840e0(int32_t* arg1)
+0x004840e0 BaseMenuState* sub_4840e0(BaseMenuState* arg1, int32_t arg2 @ r4)
 0x00484238 int32_t data_484238
 0x0048423c int32_t data_48423c
 0x00484240 int32_t data_484240
@@ -41179,21 +41171,21 @@
 0x00490a58 void sub_490a58()
 0x00490a80 int32_t data_490a80
 0x00490a84 int32_t data_490a84
-0x00490a88 void** sub_490a88(int32_t* arg1)
+0x00490a88 BaseMenuState* MainMenu::MainMenu(BaseMenuState* arg1)
 0x00490bac int32_t data_490bac
 0x00490bb0 int32_t data_490bb0
 0x00490bb4 int32_t data_490bb4
 0x00490bb8 int32_t data_490bb8
-0x00490bbc void sub_490bbc(void*** arg1 @ r5)
+0x00490bbc void sub_490bbc(State_VTable** arg1 @ r5)
 0x00490bf4 int32_t data_490bf4
-0x00490bf8 int32_t sub_490bf8(void*** arg1)
+0x00490bf8 int32_t sub_490bf8(State_VTable** arg1)
 0x00490c08 void sub_490c08(void*** arg1, int32_t* arg2, int32_t* arg3, int32_t* arg4, int32_t* arg5, int32_t arg6)
 0x00490c50 void* data_490c50
 0x00490c54 int32_t sub_490c54(void*** arg1)
 0x00490c60 void* data_490c60
 0x00490c64 void sub_490c64(void*** arg1)
 0x00490c70 void* data_490c70
-0x00490c74 int32_t sub_490c74(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+0x00490c74 int32_t sub_490c74(void* arg1, u32 arg2, u32 arg3, int32_t arg4, int32_t arg5)
 0x004911ec void* data_4911ec
 0x004911f0 int32_t sub_4911f0(void* arg1, int32_t arg2, int32_t arg3, int32_t* arg4, int64_t arg5 @ q1, int32_t arg6, int32_t arg7)
 0x00491408 void* data_491408
@@ -41272,7 +41264,7 @@
 0x00493b5c int32_t data_493b5c
 0x00493b60 int32_t data_493b60
 0x00493bdc void* data_493bdc
-0x00493be0 int32_t sub_493be0(int32_t arg1, void* arg2, Vector2* arg3, int32_t* arg4, int32_t arg5)
+0x00493be0 int32_t sub_493be0(int32_t arg1, void* arg2, int32_t* arg3, int32_t* arg4, int32_t arg5)
 0x00493fa4 void* data_493fa4
 0x00493fa8 int32_t data_493fa8
 0x00493fac int32_t data_493fac
@@ -41543,7 +41535,7 @@
 0x0049b764 void* data_49b764
 0x0049b768 void* data_49b768
 0x0049b76c void* data_49b76c
-0x0049b770 int32_t sub_49b770(int32_t arg1, int32_t arg2)
+0x0049b770 int32_t sub_49b770(u32 arg1, u32 arg2)
 0x0049b940 void* data_49b940
 0x0049ba44 void* data_49ba44
 0x0049ba48 void* data_49ba48
@@ -41557,7 +41549,7 @@
 0x0049bdbc void* data_49bdbc
 0x0049bdc0 void* data_49bdc0
 0x0049bdc4 void* data_49bdc4
-0x0049bdc8 uint32_t sub_49bdc8(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+0x0049bdc8 uint32_t sub_49bdc8(int32_t arg1, int32_t arg2, u32 arg3, u32 arg4, int32_t arg5)
 0x0049bf38 void* data_49bf38
 0x0049bf3c void* data_49bf3c
 0x0049bf40 int32_t data_49bf40
@@ -41588,11 +41580,11 @@
 0x0049d6a4 void* data_49d6a4
 0x0049d6a8 int32_t data_49d6a8
 0x0049d6ac int32_t data_49d6ac
-0x0049d6b8 int32_t sub_49d6b8(int32_t arg1, int32_t arg2)
+0x0049d6b8 uint32_t sub_49d6b8(int32_t arg1, int32_t arg2)
 0x0049df00 void* data_49df00
 0x0049df04 void* data_49df04
 0x0049df08 void* data_49df08
-0x0049df0c uint32_t sub_49df0c(int32_t arg1, int32_t arg2)
+0x0049df0c uint32_t sub_49df0c(int32_t arg1, u32 arg2)
 0x0049e3d0 void* data_49e3d0
 0x0049e3d4 void* data_49e3d4
 0x0049e3d8 void* data_49e3d8
@@ -41619,7 +41611,7 @@
 0x0049ee84 void* data_49ee84
 0x0049ee88 void* data_49ee88
 0x0049ee8c void* data_49ee8c
-0x0049ee90 int32_t sub_49ee90(int32_t arg1, int32_t arg2)
+0x0049ee90 int32_t sub_49ee90(u32 arg1, u32 arg2)
 0x0049f0d4 void* data_49f0d4
 0x0049f0d8 void* data_49f0d8
 0x0049f0dc int32_t data_49f0dc
@@ -41809,11 +41801,11 @@
 0x004a4724 int32_t data_4a4724
 0x004a4728 void sub_4a4728(int32_t arg1, int32_t arg2)
 0x004a4790 void* data_4a4790
-0x004a4794 int32_t sub_4a4794(int32_t arg1, int32_t arg2)
+0x004a4794 int32_t sub_4a4794(u32 arg1, u32 arg2)
 0x004a4cd4 void* data_4a4cd4
 0x004a4cd8 void* data_4a4cd8
 0x004a4cdc void* data_4a4cdc
-0x004a4ce0 int32_t sub_4a4ce0(int32_t arg1, int32_t arg2, int32_t arg3)
+0x004a4ce0 int32_t WorldGen::CanKillTile(int32_t arg1, int32_t arg2, int32_t arg3)
 0x004a4e84 void* data_4a4e84
 0x004a4e88 int32_t sub_4a4e88(int32_t arg1, int32_t arg2)
 0x004a4f30 void* data_4a4f30
@@ -41851,7 +41843,7 @@
 0x004a5920 int32_t data_4a5920
 0x004a5924 int32_t data_4a5924
 0x004a5b80 void* data_4a5b80
-0x004a5b8c uint32_t sub_4a5b8c(int32_t arg1, int32_t arg2)
+0x004a5b8c uint32_t sub_4a5b8c(u32 arg1, int32_t arg2)
 0x004a5d34 void* data_4a5d34
 0x004a5d38 void* data_4a5d38
 0x004a5d3c int32_t data_4a5d3c
@@ -41859,7 +41851,7 @@
 0x004a5ee4 void* data_4a5ee4
 0x004a5ee8 void* data_4a5ee8
 0x004a5eec int32_t data_4a5eec
-0x004a5ef0 int32_t sub_4a5ef0(int32_t arg1, int32_t arg2)
+0x004a5ef0 int32_t sub_4a5ef0(u32 arg1, u32 arg2)
 0x004a6134 void* data_4a6134
 0x004a6138 void* data_4a6138
 0x004a613c uint32_t sub_4a613c(int32_t arg1, int32_t arg2, int32_t arg3)
@@ -41868,7 +41860,7 @@
 0x004a641c int32_t data_4a641c
 0x004a6420 int32_t data_4a6420
 0x004a6424 void* data_4a6424
-0x004a6428 int32_t sub_4a6428(int32_t arg1, int32_t arg2)
+0x004a6428 int32_t sub_4a6428(u32 arg1, u32 arg2)
 0x004a6578 void* data_4a6578
 0x004a657c void* data_4a657c
 0x004a6580 int32_t data_4a6580
@@ -41966,7 +41958,7 @@
 0x004a9968 int32_t data_4a9968
 0x004a996c void* data_4a996c
 0x004a9970 void* data_4a9970
-0x004a997c int32_t sub_4a997c(int32_t arg1, int32_t arg2)
+0x004a997c int32_t WorldGen::ExplodeMine(int32_t arg1, u32 arg2)
 0x004a9a04 int32_t data_4a9a04
 0x004a9a08 int32_t data_4a9a08
 0x004a9a0c int32_t sub_4a9a0c(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t* arg4)
@@ -42131,7 +42123,7 @@
 0x004b0694 int32_t data_4b0694
 0x004b0698 void* data_4b0698
 0x004b069c void* data_4b069c
-0x004b0ee4 int32_t sub_4b0ee4(int32_t arg1, int32_t arg2 @ r5, int32_t arg3 @ r6, int16_t* arg4 @ r7, int32_t* arg5 @ r8, int16_t* arg6 @ r9, int32_t* arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)
+0x004b0ee4 int32_t sub_4b0ee4(int32_t arg1, u32 arg2 @ r5, u32 arg3 @ r6, int16_t* arg4 @ r7, int32_t* arg5 @ r8, int16_t* arg6 @ r9, int32_t* arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)
 0x004b1200 void sub_4b1200(char* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 0x004b143c void* data_4b143c
 0x004b1440 void* data_4b1440
@@ -42139,7 +42131,7 @@
 0x004b1448 void* data_4b1448
 0x004b144c void* data_4b144c
 0x004b1450 void* data_4b1450
-0x004b1454 char* sub_4b1454(int32_t arg1, void* arg2, void* arg3 @ r4, int32_t arg4 @ r11, int32_t arg5 @ r12)
+0x004b1454 char* sub_4b1454(u32 arg1, void* arg2, void* arg3 @ r4, int32_t arg4 @ r11, int32_t arg5 @ r12)
 0x004b162c void* data_4b162c
 0x004b1630 int32_t data_4b1630
 0x004b1634 uint32_t sub_4b1634()
@@ -42236,7 +42228,7 @@
 0x004b5034 uint32_t sub_4b5034(int32_t arg1, int32_t arg2)
 0x004b5050 uint32_t sub_4b5050(int32_t arg1, int32_t arg2)
 0x004b506c uint32_t sub_4b506c(int32_t arg1, int32_t arg2)
-0x004b5088 int32_t sub_4b5088(int32_t arg1, int32_t arg2)
+0x004b5088 int32_t sub_4b5088(u32 arg1, u32 arg2)
 0x004b5168 void* data_4b5168
 0x004b516c u16* sub_4b516c()
 0x004b52c0 void* data_4b52c0
@@ -42275,7 +42267,7 @@
 0x004b6258 void* data_4b6258
 0x004b625c void* data_4b625c
 0x004b6260 void* data_4b6260
-0x004b6264 int32_t sub_4b6264(int32_t arg1, int32_t arg2)
+0x004b6264 int32_t sub_4b6264(int32_t arg1, u32 arg2)
 0x004b668c void* data_4b668c
 0x004b6690 void* data_4b6690
 0x004b6694 int32_t data_4b6694
@@ -43050,7 +43042,7 @@
 0x004d24a8 void* data_4d24a8
 0x004d24ac void* data_4d24ac
 0x004d24c4 int32_t data_4d24c4
-0x004d24c8 void sub_4d24c8(int32_t arg1, int32_t arg2)
+0x004d24c8 void sub_4d24c8(u32 arg1, u32 arg2)
 0x004d2518 void* data_4d2518
 0x004d251c void* data_4d251c
 0x004d2520 s32 sub_4d2520(int32_t arg1, int32_t arg2, int64_t arg3 @ q1)
@@ -43080,7 +43072,6 @@
 0x004d2be0 void* data_4d2be0
 0x004d2be4 int32_t sub_4d2be4(int32_t arg1, int32_t arg2)
 0x004d2c08 void* data_4d2c08
-0x004d2c0c uint32_t sub_4d2c0c(int32_t arg1, int32_t arg2, void* arg3)
 0x004d2cd0 void* data_4d2cd0
 0x004d2cd4 int32_t sub_4d2cd4(uint32_t arg1, int32_t arg2)
 0x004d2db8 void* data_4d2db8
@@ -43126,7 +43117,7 @@
 0x004d4484 void* data_4d4484
 0x004d4488 int32_t data_4d4488
 0x004d448c int32_t data_4d448c
-0x004d4490 uint32_t sub_4d4490(int32_t arg1, int32_t arg2)
+0x004d4490 uint32_t sub_4d4490(u32 arg1, uint32_t arg2)
 0x004d44fc void* data_4d44fc
 0x004d4500 int32_t sub_4d4500()
 0x004d4688 int32_t data_4d4688
@@ -43557,9 +43548,9 @@
 0x004e3b58 void* data_4e3b58
 0x004e3b5c int32_t data_4e3b5c
 0x004e3b60 int32_t data_4e3b60
-0x004e3b64 int32_t sub_4e3b64(int32_t arg1, int32_t arg2)
+0x004e3b64 int32_t sub_4e3b64(u32 arg1, u32 arg2)
 0x004e3bac void* data_4e3bac
-0x004e3bb0 uint32_t sub_4e3bb0(uint32_t arg1, int32_t arg2, int32_t arg3)
+0x004e3bb0 uint32_t sub_4e3bb0(uint32_t arg1, u32 arg2, int32_t arg3)
 0x004e3ddc void* data_4e3ddc
 0x004e3de0 void* data_4e3de0
 0x004e3de4 int32_t data_4e3de4
@@ -43568,7 +43559,7 @@
 0x004e3fa0 void* data_4e3fa0
 0x004e3fa4 int32_t data_4e3fa4
 0x004e3fa8 void* data_4e3fa8
-0x004e3fac void* sub_4e3fac(int32_t arg1, int32_t arg2, int32_t arg3)
+0x004e3fac void* sub_4e3fac(int32_t arg1, uint32_t arg2, int32_t arg3, int32_t arg4 @ r10)
 0x004e42bc void* data_4e42bc
 0x004e42c0 void* data_4e42c0
 0x004e42c4 int32_t data_4e42c4
@@ -43622,10 +43613,10 @@
 0x004e5b54 void* data_4e5b54
 0x004e5b58 int32_t data_4e5b58
 0x004e5b5c void* data_4e5b5c
-0x004e5b60 uint32_t sub_4e5b60(int32_t arg1, int32_t arg2)
+0x004e5b60 uint32_t sub_4e5b60(u32 arg1, u32 arg2)
 0x004e5c0c void* data_4e5c0c
 0x004e5c10 int32_t data_4e5c10
-0x004e5c14 int32_t sub_4e5c14(int32_t arg1, int32_t arg2)
+0x004e5c14 int32_t sub_4e5c14(u32 arg1, u32 arg2)
 0x004e5de8 void* data_4e5de8
 0x004e5dec void* data_4e5dec
 0x004e5df0 void* data_4e5df0
@@ -43736,7 +43727,7 @@
 0x004e8e4c int32_t data_4e8e4c
 0x004e9f74 void* data_4e9f74
 0x004e9f78 void* data_4e9f78
-0x004e9f7c int32_t sub_4e9f7c(int32_t arg1, int32_t arg2)
+0x004e9f7c int32_t WorldGen::KillTile2(u32 x, u32 y)
 0x004ea4ac void* data_4ea4ac
 0x004ea4b0 void* data_4ea4b0
 0x004ea4b4 void* data_4ea4b4
@@ -43747,7 +43738,7 @@
 0x004ea4c8 void* data_4ea4c8
 0x004ea4cc int32_t data_4ea4cc
 0x004ea4d0 void* data_4ea4d0
-0x004ea4d4 void sub_4ea4d4(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+0x004ea4d4 void WorldGen::KillTile(u32 x, u32 y, bool flag1, bool flag2, bool flag3, bool flag4)
 0x004ea708 void* data_4ea708
 0x004ea70c void* data_4ea70c
 0x004ea710 void* data_4ea710
@@ -43756,7 +43747,7 @@
 0x004ea71c int32_t data_4ea71c
 0x004ea720 void* data_4ea720
 0x004ea724 int32_t data_4ea724
-0x004ea728 void sub_4ea728(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r5, u32 arg6 @ r11)
+0x004ea728 void sub_4ea728(u32 arg1, uint32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r5, u32 arg6 @ r11)
 0x004ea7e4 uint32_t jump_table_4ea7e4[0x19]
 0x004ea8a8 uint32_t jump_table_4ea8a8[0x6]
 0x004eaac0 void* data_4eaac0
@@ -43964,15 +43955,15 @@
 0x004efe6c void* data_4efe6c
 0x004efe70 int32_t data_4efe70
 0x004efe74 void* data_4efe74
-0x004efe80 int32_t sub_4efe80(int32_t arg1, int32_t arg2)
+0x004efe80 int32_t sub_4efe80(int32_t arg1, u32 arg2)
 0x004f0198 void* data_4f0198
 0x004f019c int32_t data_4f019c
 0x004f01a0 void* data_4f01a0
-0x004f01a4 int32_t sub_4f01a4(int32_t arg1, int32_t arg2)
+0x004f01a4 int32_t sub_4f01a4(u32 arg1, u32 arg2)
 0x004f0434 void* data_4f0434
 0x004f0438 void* data_4f0438
 0x004f043c void* data_4f043c
-0x004f0440 Tile* sub_4f0440(int32_t arg1, int32_t arg2)
+0x004f0440 Tile* sub_4f0440(u32 arg1, u32 arg2)
 0x004f04d4 void* data_4f04d4
 0x004f04d8 void* data_4f04d8
 0x004f04dc void sub_4f04dc(void* arg1, int32_t arg2)
@@ -44166,7 +44157,7 @@
 0x004f7bac int32_t data_4f7bac
 0x004f7bb0 int32_t data_4f7bb0
 0x004f7bb4 int32_t data_4f7bb4
-0x004f7bb8 int32_t sub_4f7bb8(int32_t arg1, int32_t arg2)
+0x004f7bb8 int32_t sub_4f7bb8(u32 arg1, u32 arg2)
 0x004f7d34 void* data_4f7d34
 0x004f7d38 void* data_4f7d38
 0x004f7d3c void* data_4f7d3c
@@ -44186,13 +44177,13 @@
 0x004f841c void* data_4f841c
 0x004f8420 void* data_4f8420
 0x004f8424 void* data_4f8424
-0x004f8428 int32_t sub_4f8428(int32_t arg1, int32_t arg2, int32_t arg3)
+0x004f8428 int32_t sub_4f8428(u32 arg1, u32 arg2, int32_t arg3)
 0x004f85c4 void* data_4f85c4
 0x004f85c8 void* data_4f85c8
 0x004f85cc void* data_4f85cc
 0x004f85d8 int32_t sub_4f85d8(int32_t arg1, int32_t arg2)
 0x004f85fc void* data_4f85fc
-0x004f8600 uint32_t sub_4f8600(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4 @ r5, void* arg5 @ r8, int32_t arg6 @ r10)
+0x004f8600 uint32_t sub_4f8600(u32 arg1, uint32_t arg2, int32_t arg3, u32 arg4 @ r5, void* arg5 @ r8, int32_t arg6 @ r10)
 0x004f86f0 uint32_t jump_table_4f86f0[0x8b]
 0x004f8a08 uint32_t jump_table_4f8a08[0x1c]
 0x004f8afc uint32_t jump_table_4f8afc[0xb]
@@ -44255,7 +44246,7 @@
 0x004fdf3c int32_t data_4fdf3c
 0x004fdf40 void* data_4fdf40
 0x004fdf44 int32_t data_4fdf44
-0x004fe084 int32_t sub_4fe084(int32_t arg1, int32_t arg2, void* arg3 @ r4)
+0x004fe084 int32_t sub_4fe084(u32 arg1, int32_t arg2, void* arg3 @ r4)
 0x004fe1d8 void* data_4fe1d8
 0x004fe1dc void* data_4fe1dc
 0x004fe1e0 int32_t data_4fe1e0
@@ -44272,7 +44263,7 @@
 0x004fe654 int32_t data_4fe654
 0x004fe658 void* data_4fe658
 0x004fe68c int32_t sub_4fe68c()
-0x004fe6b0 int32_t sub_4fe6b0(int32_t arg1, int32_t arg2, int32_t arg3)
+0x004fe6b0 int32_t sub_4fe6b0(u32 arg1, int32_t arg2, int32_t arg3)
 0x004fedac int32_t sub_4fedac(int32_t arg1, int32_t* arg2, int32_t arg3, int32_t arg4 @ r4, int32_t arg5 @ r5, void* arg6 @ r6, int32_t arg7 @ r7, int32_t arg8 @ r9, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17)
 0x004ff1c0 void* data_4ff1c0
 0x004ff1c4 void* data_4ff1c4
@@ -44283,7 +44274,7 @@
 0x004ff370 void* data_4ff370
 0x004ff374 void* data_4ff374
 0x004ff378 void* data_4ff378
-0x004ff37c int32_t sub_4ff37c(int32_t arg1, int32_t arg2, int32_t arg3)
+0x004ff37c int32_t sub_4ff37c(u32 arg1, int32_t arg2, int32_t arg3)
 0x005000b0 void* data_5000b0
 0x005000b4 void* data_5000b4
 0x005000b8 void* data_5000b8
@@ -44585,7 +44576,7 @@
 0x00506364 int32_t data_506364
 0x00506368 int32_t data_506368
 0x0050636c int32_t data_50636c
-0x00506370 int32_t sub_506370(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4 @ r7, int32_t* arg5 @ r9, int96_t arg6 @ q0, int32_t arg7)
+0x00506370 int32_t Collision::SwitchTiles(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4 @ r7, int32_t* arg5 @ r9, int96_t arg6 @ q0, int32_t arg7)
 0x005065fc void* data_5065fc
 0x00506600 void* data_506600
 0x00506604 void* data_506604
@@ -44879,6 +44870,7 @@
 0x0050defc int32_t sub_50defc()
 0x0050df00 int32_t sub_50df00()
 0x0050df10 int32_t sub_50df10(int32_t arg1 @ r8)
+0x0050df20 int32_t sub_50df20(void* arg1, void* (* arg2)(int32_t* arg1), void* const arg3, int32_t arg4)
 0x0050e04c int32_t data_50e04c
 0x0050e050 int32_t data_50e050
 0x0050e054 int32_t data_50e054
@@ -44888,7 +44880,7 @@
 0x0050e064 int32_t data_50e064
 0x0050e068 void* data_50e068
 0x0050e06c int32_t sub_50e06c(int32_t arg1 @ r8)
-0x0050e090 uint32_t sub_50e090(void* arg1)
+0x0050e090 uint32_t sub_50e090(GameState* gameState)
 0x0050e430 void* data_50e430
 0x0050e434 void* data_50e434
 0x0050e448 void* data_50e448
@@ -44915,7 +44907,7 @@
 0x0050e750 void sub_50e750()
 0x0050e778 int32_t data_50e778
 0x0050e77c void* data_50e77c
-0x0050e780 int32_t sub_50e780()
+0x0050e780 int32_t GameState::GetStateFlags()
 0x0050e7b0 int32_t data_50e7b0
 0x0050e7b4 void* data_50e7b4
 0x0050e7b8 void sub_50e7b8()
@@ -44962,7 +44954,7 @@
 0x0050f124 int32_t data_50f124
 0x0050f128 int32_t data_50f128
 0x0050f134 int32_t sub_50f134(void* arg1)
-0x0050f170 void* GameState::Draw(void* arg1)
+0x0050f170 void* GameState::Draw(GameState* arg1)
 0x0050f4b4 void* data_50f4b4
 0x0050f4b8 int32_t data_50f4b8
 0x0050f4bc int32_t data_50f4bc
@@ -44983,12 +44975,11 @@
 0x0050f4f8 void* data_50f4f8
 0x0050f4fc void* data_50f4fc
 0x0050f500 int32_t data_50f500
-0x0050f504 int32_t sub_50f504()
-0x0050f510 int32_t sub_50f510()
-0x0050f514 int32_t sub_50f514()
-0x0050f51c int32_t sub_50f51c()
-0x0050f524 int32_t sub_50f524()
-0x0050f540 int32_t GameState::Update(int32_t arg1 @ r8)
+0x0050f504 int32_t sub_50f504(int32_t arg1 @ r8)
+0x0050f510 int32_t sub_50f510(int32_t arg1 @ r8)
+0x0050f51c int32_t sub_50f51c(int32_t arg1 @ r8)
+0x0050f524 int32_t sub_50f524(int32_t arg1 @ r8)
+0x0050f554 bool GameState::Update(void* arg1)
 0x0050f98c void* data_50f98c
 0x0050f990 int32_t data_50f990
 0x0050f994 int32_t data_50f994
@@ -45044,14 +45035,14 @@
 0x0050fc6c void sub_50fc6c()
 0x0050fc94 int32_t data_50fc94
 0x0050fc98 void* data_50fc98
-0x0050fc9c void* GameState::GameState(void* arg1)
+0x0050fc9c void* GameState::GameState(GameState* gameState)
 0x0050fd68 void* data_50fd68
 0x0050fd6c void* data_50fd6c
 0x0050fd70 int32_t data_50fd70
 0x0050fd74 int32_t data_50fd74
 0x0050fd78 int32_t data_50fd78
 0x0050fd7c int32_t sub_50fd7c(void* arg1 @ r6)
-0x0050fddc void* sub_50fddc(void*** arg1)
+0x0050fddc void* sub_50fddc(GameState_VTable** arg1)
 0x0050feb0 void* data_50feb0
 0x0050feb4 int32_t data_50feb4
 0x0050fefc int32_t sub_50fefc(int32_t* arg1, void* arg2)
@@ -45065,23 +45056,24 @@
 0x00510680 int32_t sub_510680(void* arg1)
 0x005106c4 int32_t sub_5106c4(void* arg1)
 0x0051070c int32_t sub_51070c(void* arg1)
-0x0051074c int32_t* sub_51074c(void* arg1, int32_t arg2)
+0x0051074c int32_t* sub_51074c(BaseMenu* menu, int32_t arg2)
 0x00510970 int32_t sub_510970(void* arg1)
 0x005109b0 void sub_5109b0(void* arg1)
 0x005109dc void sub_5109dc(void* arg1)
-0x00510a0c int32_t sub_510a0c(void* arg1)
+0x00510a08 int32_t sub_510a08(BaseMenuState* arg1)
+0x00510a0c uint32_t BaseMenuState::Draw(BaseMenuState* arg1)
 0x00510ac4 void* data_510ac4
 0x00510ac8 int32_t data_510ac8
 0x00510acc int32_t data_510acc
 0x00510ad0 void* data_510ad0
 0x00510ae8 void* data_510ae8
 0x00510af0 int32_t sub_510af0(void* arg1)
-0x00510b38 int32_t sub_510b38(void* arg1)
-0x00510b80 void* sub_510b80(int32_t* arg1, int32_t arg2, int32_t* arg3, int32_t arg4, int32_t arg5)
+0x00510b38 int32_t BaseMenuState::Update(BaseMenuState* menuState)
+0x00510b80 BaseMenuState* BaseMenuState::BaseMenuState(BaseMenuState* menuState, String* str, int32_t* arg3, uint32_t arg4, int32_t arg5)
 0x00510bf4 void* data_510bf4
 0x00510bf8 int32_t sub_510bf8()
-0x00510c10 int32_t sub_510c10(void*** arg1)
-0x00510c14 int32_t sub_510c14(void*** arg1)
+0x00510c10 int32_t sub_510c10(State_VTable** arg1)
+0x00510c14 int32_t sub_510c14(State_VTable** arg1)
 0x00510d60 void* data_510d60
 0x00510d64 int32_t sub_510d64(void* arg1 @ r4)
 0x00510db4 void* data_510db4
@@ -45207,11 +45199,11 @@
 0x00512c68 int32_t data_512c68
 0x00512c6c void* data_512c6c
 0x00512c70 void sub_512c70()
-0x00512ca0 int32_t sub_512ca0(Texture* arg1, int32_t* arg2)
+0x00512ca0 int32_t sub_512ca0(Texture* arg1, String* arg2)
 0x00512cc0 int32_t sub_512cc0(void* arg1)
 0x00512cfc int32_t sub_512cfc(void* arg1)
 0x00512d10 int32_t sub_512d10(void* arg1)
-0x00512d48 int32_t Texture2D::loadTexture(Texture* arg1, void* arg2)
+0x00512d48 int32_t Texture2D::loadTexture(Texture* arg1, String* str)
 0x00513134 int32_t data_513134
 0x00513138 int32_t data_513138
 0x0051313c int32_t data_51313c
@@ -45249,7 +45241,7 @@
 0x00514484 int32_t data_514484
 0x00514488 int32_t data_514488
 0x0051448c int32_t sub_51448c()
-0x005144d8 Texture* Texture2D::Texture2D(Texture* arg1, void* arg2)
+0x005144d8 Texture* Texture2D::Texture2D(Texture* arg1, String* arg2)
 0x005145e0 void* data_5145e0
 0x005145e4 int32_t data_5145e4
 0x005145e8 int32_t data_5145e8
@@ -45306,7 +45298,7 @@
 0x00515534 void* data_515534
 0x00515538 void* data_515538
 0x0051553c void* sub_51553c(int32_t arg1, int32_t* arg2)
-0x0051572c int32_t sub_51572c(int32_t* arg1 @ r4, int32_t* arg2 @ r5, int32_t* arg3 @ r6, int32_t arg4 @ r7, void** arg5 @ r8, int32_t arg6, char* arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)
+0x0051572c int32_t sub_51572c(int32_t* arg1 @ r4, int32_t* arg2 @ r5, int32_t* arg3 @ r6, int32_t arg4 @ r7, int32_t** arg5 @ r8, int32_t arg6, char* arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)
 0x0051593c int32_t data_51593c
 0x00515960 int32_t data_515960
 0x00515974 int32_t data_515974
@@ -45319,7 +45311,7 @@
 0x00515dd0 void* data_515dd0
 0x00515de4 int32_t data_515de4
 0x00515df4 int32_t sub_515df4()
-0x00515df8 int32_t sub_515df8(int32_t arg1 @ r4, void* arg2 @ r5, int32_t arg3 @ r6, char arg4 @ r7, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13)
+0x00515df8 int32_t sub_515df8(int32_t arg1 @ r4, void* arg2 @ r5, int32_t arg3 @ r6, bool arg4 @ r7, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13)
 0x00515f88 void* data_515f88
 0x00515f8c void* data_515f8c
 0x00515f94 int32_t data_515f94
@@ -45339,7 +45331,7 @@
 0x00516108 int32_t data_516108
 0x0051610c void* data_51610c
 0x00516110 void* data_516110
-0x00516114 int32_t sub_516114(void** arg1)
+0x00516114 int32_t sub_516114(int32_t** arg1)
 0x005161c0 int32_t data_5161c0
 0x005161c4 int32_t data_5161c4
 0x005161c8 int32_t data_5161c8
@@ -45455,7 +45447,7 @@
 0x00517a04 void sub_517a04()
 0x00517a48 int32_t data_517a48
 0x00517a4c int32_t data_517a4c
-0x00517a50 void** sub_517a50(int32_t* arg1)
+0x00517a50 BaseMenu* sub_517a50(BaseMenuState* arg1)
 0x00517b1c int32_t data_517b1c
 0x00517b20 int32_t data_517b20
 0x00517b24 int32_t data_517b24
@@ -45600,7 +45592,7 @@
 0x00519de4 int32_t data_519de4
 0x00519de8 int32_t data_519de8
 0x00519dec int32_t data_519dec
-0x0051a0c4 uint32_t sub_51a0c4(int32_t arg1, int32_t* arg2, void* arg3, int32_t arg4, Vector2* arg5, void* arg6, int32_t arg7, int32_t arg8)
+0x0051a0c4 uint32_t sub_51a0c4(int32_t arg1, int32_t* arg2, void* arg3, int32_t arg4, int32_t* arg5, void* arg6, int32_t arg7, int32_t arg8)
 0x0051a700 void* data_51a700
 0x0051a704 int32_t data_51a704
 0x0051a708 int32_t data_51a708
@@ -45899,7 +45891,7 @@
 0x00521970 int32_t data_521970
 0x00521974 void sub_521974()
 0x0052199c int32_t data_52199c
-0x005219a0 u32 sub_5219a0(int32_t arg1, void* arg2, Vector2* arg3, int16_t* arg4)
+0x005219a0 u32 sub_5219a0(int32_t arg1, void* arg2, int32_t* arg3, int16_t* arg4)
 0x00521c1c void* data_521c1c
 0x00521c20 int32_t data_521c20
 0x00521c24 int32_t data_521c24
@@ -45943,8 +45935,7 @@
 0x00522638 int32_t data_522638
 0x0052263c int32_t data_52263c
 0x00522640 int32_t sub_522640()
-0x00522648 int32_t WorldView::DrawWorld(void* arg1)
-0x005226bc int32_t WorldView::DrawWorld_2(void* arg1 @ r4, int32_t* arg2 @ r7, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8, int32_t arg9)
+0x00522648 void WorldView::DrawWorld(void* arg1)
 0x00522b10 void* data_522b10
 0x00522b14 void* data_522b14
 0x00522b18 int32_t data_522b18
@@ -46099,7 +46090,7 @@
 0x00523fe0 void* data_523fe0
 0x00523fe4 void* data_523fe4
 0x00524000 int32_t sub_524000(void* arg1, int32_t arg2)
-0x00524028 int32_t sub_524028(void* arg1, int32_t arg2)
+0x00524028 int32_t InputManager::IsButtonPressed(void* arg1, int32_t arg2)
 0x00524080 int32_t sub_524080(void* arg1, int32_t arg2)
 0x005241c8 int32_t data_5241c8
 0x005241cc int32_t data_5241cc
@@ -47231,7 +47222,7 @@
 0x005337b4 int32_t data_5337b4
 0x005337b8 void sub_5337b8(char* arg1, int32_t* arg2, char* arg3)
 0x005337ec int32_t data_5337ec
-0x005337f0 int32_t sub_5337f0(int32_t* arg1, char* arg2)
+0x005337f0 int32_t Gamepad::IsPressed(int32_t* arg1, char* arg2)
 0x0053380c uint32_t sub_53380c(void* arg1, int32_t arg2)
 0x0053381c int32_t sub_53381c(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint8_t* arg5, uint8_t* arg6, char* arg7)
 0x00533910 void* data_533910
@@ -47571,7 +47562,7 @@
 0x00538188 void* data_538188
 0x0053818c void sub_53818c()
 0x005381a8 int32_t sub_5381a8(int32_t arg1)
-0x005381bc int32_t sub_5381bc(int32_t* arg1)
+0x005381bc int32_t sub_5381bc(BaseMenu* arg1)
 0x005381c8 int32_t sub_5381c8(int32_t arg1)
 0x00538204 void* data_538204
 0x00538208 int32_t sub_538208(int32_t arg1 @ r4)
@@ -47591,14 +47582,14 @@
 0x0053848c void* data_53848c
 0x00538490 int32_t sub_538490(int32_t* arg1)
 0x005384fc int32_t data_5384fc
-0x00538500 int32_t sub_538500(void*** arg1 @ r5)
+0x00538500 int32_t sub_538500(State_VTable** arg1 @ r5)
 0x00538578 int32_t data_538578
-0x0053857c int32_t sub_53857c(void*** arg1 @ r5)
+0x0053857c int32_t sub_53857c(State_VTable** arg1 @ r5)
 0x005385c0 void* data_5385c0
-0x005385c4 int32_t sub_5385c4(void*** arg1 @ r4)
+0x005385c4 int32_t sub_5385c4(State_VTable** arg1 @ r4)
 0x00538600 void* data_538600
-0x00538604 int32_t sub_538604(void*** arg1 @ r4)
-0x00538644 int32_t sub_538644(int32_t arg1)
+0x00538604 int32_t sub_538604(State_VTable** arg1 @ r4)
+0x00538644 int32_t MenuBackground::~MenuBackground2(int32_t arg1)
 0x00538658 int32_t sub_538658(int32_t arg1)
 0x0053866c uint32_t sub_53866c(int32_t arg1)
 0x0053872c int32_t data_53872c
@@ -47613,9 +47604,9 @@
 0x00538798 void* data_538798
 0x0053879c int32_t sub_53879c(int32_t arg1)
 0x005387cc int32_t data_5387cc
-0x005387d0 int32_t sub_5387d0(void*** arg1 @ r4)
+0x005387d0 int32_t sub_5387d0(State_VTable** arg1 @ r4)
 0x0053880c int32_t data_53880c
-0x00538810 int32_t sub_538810(void*** arg1 @ r4, int32_t arg2 @ q4)
+0x00538810 int32_t sub_538810(State_VTable** arg1 @ r4, int32_t arg2 @ q4)
 0x00538908 int32_t data_538908
 0x0053890c int32_t data_53890c
 0x00538910 int32_t data_538910
@@ -47637,7 +47628,7 @@
 0x00538b14 int32_t sub_538b14(int32_t arg1)
 0x00538b24 int32_t sub_538b24(int32_t arg1)
 0x00538b38 int32_t sub_538b38(int32_t arg1)
-0x00538b48 int32_t sub_538b48(int32_t arg1)
+0x00538b48 int32_t BaseMenu::Draw2_2(int32_t arg1)
 0x00538b50 int32_t sub_538b50(int32_t arg1)
 0x00538b64 int32_t sub_538b64(int32_t arg1)
 0x00538b6c uint32_t sub_538b6c(int32_t arg1)
@@ -52282,7 +52273,7 @@
 0x00579c9c void sub_579c9c(void* arg1, int32_t arg2)
 0x00579f30 void*** sub_579f30(void*** arg1)
 0x0057a000 void* data_57a000
-0x0057a018 void sub_57a018(void* arg1, int32_t arg2)
+0x0057a018 void O::Event<Widget*>::fire(void* arg1, int32_t arg2)
 0x0057a29c void sub_57a29c(void* arg1)
 0x0057a378 int32_t sub_57a378(void* arg1, int32_t* arg2)
 0x0057a4c8 int32_t data_57a4c8
@@ -52667,8 +52658,8 @@
 0x00599ea8 int32_t data_599ea8
 0x00599eac void sub_599eac(void* arg1)
 0x00599f04 void sub_599f04(void* arg1)
-0x00599f5c int32_t sub_599f5c(int32_t* arg1, void** arg2)
-0x0059a2a8 int32_t sub_59a2a8(int32_t* arg1 @ r4, void* arg2 @ r5, int32_t arg3 @ r7, int32_t arg4 @ r8, char* arg5 @ r9, char* arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, void** arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20)
+0x00599f5c int32_t sub_599f5c(int32_t* arg1, int32_t** arg2)
+0x0059a2a8 int32_t sub_59a2a8(int32_t* arg1 @ r4, void* arg2 @ r5, int32_t arg3 @ r7, int32_t arg4 @ r8, char* arg5 @ r9, char* arg6, int32_t arg7, int32_t arg8, int32_t arg9, int32_t arg10, int32_t** arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20)
 0x0059a53c int32_t sub_59a53c(int32_t* arg1 @ r4)
 0x0059a590 void* data_59a590
 0x0059a594 void* data_59a594
@@ -53171,7 +53162,7 @@
 0x005a3c78 void* data_5a3c78
 0x005a3c90 int32_t data_5a3c90
 0x005a3c94 int32_t sub_5a3c94(int16_t arg1 @ r9)
-0x005a3cc8 ContentLoader* GetImageLoader()
+0x005a3cc8 ContentLoader* ContentLoader::ContentLoader_Check()
 0x005a3d10 void* data_5a3d10
 0x005a3d14 int32_t data_5a3d14
 0x005a3d18 int32_t data_5a3d18
@@ -53289,7 +53280,7 @@
 0x005a5c74 void sub_5a5c74(int32_t* arg1, int32_t* arg2, int32_t arg3)
 0x005a5ce8 int32_t data_5a5ce8
 0x005a5cec void sub_5a5cec(int32_t* arg1, int32_t* arg2, int32_t arg3)
-0x005a5d48 void** sub_5a5d48(void*** arg1, void* arg2)
+0x005a5d48 int32_t** sub_5a5d48(int32_t*** arg1, void* arg2)
 0x005a5e58 int32_t data_5a5e58
 0x005a5e5c int32_t data_5a5e5c
 0x005a5e60 int32_t sub_5a5e60(int32_t* arg1)
@@ -53395,7 +53386,7 @@
 0x005a85ec int32_t sub_5a85ec(int32_t* arg1 @ r4)
 0x005a8640 void* data_5a8640
 0x005a8644 void* data_5a8644
-0x005a8660 void* sub_5a8660(int32_t* arg1, int32_t arg2)
+0x005a8660 int32_t* sub_5a8660(int32_t* arg1, int32_t arg2)
 0x005a8850 int32_t data_5a8850
 0x005a8854 int32_t data_5a8854
 0x005a8858 int32_t data_5a8858
@@ -53563,7 +53554,7 @@
 0x005afda8 int32_t* sub_5afda8(int32_t* arg1)
 0x005afe00 int32_t data_5afe00
 0x005afe04 int32_t* sub_5afe04(int32_t* arg1)
-0x005afe80 int32_t* sub_5afe80(int32_t* arg1, int32_t* arg2)
+0x005afe80 int32_t* QueryInstruction::ToString(int32_t* arg1, int32_t* arg2)
 0x005b0128 int32_t data_5b0128
 0x005b012c int32_t* sub_5b012c(int32_t* arg1)
 0x005b01b8 int32_t data_5b01b8
@@ -54300,16 +54291,7 @@
 0x005d5d90 void* data_5d5d90
 0x005d5d94 void* data_5d5d94
 0x005d5d98 void* data_5d5d98
-0x005d5dac void* data_5d5dac
-0x005d5db0 void* data_5d5db0
-0x005d5db4 void* data_5d5db4
-0x005d5db8 void* data_5d5db8
-0x005d5dbc void* data_5d5dbc
-0x005d5dc0 void* data_5d5dc0
-0x005d5dc4 void* data_5d5dc4
-0x005d5dc8 void* data_5d5dc8
-0x005d5dcc void* data_5d5dcc
-0x005d5dd0 void* data_5d5dd0
+0x005d5da4 State_VTable data_5d5da4
 0x005d5de4 void* data_5d5de4
 0x005d5df4 void* data_5d5df4
 0x005d5dfc void* data_5d5dfc
@@ -54360,14 +54342,7 @@
 0x005d5f80 void* data_5d5f80
 0x005d5f84 void* data_5d5f84
 0x005d5f88 void* data_5d5f88
-0x005d5fb0 void* data_5d5fb0
-0x005d5fb4 void* data_5d5fb4
-0x005d5fbc void* data_5d5fbc
-0x005d5fc0 void* data_5d5fc0
-0x005d5fc4 void* data_5d5fc4
-0x005d5fc8 void* data_5d5fc8
-0x005d5fd0 void* data_5d5fd0
-0x005d5fd8 void* data_5d5fd8
+0x005d5fac State_VTable data_5d5fac
 0x005d5fec void* data_5d5fec
 0x005d5ffc void* data_5d5ffc
 0x005d6004 void* data_5d6004
@@ -54431,13 +54406,8 @@
 0x005d61f4 void* data_5d61f4
 0x005d61fc void* data_5d61fc
 0x005d6208 void* data_5d6208
-0x005d621c void* data_5d621c
-0x005d6220 void* data_5d6220
-0x005d6224 void* data_5d6224
-0x005d6230 void* data_5d6230
-0x005d6234 void* data_5d6234
-0x005d625c void* data_5d625c
-0x005d6274 void* data_5d6274
+0x005d6218 State_VTable CreditsMenu_State_vtable
+0x005d6254 BaseMenu_VTable CreditsMenu_Menu_vtable
 0x005d6288 void* data_5d6288
 0x005d628c void* data_5d628c
 0x005d6290 void* data_5d6290
@@ -54478,30 +54448,11 @@
 0x005d6380 void* data_5d6380
 0x005d6390 void* FullVersion_vtable
 0x005d6394 void* data_5d6394
-0x005d63a8 void* data_5d63a8
-0x005d63ac void* data_5d63ac
-0x005d63b0 void* data_5d63b0
-0x005d63b4 void* data_5d63b4
-0x005d63b8 void* data_5d63b8
-0x005d63bc void* data_5d63bc
-0x005d63c0 void* data_5d63c0
-0x005d63c4 void* data_5d63c4
-0x005d63c8 void* data_5d63c8
-0x005d63cc void* data_5d63cc
-0x005d63d0 void* data_5d63d0
+0x005d63a4 State_VTable data_5d63a4
 0x005d63e4 void* data_5d63e4
 0x005d63f4 void* data_5d63f4
 0x005d63fc void* data_5d63fc
-0x005d640c void* data_5d640c
-0x005d6410 void* data_5d6410
-0x005d6414 void* data_5d6414
-0x005d6418 void* data_5d6418
-0x005d641c void* data_5d641c
-0x005d6420 void* data_5d6420
-0x005d6424 void* data_5d6424
-0x005d6428 void* data_5d6428
-0x005d642c void* data_5d642c
-0x005d6434 void* data_5d6434
+0x005d6408 State_VTable data_5d6408
 0x005d6448 void* data_5d6448
 0x005d6454 void* data_5d6454
 0x005d6458 void* data_5d6458
@@ -54515,7 +54466,7 @@
 0x005d64a8 void* data_5d64a8
 0x005d64ac void* data_5d64ac
 0x005d64b0 void* data_5d64b0
-0x005d64bc ExtractState_vtable ExtractState_vtable
+0x005d64bc State_VTable ExtractState_vtable
 0x005d64f4 SpriteBatch_VTable SpriteBatch_vtable
 0x005d6518 void* data_5d6518
 0x005d651c void* data_5d651c
@@ -54567,6 +54518,7 @@
 0x005d668c void* data_5d668c
 0x005d6690 void* data_5d6690
 0x005d6694 void* data_5d6694
+0x005d66a0 CameraZoomer_VTable data_5d66a0
 0x005d66a4 void* data_5d66a4
 0x005d66b4 void* data_5d66b4
 0x005d66b8 void* data_5d66b8
@@ -54596,7 +54548,7 @@
 0x005d67f8 void* data_5d67f8
 0x005d6804 void* data_5d6804
 0x005d6810 void* data_5d6810
-0x005d683c void* data_5d683c
+0x005d683c void* OptionsMenuBottom_State_vtable
 0x005d6840 void* data_5d6840
 0x005d6844 void* data_5d6844
 0x005d6848 void* data_5d6848
@@ -54642,7 +54594,7 @@
 0x005d6970 void* data_5d6970
 0x005d6984 void* data_5d6984
 0x005d698c void* data_5d698c
-0x005d6998 GameManager_VTable GameManager_vtable
+0x005d6998 StateManager_VTable StateManager_vtable_1
 0x005d69c8 void* data_5d69c8
 0x005d69cc void* data_5d69cc
 0x005d69e8 void* data_5d69e8
@@ -54716,26 +54668,11 @@
 0x005d6c94 void* data_5d6c94
 0x005d6ca4 void* data_5d6ca4
 0x005d6cac void* data_5d6cac
-0x005d6cc0 void* data_5d6cc0
-0x005d6cc4 void* data_5d6cc4
-0x005d6cc8 void* data_5d6cc8
-0x005d6ccc void* data_5d6ccc
-0x005d6cd0 void* data_5d6cd0
-0x005d6cd4 void* data_5d6cd4
-0x005d6cd8 void* data_5d6cd8
-0x005d6cdc void* data_5d6cdc
-0x005d6ce0 void* data_5d6ce0
-0x005d6ce4 void* data_5d6ce4
+0x005d6cb8 State_VTable data_5d6cb8
 0x005d6cf8 void* data_5d6cf8
 0x005d6d08 void* data_5d6d08
 0x005d6d10 void* data_5d6d10
-0x005d6d24 void* data_5d6d24
-0x005d6d2c void* data_5d6d2c
-0x005d6d30 void* data_5d6d30
-0x005d6d34 void* data_5d6d34
-0x005d6d38 void* data_5d6d38
-0x005d6d3c void* data_5d6d3c
-0x005d6d40 void* data_5d6d40
+0x005d6d1c State_VTable data_5d6d1c
 0x005d6d5c void* data_5d6d5c
 0x005d6d74 void* data_5d6d74
 0x005d6d90 void* data_5d6d90
@@ -54784,16 +54721,7 @@
 0x005d6f78 void* data_5d6f78
 0x005d6f7c void* data_5d6f7c
 0x005d6f84 void* data_5d6f84
-0x005d6f94 void* data_5d6f94
-0x005d6f98 void* data_5d6f98
-0x005d6f9c void* data_5d6f9c
-0x005d6fa4 void* data_5d6fa4
-0x005d6fa8 void* data_5d6fa8
-0x005d6fac void* data_5d6fac
-0x005d6fb0 void* data_5d6fb0
-0x005d6fb4 void* data_5d6fb4
-0x005d6fb8 void* data_5d6fb8
-0x005d6fbc void* data_5d6fbc
+0x005d6f90 State_VTable data_5d6f90
 0x005d6fd0 void* data_5d6fd0
 0x005d6fe0 void* data_5d6fe0
 0x005d6fe8 void* data_5d6fe8
@@ -54840,17 +54768,8 @@
 0x005d714c void* data_5d714c
 0x005d7158 void* data_5d7158
 0x005d715c void* data_5d715c
-0x005d7168 void* data_5d7168
-0x005d716c void* data_5d716c
-0x005d7170 void* data_5d7170
-0x005d717c void* data_5d717c
-0x005d7180 void* data_5d7180
-0x005d7184 void* data_5d7184
-0x005d7188 void* data_5d7188
-0x005d718c void* data_5d718c
-0x005d71a4 void* data_5d71a4
-0x005d71a8 void* data_5d71a8
-0x005d71c0 void* data_5d71c0
+0x005d7168 State_VTable MenuBackground_State_vtable
+0x005d71a0 BaseMenu_VTable MenuBackground_Menu_vtable
 0x005d71cc void* data_5d71cc
 0x005d71d0 void* data_5d71d0
 0x005d71dc void* data_5d71dc
@@ -54905,16 +54824,7 @@
 0x005d7370 void* data_5d7370
 0x005d7380 void* data_5d7380
 0x005d7388 void* data_5d7388
-0x005d7398 void* data_5d7398
-0x005d739c void* data_5d739c
-0x005d73a0 void* data_5d73a0
-0x005d73a8 void* data_5d73a8
-0x005d73ac void* data_5d73ac
-0x005d73b0 void* data_5d73b0
-0x005d73b4 void* data_5d73b4
-0x005d73b8 void* data_5d73b8
-0x005d73bc void* data_5d73bc
-0x005d73c0 void* data_5d73c0
+0x005d7394 State_VTable data_5d7394
 0x005d73d4 void* data_5d73d4
 0x005d73e4 void* data_5d73e4
 0x005d73ec void* data_5d73ec
@@ -55005,15 +54915,7 @@
 0x005d76f8 void* data_5d76f8
 0x005d76fc void* data_5d76fc
 0x005d7708 void* data_5d7708
-0x005d7714 void* data_5d7714
-0x005d7718 void* data_5d7718
-0x005d771c void* data_5d771c
-0x005d7724 void* data_5d7724
-0x005d772c void* data_5d772c
-0x005d7730 void* data_5d7730
-0x005d7734 void* data_5d7734
-0x005d773c void* data_5d773c
-0x005d7740 void* data_5d7740
+0x005d7714 State_VTable data_5d7714
 0x005d7750 void* data_5d7750
 0x005d7754 void* data_5d7754
 0x005d7764 void* data_5d7764
@@ -55065,7 +54967,7 @@
 0x005d78a4 void* data_5d78a4
 0x005d78a8 void* data_5d78a8
 0x005d78ac void* data_5d78ac
-0x005d78b8 GameStateManager_VTable GameStateManager_vtable
+0x005d78b8 GameStateManager_VTable GameStateManager_vtable_2
 0x005d7904 void* data_5d7904
 0x005d790c void* data_5d790c
 0x005d7944 void* data_5d7944
@@ -55073,17 +54975,8 @@
 0x005d794c void* data_5d794c
 0x005d7958 void* data_5d7958
 0x005d795c void* data_5d795c
-0x005d7970 void* data_5d7970
-0x005d7974 void* data_5d7974
-0x005d7978 void* data_5d7978
-0x005d7980 void* data_5d7980
-0x005d7984 void* data_5d7984
-0x005d798c void* data_5d798c
-0x005d7990 void* data_5d7990
-0x005d7994 void* data_5d7994
-0x005d79ac void* data_5d79ac
-0x005d79bc void* data_5d79bc
-0x005d79c4 void* data_5d79c4
+0x005d7968 State_VTable OptionsMenu_State_vtable
+0x005d79a4 BaseMenu_VTable OptionsMenu_Menu_vtable
 0x005d79d0 void* data_5d79d0
 0x005d79d4 void* data_5d79d4
 0x005d79d8 void* data_5d79d8
@@ -55541,16 +55434,7 @@
 0x005d881c void* data_5d881c
 0x005d8820 void* data_5d8820
 0x005d8824 void* data_5d8824
-0x005d8834 void* data_5d8834
-0x005d8838 void* data_5d8838
-0x005d883c void* data_5d883c
-0x005d8840 void* data_5d8840
-0x005d8844 void* data_5d8844
-0x005d8848 void* data_5d8848
-0x005d884c void* data_5d884c
-0x005d8850 void* data_5d8850
-0x005d8854 void* data_5d8854
-0x005d885c void* data_5d885c
+0x005d8830 State_VTable data_5d8830
 0x005d886c void* data_5d886c
 0x005d8870 void* data_5d8870
 0x005d8874 void* data_5d8874
@@ -55599,16 +55483,7 @@
 0x005d8a50 void* data_5d8a50
 0x005d8a54 void* data_5d8a54
 0x005d8a70 void* data_5d8a70
-0x005d8a84 void* data_5d8a84
-0x005d8a88 void* data_5d8a88
-0x005d8a8c void* data_5d8a8c
-0x005d8a94 void* data_5d8a94
-0x005d8a98 void* data_5d8a98
-0x005d8a9c void* data_5d8a9c
-0x005d8aa0 void* data_5d8aa0
-0x005d8aa4 void* data_5d8aa4
-0x005d8aa8 void* data_5d8aa8
-0x005d8aac void* data_5d8aac
+0x005d8a80 State_VTable State_vtable
 0x005d8abc void* data_5d8abc
 0x005d8acc void* data_5d8acc
 0x005d8ad0 void* data_5d8ad0
@@ -55705,13 +55580,7 @@
 0x005d8d4c void* data_5d8d4c
 0x005d8d5c void* data_5d8d5c
 0x005d8d60 void* data_5d8d60
-0x005d8d6c void* data_5d8d6c
-0x005d8d70 void* data_5d8d70
-0x005d8d74 void* data_5d8d74
-0x005d8d7c void* data_5d8d7c
-0x005d8d80 void* data_5d8d80
-0x005d8d84 void* data_5d8d84
-0x005d8d8c void* data_5d8d8c
+0x005d8d6c BaseMenu_VTable BaseMenu_Menu_vtable
 0x005d8da0 void* data_5d8da0
 0x005d8da4 void* data_5d8da4
 0x005d8dac void* data_5d8dac
@@ -55759,19 +55628,8 @@
 0x005d8ed0 void* data_5d8ed0
 0x005d8ee0 void* data_5d8ee0
 0x005d8ee4 void* data_5d8ee4
-0x005d8ef8 void* data_5d8ef8
-0x005d8efc void* data_5d8efc
-0x005d8f00 void* data_5d8f00
-0x005d8f08 void* data_5d8f08
-0x005d8f0c void* data_5d8f0c
-0x005d8f10 void* data_5d8f10
-0x005d8f14 void* data_5d8f14
-0x005d8f18 void* data_5d8f18
-0x005d8f20 void* data_5d8f20
-0x005d8f34 void* data_5d8f34
-0x005d8f40 void* data_5d8f40
-0x005d8f44 void* data_5d8f44
-0x005d8f4c void* data_5d8f4c
+0x005d8ef4 State_VTable MainMenu_State_vtable
+0x005d8f2c BaseMenu_VTable MainMenu_Menu_vtable
 0x005d8f58 void* data_5d8f58
 0x005d8f5c void* data_5d8f5c
 0x005d8f6c void* data_5d8f6c
@@ -55806,33 +55664,10 @@
 0x005d9040 void* data_5d9040
 0x005d9048 void* data_5d9048
 0x005d904c void* data_5d904c
-0x005d9058 void* GameState_vtable
-0x005d9060 void* data_5d9060
-0x005d9064 void* data_5d9064
-0x005d9068 void* data_5d9068
-0x005d9070 void* data_5d9070
-0x005d9074 void* data_5d9074
-0x005d9078 void* data_5d9078
-0x005d907c void* data_5d907c
-0x005d9080 int32_t data_5d9080
-0x005d9084 void* data_5d9084
+0x005d9058 GameState_VTable GameState_vtable
 0x005d9090 void* data_5d9090
-0x005d90a0 void* data_5d90a0
-0x005d90a8 void* data_5d90a8
-0x005d90ac void* data_5d90ac
-0x005d90b0 void* data_5d90b0
-0x005d90b4 void* data_5d90b4
-0x005d90b8 void* data_5d90b8
-0x005d90bc void* data_5d90bc
-0x005d90c0 void* data_5d90c0
-0x005d90c4 void* data_5d90c4
-0x005d90c8 void* data_5d90c8
-0x005d90cc void* data_5d90cc
-0x005d90d8 void* data_5d90d8
-0x005d90dc void* data_5d90dc
-0x005d90e0 void* data_5d90e0
-0x005d90f0 void* data_5d90f0
-0x005d90f8 void* data_5d90f8
+0x005d90a0 State_VTable BaseMenuState_State_vtable_2
+0x005d90d8 BaseMenu_VTable BaseMenuState_Menu_vtable_2
 0x005d9104 void* data_5d9104
 0x005d9108 void* data_5d9108
 0x005d9140 void* data_5d9140
@@ -55891,7 +55726,7 @@
 0x005d9460 void* data_5d9460
 0x005d946c void* data_5d946c
 0x005d947c void* data_5d947c
-0x005d948c void* data_5d948c
+0x005d948c void* StateManager_vtable_2
 0x005d949c void* data_5d949c
 0x005d94ac void* data_5d94ac
 0x005d94b0 void* data_5d94b0
@@ -58618,7 +58453,7 @@
 0x00631dac int32_t data_631dac
 0x00631db0 int32_t data_631db0
 0x00631db4 int32_t data_631db4
-0x00631dbc void* GameState::Terraria
+0x00631dbc Main* GameState::Terraria
 0x00631dc0 void* GameState::terrariaLoader
 0x00631dc4 int32_t data_631dc4
 0x00631dc8 int32_t data_631dc8
@@ -59152,7 +58987,7 @@
 0x00632920 int32_t data_632920
 0x00632924 int32_t data_632924
 0x00632928 int32_t data_632928
-0x0063292c char data_63292c
+0x0063292c char Netplay::IsAboutToJoinASession
 0x00632934 int32_t data_632934
 0x00632938 int32_t data_632938
 0x0063293c int32_t data_63293c
@@ -59741,7 +59576,7 @@
 0x0063348d char data_63348d
 0x00633490 int32_t data_633490
 0x00633494 char data_633494
-0x00633495 char data_633495
+0x00633495 bool Main::DoneLoading
 0x00633496 char data_633496
 0x0063349c int16_t data_63349c
 0x0063349e int16_t data_63349e
@@ -60095,7 +59930,7 @@
 0x00633b2c int32_t data_633b2c
 0x00633b30 int32_t data_633b30
 0x00633b34 int32_t data_633b34
-0x00633b3c int32_t data_633b3c
+0x00633b3c int32_t SpriteBatch::globalSpriteBatch
 0x00633b40 int32_t data_633b40
 0x00633b44 int32_t data_633b44
 0x00633b48 int32_t data_633b48
@@ -66571,6 +66406,7 @@
 0x008d3a7c int32_t data_8d3a7c
 0x008d3a88 int32_t data_8d3a88
 0x008d3a98 int32_t data_8d3a98
+0x008d3a9c int32_t data_8d3a9c
 0x008d3aa0 float data_8d3aa0
 0x008d3aa4 int32_t data_8d3aa4
 0x008d3aa8 int32_t data_8d3aa8
@@ -66589,14 +66425,19 @@
 0x008d3adc float data_8d3adc
 0x008d4b04 int32_t data_8d4b04
 0x008d4b08 char data_8d4b08
+0x008d4b09 char data_8d4b09
 0x008d4b0a char data_8d4b0a
+0x008d4b0b char data_8d4b0b
+0x008d4b1c int32_t data_8d4b1c
+0x008d4b20 int32_t data_8d4b20
+0x008d4b28 int32_t data_8d4b28
+0x008d4b2c int32_t data_8d4b2c
 0x008d4b38 TextureAtlas UIAtlas::Instance
 0x008d4bb8 char data_8d4bb8
 0x008d4bc4 char data_8d4bc4
 0x008d4bc5 char data_8d4bc5
 0x008d4bc6 char data_8d4bc6
-0x008d4bf0 int32_t data_8d4bf0
-0x008d4bfc int32_t data_8d4bfc
+0x008d4bdc CameraZoomer CameraZoomer::Instance
 0x008d4df0 int32_t data_8d4df0
 0x008d4df8 int32_t data_8d4df8
 0x008d4dfc int32_t data_8d4dfc
@@ -66655,15 +66496,7 @@
 0x008d501c int32_t data_8d501c
 0x008d5020 int32_t data_8d5020
 0x008d5024 TerrariaAtlas TerrariaAtlas::Instance
-0x008d5108 GraphicsDevice* GraphicsDevice::Instance
-0x008d5110 int32_t data_8d5110
-0x008d5114 int32_t data_8d5114
-0x008d5118 int32_t data_8d5118
-0x008d511c int32_t data_8d511c
-0x008d5128 int64_t data_8d5128
-0x008d5130 int32_t data_8d5130
-0x008d51d4 char data_8d51d4
-0x008d51dc u8 osType
+0x008d5108 GraphicsDevice GraphicsDevice::Instance
 0x008d521d char data_8d521d
 0x008d521e char data_8d521e
 0x008d52ac GameStateManager GameStateManager::Instance
@@ -66681,6 +66514,8 @@
 0x008d7c18 int32_t data_8d7c18
 0x008d7c24 char data_8d7c24
 0x008d7c28 int32_t data_8d7c28
+0x008d7c2c int32_t data_8d7c2c
+0x008d7c3d char data_8d7c3d
 0x008d7c48 int32_t data_8d7c48
 0x008d7ccc int32_t data_8d7ccc
 0x008d7cd0 char data_8d7cd0
@@ -66753,8 +66588,33 @@
 0x008d88e4 int64_t data_8d88e4
 0x008d88f0 int32_t data_8d88f0
 0x008d9338 int32_t data_8d9338
-0x008d98b8 void* data_8d98b8
+0x008d98b8 void* WorldView::Instance
 0x008d9950 int16_t data_8d9950
+0x008d9954 int32_t data_8d9954
+0x008d9958 int32_t data_8d9958
+0x008d995c char data_8d995c
+0x008d995d char data_8d995d
+0x008d995e char data_8d995e
+0x008d995f char data_8d995f
+0x008d9960 char data_8d9960
+0x008d9961 char data_8d9961
+0x008d9962 int16_t data_8d9962
+0x008d9964 int16_t data_8d9964
+0x008d9966 int16_t data_8d9966
+0x008d9968 int32_t data_8d9968
+0x008d996c int32_t data_8d996c
+0x008d9970 int16_t data_8d9970
+0x008d9972 int16_t data_8d9972
+0x008d9974 int32_t data_8d9974
+0x008d9978 int32_t data_8d9978
+0x008d997c int32_t data_8d997c
+0x008d9980 int32_t data_8d9980
+0x008d9984 int32_t data_8d9984
+0x008d9988 int32_t data_8d9988
+0x008d998c int32_t data_8d998c
+0x008d9990 int32_t data_8d9990
+0x008d9994 int32_t data_8d9994
+0x008d9998 char data_8d9998
 0x008d99a8 int32_t data_8d99a8
 0x008d99ac int32_t data_8d99ac
 0x008d99b0 int32_t data_8d99b0

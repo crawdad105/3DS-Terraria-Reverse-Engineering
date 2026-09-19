@@ -41,8 +41,14 @@ typedef uint32_t wchar32;
 
 struct _BaseDrawable;
 struct _BaseDrawable_VTable;
-struct _BaseDrawable_VTable_1;
+struct _BaseMenu;
+struct _BaseMenuState;
+struct _BaseMenu_VTable;
+struct _BaseMenu_VTable_1;
 struct _Bytes6;
+struct _CameraZoomer;
+struct _CameraZoomer_VTable;
+struct _CameraZoomer_VTable_1;
 struct _Chest;
 struct _Colour;
 struct _ContentLoader;
@@ -52,6 +58,7 @@ struct _Draw_Unk0;
 struct _Draw_Unk1;
 struct _Draw_Unk2;
 struct _Draw_Unk3;
+struct _ExtractState;
 struct _ExtractState_vtable;
 struct _ExtractState_vtable_1;
 struct _FileReader;
@@ -60,12 +67,12 @@ struct _FileReader_1;
 struct _FileWriter;
 struct _FileWriterFuncTable;
 struct _FileWriter_1;
-struct _GameManager;
-struct _GameManager_VTable;
-struct _GameManager_VTable_1;
+struct _GameState;
 struct _GameStateManager;
 struct _GameStateManager_VTable;
 struct _GameStateManager_VTable_1;
+struct _GameState_VTable;
+struct _GameState_VTable_1;
 struct _Gore;
 struct _GraphicsDevice;
 struct _IVector4;
@@ -73,6 +80,11 @@ struct _Image;
 struct _ImageLoader_Data1;
 struct _Item;
 struct _ItemText;
+struct _Main;
+struct _MainMenuState_VTable;
+struct _MainMenuState_VTable_1;
+struct _MainMenu_VTable;
+struct _MainMenu_VTable_1;
 struct _MiniMap;
 struct _MiniMapHelper;
 struct _MiniMapHelper_VTable;
@@ -90,8 +102,15 @@ struct _SpriteBatch;
 struct _SpriteBatch_VTable;
 struct _SpriteBatch_VTable_1;
 struct _SpriteInfo;
+struct _SpriteText;
 struct _Sprite_VTable;
 struct _Sprite_VTable_1;
+struct _State;
+struct _StateManager;
+struct _StateManager_VTable;
+struct _StateManager_VTable_1;
+struct _State_VTable;
+struct _State_VTable_1;
 struct _String;
 struct _StringHeader;
 struct _String_1;
@@ -153,20 +172,68 @@ struct tinyxml2_XMLNode_VTable
 // "u64"
 typedef uint64_t u64;
 
+// "_MiniMapHelper_VTable"
+struct _MiniMapHelper_VTable
+{
+	void (* func0)();
+	void (* func1)();
+	void (* func2)();
+	void (* func3)();
+	void (* func4)();
+	void (* func5)();
+};
+
 // "u16"
 typedef uint16_t u16;
 
-// "_GameStateManager_VTable"
-struct _GameStateManager_VTable
+// "_ExtractState_vtable"
+struct _ExtractState_vtable
 {
 	void (* foo0)();
 	void (* foo1)();
-	void (* Initialize)();
-	void (* Destry)();
-	void (* Update)();
-	void (* Draw)();
+	void (* GetStateFlags)();
+	void (* OnLoad)();
+	void (* OnActivate)();
+	void (* foo5)();
 	void (* foo6)();
 	void (* foo7)();
+	void (* foo8)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
+	void (* foo12)();
+};
+
+// "u32"
+typedef uint32_t u32;
+
+// "_BaseMenu_VTable"
+struct _BaseMenu_VTable
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* Enter)();
+	void (* Exit)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
+	void (* WidgetSelectedByController)();
+	void (* IsControllerMenuTraversalEnabled)();
+};
+
+// "s32"
+typedef int32_t s32;
+
+// "_StateManager_VTable"
+struct _StateManager_VTable
+{
+	void (* Destructor)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* Update)();
+	void (* Draw)();
+	void (* AbortUpdate)();
 };
 
 // "_FileWriter"
@@ -174,9 +241,6 @@ struct _FileWriter
 {
 	struct _FileWriterFuncTable* funcs;
 };
-
-// "u32"
-typedef uint32_t u32;
 
 // "_Rect"
 struct _Rect
@@ -187,17 +251,76 @@ struct _Rect
 	float Height;
 };
 
+// "_State_VTable"
+struct _State_VTable
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* GetStateFlags)();
+	void (* OnLoad)();
+	void (* OnActive)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
+};
+
+// "_CameraZoomer_VTable"
+struct _CameraZoomer_VTable
+{
+	void (* foo0)();
+};
+
+// "_GameState_VTable"
+struct _GameState_VTable
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* OnActive)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* foo9)();
+	void (* Update)();
+	void (* Draw)();
+};
+
+// "_Vector3"
+struct _Vector3
+{
+	float X;
+	float Y;
+	float Z;
+};
+
+// "_MainMenuState_VTable"
+struct _MainMenuState_VTable
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* foo4)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* foo9)();
+	void (* foo10)();
+	void (* foo11)();
+};
+
 // "_Vector2"
 struct _Vector2
 {
 	float X;
 	float Y;
-};
-
-// "_FileReader"
-struct _FileReader
-{
-	struct _FileReaderFuncTable* funcs;
 };
 
 // "_Vector4"
@@ -220,14 +343,14 @@ struct _TextureAtlas_VTable
 	void (* func5)();
 };
 
-// "_String"
-struct _String
+// "_FileReader"
+struct _FileReader
 {
-	void* data;
-	void* data1;
-	void* data2;
-	void* data3;
+	struct _FileReaderFuncTable* funcs;
 };
+
+// "u8"
+typedef uint8_t u8;
 
 // "_SpriteBatch_VTable"
 struct _SpriteBatch_VTable
@@ -245,24 +368,36 @@ struct _Double2
 	double Y;
 };
 
-// "_Vector3"
-struct _Vector3
+// "_GameStateManager_VTable"
+struct _GameStateManager_VTable
 {
-	float X;
-	float Y;
-	float Z;
+	void (* foo0)();
+	void (* foo1)();
+	void (* Initialize)();
+	void (* Destry)();
+	void (* Update)();
+	void (* Draw)();
+	void (* foo6)();
+	void (* foo7)();
 };
 
 // "_Sprite_VTable"
 struct _Sprite_VTable
 {
+	__padding char _0[1];
 };
 
-// "s32"
-typedef int32_t s32;
+// "_String"
+struct _String
+{
+	void* data;
+	void* data1;
+	void* data2;
+	void* data3;
+};
 
-// "_MiniMapHelper_VTable"
-struct _MiniMapHelper_VTable
+// "_MainMenu_VTable"
+struct _MainMenu_VTable
 {
 	void (* func0)();
 	void (* func1)();
@@ -270,63 +405,9 @@ struct _MiniMapHelper_VTable
 	void (* func3)();
 	void (* func4)();
 	void (* func5)();
-};
-
-// "_ExtractState_vtable"
-struct _ExtractState_vtable
-{
-	void (* foo0)();
-	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* foo4)();
-	void (* foo5)();
-	void (* foo6)();
-	void (* foo7)();
-	void (* foo8)();
-	void (* foo9)();
-	void (* Update)();
-	void (* Draw)();
-	void (* foo12)();
-};
-
-// "_BaseDrawable_VTable"
-struct _BaseDrawable_VTable
-{
-	void (* foo0)();
-	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* foo4)();
-	void (* foo5)();
-	void (* foo6)();
-	void (* foo7)();
-	void (* foo8)();
-	void (* foo9)();
-};
-
-// "u8"
-typedef uint8_t u8;
-
-// "_GameManager_VTable"
-struct _GameManager_VTable
-{
-	void (* Destructor)();
-	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* Update)();
-	void (* Draw)();
-	void (* AbortUpdate)();
-};
-
-// "_String_1"
-struct _String_1
-{
-	void* data;
-	void* data1;
-	void* data2;
-	void* data3;
+	void (* func6)();
+	void (* func7)();
+	void (* func8)();
 };
 
 // "_MiniMapHelper_VTable_1"
@@ -340,29 +421,38 @@ struct _MiniMapHelper_VTable_1
 	void (* func5)();
 };
 
+// "_String_1"
+struct _String_1
+{
+	void* data;
+	void* data1;
+	void* data2;
+	void* data3;
+};
+
 // "u32_1"
 typedef uint32_t u32_1;
 
 // "u8_1"
 typedef uint8_t u8_1;
 
-// "u16_1"
-typedef uint16_t u16_1;
+// "MiniMapHelper_VTable"
+typedef struct _MiniMapHelper_VTable MiniMapHelper_VTable;
 
 // "String"
 typedef struct _String String;
 
-// "MiniMapHelper_VTable"
-typedef struct _MiniMapHelper_VTable MiniMapHelper_VTable;
+// "u16_1"
+typedef uint16_t u16_1;
 
 // "TerrariaAtlas"
 typedef struct _TerrariaAtlas TerrariaAtlas;
 
-// "Texture"
-typedef struct _Texture Texture;
-
 // "MiniMapHelper"
 typedef struct _MiniMapHelper MiniMapHelper;
+
+// "Texture_VTable"
+typedef struct _Texture_VTable Texture_VTable;
 
 // "_TerrariaAtlas_VTable"
 struct _TerrariaAtlas_VTable
@@ -375,16 +465,6 @@ struct _TerrariaAtlas_VTable
 	void (* func5)();
 	void (* func6)();
 	void (* func7)(void*, u32, TerrariaAtlas, u32);
-};
-
-// "_Texture_VTable"
-struct _Texture_VTable
-{
-	void (* foo0)(void*);
-	void (* foo1)(Texture*);
-	void (* foo2)(void*);
-	void (* foo3)(void*);
-	void (* foo4)(void*);
 };
 
 // "_MiniMap"
@@ -467,14 +547,98 @@ struct _MiniMap
 	u8 _77;
 };
 
+// "_Texture"
+struct _Texture
+{
+	Texture_VTable* FuncTable;
+	void* _04_07;
+	u32 _08_0B;
+	u32 _0C_0F;
+	void* _10_13;
+	u32 width1;
+	u32 height1;
+	u32 width2;
+	u32 height2;
+	u32 _24_27;
+	bool flag1;
+	bool flag2;
+	u16 imageFormat;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8* imageData;
+	void* _34_37;
+	String* imageName;
+	void* _3C_3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+};
+
 // "TerrariaAtlas_VTable"
 typedef struct _TerrariaAtlas_VTable TerrariaAtlas_VTable;
 
-// "Texture_VTable"
-typedef struct _Texture_VTable Texture_VTable;
-
 // "MiniMap"
 typedef struct _MiniMap MiniMap;
+
+// "Texture"
+typedef struct _Texture Texture;
 
 // "_TerrariaAtlas"
 struct _TerrariaAtlas
@@ -604,90 +768,6 @@ struct _TerrariaAtlas
 	u8 _83;
 };
 
-// "_Texture"
-struct _Texture
-{
-	Texture_VTable* FuncTable;
-	void* _04_07;
-	u32 _08_0B;
-	u32 _0C_0F;
-	void* _10_13;
-	u32 width1;
-	u32 height1;
-	u32 width2;
-	u32 height2;
-	u32 _24_27;
-	bool flag1;
-	bool flag2;
-	u16 imageFormat;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8* imageData;
-	void* _34_37;
-	String* imageName;
-	void* _3C_3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-};
-
 // "_MiniMapHelper"
 struct _MiniMapHelper
 {
@@ -705,6 +785,33 @@ struct _MiniMapHelper
 	u8 _E;
 	u8 _F;
 	MiniMap* miniMap;
+};
+
+// "_Texture_VTable"
+struct _Texture_VTable
+{
+	void (* foo0)(void*);
+	void (* foo1)(Texture*);
+	void (* foo2)(void*);
+	void (* foo3)(void*);
+	void (* foo4)(void*);
+};
+
+// "_State_VTable_1"
+struct _State_VTable_1
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* GetStateFlags)();
+	void (* OnLoad)();
+	void (* OnActive)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
 };
 
 // "_Vector4_1"
@@ -741,6 +848,22 @@ struct _Colour
 	u8 A;
 };
 
+// "_BaseDrawable_VTable"
+struct _BaseDrawable_VTable
+{
+	void (* OnContextLoss)();
+	void (* OnDeviceBufferChange)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* foo4)();
+	void (* SetTexture)(void*, String*);
+	void (* SetTexture2)();
+	void (* setColor)();
+};
+
+// "State_VTable"
+typedef struct _State_VTable State_VTable;
+
 // "Vector4"
 typedef struct _Vector4 Vector4;
 
@@ -752,6 +875,16 @@ typedef struct _IVector4 IVector4;
 
 // "Colour"
 typedef struct _Colour Colour;
+
+// "BaseDrawable_VTable"
+typedef struct _BaseDrawable_VTable BaseDrawable_VTable;
+
+// "_State"
+struct _State
+{
+	State_VTable* vtable;
+	u32 num1;
+};
 
 // "_SpriteInfo"
 struct _SpriteInfo
@@ -777,7 +910,7 @@ struct _SpriteBatch_VTable_1
 // "_GraphicsDevice"
 struct _GraphicsDevice
 {
-	void* _0_3;
+	void* vtable;
 	u8 _4;
 	u8 _5;
 	u8 _6;
@@ -811,7 +944,7 @@ struct _GraphicsDevice
 	u8 _25;
 	u8 _26;
 	u8 _27;
-	u8 _28;
+	bool isRenderingTop;
 	u8 _29;
 	u8 _2A;
 	u8 _2B;
@@ -977,7 +1110,7 @@ struct _GraphicsDevice
 	u8 _D1;
 	u8 _D2;
 	u8 _D3;
-	u8 _D4;
+	u8 platform;
 	u8 _D5;
 	u8 _D6;
 	u8 _D7;
@@ -1768,20 +1901,213 @@ struct _Item
 	u8 _83;
 };
 
-// "_BaseDrawable_VTable_1"
-struct _BaseDrawable_VTable_1
+// "_BaseDrawable"
+struct _BaseDrawable
+{
+	BaseDrawable_VTable* vtable;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	String* name;
+	u8 _C;
+	Colour colour;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	u8 _7C;
+	u8 _7D;
+	u8 _7E;
+	u8 _7F;
+	u8 _80;
+	u8 _81;
+	u8 _82;
+	u8 _83;
+	u32 _84_87;
+	u32 _88_8B;
+	u8 _8C;
+	u8 _8D;
+	u8 _8E;
+	u8 _8F;
+	u8 _90;
+	u8 _91;
+	u8 _92;
+	u8 _93;
+	u8 _94;
+	u8 _95;
+	u8 _96;
+	u8 _97;
+	u8 _98;
+	u8 _99;
+	u8 _9A;
+	u8 _9B;
+	u32 _9C_9F;
+	u32 _A0_A3;
+	u32 _A4_A7;
+	Texture* texture;
+	u8 _AC;
+	u8 _AD;
+	u8 _AE;
+	u8 _AF;
+	u8 _B0;
+	u8 _B1;
+	u8 _B2;
+	u8 _B3;
+	u8 _B4;
+	u8 _B5;
+	u8 _B6;
+	u8 _B7;
+	u8 _B8;
+	u8 _B9;
+	u8 _BA;
+	u8 _BB;
+	u32 _BC_BF;
+	u32 _C0_C3;
+	u32 _C4_C7;
+	u32 _C8_CB;
+	u32 _CC_CF;
+	u32 _D0_D3;
+	u32 _D4_D7;
+	u32 _D8_DB;
+	u8 _DC;
+	u8 _DD;
+	u8 _DE;
+	u8 _DF;
+	u8 _E0;
+	u8 _E1;
+	u8 _E2;
+	u8 _E3;
+	u8 _E4;
+	u8 _E5;
+	u8 _E6;
+	u8 _E7;
+	u8 _E8;
+	u8 _E9;
+	u8 _EA;
+	u8 _EB;
+	u8 _EC;
+};
+
+// "_BaseMenu_VTable_1"
+struct _BaseMenu_VTable_1
 {
 	void (* foo0)();
 	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* foo4)();
-	void (* foo5)();
-	void (* foo6)();
-	void (* foo7)();
-	void (* foo8)();
-	void (* foo9)();
+	void (* Enter)();
+	void (* Exit)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
+	void (* WidgetSelectedByController)();
+	void (* IsControllerMenuTraversalEnabled)();
 };
+
+// "State"
+typedef struct _State State;
 
 // "SpriteInfo"
 typedef struct _SpriteInfo SpriteInfo;
@@ -1809,8 +2135,181 @@ struct _Bytes6
 // "Item"
 typedef struct _Item Item;
 
-// "BaseDrawable_VTable"
-typedef struct _BaseDrawable_VTable BaseDrawable_VTable;
+// "BaseDrawable"
+typedef struct _BaseDrawable BaseDrawable;
+
+// "BaseMenu_VTable"
+typedef struct _BaseMenu_VTable BaseMenu_VTable;
+
+// "_StateManager"
+struct _StateManager
+{
+	void* vtable1;
+	void* vtable2;
+	u32 _08_0B;
+	State** StateGroup;
+	void* StateGroupEnd;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u32 _24_27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u32 _2C_2F;
+	u32 _30_33;
+	State** states;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+};
+
+// "_GameState"
+struct _GameState
+{
+	State state;
+	void* _8_B;
+	u8 _C;
+	u8 _D;
+	u8 _E;
+	u8 _F;
+	void* _10_13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	void* _18_1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u32 _58_5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+};
 
 // "_SpriteBatch"
 struct _SpriteBatch
@@ -1874,52 +2373,6 @@ struct _SpriteBatch
 	u32 _74_77;
 	u32 _78_7B;
 	u32 _7C_7F;
-};
-
-// "_GameManager"
-struct _GameManager
-{
-	void* vtable1;
-	void* vtable2;
-	u32 _08_0B;
-	u8 _0C;
-	u8 _0D;
-	u8 _0E;
-	u8 _0F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u32 _24_27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u32 _2C_2F;
-	u32 _30_33;
-	u32 _34_37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
 };
 
 // "_Draw_Unk1"
@@ -1989,6 +2442,122 @@ struct _Draw_Unk1
 	u8 _46;
 	u8 _47;
 	u8 _48;
+};
+
+// "_TextureAtlas"
+struct _TextureAtlas
+{
+	void* vtable;
+	u8 _04;
+	u8 _05;
+	u8 _06;
+	u8 _07;
+	u8 _08;
+	u8 _09;
+	u8 _0A;
+	u8 _0B;
+	u8 _0C;
+	u8 _0D;
+	u8 _0E;
+	u8 _0F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+};
+
+// "_ImageLoader_Data1"
+struct _ImageLoader_Data1
+{
+	u8 _00;
+	u8 _01;
+	u8 _02;
+	u8 _03;
+	u8 _04;
+	u8 _05;
+	u8 _06;
+	u8 _07;
+	u8 _08;
+	u8 _09;
+	u8 _0A;
+	u8 _0B;
+	u8 _0C;
+	u8 _0D;
+	u8 _0E;
+	u8 _0F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
 };
 
 // "_Player"
@@ -2906,17 +3475,391 @@ struct _Player
 	u8 _pad8[0xb4c];
 };
 
-// "_BaseDrawable"
-struct _BaseDrawable
+// "_Sprite"
+struct _Sprite
 {
-	BaseDrawable_VTable* vtable;
+	BaseDrawable base;
+	u8 _AC;
+	u8 _AD;
+	u8 _AE;
+	u8 _AF;
+	u32 _B0_B3;
+	u32 _B4_B7;
+	u32 _B8_BB;
+	u32 _BC_BF;
+	u8 _C0;
+	u8 _C1;
+	u8 _C2;
+	u8 _C3;
+	u8 _C4;
+	u8 _C5;
+	u8 _C6;
+	u8 _C7;
+	u8 _C8;
+	u8 _C9;
+	u8 _CA;
+	u8 _CB;
+	u8 _CC;
+	u8 _CD;
+	u8 _CE;
+	u8 _CF;
+	u32 _D0_D3;
+	u32 _D4_D7;
+	u32 _D8_DB;
+	u8 _DC;
+	u8 _DD;
+	u8 _DE;
+	u8 _DF;
+	u8 _E0;
+	u8 _E1;
+	u8 _E2;
+	u8 _E3;
+	u8 _E4;
+	u8 _E5;
+	u8 _E6;
+	u8 _E7;
+	u8 _E8;
+	u8 _E9;
+	u8 _EA;
+	u8 _EB;
+	u8 _EC;
+	u8 _ED;
+	u8 _EE;
+	u8 _EF;
+	u8 _F0;
+	u8 _F1;
+	u8 _F2;
+	u8 _F3;
+	u8 _F4;
+	u8 _F5;
+	u8 _F6;
+	u8 _F7;
+	u8 _F8;
+	u8 _F9;
+	u8 _FA;
+	u8 _FB;
+	u8 _FC;
+	u8 _FD;
+	u8 _FE;
+	u8 _FF;
+};
+
+// "_BaseMenu"
+struct _BaseMenu
+{
+	BaseMenu_VTable* vtable;
 	u8 _4;
 	u8 _5;
 	u8 _6;
 	u8 _7;
-	String* name;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	void* _C_F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	void* _1C_1F_start;
+	void* _20_23_end;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	void* XmlBackgroundLoader_verify;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u32 _3C_3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u32 _44_47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u32 _4C_4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u32 _58_5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+};
+
+// "StateManager"
+typedef struct _StateManager StateManager;
+
+// "GameState"
+typedef struct _GameState GameState;
+
+// "SpriteBatch"
+typedef struct _SpriteBatch SpriteBatch;
+
+// "s32_1"
+typedef int32_t s32_1;
+
+// "Draw_Unk1"
+typedef struct _Draw_Unk1 Draw_Unk1;
+
+// "TextureAtlas"
+typedef struct _TextureAtlas TextureAtlas;
+
+// "ImageLoader_Data1"
+typedef struct _ImageLoader_Data1 ImageLoader_Data1;
+
+// "_FileReader_1"
+struct _FileReader_1
+{
+	struct _FileReaderFuncTable* funcs;
+};
+
+// "Player"
+typedef struct _Player Player;
+
+// "Sprite"
+typedef struct _Sprite Sprite;
+
+// "_TileFlags1"
+struct _TileFlags1
+{
+	u8 active : 1;
+	u8 _1 : 1;
+	u8 _2 : 1;
+	u8 slope : 3;
+	u8 _6 : 1;
+	u8 _7 : 1;
+};
+
+// "BaseMenu"
+typedef struct _BaseMenu BaseMenu;
+
+// "_GameStateManager"
+struct _GameStateManager
+{
+	StateManager stateManager;
+	void* vtable;
+	u32 num1;
+	u32 num2;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	u8 _7C;
+	u8 _7D;
+	u8 _7E;
+	u8 _7F;
+	u32 _80_83;
+	u32 _84_87;
+	u32 _88_8B;
+	GameState* gameState;
+};
+
+// "_Draw_Unk3"
+struct _Draw_Unk3
+{
+	SpriteBatch* SpriteBatch;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	SpriteInfo* vertexBuffer;
+	void* ptr1;
+	void* ptr2;
+	u32 _18_1B;
+	void* SpriteText;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	float _28_2B;
+	float _2C_2F;
+	float _30_33;
+	float _34_37;
+	float _38_3B;
+	float _3C_3F;
+	float _40_43;
+	float _44_47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	float _58_5B;
+	float _5C_5F;
+	float _60_63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+};
+
+// "_Vector3_1"
+struct _Vector3_1
+{
+	float X;
+	float Y;
+	float Z;
+};
+
+// "_StateManager_VTable_1"
+struct _StateManager_VTable_1
+{
+	void (* Destructor)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* Update)();
+	void (* Draw)();
+	void (* AbortUpdate)();
+};
+
+// "_World"
+struct _World
+{
+	u8 _00;
+	u8 _01;
+	u8 _02;
+	bool gen;
+	bool generatingWorld;
+	u8 _05;
+	u8 _06;
+	u8 _07;
+	u8 _08;
+	u8 _09;
+	u8 _0A;
+	u8 _0B;
+	bool destroyObject;
+	bool crimsonWorld;
+	u8 _0E;
+	u8 _0F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u16 copperType;
+	u16 ironType;
+	u16 silverType;
+	u16 goldType;
+	u16 num1;
+	u16 num2;
+	u16 coboltType;
+	u16 mythrilType;
+	u16 adamantiteType;
+	u16 worldWidth;
+	u16 worldHeight;
+};
+
+// "_Image"
+struct _Image
+{
+	u8 _0;
+	u8 _1;
+	u8 _2;
+	u8 _3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
 	u8 _C;
-	Colour colour;
+	u8 _D;
+	u8 _E;
+	u8 _F;
+	u8 _10;
 	u8 _11;
 	u8 _12;
 	u8 _13;
@@ -3056,16 +3999,185 @@ struct _BaseDrawable
 	u8 _99;
 	u8 _9A;
 	u8 _9B;
-	u32 _9C_9F;
-	u32 _A0_A3;
-	u32 _A4_A7;
-	u32 _A8_AB;
+	u8 _9C;
+	u8 _9D;
+	u8 _9E;
+	u8 _9F;
+	u8 _A0;
+	u8 _A1;
+	u8 _A2;
+	u8 _A3;
+	u8 _A4;
+	u8 _A5;
+	u8 _A6;
+	u8 _A7;
+	u8 _A8;
+	u8 _A9;
+	u8 _AA;
+	u8 _AB;
+	u8 _AC;
+	u8 _AD;
+	u8 _AE;
+	u8 _AF;
+	u8 _B0;
+	u8 _B1;
+	u8 _B2;
+	u8 _B3;
+	u8 _B4;
+	u8 _B5;
+	u8 _B6;
+	u8 _B7;
+	u8 _B8;
+	u8 _B9;
+	u8 _BA;
+	u8 _BB;
+	u8 _BC;
+	u8 _BD;
+	u8 _BE;
+	u8 _BF;
+	u8 _C0;
+	u8 _C1;
+	u8 _C2;
+	u8 _C3;
+	u8 _C4;
+	u8 _C5;
+	u8 _C6;
+	u8 _C7;
+	u8 _C8;
+	u8 _C9;
+	u8 _CA;
+	u8 _CB;
+	u8 _CC;
+	u8 _CD;
+	u8 _CE;
+	u8 _CF;
+	u8 _D0;
+	u8 _D1;
+	u8 _D2;
+	u8 _D3;
+	u8 _D4;
+	u8 _D5;
+	u8 _D6;
+	u8 _D7;
+	u8 _D8;
+	u8 _D9;
+	u8 _DA;
+	u8 _DB;
+	u8 _DC;
+	u8 _DD;
+	u8 _DE;
+	u8 _DF;
+	u8 _E0;
+	u8 _E1;
+	u8 _E2;
+	u8 _E3;
+	u8 _E4;
+	u8 _E5;
+	u8 _E6;
+	u8 _E7;
+	u8 _E8;
+	u8 _E9;
+	u8 _EA;
+	u8 _EB;
+	u8 _EC;
+	u8 _ED;
+	u8 _EE;
+	u8 _EF;
+	u8 _F0;
+	u8 _F1;
+	u8 _F2;
+	u8 _F3;
+	u8 _F4;
+	u8 _F5;
+	u8 _F6;
+	u8 _F7;
+	u8 _F8;
+	u8 _F9;
+	u8 _FA;
+	u8 _FB;
+	u8 _FC;
+	u8 _FD;
+	u8 _FE;
+	u8 _FF;
 };
 
-// "_TextureAtlas"
-struct _TextureAtlas
+// "_Chest"
+struct _Chest
 {
-	void* vtable;
+	Item items[0x28];
+	u16 X;
+	u16 Y;
+	u32 other;
+};
+
+// "_ExtractState_vtable_1"
+struct _ExtractState_vtable_1
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* GetStateFlags)();
+	void (* OnLoad)();
+	void (* OnActivate)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* HandleInput)();
+	void (* Update)();
+	void (* Draw)();
+	void (* foo12)();
+};
+
+// "_SoundEffect"
+struct _SoundEffect
+{
+	u8 _00;
+	u8 _01;
+	u8 _02;
+	u8 _03;
+	u8 _04;
+	u8 _05;
+	u8 _06;
+	u8 _07;
+	u8 _08;
+	u8 _09;
+	u8 _0A;
+	u8 _0B;
+	u32 _0C_0F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+};
+
+// "_GameStateManager_VTable_1"
+struct _GameStateManager_VTable_1
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* Initialize)();
+	void (* Destry)();
+	void (* Update)();
+	void (* Draw)();
+	void (* foo6)();
+	void (* foo7)();
+};
+
+// "_ItemText"
+struct _ItemText
+{
+	u8 _00;
+	u8 _01;
+	u8 _02;
+	u8 _03;
 	u8 _04;
 	u8 _05;
 	u8 _06;
@@ -3078,6 +4190,170 @@ struct _TextureAtlas
 	u8 _0D;
 	u8 _0E;
 	u8 _0F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+};
+
+// "_MainMenuState_VTable_1"
+struct _MainMenuState_VTable_1
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* foo4)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* foo9)();
+	void (* foo10)();
+	void (* foo11)();
+};
+
+// "_GameState_VTable_1"
+struct _GameState_VTable_1
+{
+	void (* foo0)();
+	void (* foo1)();
+	void (* foo2)();
+	void (* foo3)();
+	void (* OnActive)();
+	void (* foo5)();
+	void (* foo6)();
+	void (* foo7)();
+	void (* foo8)();
+	void (* foo9)();
+	void (* Update)();
+	void (* Draw)();
+};
+
+// "_StringHeader"
+struct _StringHeader
+{
+	s32 refcount;
+	u32 unk;
+	u32 length;
+	String string;
+};
+
+// "_Recipe"
+struct _Recipe
+{
+	u8 _00;
+	u8 _01;
+	u8 _02;
+	u8 _03;
+	Item recipeResult;
+	Item recipeRequired[0x6];
+};
+
+// "_Main"
+struct _Main
+{
+	u8 _0;
+	u8 _1;
+	u8 _2;
+	u8 _3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	u8 _C;
+	u8 _D;
+	u8 _E;
+	u8 _F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+};
+
+// "_Draw_Unk0"
+struct _Draw_Unk0
+{
+	u8 _0;
+	u8 _1;
+	u8 _2;
+	u8 _3;
+	u8 _4;
+	u8 _5;
+	u8 _6;
+	u8 _7;
+	u8 _8;
+	u8 _9;
+	u8 _A;
+	u8 _B;
+	u8 _C;
+	u8 _D;
+	u8 _E;
+	u8 _F;
 	u8 _10;
 	u8 _11;
 	u8 _12;
@@ -3146,10 +4422,262 @@ struct _TextureAtlas
 	u8 _51;
 	u8 _52;
 	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
+	u8 _64;
+	u8 _65;
+	u8 _66;
+	u8 _67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	u32 _7C_7F;
+	u32 _80_83;
+	u8 _84;
+	u8 _85;
+	u8 _86;
+	u8 _87;
+	Draw_Unk1* unk1;
+	u8 _8C;
+	u8 _8D;
+	u8 _8E;
+	u8 _8F;
+	u8 _90;
+	u8 _91;
+	u8 _92;
+	u8 _93;
 };
 
-// "_ImageLoader_Data1"
-struct _ImageLoader_Data1
+// "_FileWriter_1"
+struct _FileWriter_1
+{
+	struct _FileWriterFuncTable* funcs;
+};
+
+// "_ContentLoader"
+struct _ContentLoader
+{
+	u32 num1;
+	ImageLoader_Data1 data1;
+	u32 num3;
+	u32 num4;
+	u32 num5;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u8 _18;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
+	u8 _48;
+	u8 _49;
+	u8 _4A;
+	u8 _4B;
+	u8 _4C;
+	u8 _4D;
+	u8 _4E;
+	u8 _4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	TextureAtlas* altasBufferStart;
+	TextureAtlas* altasBufferEnd;
+	void* _68_6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	u8 _7C;
+	u8 _7D;
+	u8 _7E;
+	u8 _7F;
+	u8 _80;
+	u8 _81;
+	u8 _82;
+	u8 _83;
+	u8 _84;
+	u8 _85;
+	u8 _86;
+	u8 _87;
+	u8 _88;
+	u8 _89;
+	u8 _8A;
+	u8 _8B;
+};
+
+// "_CameraZoomer_VTable_1"
+struct _CameraZoomer_VTable_1
+{
+	void (* foo0)();
+};
+
+// "FileReader"
+typedef struct _FileReader FileReader;
+
+// "_PlayerParentPlaceholder"
+struct _PlayerParentPlaceholder
+{
+	u8 _pad1[0x1c];
+	Player* player;
+};
+
+// "_Double2_1"
+struct _Double2_1
+{
+	double X;
+	double Y;
+};
+
+// "_ExtractState"
+struct _ExtractState
+{
+	State state;
+	Sprite* splash_505;
+	Sprite* splash_relogic;
+	Sprite* splash_codeglue;
+	Sprite* splash_terraria;
+	void* _19_1C;
+	float _1C_2F;
+	u8 loadCounter;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+};
+
+// "_Tile"
+struct _Tile
+{
+	u8 _00;
+	struct _TileFlags1 flags1;
+	u8 _02;
+	u8 _03;
+	u8 _04;
+	u8 _05;
+	u8 type_0 : 1;
+	u8 type_1 : 1;
+	u8 type_2 : 1;
+	u8 type_3 : 1;
+	u8 type_4 : 1;
+	u8 type_5 : 1;
+	u8 type_6 : 1;
+	u8 type_7 : 1;
+	u8 type_8 : 1;
+	u8 _07_1 : 1;
+	u8 _07_2 : 1;
+	u8 _07_3 : 1;
+	u8 _07_4 : 1;
+	u8 _07_5 : 1;
+	u8 _07_6 : 1;
+	u8 _07_7 : 1;
+	u16 frameX;
+	u16 frameY;
+	u8 _0C;
+	u8 _0D;
+};
+
+// "_Projectile"
+struct _Projectile
 {
 	u8 _00;
 	u8 _01;
@@ -3176,69 +4704,13 @@ struct _ImageLoader_Data1
 	u8 _16;
 	u8 _17;
 	u8 _18;
-};
-
-// "_FileReader_1"
-struct _FileReader_1
-{
-	struct _FileReaderFuncTable* funcs;
-};
-
-// "SpriteBatch"
-typedef struct _SpriteBatch SpriteBatch;
-
-// "s32_1"
-typedef int32_t s32_1;
-
-// "_TileFlags1"
-struct _TileFlags1
-{
-	u8 active : 1;
-	u8 _1 : 1;
-	u8 _2 : 1;
-	u8 slope : 3;
-	u8 _6 : 1;
-	u8 _7 : 1;
-};
-
-// "GameManager"
-typedef struct _GameManager GameManager;
-
-// "Draw_Unk1"
-typedef struct _Draw_Unk1 Draw_Unk1;
-
-// "Player"
-typedef struct _Player Player;
-
-// "BaseDrawable"
-typedef struct _BaseDrawable BaseDrawable;
-
-// "TextureAtlas"
-typedef struct _TextureAtlas TextureAtlas;
-
-// "ImageLoader_Data1"
-typedef struct _ImageLoader_Data1 ImageLoader_Data1;
-
-// "FileReader"
-typedef struct _FileReader FileReader;
-
-// "_Draw_Unk3"
-struct _Draw_Unk3
-{
-	SpriteBatch* SpriteBatch;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	SpriteInfo* vertexBuffer;
-	void* ptr1;
-	void* ptr2;
-	u32 _18_1B;
-	void* SpriteText;
+	u8 _19;
+	u8 _1A;
+	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
 	u8 _20;
 	u8 _21;
 	u8 _22;
@@ -3247,14 +4719,36 @@ struct _Draw_Unk3
 	u8 _25;
 	u8 _26;
 	u8 _27;
-	float _28_2B;
-	float _2C_2F;
-	float _30_33;
-	float _34_37;
-	float _38_3B;
-	float _3C_3F;
-	float _40_43;
-	float _44_47;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u16 width;
+	u16 height;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	u8 _40;
+	u8 _41;
+	u8 _42;
+	u8 _43;
+	u8 _44;
+	u8 _45;
+	u8 _46;
+	u8 _47;
 	u8 _48;
 	u8 _49;
 	u8 _4A;
@@ -3271,9 +4765,18 @@ struct _Draw_Unk3
 	u8 _55;
 	u8 _56;
 	u8 _57;
-	float _58_5B;
-	float _5C_5F;
-	float _60_63;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	u8 _60;
+	u8 _61;
+	u8 _62;
+	u8 _63;
 	u8 _64;
 	u8 _65;
 	u8 _66;
@@ -3286,10 +4789,395 @@ struct _Draw_Unk3
 	u8 _6D;
 	u8 _6E;
 	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+	u8 _78;
+	u8 _79;
+	u8 _7A;
+	u8 _7B;
+	float _7C_7F;
+	u8 _80;
+	u8 _81;
+	u8 _82;
+	u8 _83;
+	u8 _84;
+	u8 _85;
+	u8 _86;
+	u8 _87;
+	u8 _88;
+	u8 _89;
+	u8 _8A;
+	u8 _8B;
+	u8 _8C;
+	u8 _8D;
+	u8 _8E;
+	u8 _8F;
+	u8 _90;
+	u8 _91;
+	u8 _92;
+	u8 _93;
+	u8 _94;
+	u8 _95;
+	u8 _96;
+	u8 _97;
+	u8 _98;
+	u8 _99;
+	u8 _9A;
+	u8 _9B;
+	u8 _9C;
+	u8 _9D;
+	u8 _9E;
+	u8 _9F;
+	u8 _A0;
+	u8 _A1;
+	u8 _A2;
+	u8 _A3;
+	u8 _A4;
+	u8 _A5;
+	u8 _A6;
+	u8 _A7;
+	u8 _A8;
+	u8 _A9;
+	u8 _AA;
+	u8 _AB;
+	u8 _AC;
+	u8 _AD;
+	u8 _AE;
+	u8 _AF;
+	u8 _B0;
+	u8 _B1;
+	u8 _B2;
+	u8 _B3;
+	u8 _B4;
+	u8 _B5;
+	u8 _B6;
+	u8 _B7;
+	u8 _B8;
+	u8 _B9;
+	u8 _BA;
+	u8 _BB;
+	u8 _BC;
+	u8 _BD;
+	u8 _BE;
+	u8 _BF;
+	u8 _C0;
+	u8 _C1;
+	u8 _C2;
+	u8 _C3;
+	u8 _C4;
+	u8 _C5;
+	u8 _C6;
+	u8 _C7;
+	u8 _C8;
+	u8 _C9;
+	u8 _CA;
+	u8 _CB;
+	u8 _CC;
+	u8 _CD;
+	u8 _CE;
+	u8 _CF;
+	u8 _D0;
+	u8 _D1;
+	u8 _D2;
+	u8 _D3;
+	u8 _D4;
+	u8 _D5;
+	u8 _D6;
+	u8 _D7;
+	u8 _D8;
+	u8 _D9;
+	u8 _DA;
+	u8 _DB;
+	u8 _DC;
+	u8 _DD;
+	u8 _DE;
+	u8 _DF;
+	u8 _E0;
+	u8 _E1;
+	u8 _E2;
+	u8 _E3;
+	u8 _E4;
+	u8 _E5;
+	u8 _E6;
+	u8 _E7;
+	u8 _E8;
+	u8 _E9;
+	u8 _EA;
+	u8 _EB;
+	u8 _EC;
+	u8 _ED;
+	u8 _EE;
+	u8 _EF;
+	u8 _F0;
+	u8 _F1;
+	u8 _F2;
+	u8 _F3;
+	u8 _F4;
+	u8 _F5;
+	u8 _F6;
+	u8 _F7;
 };
 
-// "_SoundEffect"
-struct _SoundEffect
+// "_SpriteText"
+struct _SpriteText
+{
+	BaseDrawable base;
+	u8 _F0;
+	u8 _F1;
+	u8 _F2;
+	u8 _F3;
+	u8 _F4;
+	u8 _F5;
+	u8 _F6;
+	u8 _F7;
+	u8 _F8;
+	u8 _F9;
+	u8 _FA;
+	u8 _FB;
+	u8 _FC;
+	u8 _FD;
+	u8 _FE;
+	u8 _FF;
+	u8 _100;
+	u8 _101;
+	u8 _102;
+	u8 _103;
+	u8 _104;
+	u8 _105;
+	u8 _106;
+	u8 _107;
+	u8 _108;
+	u8 _109;
+	u8 _10A;
+	u8 _10B;
+	u8 _10C;
+	u8 _10D;
+	u8 _10E;
+	u8 _10F;
+	u8 _110;
+	u8 _111;
+	u8 _112;
+	u8 _113;
+	float _114_117;
+	float _118_11B;
+	float _11C_11F;
+	float _120_123;
+	u8 _124;
+	u8 _125;
+	u8 _126;
+	u8 _127;
+	u8 _128;
+	u8 _129;
+	u8 _12A;
+	u8 _12B;
+	u8 _12C;
+	u8 _12D;
+	u8 _12E;
+	u8 _12F;
+	u8 _130;
+	u8 _131;
+	u8 _132;
+	u8 _133;
+	u8 _134;
+	u8 _135;
+	u8 _136;
+	u8 _137;
+	u8 _138;
+	u8 _139;
+	u8 _13A;
+	u8 _13B;
+	u8 _13C;
+	u8 _13D;
+	u8 _13E;
+	u8 _13F;
+	u32 _140_143;
+	u8 _144;
+	u8 _145;
+	u8 _146;
+	u8 _147;
+	u32 _148_14B;
+	u8 _14C;
+	u8 _14D;
+	u8 _14E;
+	u8 _14F;
+	u8 _150;
+	u8 _151;
+	u8 _152;
+	u8 _153;
+	u8 _154;
+	u8 _155;
+	u8 _156;
+	u8 _157;
+	u8 _158;
+	u8 _159;
+	u8 _15A;
+	u8 _15B;
+	u8 _15C;
+	u8 _15D;
+	u8 _15E;
+	u8 _15F;
+	u8 _160;
+	u8 _161;
+	u8 _162;
+	u8 _163;
+	void* _164_167;
+	u8 _168;
+	u8 _169;
+	u8 _16A;
+	u8 _16B;
+	u8 _16C;
+	u8 _16D;
+	u8 _16E;
+	u8 _16F;
+	u8 _170;
+	u8 _171;
+	u8 _172;
+	u8 _173;
+	u8 _174;
+	u8 _175;
+	u8 _176;
+	u8 _177;
+};
+
+// "_CameraZoomer"
+struct _CameraZoomer
+{
+	void* vtable;
+	u32 _4_7;
+	u32 _8_B;
+	u32 _C_F;
+	u32 _10_13;
+	float _14_17;
+	float _18_1B;
+	float _1C_1F;
+	float _20_23;
+	float _24_27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+};
+
+// "_BaseMenuState"
+struct _BaseMenuState
+{
+	State state;
+	BaseMenu menu;
+	void* _C_F;
+	u8 _10;
+	u8 _11;
+	u8 _12;
+	u8 _13;
+	u8 _14;
+	u8 _15;
+	u8 _16;
+	u8 _17;
+	u32 _18_1B;
+	u32 _1C_1F;
+	u32 _20_23;
+	float _24_27;
+	u8 _28;
+	u8 _29;
+	u8 _2A;
+	u8 _2B;
+	u8 _2C;
+	u8 _2D;
+	u8 _2E;
+	u8 _2F;
+	u8 _30;
+	u8 _31;
+	u8 _32;
+	u8 _33;
+	u8 _34;
+	u8 _35;
+	u8 _36;
+	u8 _37;
+	u8 _38;
+	u8 _39;
+	u8 _3A;
+	u8 _3B;
+	u8 _3C;
+	u8 _3D;
+	u8 _3E;
+	u8 _3F;
+	void* _40_43;
+	u32 _44_47;
+	u32 _48_4B;
+	u32 _4C_4F;
+	u8 _50;
+	u8 _51;
+	u8 _52;
+	u8 _53;
+	u8 _54;
+	u8 _55;
+	u8 _56;
+	u8 _57;
+	u8 _58;
+	u8 _59;
+	u8 _5A;
+	u8 _5B;
+	u8 _5C;
+	u8 _5D;
+	u8 _5E;
+	u8 _5F;
+	void* _60_63;
+	void* _64_67;
+	u8 _68;
+	u8 _69;
+	u8 _6A;
+	u8 _6B;
+	u8 _6C;
+	u8 _6D;
+	u8 _6E;
+	u8 _6F;
+	u8 _70;
+	u8 _71;
+	u8 _72;
+	u8 _73;
+	u8 _74;
+	u8 _75;
+	u8 _76;
+	u8 _77;
+};
+
+// "_TextureAtlas_VTable_1"
+struct _TextureAtlas_VTable_1
+{
+	void (* func0)();
+	void (* func1)();
+	void (* func2)();
+	void (* func3)();
+	void (* func4)();
+	void (* func5)();
+};
+
+// "_Rect_1"
+struct _Rect_1
+{
+	float X;
+	float Y;
+	float Width;
+	float Height;
+};
+
+// "_Sprite_VTable_1"
+struct _Sprite_VTable_1
+{
+	__padding char _0[1];
+};
+
+// "_Gore"
+struct _Gore
 {
 	u8 _00;
 	u8 _01;
@@ -3303,7 +5191,10 @@ struct _SoundEffect
 	u8 _09;
 	u8 _0A;
 	u8 _0B;
-	u32 _0C_0F;
+	u8 _0C;
+	u8 _0D;
+	u8 _0E;
+	u8 _0F;
 	u8 _10;
 	u8 _11;
 	u8 _12;
@@ -3316,6 +5207,18 @@ struct _SoundEffect
 	u8 _19;
 	u8 _1A;
 	u8 _1B;
+	u8 _1C;
+	u8 _1D;
+	u8 _1E;
+	u8 _1F;
+	u8 _20;
+	u8 _21;
+	u8 _22;
+	u8 _23;
+	u8 _24;
+	u8 _25;
+	u8 _26;
+	u8 _27;
 };
 
 // "_UI"
@@ -5362,279 +7265,18 @@ struct _UI
 	u8 _7FF;
 };
 
-// "_Rect_1"
-struct _Rect_1
+// "_MainMenu_VTable_1"
+struct _MainMenu_VTable_1
 {
-	float X;
-	float Y;
-	float Width;
-	float Height;
-};
-
-// "_World"
-struct _World
-{
-	u8 _00;
-	u8 _01;
-	u8 _02;
-	bool gen;
-	bool generatingWorld;
-	u8 _05;
-	u8 _06;
-	u8 _07;
-	u8 _08;
-	u8 _09;
-	u8 _0A;
-	u8 _0B;
-	bool destroyObject;
-	bool crimsonWorld;
-	u8 _0E;
-	u8 _0F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u16 copperType;
-	u16 ironType;
-	u16 silverType;
-	u16 goldType;
-	u16 num1;
-	u16 num2;
-	u16 coboltType;
-	u16 mythrilType;
-	u16 adamantiteType;
-	u16 worldWidth;
-	u16 worldHeight;
-};
-
-// "_ExtractState_vtable_1"
-struct _ExtractState_vtable_1
-{
-	void (* foo0)();
-	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* foo4)();
-	void (* foo5)();
-	void (* foo6)();
-	void (* foo7)();
-	void (* foo8)();
-	void (* foo9)();
-	void (* Update)();
-	void (* Draw)();
-	void (* foo12)();
-};
-
-// "_FileWriter_1"
-struct _FileWriter_1
-{
-	struct _FileWriterFuncTable* funcs;
-};
-
-// "_GameStateManager_VTable_1"
-struct _GameStateManager_VTable_1
-{
-	void (* foo0)();
-	void (* foo1)();
-	void (* Initialize)();
-	void (* Destry)();
-	void (* Update)();
-	void (* Draw)();
-	void (* foo6)();
-	void (* foo7)();
-};
-
-// "_Recipe"
-struct _Recipe
-{
-	u8 _00;
-	u8 _01;
-	u8 _02;
-	u8 _03;
-	Item recipeResult;
-	Item recipeRequired[0x6];
-};
-
-// "_Gore"
-struct _Gore
-{
-	u8 _00;
-	u8 _01;
-	u8 _02;
-	u8 _03;
-	u8 _04;
-	u8 _05;
-	u8 _06;
-	u8 _07;
-	u8 _08;
-	u8 _09;
-	u8 _0A;
-	u8 _0B;
-	u8 _0C;
-	u8 _0D;
-	u8 _0E;
-	u8 _0F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-};
-
-// "_StringHeader"
-struct _StringHeader
-{
-	s32 refcount;
-	u32 unk;
-	u32 length;
-	String string;
-};
-
-// "_ItemText"
-struct _ItemText
-{
-	u8 _00;
-	u8 _01;
-	u8 _02;
-	u8 _03;
-	u8 _04;
-	u8 _05;
-	u8 _06;
-	u8 _07;
-	u8 _08;
-	u8 _09;
-	u8 _0A;
-	u8 _0B;
-	u8 _0C;
-	u8 _0D;
-	u8 _0E;
-	u8 _0F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-};
-
-// "_Tile"
-struct _Tile
-{
-	u8 _00;
-	struct _TileFlags1 flags1;
-	u8 _02;
-	u8 _03;
-	u8 _04;
-	u8 _05;
-	u8 type_0 : 1;
-	u8 type_1 : 1;
-	u8 type_2 : 1;
-	u8 type_3 : 1;
-	u8 type_4 : 1;
-	u8 type_5 : 1;
-	u8 type_6 : 1;
-	u8 type_7 : 1;
-	u8 type_8 : 1;
-	u8 _07_1 : 1;
-	u8 _07_2 : 1;
-	u8 _07_3 : 1;
-	u8 _07_4 : 1;
-	u8 _07_5 : 1;
-	u8 _07_6 : 1;
-	u8 _07_7 : 1;
-	u16 frameX;
-	u16 frameY;
-	u8 _0C;
-	u8 _0D;
-};
-
-// "_GameStateManager"
-struct _GameStateManager
-{
-	GameManager gameManager;
-	u8 _pad1[0x20];
-	void* vtable;
-	u32 num1;
-	u32 num2;
-	u8 _pad2[0x24];
-};
-
-// "_Chest"
-struct _Chest
-{
-	Item items[0x28];
-	u16 X;
-	u16 Y;
-	u32 other;
+	void (* func0)();
+	void (* func1)();
+	void (* func2)();
+	void (* func3)();
+	void (* func4)();
+	void (* func5)();
+	void (* func6)();
+	void (* func7)();
+	void (* func8)();
 };
 
 // "_NPC"
@@ -6022,907 +7664,65 @@ struct _NPC
 	u8 _292;
 };
 
-// "_TextureAtlas_VTable_1"
-struct _TextureAtlas_VTable_1
-{
-	void (* func0)();
-	void (* func1)();
-	void (* func2)();
-	void (* func3)();
-	void (* func4)();
-	void (* func5)();
-};
+// "GameStateManager"
+typedef struct _GameStateManager GameStateManager;
 
-// "_Double2_1"
-struct _Double2_1
-{
-	double X;
-	double Y;
-};
+// "XNASpriteBatch"
+typedef struct _Draw_Unk3 XNASpriteBatch;
 
-// "_Sprite_VTable_1"
-struct _Sprite_VTable_1
-{
-};
+// "Vector3"
+typedef struct _Vector3 Vector3;
 
-// "_Draw_Unk0"
-struct _Draw_Unk0
-{
-	u8 _0;
-	u8 _1;
-	u8 _2;
-	u8 _3;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	u8 _C;
-	u8 _D;
-	u8 _E;
-	u8 _F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-	u8 _7A;
-	u8 _7B;
-	u32 _7C_7F;
-	u32 _80_83;
-	u8 _84;
-	u8 _85;
-	u8 _86;
-	u8 _87;
-	Draw_Unk1* unk1;
-	u8 _8C;
-	u8 _8D;
-	u8 _8E;
-	u8 _8F;
-	u8 _90;
-	u8 _91;
-	u8 _92;
-	u8 _93;
-};
+// "StateManager_VTable"
+typedef struct _StateManager_VTable StateManager_VTable;
 
-// "_Projectile"
-struct _Projectile
-{
-	u8 _00;
-	u8 _01;
-	u8 _02;
-	u8 _03;
-	u8 _04;
-	u8 _05;
-	u8 _06;
-	u8 _07;
-	u8 _08;
-	u8 _09;
-	u8 _0A;
-	u8 _0B;
-	u8 _0C;
-	u8 _0D;
-	u8 _0E;
-	u8 _0F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u16 width;
-	u16 height;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-	u8 _7A;
-	u8 _7B;
-	float _7C_7F;
-	u8 _80;
-	u8 _81;
-	u8 _82;
-	u8 _83;
-	u8 _84;
-	u8 _85;
-	u8 _86;
-	u8 _87;
-	u8 _88;
-	u8 _89;
-	u8 _8A;
-	u8 _8B;
-	u8 _8C;
-	u8 _8D;
-	u8 _8E;
-	u8 _8F;
-	u8 _90;
-	u8 _91;
-	u8 _92;
-	u8 _93;
-	u8 _94;
-	u8 _95;
-	u8 _96;
-	u8 _97;
-	u8 _98;
-	u8 _99;
-	u8 _9A;
-	u8 _9B;
-	u8 _9C;
-	u8 _9D;
-	u8 _9E;
-	u8 _9F;
-	u8 _A0;
-	u8 _A1;
-	u8 _A2;
-	u8 _A3;
-	u8 _A4;
-	u8 _A5;
-	u8 _A6;
-	u8 _A7;
-	u8 _A8;
-	u8 _A9;
-	u8 _AA;
-	u8 _AB;
-	u8 _AC;
-	u8 _AD;
-	u8 _AE;
-	u8 _AF;
-	u8 _B0;
-	u8 _B1;
-	u8 _B2;
-	u8 _B3;
-	u8 _B4;
-	u8 _B5;
-	u8 _B6;
-	u8 _B7;
-	u8 _B8;
-	u8 _B9;
-	u8 _BA;
-	u8 _BB;
-	u8 _BC;
-	u8 _BD;
-	u8 _BE;
-	u8 _BF;
-	u8 _C0;
-	u8 _C1;
-	u8 _C2;
-	u8 _C3;
-	u8 _C4;
-	u8 _C5;
-	u8 _C6;
-	u8 _C7;
-	u8 _C8;
-	u8 _C9;
-	u8 _CA;
-	u8 _CB;
-	u8 _CC;
-	u8 _CD;
-	u8 _CE;
-	u8 _CF;
-	u8 _D0;
-	u8 _D1;
-	u8 _D2;
-	u8 _D3;
-	u8 _D4;
-	u8 _D5;
-	u8 _D6;
-	u8 _D7;
-	u8 _D8;
-	u8 _D9;
-	u8 _DA;
-	u8 _DB;
-	u8 _DC;
-	u8 _DD;
-	u8 _DE;
-	u8 _DF;
-	u8 _E0;
-	u8 _E1;
-	u8 _E2;
-	u8 _E3;
-	u8 _E4;
-	u8 _E5;
-	u8 _E6;
-	u8 _E7;
-	u8 _E8;
-	u8 _E9;
-	u8 _EA;
-	u8 _EB;
-	u8 _EC;
-	u8 _ED;
-	u8 _EE;
-	u8 _EF;
-	u8 _F0;
-	u8 _F1;
-	u8 _F2;
-	u8 _F3;
-	u8 _F4;
-	u8 _F5;
-	u8 _F6;
-	u8 _F7;
-};
+// "World"
+typedef struct _World World;
 
-// "_PlayerParentPlaceholder"
-struct _PlayerParentPlaceholder
-{
-	u8 _pad1[0x1c];
-	Player* player;
-};
+// "Image"
+typedef struct _Image Image;
 
-// "_Vector3_1"
-struct _Vector3_1
-{
-	float X;
-	float Y;
-	float Z;
-};
+// "Chest"
+typedef struct _Chest Chest;
 
-// "_Sprite"
-struct _Sprite
-{
-	BaseDrawable base;
-	u8 _AC;
-	u8 _AD;
-	u8 _AE;
-	u8 _AF;
-	u32 _B0_B3;
-	u32 _B4_B7;
-	u32 _B8_BB;
-	u32 _BC_BF;
-	u8 _C0;
-	u8 _C1;
-	u8 _C2;
-	u8 _C3;
-	u8 _C4;
-	u8 _C5;
-	u8 _C6;
-	u8 _C7;
-	u8 _C8;
-	u8 _C9;
-	u8 _CA;
-	u8 _CB;
-	u8 _CC;
-	u8 _CD;
-	u8 _CE;
-	u8 _CF;
-	u8 _D0;
-	u8 _D1;
-	u8 _D2;
-	u8 _D3;
-	u8 _D4;
-	u8 _D5;
-	u8 _D6;
-	u8 _D7;
-	u8 _D8;
-	u8 _D9;
-	u8 _DA;
-	u8 _DB;
-	u8 _DC;
-	u8 _DD;
-	u8 _DE;
-	u8 _DF;
-	u8 _E0;
-	u8 _E1;
-	u8 _E2;
-	u8 _E3;
-	u8 _E4;
-	u8 _E5;
-	u8 _E6;
-	u8 _E7;
-	u8 _E8;
-	u8 _E9;
-	u8 _EA;
-	u8 _EB;
-	u8 _EC;
-	u8 _ED;
-	u8 _EE;
-	u8 _EF;
-	u8 _F0;
-	u8 _F1;
-	u8 _F2;
-	u8 _F3;
-	u8 _F4;
-	u8 _F5;
-	u8 _F6;
-	u8 _F7;
-	u8 _F8;
-	u8 _F9;
-	u8 _FA;
-	u8 _FB;
-	u8 _FC;
-	u8 _FD;
-	u8 _FE;
-	u8 _FF;
-};
+// "ExtractState_vtable"
+typedef struct _ExtractState_vtable ExtractState_vtable;
 
-// "_ContentLoader"
-struct _ContentLoader
-{
-	u32 num1;
-	ImageLoader_Data1 data1;
-	u32 num3;
-	u32 num4;
-	u32 num5;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	TextureAtlas* altasBufferStart;
-	TextureAtlas* altasBufferEnd;
-	void* _68_6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-	u8 _7A;
-	u8 _7B;
-	u8 _7C;
-	u8 _7D;
-	u8 _7E;
-	u8 _7F;
-	u8 _80;
-	u8 _81;
-	u8 _82;
-	u8 _83;
-	u8 _84;
-	u8 _85;
-	u8 _86;
-	u8 _87;
-	u8 _88;
-	u8 _89;
-	u8 _8A;
-	u8 _8B;
-};
+// "SoundEffect"
+typedef struct _SoundEffect SoundEffect;
 
-// "_GameManager_VTable_1"
-struct _GameManager_VTable_1
-{
-	void (* Destructor)();
-	void (* foo1)();
-	void (* foo2)();
-	void (* foo3)();
-	void (* Update)();
-	void (* Draw)();
-	void (* AbortUpdate)();
-};
+// "GameStateManager_VTable"
+typedef struct _GameStateManager_VTable GameStateManager_VTable;
 
-// "_Image"
-struct _Image
-{
-	u8 _0;
-	u8 _1;
-	u8 _2;
-	u8 _3;
-	u8 _4;
-	u8 _5;
-	u8 _6;
-	u8 _7;
-	u8 _8;
-	u8 _9;
-	u8 _A;
-	u8 _B;
-	u8 _C;
-	u8 _D;
-	u8 _E;
-	u8 _F;
-	u8 _10;
-	u8 _11;
-	u8 _12;
-	u8 _13;
-	u8 _14;
-	u8 _15;
-	u8 _16;
-	u8 _17;
-	u8 _18;
-	u8 _19;
-	u8 _1A;
-	u8 _1B;
-	u8 _1C;
-	u8 _1D;
-	u8 _1E;
-	u8 _1F;
-	u8 _20;
-	u8 _21;
-	u8 _22;
-	u8 _23;
-	u8 _24;
-	u8 _25;
-	u8 _26;
-	u8 _27;
-	u8 _28;
-	u8 _29;
-	u8 _2A;
-	u8 _2B;
-	u8 _2C;
-	u8 _2D;
-	u8 _2E;
-	u8 _2F;
-	u8 _30;
-	u8 _31;
-	u8 _32;
-	u8 _33;
-	u8 _34;
-	u8 _35;
-	u8 _36;
-	u8 _37;
-	u8 _38;
-	u8 _39;
-	u8 _3A;
-	u8 _3B;
-	u8 _3C;
-	u8 _3D;
-	u8 _3E;
-	u8 _3F;
-	u8 _40;
-	u8 _41;
-	u8 _42;
-	u8 _43;
-	u8 _44;
-	u8 _45;
-	u8 _46;
-	u8 _47;
-	u8 _48;
-	u8 _49;
-	u8 _4A;
-	u8 _4B;
-	u8 _4C;
-	u8 _4D;
-	u8 _4E;
-	u8 _4F;
-	u8 _50;
-	u8 _51;
-	u8 _52;
-	u8 _53;
-	u8 _54;
-	u8 _55;
-	u8 _56;
-	u8 _57;
-	u8 _58;
-	u8 _59;
-	u8 _5A;
-	u8 _5B;
-	u8 _5C;
-	u8 _5D;
-	u8 _5E;
-	u8 _5F;
-	u8 _60;
-	u8 _61;
-	u8 _62;
-	u8 _63;
-	u8 _64;
-	u8 _65;
-	u8 _66;
-	u8 _67;
-	u8 _68;
-	u8 _69;
-	u8 _6A;
-	u8 _6B;
-	u8 _6C;
-	u8 _6D;
-	u8 _6E;
-	u8 _6F;
-	u8 _70;
-	u8 _71;
-	u8 _72;
-	u8 _73;
-	u8 _74;
-	u8 _75;
-	u8 _76;
-	u8 _77;
-	u8 _78;
-	u8 _79;
-	u8 _7A;
-	u8 _7B;
-	u8 _7C;
-	u8 _7D;
-	u8 _7E;
-	u8 _7F;
-	u8 _80;
-	u8 _81;
-	u8 _82;
-	u8 _83;
-	u8 _84;
-	u8 _85;
-	u8 _86;
-	u8 _87;
-	u8 _88;
-	u8 _89;
-	u8 _8A;
-	u8 _8B;
-	u8 _8C;
-	u8 _8D;
-	u8 _8E;
-	u8 _8F;
-	u8 _90;
-	u8 _91;
-	u8 _92;
-	u8 _93;
-	u8 _94;
-	u8 _95;
-	u8 _96;
-	u8 _97;
-	u8 _98;
-	u8 _99;
-	u8 _9A;
-	u8 _9B;
-	u8 _9C;
-	u8 _9D;
-	u8 _9E;
-	u8 _9F;
-	u8 _A0;
-	u8 _A1;
-	u8 _A2;
-	u8 _A3;
-	u8 _A4;
-	u8 _A5;
-	u8 _A6;
-	u8 _A7;
-	u8 _A8;
-	u8 _A9;
-	u8 _AA;
-	u8 _AB;
-	u8 _AC;
-	u8 _AD;
-	u8 _AE;
-	u8 _AF;
-	u8 _B0;
-	u8 _B1;
-	u8 _B2;
-	u8 _B3;
-	u8 _B4;
-	u8 _B5;
-	u8 _B6;
-	u8 _B7;
-	u8 _B8;
-	u8 _B9;
-	u8 _BA;
-	u8 _BB;
-	u8 _BC;
-	u8 _BD;
-	u8 _BE;
-	u8 _BF;
-	u8 _C0;
-	u8 _C1;
-	u8 _C2;
-	u8 _C3;
-	u8 _C4;
-	u8 _C5;
-	u8 _C6;
-	u8 _C7;
-	u8 _C8;
-	u8 _C9;
-	u8 _CA;
-	u8 _CB;
-	u8 _CC;
-	u8 _CD;
-	u8 _CE;
-	u8 _CF;
-	u8 _D0;
-	u8 _D1;
-	u8 _D2;
-	u8 _D3;
-	u8 _D4;
-	u8 _D5;
-	u8 _D6;
-	u8 _D7;
-	u8 _D8;
-	u8 _D9;
-	u8 _DA;
-	u8 _DB;
-	u8 _DC;
-	u8 _DD;
-	u8 _DE;
-	u8 _DF;
-	u8 _E0;
-	u8 _E1;
-	u8 _E2;
-	u8 _E3;
-	u8 _E4;
-	u8 _E5;
-	u8 _E6;
-	u8 _E7;
-	u8 _E8;
-	u8 _E9;
-	u8 _EA;
-	u8 _EB;
-	u8 _EC;
-	u8 _ED;
-	u8 _EE;
-	u8 _EF;
-	u8 _F0;
-	u8 _F1;
-	u8 _F2;
-	u8 _F3;
-	u8 _F4;
-	u8 _F5;
-	u8 _F6;
-	u8 _F7;
-	u8 _F8;
-	u8 _F9;
-	u8 _FA;
-	u8 _FB;
-	u8 _FC;
-	u8 _FD;
-	u8 _FE;
-	u8 _FF;
-};
+// "ItemText"
+typedef struct _ItemText ItemText;
+
+// "MainMenuState_VTable"
+typedef struct _MainMenuState_VTable MainMenuState_VTable;
+
+// "GameState_VTable"
+typedef struct _GameState_VTable GameState_VTable;
+
+// "StringHeader"
+typedef struct _StringHeader StringHeader;
+
+// "Recipe"
+typedef struct _Recipe Recipe;
+
+// "Main"
+typedef struct _Main Main;
+
+// "Draw_Unk0"
+typedef struct _Draw_Unk0 Draw_Unk0;
+
+// "FileWriter"
+typedef struct _FileWriter FileWriter;
+
+// "ContentLoader"
+typedef struct _ContentLoader ContentLoader;
+
+// "CameraZoomer_VTable"
+typedef struct _CameraZoomer_VTable CameraZoomer_VTable;
 
 // "_FileReaderFuncTable"
 struct _FileReaderFuncTable
@@ -6938,44 +7738,14 @@ struct _FileReaderFuncTable
 	void (* ReadData)(FileReader* reader, void* buffer, u32 size);
 };
 
-// "XNASpriteBatch"
-typedef struct _Draw_Unk3 XNASpriteBatch;
+// "PlayerParentPlaceholder"
+typedef struct _PlayerParentPlaceholder PlayerParentPlaceholder;
 
-// "SoundEffect"
-typedef struct _SoundEffect SoundEffect;
+// "Double2"
+typedef struct _Double2 Double2;
 
-// "UI"
-typedef struct _UI UI;
-
-// "Rect"
-typedef struct _Rect Rect;
-
-// "World"
-typedef struct _World World;
-
-// "ExtractState_vtable"
-typedef struct _ExtractState_vtable ExtractState_vtable;
-
-// "FileWriter"
-typedef struct _FileWriter FileWriter;
-
-// "GameStateManager_VTable"
-typedef struct _GameStateManager_VTable GameStateManager_VTable;
-
-// "Recipe"
-typedef struct _Recipe Recipe;
-
-// "Gore"
-typedef struct _Gore Gore;
-
-// "StringHeader"
-typedef struct _StringHeader StringHeader;
-
-// "ItemText"
-typedef struct _ItemText ItemText;
-
-// "Tile"
-typedef struct _Tile Tile;
+// "ExtractState"
+typedef struct _ExtractState ExtractState;
 
 // "__ChestItems"
 struct __ChestItems
@@ -6983,29 +7753,32 @@ struct __ChestItems
 	Item items[0x28];
 };
 
-// "GameStateManager"
-typedef struct _GameStateManager GameStateManager;
+// "Tile"
+typedef struct _Tile Tile;
 
-// "Chest"
-typedef struct _Chest Chest;
+// "Projectile"
+typedef struct _Projectile Projectile;
 
-// "NPC"
-typedef struct _NPC NPC;
+// "SpriteText"
+typedef struct _SpriteText SpriteText;
+
+// "CameraZoomer"
+typedef struct _CameraZoomer CameraZoomer;
+
+// "BaseMenuState"
+typedef struct _BaseMenuState BaseMenuState;
 
 // "TextureAtlas_VTable"
 typedef struct _TextureAtlas_VTable TextureAtlas_VTable;
 
-// "Double2"
-typedef struct _Double2 Double2;
+// "Rect"
+typedef struct _Rect Rect;
 
 // "Sprite_VTable"
 typedef struct _Sprite_VTable Sprite_VTable;
 
-// "Draw_Unk0"
-typedef struct _Draw_Unk0 Draw_Unk0;
-
-// "Projectile"
-typedef struct _Projectile Projectile;
+// "Gore"
+typedef struct _Gore Gore;
 
 // "_FileWriterFuncTable"
 struct _FileWriterFuncTable
@@ -7021,21 +7794,12 @@ struct _FileWriterFuncTable
 	void (* WriteData)(void* file, void* buffer, u32 size);
 };
 
-// "PlayerParentPlaceholder"
-typedef struct _PlayerParentPlaceholder PlayerParentPlaceholder;
+// "UI"
+typedef struct _UI UI;
 
-// "Vector3"
-typedef struct _Vector3 Vector3;
+// "MainMenu_VTable"
+typedef struct _MainMenu_VTable MainMenu_VTable;
 
-// "Sprite"
-typedef struct _Sprite Sprite;
-
-// "ContentLoader"
-typedef struct _ContentLoader ContentLoader;
-
-// "GameManager_VTable"
-typedef struct _GameManager_VTable GameManager_VTable;
-
-// "Image"
-typedef struct _Image Image;
+// "NPC"
+typedef struct _NPC NPC;
 

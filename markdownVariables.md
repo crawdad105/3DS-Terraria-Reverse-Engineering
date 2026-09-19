@@ -1,18 +1,32 @@
 | Address | Variables | Description |
 | - | - | - |
 | `0x00246038` | `char en_str[0x3]` |  |
+| `0x005d6218` | `State_VTable CreditsMenu_State_vtable` |  |
+| `0x005d6254` | `BaseMenu_VTable CreditsMenu_Menu_vtable` |  |
 | `0x005d6390` | `void* FullVersion_vtable` |  |
-| `0x005d64bc` | `ExtractState_vtable ExtractState_vtable` |  |
+| `0x005d64bc` | `State_VTable ExtractState_vtable` |  |
 | `0x005d64f4` | `SpriteBatch_VTable SpriteBatch_vtable` |  |
 | `0x005d6640` | `BaseDrawable_VTable BaseDrawable_vtable` |  |
-| `0x005d6998` | `GameManager_VTable GameManager_vtable` |  |
+| `0x005d683c` | `void* OptionsMenuBottom_State_vtable` |  |
+| `0x005d6998` | `StateManager_VTable StateManager_vtable_1` |  |
 | `0x005d6a68` | `TextureAtlas_VTable TextureAtlas_vtable` |  |
 | `0x005d6e54` | `MiniMapHelper_VTable MiniMapHelper_vtable` |  |
 | `0x005d6e98` | `TerrariaAtlas_VTable TerrariaAtlas_vtable` |  |
-| `0x005d78b8` | `GameStateManager_VTable GameStateManager_vtable` |  |
+| `0x005d7168` | `State_VTable MenuBackground_State_vtable` |  |
+| `0x005d71a0` | `BaseMenu_VTable MenuBackground_Menu_vtable` |  |
+| `0x005d78b8` | `GameStateManager_VTable GameStateManager_vtable_2` |  |
+| `0x005d7968` | `State_VTable OptionsMenu_State_vtable` |  |
+| `0x005d79a4` | `BaseMenu_VTable OptionsMenu_Menu_vtable` |  |
+| `0x005d8a80` | `State_VTable State_vtable` |  |
 | `0x005d8bc8` | `BaseDrawable_VTable Sprite_vtable` |  |
-| `0x005d9058` | `void* GameState_vtable` |  |
+| `0x005d8d6c` | `BaseMenu_VTable BaseMenu_Menu_vtable` |  |
+| `0x005d8ef4` | `State_VTable MainMenu_State_vtable` |  |
+| `0x005d8f2c` | `BaseMenu_VTable MainMenu_Menu_vtable` |  |
+| `0x005d9058` | `GameState_VTable GameState_vtable` |  |
+| `0x005d90a0` | `State_VTable BaseMenuState_State_vtable_2` |  |
+| `0x005d90d8` | `BaseMenu_VTable BaseMenuState_Menu_vtable_2` |  |
 | `0x005d91dc` | `Texture_VTable Texture_vtable` |  |
+| `0x005d948c` | `void* StateManager_vtable_2` |  |
 | `0x0063165c` | `u32 NPC::fireFlyFriendly` |  |
 | `0x00631660` | `u32 NPC::fireFlyChance` |  |
 | `0x00631664` | `u32 NPC::fireFlyMultiple` |  |
@@ -20,7 +34,7 @@
 | `0x00631a6c` | `u8 questFishType` |  |
 | `0x00631c18` | `int32_t Underground::magmaBGFrame` |  |
 | `0x00631c98` | `float cloudBGActive` |  |
-| `0x00631dbc` | `void* GameState::Terraria` |  |
+| `0x00631dbc` | `Main* GameState::Terraria` |  |
 | `0x00631dc0` | `void* GameState::terrariaLoader` |  |
 | `0x00631fa4` | `char Collision::honey` |  |
 | `0x00631fc4` | `Colour Color::White` |  |
@@ -44,6 +58,7 @@
 | `0x006328f0` | `char Netplay::mode` |  |
 | `0x006328f4` | `int32_t Netplay::gamer` |  |
 | `0x00632900` | `int32_t Netplay::session` |  |
+| `0x0063292c` | `char Netplay::IsAboutToJoinASession` |  |
 | `0x0063299a` | `bool NPC::downedGoblins` |  |
 | `0x0063299d` | `bool NPC::downedRabbit` |  |
 | `0x006329a4` | `bool planteraDown` |  |
@@ -97,6 +112,8 @@
 | `0x00633408` | `u32 Main::MainPlayerIndex` | Equivalent to `myPlayer` |
 | `0x00633430` | `void* Main::AchievementSystem` |  |
 | `0x00633440` | `int32_t Main::worldSurfacePixels` |  |
+| `0x00633495` | `bool Main::DoneLoading` |  |
+| `0x00633b3c` | `int32_t SpriteBatch::globalSpriteBatch` |  |
 | `0x00633f68` | `Vector2 WidgetLoader::WidgetScale` |  |
 | `0x00634bcc` | `u32 cfgu_RefCount` |  |
 | `0x007b9f64` | `Texture* BackgroundPointers[0xa]` |  |
@@ -158,13 +175,14 @@
 | `0x00894ff4` | `Projectile projectile_Main[0x200]` | Equivalent to `Terraria.Main.projectile[]`. |
 | `0x008b4080` | `Player* player[0x4]` |  |
 | `0x008d4b38` | `TextureAtlas UIAtlas::Instance` |  |
+| `0x008d4bdc` | `CameraZoomer CameraZoomer::Instance` |  |
 | `0x008d4ef8` | `ContentLoader ContentLoader::Instance` |  |
 | `0x008d5024` | `TerrariaAtlas TerrariaAtlas::Instance` |  |
-| `0x008d5108` | `GraphicsDevice* GraphicsDevice::Instance` | *Verify, manually inferred. |
-| `0x008d51dc` | `u8 osType` | Used in place of the mobile function `PlatformDevice::GetOsType` |
+| `0x008d5108` | `GraphicsDevice GraphicsDevice::Instance` | *Verify, manually inferred. |
 | `0x008d52ac` | `GameStateManager GameStateManager::Instance` |  |
 | `0x008d55e4` | `UI ui` |  |
 | `0x008d83a0` | `MiniMap* MiniMap::Instance` |  |
+| `0x008d98b8` | `void* WorldView::Instance` |  |
 | `0x008dae70` | `u32 Main::quickBG` | Matches `Main.quickBG`, does not have a name on mobile. Also does not seem to be used, its only set to `10`/`0x0A`. |
 | `0x083a9238` | `Item recipeItems1[0x6]` |  |
 | `0x090a2c08` | `Player _player1` |  |

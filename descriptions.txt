@@ -149,7 +149,7 @@
 001f3d7c:*Verify
 00482f34:No call references, no variable reference. On mobile its called in `GlyphSet::GlyphSet`. Also expands mobile function `GlyphSet::ClearBorderColor`.
 002435ac:*Verify, No call references, no variable reference. This does not match the mobile function.
-00246298:Does not match the mobile function.
+00246298:Seems to draw everything. There a a bunch of `nop`s so patching might be easy.  Does not match the mobile function.
 00220810:There are a bunch of different functions with this name but difference parameters.
 001d9a44:There are a bunch of different functions with this name but difference parameters.
 002200c4:*Verify
@@ -179,3 +179,13 @@
 0012cb80:*Verify, might not be correct.
 0010fda0:Expands the mobile function `Achievements::TriggerSystem::ClearTriggers`
 0023ba04:Probably loads an atlas, it is unknown if it has a mobile version counterpart.
+
+003db4fc:Draws most of the top screen stuff. Not hearts, selected item, mana or buffs. This is called at `0050f2fc` which is fallowed by 2 `nop`s so there is enough room to hook this and call it yourself.
+0050f170:Stored in a vtable, called in `StateManager::Draw` at `0x001f6fbc` via `blx r1`.
+0024e4f0:Probably a 3ds specific function.
+005afe80:*Verify, probably 3ds specific GPU instructions, do it does not match the mobile function.
+00510b80:Seems to be an intermediate stage for `BaseMenu::BaseMenu`.
+0022f008:*Verify
+0022d650:*Verify
+00102800:*Verify
+00109610:Expands the mobile function `std::map<std::string, State*>::operator[]`.

@@ -1,17 +1,17 @@
 # 3DS Terraria Decompilation/Reverse Engineering
 ### This is for Terraria 3DS versions 1.0.5 (Update Code: v5.6.0).
 ### This is not a redistribution, no source code/memory is downloadable.
-This is an attempt ad reverce engineering the 3DS version of Terraria. It mostly contains some tools and general information such as functions names. Cartage dump data including images, code or other files are not included although tools and methods are provided to do it your self. The code was mostly analyzed from a ram dump, a cartridge dump would work as well but you don't get get other ram stuff like the heap or other sections.
-The disassembly was done in [Binary Ninja](https://binary.ninja/) rather then Ghidra because Ghidra (and literally any other free disassembler for some reason) can not decompile the ridiculously large jump table Terraria uses.
+This is an attempt at reverse engineering the 3DS version of Terraria. It mostly contains some tools and general information such as functions names. Cartage dump data including images, code or other files are not included although tools and methods are provided to do it yourself. The code was mostly analyzed from a ram dump, a cartridge dump would work as well but you don't get other ram stuff like the heap or other sections.
+The disassembly was done in [Binary Ninja](https://binary.ninja/) rather than Ghidra because Ghidra (and literally any other free disassembler for some reason) can not decompile the ridiculously large jump table Terraria uses.
 
 For more up to date info or other progress on mods or hacks go to the [crawdad105 discord](https://crawdad105.com/discord)
 
 # Files
 [data.json](data.json) has exported data from Binary Ninja containing functions and variable names and addresses.<br/>
 [userDefinedData.json](userDefinedData.json) has user defined exported data.<br/>
-[index.html](index.html) also exists with options to show and hide exported data in a viewable form (this requires [data.json](data.json)).<br/>
+[index.html](index.html) also exists with options to show and hide exported data in a viewable from (this requires [data.json](data.json)).<br/>
 [segments.png](segments.png) has an image of sections extracted directly from the 3DS (this was done on the New 3DS XL but should be roughly the same on other 3DSs).<br/>
-[types.h](types.h) are the exported types form Binary Ninja as a header file. The types need to be manually created, so they are incomplete, its mainly used for referencing.<br/>
+[types.h](types.h) are the exported types from Binary Ninja as a header file. The types need to be manually created, so they are incomplete, its mainly used for referencing.<br/>
 [BinaryNinjaTypeArchive.bnta](BinaryNinjaTypeArchive.bnta) is the type archive for Binary Ninja, its a bit complicated to set up though.<br/>
 <br/>
 The files within [/ExportExtractor](ExportExtractor) are used to extract the data from the Binary Ninja export.
@@ -32,7 +32,7 @@ also it would be distributing code which is illegal.<br/>
 This can be parsed using [ExtractDumpNames.dll](ExportExtractor/ExtractDumpNames.dll), it was written in dotnet 8.0 so should work on linux. (you also need the other files as well).
 
 # Modding
-There is not much information about 3DS Terraria modding it seems (other them people wanting to port modern Terraria or Calamity for some reason).
+There is not much information about 3DS Terraria modding it seems (other then people wanting to port modern Terraria or Calamity for some reason).
 There is some effort to mod it however.<br/>
 [Working vein miner](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (the impressive part is they got UI elements drawn, it can be downloaded on [GameBanana](https://gamebanana.com/mods/704537), but may only work on the European versions (not the one this repo is about)).<br/>
 [Rom hack that change the music](https://www.gamebrew.org/wiki/Terratale_3DS)<br/>
@@ -45,7 +45,7 @@ Dumping the 3DS versions can be done by dumping the cartage with [GodMode9](http
 Assuming you have the `.cia` file (idk how to do it with a `.3ds` file), run `ctrtool.exe --contents=contents "game.cia"` to extract a `contents.0000.XXXXXXXX` file (there may be 2, i chose the larger one which seemed to work)
 run `ctrtool.exe -x --decompresscode --exefsdir=ExeFS --romfsdir=RomFS contents.0000.XXXXXXXX` to extract that file into `ExeFS` and `RomFS` folders, game content is in `RomFS` and code is in `ExeFS`.
 The code might be compressed, it should be around 5KB not compressed, if it it not run `ctrtool.exe --exefs=exefs.bin contents.0000.XXXXXXXX` and `ctrtool.exe --exefsdir=ExeFS --decompresscode exefs.bin`, this should uncompressed it.<br/>
-Note that you will need 2 separate `.cia` file, one for the base game and one for the update content, with the update content you simply just paste the new content over the old content.
+Note that you will need 2 separate `.cia` files, one for the base game and one for the update content, with the update content you simply just paste the new content over the old content.
 
 If this does not work, then idk.
 
@@ -95,7 +95,7 @@ Note: Addresses past `0x008DC000` may change locations.
 3ModLoader is a mod loader for this versions of 3DS Terraria, build off of a modified versions of Luma3DS (specifically the Rosalina sysmodule) called [ctn Firmware](https://github.com/crawdad105/ctn-Firmware).
 ctn has a built in memory viewer, reader and writer, memory dumper, debugger, file viewer (with a custom ftp like file server), UI system, plugin system and more.
 3Modloader itself is a plugin for ctn that currently just has built in mods and hacks, it cant actually load mods.
-A versions can technically be recompiled from an accidentally leak which was published with ctn firmware or you can find and download a versions from the crawdad105 discord, but its a prototype and not officially released yet, and it cant load mods yet.
+A version can technically be recompiled from an accidental leak which was published with ctn firmware or you can find and download a version from the crawdad105 discord, but its a prototype and not officially released yet, and it cant load mods yet.
 
 # Credit
 crawdad105<br/>

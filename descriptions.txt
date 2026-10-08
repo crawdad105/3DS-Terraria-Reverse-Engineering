@@ -183,9 +183,30 @@
 003db4fc:Draws most of the top screen stuff. Not hearts, selected item, mana or buffs. This is called at `0050f2fc` which is fallowed by 2 `nop`s so there is enough room to hook this and call it yourself.
 0050f170:Stored in a vtable, called in `StateManager::Draw` at `0x001f6fbc` via `blx r1`.
 0024e4f0:Probably a 3ds specific function.
-005afe80:*Verify, probably 3ds specific GPU instructions, do it does not match the mobile function.
+005afe80:*Verify. Does not match the mobile function, probably 3ds specific GPU instructions.
 00510b80:Seems to be an intermediate stage for `BaseMenu::BaseMenu`.
 0022f008:*Verify
 0022d650:*Verify
 00102800:*Verify
 00109610:Expands the mobile function `std::map<std::string, State*>::operator[]`.
+
+0013722c:Found by accident while running custom code. A debugger can catch this exception, but if no debugger is present the 3ds crashes.
+0013173c:Not exact by very close.
+0013ce54:Not sure if the name is correct but it copies 8 bytes.
+002a70c8:Do not trust the parameters on this function, they have been matched to look right but they are not.
+00125990:https://xem.github.io/3DShomebrew/documentation/doxygen/hid_8c_source.html#:~:text=185%C2%A0Result-,HIDUSER_GetHandles,-(Handle*%20outMemHandle
+00113e54:https://xem.github.io/3DShomebrew/documentation/doxygen/hid_8c_source.html#:~:text=22%C2%A0Result-,hidInit,-(u32*%20sharedMem
+00109c14:Does not match but seems to do the same thing. https://xem.github.io/3DShomebrew/documentation/doxygen/fs_8c.html#a897bb73f6c956a45305aa9f50f7935ca
+0019f9c4:Expands the mobile function `Item::GetTexIdFromType`.
+00186e68:Does not exist on mobile.
+00157228:*Verify
+001872b0:Seems to expand the mobile function `ItemWidget::Init`.
+002a83fc:On mobile this is equivalent to `glEnable(0xc11)` and `glDisable(0xc11)`.
+0048dd78:Expands the mobile function `ListView::updateScrollState`.
+001988fc:Kind of expands the mobile function `Projectile::initializeProjectile`, its present at the end but not all of the calls it seems.
+00553ae8:Name from mobile versions. "ClearAll" makes more sense.
+0020f2b4:Does not exist on mobile i think.
+00115420:Does not match the mobile function, but call sites are similar. 
+00473e88:No variable or functions reference, maybe used for testing? Different from `MiniMap::CreateMap`.
+001d8d1c:Does not match the mobile function, but call sites are the same. 
+00633b3c:Use `XNASpriteBatch::Instance.SpriteBatch` instead, this is used for different rendering in `BaseMenu::Draw` (not sure where else though).

@@ -1,10 +1,13 @@
 # 3DS Terraria Decompilation/Reverse Engineering
-### This is for Terraria 3DS versions 1.0.5 (Update Code: v5.6.0).
+### This is for the North American 1.0.5 3DS. (Update Code: v5.6.0).
 ### This is not a redistribution, no source code/memory is downloadable.
-This is an attempt ad reverce engineering the 3DS version of Terraria. It mostly contains some tools and general information such as functions names. Cartage dump data including images, code or other files are not included although tools and methods are provided to do it your self. The code was mostly analyzed from a ram dump, a cartridge dump would work as well but you don't get get other ram stuff like the heap or other sections.
+This is an attempt ad reverse engineering the 3DS version of Terraria. It mostly contains some tools and general information such as functions names. Cartage dump data including images, code or other files are not included although tools and methods are provided to do it your self. The code was mostly analyzed from a ram dump, a cartridge dump would work as well but you don't get get other ram stuff like the heap or other sections.
 The disassembly was done in [Binary Ninja](https://binary.ninja/) rather then Ghidra because Ghidra (and literally any other free disassembler for some reason) can not decompile the ridiculously large jump table Terraria uses.
 
 For more up to date info or other progress on mods or hacks go to the [crawdad105 discord](https://crawdad105.com/discord)
+
+> [!IMPORTANT]
+> If binary ninja shows `🚫` the instructions is probably not being shown correctly, it may show something like `vmov.f32 d0, #3.000000` but its actually `vmov.f32 s0, s16`, Ghidra and [this website](https://inventivehq.com/tools/security/machine-code-disassembler) seems to accurately decode these instructions.
 
 # Files
 [data.json](data.json) has exported data from Binary Ninja containing functions and variable names and addresses.<br/>
@@ -17,6 +20,10 @@ For more up to date info or other progress on mods or hacks go to the [crawdad10
 The files within [/ExportExtractor](ExportExtractor) are used to extract the data from the Binary Ninja export.
 It generates [data.json](data.json), [userDefinedData.json](userDefinedData.json), [markdownFunctions.md](markdownFunctions.md), [markdownVariables.md](markdownVariables.md) and [extracted.txt](extracted.txt).
 [descriptions.txt](descriptions.txt) has description data for variables and functions, it is used when generating [markdownFunctions.md](markdownFunctions.md) and [markdownVariables.md](markdownVariables.md).
+
+# Useful sits
+["Floating Point to Hex Converter"](https://gregstoll.com/~gregstoll/floattohex/)
+["Assembly Disassembler"](https://inventivehq.com/tools/security/machine-code-disassembler)
 
 # Comparing code
 Code was compared to Terraria Versions around 1.2.4.1 but may contain code from some 1.3 versions and old mobile versions.<br/>

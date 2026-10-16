@@ -1,15 +1,25 @@
 | Address | Variables | Description |
 | - | - | - |
 | `0x00246038` | `char en_str[0x3]` |  |
+| `0x005c2a74` | `float 0.45` |  |
+| `0x005d5e68` | `WidgetGroup_VTable ItemWidget_vtable` |  |
+| `0x005d5f74` | `TextureAtlas_VTable UIAtlas_vtable` |  |
+| `0x005d6030` | `SpriteText_VTable SpriteText_vtable` |  |
+| `0x005d6098` | `Widget_VTable TextWidget_vtable` |  |
 | `0x005d6218` | `State_VTable CreditsMenu_State_vtable` |  |
 | `0x005d6254` | `BaseMenu_VTable CreditsMenu_Menu_vtable` |  |
 | `0x005d6390` | `void* FullVersion_vtable` |  |
+| `0x005d646c` | `int32_t PixelShader_vtable` |  |
 | `0x005d64bc` | `State_VTable ExtractState_vtable` |  |
 | `0x005d64f4` | `SpriteBatch_VTable SpriteBatch_vtable` |  |
+| `0x005d654c` | `WidgetGroup_VTable WidgetGroup_vtable` |  |
 | `0x005d6640` | `BaseDrawable_VTable BaseDrawable_vtable` |  |
+| `0x005d6750` | `InputManager_VTable InputManager_vtable` |  |
 | `0x005d683c` | `void* OptionsMenuBottom_State_vtable` |  |
+| `0x005d68a4` | `Widget_VTable SpriteWidget_vtable` |  |
 | `0x005d6998` | `StateManager_VTable StateManager_vtable_1` |  |
 | `0x005d6a68` | `TextureAtlas_VTable TextureAtlas_vtable` |  |
+| `0x005d6ab0` | `int32_t VertexShader_vtable` |  |
 | `0x005d6e54` | `MiniMapHelper_VTable MiniMapHelper_vtable` |  |
 | `0x005d6e98` | `TerrariaAtlas_VTable TerrariaAtlas_vtable` |  |
 | `0x005d7168` | `State_VTable MenuBackground_State_vtable` |  |
@@ -17,9 +27,17 @@
 | `0x005d78b8` | `GameStateManager_VTable GameStateManager_vtable_2` |  |
 | `0x005d7968` | `State_VTable OptionsMenu_State_vtable` |  |
 | `0x005d79a4` | `BaseMenu_VTable OptionsMenu_Menu_vtable` |  |
+| `0x005d7c14` | `void* BasicEaseAnimation_vtable` |  |
+| `0x005d7cdc` | `int32_t BackgroundDirt_vtable` |  |
+| `0x005d7da4` | `void* BaseWidgetAnimation_vtable` |  |
+| `0x005d84b8` | `int32_t PositionTextureShader_vtable` |  |
+| `0x005d88e8` | `int32_t PositionColorTextureShader_vtable` |  |
 | `0x005d8a80` | `State_VTable State_vtable` |  |
-| `0x005d8bc8` | `BaseDrawable_VTable Sprite_vtable` |  |
+| `0x005d8bb0` | `void* Shader_vtable` |  |
+| `0x005d8bc8` | `Sprite_VTable Sprite_vtable` |  |
+| `0x005d8c40` | `Widget_VTable Widget_vtable` |  |
 | `0x005d8d6c` | `BaseMenu_VTable BaseMenu_Menu_vtable` |  |
+| `0x005d8dfc` | `WidgetGroup_VTable ListView_vtable` |  |
 | `0x005d8ef4` | `State_VTable MainMenu_State_vtable` |  |
 | `0x005d8f2c` | `BaseMenu_VTable MainMenu_Menu_vtable` |  |
 | `0x005d9058` | `GameState_VTable GameState_vtable` |  |
@@ -113,14 +131,29 @@
 | `0x00633430` | `void* Main::AchievementSystem` |  |
 | `0x00633440` | `int32_t Main::worldSurfacePixels` |  |
 | `0x00633495` | `bool Main::DoneLoading` |  |
-| `0x00633b3c` | `int32_t SpriteBatch::globalSpriteBatch` |  |
+| `0x00633b3c` | `int32_t SpriteBatch::globalSpriteBatch` | Use `XNASpriteBatch::Instance.SpriteBatch` instead, this is used for different rendering in `BaseMenu::Draw` (not sure where else though). |
+| `0x00633db8` | `u32 heapStart` |  |
+| `0x00633e78` | `int32_t ListView::delayTime` |  |
+| `0x00633f0c` | `void* Widget::onWidgetPlayClickSound` |  |
 | `0x00633f68` | `Vector2 WidgetLoader::WidgetScale` |  |
-| `0x00634bcc` | `u32 cfgu_RefCount` |  |
+| `0x0063429c` | `int32_t fs_handle` |  |
+| `0x00634bcc` | `u32 cfg_refCount` |  |
+| `0x00634bd0` | `int32_t cfg:u_handle` |  |
+| `0x00634c20` | `int32_t dsp_handle` |  |
+| `0x00634c70` | `bool hidActive` |  |
+| `0x0063560c` | `int32_t hid:USER_handle` |  |
+| `0x00635684` | `int32_t ndm_refCount` |  |
+| `0x00636610` | `int32_t cfg:i_handle` |  |
+| `0x00636634` | `int32_t ndm_handle` |  |
+| `0x00639284` | `void* ir_handle` |  |
 | `0x007b9f64` | `Texture* BackgroundPointers[0xa]` |  |
 | `0x007b9f8c` | `bool NPC_catchable[0x406]` |  |
 | `0x007ba75c` | `void* Underground::backgroundTexture` |  |
 | `0x007bc164` | `int128_t randomNumSeed` | Named g_rand on mobile. |
 | `0x007bc1d8` | `void* Gore::gore` |  |
+| `0x007bc324` | `int32_t Item::headType` |  |
+| `0x007bc330` | `int32_t Item::bodyType` |  |
+| `0x007bc33c` | `int32_t Item::legType` |  |
 | `0x007c17d4` | `void* NetMessage::packetOut` |  |
 | `0x007c1890` | `int32_t Netplay::gamersWaitingForPlayerId` |  |
 | `0x007c18ec` | `NPC* NPC::npc` |  |
@@ -174,13 +207,15 @@
 | `0x0088e850` | `Item item_Main[0xc9]` | Equivalent to `Terraria.Main.item[]`. |
 | `0x00894ff4` | `Projectile projectile_Main[0x200]` | Equivalent to `Terraria.Main.projectile[]`. |
 | `0x008b4080` | `Player* player[0x4]` |  |
+| `0x008c8938` | `u32 scissor` |  |
 | `0x008d4b38` | `TextureAtlas UIAtlas::Instance` |  |
 | `0x008d4bdc` | `CameraZoomer CameraZoomer::Instance` |  |
+| `0x008d4c18` | `InputManager InputManager::Instance` |  |
 | `0x008d4ef8` | `ContentLoader ContentLoader::Instance` |  |
 | `0x008d5024` | `TerrariaAtlas TerrariaAtlas::Instance` |  |
 | `0x008d5108` | `GraphicsDevice GraphicsDevice::Instance` | *Verify, manually inferred. |
 | `0x008d52ac` | `GameStateManager GameStateManager::Instance` |  |
-| `0x008d55e4` | `UI ui` |  |
+| `0x008d55e4` | `UI UI::Instance` |  |
 | `0x008d83a0` | `MiniMap* MiniMap::Instance` |  |
 | `0x008d98b8` | `void* WorldView::Instance` |  |
 | `0x008dae70` | `u32 Main::quickBG` | Matches `Main.quickBG`, does not have a name on mobile. Also does not seem to be used, its only set to `10`/`0x0A`. |

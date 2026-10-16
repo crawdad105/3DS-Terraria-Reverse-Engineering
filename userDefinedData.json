@@ -26,11 +26,11 @@
   "AddressString": "00101a3e",
   "Name": "delete2",
   "Type": "int32_t",
-  "Other": "int32_t* arg1",
+  "Other": "u32 arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00101a3e int32_t delete2(int32_t* arg1)"
+  "ToStringValue": "0x00101a3e int32_t delete2(u32 arg1)"
 },
 {
   "Address": 1055464,
@@ -154,6 +154,39 @@
   "ToStringValue": "0x0010fdbc CameraZoomer* CameraZoomer::CameraZoomer(CameraZoomer* arg1)"
 },
 {
+  "Address": 1115116,
+  "AddressString": "001103ec",
+  "Name": "ShaderManager::LoadShaders",
+  "Type": "int32_t*",
+  "Other": "void* arg1, int32_t arg2 @ r9",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001103ec int32_t* ShaderManager::LoadShaders(void* arg1, int32_t arg2 @ r9)"
+},
+{
+  "Address": 1116956,
+  "AddressString": "00110b1c",
+  "Name": "ShaderManager::getShader",
+  "Type": "void",
+  "Other": "void* const arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00110b1c void ShaderManager::getShader(void* const arg1, int32_t arg2)"
+},
+{
+  "Address": 1117060,
+  "AddressString": "00110b84",
+  "Name": "ShaderManager::ShaderManager",
+  "Type": "void*",
+  "Other": "void** arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00110b84 void* ShaderManager::ShaderManager(void** arg1)"
+},
+{
   "Address": 1117672,
   "AddressString": "00110de8",
   "Name": "PlatformDevice::PlatformDevice",
@@ -178,13 +211,24 @@
 {
   "Address": 1129700,
   "AddressString": "00113ce4",
-  "Name": "_cfguInit",
+  "Name": "init_cfg:u",
   "Type": "int32_t",
   "Other": "",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00113ce4 int32_t _cfguInit()"
+  "ToStringValue": "0x00113ce4 int32_t init_cfg:u()"
+},
+{
+  "Address": 1130068,
+  "AddressString": "00113e54",
+  "Name": "hidInit",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00113e54 int32_t hidInit()"
 },
 {
   "Address": 1135000,
@@ -218,6 +262,28 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00115240 int32_t* Timer::Timer(int32_t* arg1)"
+},
+{
+  "Address": 1135628,
+  "AddressString": "0011540c",
+  "Name": "Sprite::setPosition",
+  "Type": "int32_t",
+  "Other": "Sprite* sprite, Vector2* pos",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011540c int32_t Sprite::setPosition(Sprite* sprite, Vector2* pos)"
+},
+{
+  "Address": 1135648,
+  "AddressString": "00115420",
+  "Name": "Sprite::regenerateMatrix",
+  "Type": "void*",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00115420 void* Sprite::regenerateMatrix(void* arg1)"
 },
 {
   "Address": 1135728,
@@ -330,6 +396,17 @@
   "ToStringValue": "0x00119830 int32_t* ItemTextPool::ItemTextPool(void* arg1, int32_t arg2)"
 },
 {
+  "Address": 1154368,
+  "AddressString": "00119d40",
+  "Name": "ColorizeShader::ColorizeShader",
+  "Type": "void**",
+  "Other": "void*** arg1, StringWrapper* arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00119d40 void** ColorizeShader::ColorizeShader(void*** arg1, StringWrapper* arg2, int32_t arg3)"
+},
+{
   "Address": 1154492,
   "AddressString": "00119dbc",
   "Name": "GraphicsDevice::SetTextureSlot",
@@ -350,6 +427,61 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00119dcc void* GraphicsDevice::GraphicsDevice(GraphicsDevice* arg1)"
+},
+{
+  "Address": 1156496,
+  "AddressString": "0011a590",
+  "Name": "PositionColorShader::PositionColorShader",
+  "Type": "void**",
+  "Other": "void*** arg1, StringWrapper* arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011a590 void** PositionColorShader::PositionColorShader(void*** arg1, StringWrapper* arg2, int32_t arg3)"
+},
+{
+  "Address": 1156596,
+  "AddressString": "0011a5f4",
+  "Name": "PositionTextureShader::PositionTextureShader",
+  "Type": "int32_t**",
+  "Other": "void*** arg1, StringWrapper* arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011a5f4 int32_t** PositionTextureShader::PositionTextureShader(void*** arg1, StringWrapper* arg2, int32_t arg3)"
+},
+{
+  "Address": 1156664,
+  "AddressString": "0011a638",
+  "Name": "PositionColorTextureShader::PositionColorTextureShader",
+  "Type": "int32_t**",
+  "Other": "(void*** arg1, StringWrapper* arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011a638 int32_t** PositionColorTextureShader::PositionColorTextureShader((void*** arg1, StringWrapper* arg2, int32_t arg3)"
+},
+{
+  "Address": 1168012,
+  "AddressString": "0011d28c",
+  "Name": "hidExit",
+  "Type": "uint32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011d28c uint32_t hidExit(int32_t* arg1)"
+},
+{
+  "Address": 1168328,
+  "AddressString": "0011d3c8",
+  "Name": "init_ndm:u",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011d3c8 int32_t init_ndm:u()"
 },
 {
   "Address": 1174652,
@@ -407,6 +539,17 @@
   "ToStringValue": "0x0011f19c void* RainPool::RainPool(void* arg1)"
 },
 {
+  "Address": 1176260,
+  "AddressString": "0011f2c4",
+  "Name": "new[]2",
+  "Type": "int32_t*",
+  "Other": "u32 arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0011f2c4 int32_t* new[]2(u32 arg1, int32_t arg2)"
+},
+{
   "Address": 1183820,
   "AddressString": "0012104c",
   "Name": "GraphicsDevice::GraphicsDevice_Check",
@@ -422,22 +565,44 @@
   "AddressString": "00122868",
   "Name": "GraphicsDevice::AddCallback",
   "Type": "int32_t",
-  "Other": "GraphicsDevice* device, SpriteBatch* sb",
+  "Other": "GraphicsDevice* device, BaseDrawable* drawable",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00122868 int32_t GraphicsDevice::AddCallback(GraphicsDevice* device, SpriteBatch* sb)"
+  "ToStringValue": "0x00122868 int32_t GraphicsDevice::AddCallback(GraphicsDevice* device, BaseDrawable* drawable)"
 },
 {
   "Address": 1190596,
   "AddressString": "00122ac4",
   "Name": "GraphicsDevice::QueryBuffer",
   "Type": "int32_t",
-  "Other": "GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* arg4",
+  "Other": "GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* __offset(_GraphicsDevice, 0x5c) arg4",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00122ac4 int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* arg4)"
+  "ToStringValue": "0x00122ac4 int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* __offset(_GraphicsDevice, 0x5c) arg4)"
+},
+{
+  "Address": 1193032,
+  "AddressString": "00123448",
+  "Name": "FSUSER_OpenArchive",
+  "Type": "s32",
+  "Other": "u32* handle, u64* archive, u32 archive_id, u32 archive_lowPath_type, u32 archive_lowPath_data, u32 archive_lowPath_size",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00123448 s32 FSUSER_OpenArchive(u32* handle, u64* archive, u32 archive_id, u32 archive_lowPath_type, u32 archive_lowPath_data, u32 archive_lowPath_size)"
+},
+{
+  "Address": 1193128,
+  "AddressString": "001234a8",
+  "Name": "FSUSER_CloseArchive",
+  "Type": "s32",
+  "Other": "u32* handle, u32* arg2, u32 handleLow, u32 handleHeight",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001234a8 s32 FSUSER_CloseArchive(u32* handle, u32* arg2, u32 handleLow, u32 handleHeight)"
 },
 {
   "Address": 1199256,
@@ -451,6 +616,17 @@
   "ToStringValue": "0x00124c98 void FinalDraw(int32_t arg1, int32_t arg2, int32_t arg3, void* arg4)"
 },
 {
+  "Address": 1202576,
+  "AddressString": "00125990",
+  "Name": "HIDUSER_GetHandles",
+  "Type": "s32",
+  "Other": "u32* outMemHandle, u32* eventpad0, u32* eventpad1, u32* eventaccel, u32* eventgyro, u32* eventdebugpad",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00125990 s32 HIDUSER_GetHandles(u32* outMemHandle, u32* eventpad0, u32* eventpad1, u32* eventaccel, u32* eventgyro, u32* eventdebugpad)"
+},
+{
   "Address": 1209368,
   "AddressString": "00127418",
   "Name": "Rain::Rain",
@@ -460,6 +636,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00127418 void Rain::Rain(int64_t* arg1)"
+},
+{
+  "Address": 1209416,
+  "AddressString": "00127448",
+  "Name": "Shader::Shader",
+  "Type": "void*",
+  "Other": "void*** arg1, StringWrapper* str, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00127448 void* Shader::Shader(void*** arg1, StringWrapper* str, int32_t arg3)"
 },
 {
   "Address": 1212772,
@@ -477,11 +664,22 @@
   "AddressString": "0012820c",
   "Name": "Texture2D::convertToTextureSpace",
   "Type": "void",
-  "Other": "float* arg1, void* arg2, int32_t* arg3",
+  "Other": "Vector4* rect, Texture* texture, Vector4* rectIn",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0012820c void Texture2D::convertToTextureSpace(float* arg1, void* arg2, int32_t* arg3)"
+  "ToStringValue": "0x0012820c void Texture2D::convertToTextureSpace(Vector4* rect, Texture* texture, Vector4* rectIn)"
+},
+{
+  "Address": 1231364,
+  "AddressString": "0012ca04",
+  "Name": "PixelShader::PixelShader",
+  "Type": "void*",
+  "Other": "int32_t** arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0012ca04 void* PixelShader::PixelShader(int32_t** arg1, int32_t arg2)"
 },
 {
   "Address": 1231744,
@@ -506,6 +704,17 @@
   "ToStringValue": "0x0012cdd8 void* StateManager::~StateManager(StateManager_VTable** arg1)"
 },
 {
+  "Address": 1232848,
+  "AddressString": "0012cfd0",
+  "Name": "VertexShader::VertexShader",
+  "Type": "void*",
+  "Other": "int32_t** arg1, int32_t arg2, char arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0012cfd0 void* VertexShader::VertexShader(int32_t** arg1, int32_t arg2, char arg3)"
+},
+{
   "Address": 1233568,
   "AddressString": "0012d2a0",
   "Name": "GameStateManager::GameStateManager",
@@ -517,15 +726,26 @@
   "ToStringValue": "0x0012d2a0 void* GameStateManager::GameStateManager(GameStateManager* gsm, int32_t arg2, int32_t arg3, int32_t arg4)"
 },
 {
+  "Address": 1251132,
+  "AddressString": "0013173c",
+  "Name": "srvGetServiceHandleDirect",
+  "Type": "int32_t",
+  "Other": "u32* handle, char* str, u32 length, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0013173c int32_t srvGetServiceHandleDirect(u32* handle, char* str, u32 length, int32_t arg4)"
+},
+{
   "Address": 1255072,
   "AddressString": "001326a0",
   "Name": "free",
   "Type": "int32_t",
-  "Other": "int32_t* arg1",
+  "Other": "u32 size",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001326a0 int32_t free(int32_t* arg1)"
+  "ToStringValue": "0x001326a0 int32_t free(u32 size)"
 },
 {
   "Address": 1270972,
@@ -537,6 +757,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001364bc int32_t GameStateManager::GameStateManager_Check()"
+},
+{
+  "Address": 1274412,
+  "AddressString": "0013722c",
+  "Name": "svcBreak",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0013722c int32_t svcBreak()"
 },
 {
   "Address": 1274496,
@@ -586,12 +817,12 @@
   "Address": 1281328,
   "AddressString": "00138d30",
   "Name": "UI::UI",
-  "Type": "void*",
-  "Other": "UI* ui, int32_t arg2 @ r4",
+  "Type": "UI*",
+  "Other": "UI* ui",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00138d30 void* UI::UI(UI* ui, int32_t arg2 @ r4)"
+  "ToStringValue": "0x00138d30 UI* UI::UI(UI* ui)"
 },
 {
   "Address": 1292492,
@@ -625,6 +856,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0013bac4 void Main::PlaySound(s32 soundId)"
+},
+{
+  "Address": 1298004,
+  "AddressString": "0013ce54",
+  "Name": "copyServiceName",
+  "Type": "void",
+  "Other": "u32* ptr, u32* str",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0013ce54 void copyServiceName(u32* ptr, u32* str)"
 },
 {
   "Address": 1308992,
@@ -685,12 +927,23 @@
   "Address": 1324656,
   "AddressString": "00143670",
   "Name": "malloc",
-  "Type": "int32_t",
-  "Other": "uint32_t arg1",
+  "Type": "void*",
+  "Other": "u32 size",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00143670 int32_t malloc(uint32_t arg1)"
+  "ToStringValue": "0x00143670 void* malloc(u32 size)"
+},
+{
+  "Address": 1324672,
+  "AddressString": "00143680",
+  "Name": "allocateMemory",
+  "Type": "int32_t*",
+  "Other": "u32 size, int32_t arg2, int32_t arg3, char arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00143680 int32_t* allocateMemory(u32 size, int32_t arg2, int32_t arg3, char arg4)"
 },
 {
   "Address": 1326836,
@@ -751,12 +1004,23 @@
   "Address": 1346220,
   "AddressString": "00148aac",
   "Name": "SpriteText::setText",
-  "Type": "void*",
-  "Other": "void* arg1, int32_t* arg2",
+  "Type": "uint8_t*",
+  "Other": "SpriteText* spriteText, int32_t* arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00148aac void* SpriteText::setText(void* arg1, int32_t* arg2)"
+  "ToStringValue": "0x00148aac uint8_t* SpriteText::setText(SpriteText* spriteText, int32_t* arg2)"
+},
+{
+  "Address": 1347640,
+  "AddressString": "00149038",
+  "Name": "TextWidget::setText",
+  "Type": "String*",
+  "Other": "TextWidget* textWidget, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00149038 String* TextWidget::setText(TextWidget* textWidget, int32_t* arg2)"
 },
 {
   "Address": 1350248,
@@ -774,11 +1038,11 @@
   "AddressString": "00149d00",
   "Name": "ResourceFile::close",
   "Type": "int32_t*",
-  "Other": "int32_t* arg1",
+  "Other": "u32 arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00149d00 int32_t* ResourceFile::close(int32_t* arg1)"
+  "ToStringValue": "0x00149d00 int32_t* ResourceFile::close(u32 arg1)"
 },
 {
   "Address": 1351028,
@@ -847,6 +1111,28 @@
   "ToStringValue": "0x0014b5bc String* EE::String::operator=(String* str, String* arg2, void* arg3)"
 },
 {
+  "Address": 1367836,
+  "AddressString": "0014df1c",
+  "Name": "Stopwatch::Stop",
+  "Type": "int32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0014df1c int32_t Stopwatch::Stop(void* arg1)"
+},
+{
+  "Address": 1367924,
+  "AddressString": "0014df74",
+  "Name": "Stopwatch::Start",
+  "Type": "int32_t",
+  "Other": "u64* time",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0014df74 int32_t Stopwatch::Start(u64* time)"
+},
+{
   "Address": 1367948,
   "AddressString": "0014df8c",
   "Name": "Stopwatch::Stopwatch",
@@ -858,15 +1144,26 @@
   "ToStringValue": "0x0014df8c int32_t** Stopwatch::Stopwatch(int32_t** arg1)"
 },
 {
+  "Address": 1368016,
+  "AddressString": "0014dfd0",
+  "Name": "FreeStringType5",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0014dfd0 int32_t FreeStringType5()"
+},
+{
   "Address": 1368964,
   "AddressString": "0014e384",
   "Name": "new[]",
   "Type": "int32_t*",
-  "Other": "uint32_t arg1",
+  "Other": "u32 arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0014e384 int32_t* new[](uint32_t arg1)"
+  "ToStringValue": "0x0014e384 int32_t* new[](u32 arg1)"
 },
 {
   "Address": 1374136,
@@ -883,45 +1180,56 @@
   "Address": 1376816,
   "AddressString": "00150230",
   "Name": "SpriteText::setPosition",
-  "Type": "void*",
-  "Other": "void* arg1",
+  "Type": "uint8_t*",
+  "Other": "SpriteText* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00150230 void* SpriteText::setPosition(void* arg1)"
+  "ToStringValue": "0x00150230 uint8_t* SpriteText::setPosition(SpriteText* arg1)"
 },
 {
   "Address": 1376928,
   "AddressString": "001502a0",
   "Name": "SpriteText::setBounds",
   "Type": "int32_t",
-  "Other": "void* arg1, int32_t* arg2",
+  "Other": "SpriteText* arg1, int32_t* arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001502a0 int32_t SpriteText::setBounds(void* arg1, int32_t* arg2)"
+  "ToStringValue": "0x001502a0 int32_t SpriteText::setBounds(SpriteText* arg1, int32_t* arg2)"
 },
 {
   "Address": 1377072,
   "AddressString": "00150330",
   "Name": "SpriteText::regenerateMatrix",
-  "Type": "void*",
-  "Other": "void* arg1",
+  "Type": "uint8_t*",
+  "Other": "SpriteText* spriteText",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00150330 void* SpriteText::regenerateMatrix(void* arg1)"
+  "ToStringValue": "0x00150330 uint8_t* SpriteText::regenerateMatrix(SpriteText* spriteText)"
 },
 {
   "Address": 1377168,
   "AddressString": "00150390",
   "Name": "SpriteText::getStringDimension",
-  "Type": "int32_t",
-  "Other": "int32_t* arg1, void* arg2, int32_t* arg3",
+  "Type": "void*",
+  "Other": "Vector2* size, SpriteText* spriteText, String* str_utf16",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00150390 int32_t SpriteText::getStringDimension(int32_t* arg1, void* arg2, int32_t* arg3)"
+  "ToStringValue": "0x00150390 void* SpriteText::getStringDimension(Vector2* size, SpriteText* spriteText, String* str_utf16)"
+},
+{
+  "Address": 1381336,
+  "AddressString": "001513d8",
+  "Name": "HSSSoundManager::playEffect",
+  "Type": "void*",
+  "Other": "void* arg1, int32_t* arg2, char arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001513d8 void* HSSSoundManager::playEffect(void* arg1, int32_t* arg2, char arg3, int32_t arg4)"
 },
 {
   "Address": 1384264,
@@ -1034,6 +1342,28 @@
   "ToStringValue": "0x00156f50 void CriticalSection::Leave(int32_t* arg1)"
 },
 {
+  "Address": 1404784,
+  "AddressString": "00156f70",
+  "Name": "HSSSoundManager",
+  "Type": "void*",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00156f70 void* HSSSoundManager(int32_t* arg1)"
+},
+{
+  "Address": 1405480,
+  "AddressString": "00157228",
+  "Name": "HelperFunctions::stringEndsWith",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00157228 int32_t HelperFunctions::stringEndsWith(int32_t* arg1, int32_t* arg2)"
+},
+{
   "Address": 1405656,
   "AddressString": "001572d8",
   "Name": "O::Thread::Sleep",
@@ -1104,11 +1434,22 @@
   "AddressString": "0015dcf4",
   "Name": "GlyphSet::GetGlyph",
   "Type": "int32_t",
-  "Other": "void* arg1, int32_t arg2",
+  "Other": "GlyphSet* glyphSet, u32 num",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0015dcf4 int32_t GlyphSet::GetGlyph(void* arg1, int32_t arg2)"
+  "ToStringValue": "0x0015dcf4 int32_t GlyphSet::GetGlyph(GlyphSet* glyphSet, u32 num)"
+},
+{
+  "Address": 1491144,
+  "AddressString": "0016c0c8",
+  "Name": "memset",
+  "Type": "int32_t",
+  "Other": "char* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0016c0c8 int32_t memset(char* arg1, int32_t arg2)"
 },
 {
   "Address": 1521940,
@@ -1221,15 +1562,103 @@
   "ToStringValue": "0x001809c8 uint32_t WorldView::DrawCursor(void* arg1)"
 },
 {
-  "Address": 1602224,
-  "AddressString": "001872b0",
-  "Name": "ItemWidget::ItemWidget",
-  "Type": "void*",
-  "Other": "void*** arg1, String* str1, String* str2",
+  "Address": 1597112,
+  "AddressString": "00185eb8",
+  "Name": "ItemWidget::SetupSpritesAndStackText",
+  "Type": "int32_t",
+  "Other": "ItemWidget* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001872b0 void* ItemWidget::ItemWidget(void*** arg1, String* str1, String* str2)"
+  "ToStringValue": "0x00185eb8 int32_t ItemWidget::SetupSpritesAndStackText(ItemWidget* arg1)"
+},
+{
+  "Address": 1600228,
+  "AddressString": "00186ae4",
+  "Name": "ItemWidget::Draw",
+  "Type": "uint32_t",
+  "Other": "ItemWidget* arg1, SpriteBatch* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186ae4 uint32_t ItemWidget::Draw(ItemWidget* arg1, SpriteBatch* arg2)"
+},
+{
+  "Address": 1600652,
+  "AddressString": "00186c8c",
+  "Name": "ItemWidget::Update",
+  "Type": "uint32_t",
+  "Other": "ItemWidget* widget",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186c8c uint32_t ItemWidget::Update(ItemWidget* widget)"
+},
+{
+  "Address": 1600932,
+  "AddressString": "00186da4",
+  "Name": "ItemWidget::MouseIn",
+  "Type": "int32_t",
+  "Other": "ItemWidget* widget",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186da4 int32_t ItemWidget::MouseIn(ItemWidget* widget)"
+},
+{
+  "Address": 1601064,
+  "AddressString": "00186e28",
+  "Name": "ItemWidget::MouseOut",
+  "Type": "uint32_t",
+  "Other": "ItemWidget* widget",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186e28 uint32_t ItemWidget::MouseOut(ItemWidget* widget)"
+},
+{
+  "Address": 1601128,
+  "AddressString": "00186e68",
+  "Name": "ItemWidget::setRotation_2",
+  "Type": "int32_t",
+  "Other": "int32_t arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186e68 int32_t ItemWidget::setRotation_2(int32_t arg1, int32_t* arg2)"
+},
+{
+  "Address": 1601136,
+  "AddressString": "00186e70",
+  "Name": "ItemWidget::setRotation",
+  "Type": "int32_t*",
+  "Other": "ItemWidget* widget, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00186e70 int32_t* ItemWidget::setRotation(ItemWidget* widget, int32_t* arg2)"
+},
+{
+  "Address": 1601616,
+  "AddressString": "00187050",
+  "Name": "ItemWidget::DrawStars",
+  "Type": "float",
+  "Other": "ItemWidget* widget",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00187050 float ItemWidget::DrawStars(ItemWidget* widget)"
+},
+{
+  "Address": 1602224,
+  "AddressString": "001872b0",
+  "Name": "ItemWidget::ItemWidget",
+  "Type": "ItemWidget*",
+  "Other": "ItemWidget* arg1, String* str1, String* str2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001872b0 ItemWidget* ItemWidget::ItemWidget(ItemWidget* arg1, String* str1, String* str2)"
 },
 {
   "Address": 1604764,
@@ -1419,6 +1848,28 @@
   "ToStringValue": "0x00194ba0 int32_t NetMessage::SendPlayerIDSessionMapping(void* arg1)"
 },
 {
+  "Address": 1663988,
+  "AddressString": "001963f4",
+  "Name": "UIAtlas::UIAtlas",
+  "Type": "TextureAtlas*",
+  "Other": "TextureAtlas* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001963f4 TextureAtlas* UIAtlas::UIAtlas(TextureAtlas* arg1)"
+},
+{
+  "Address": 1673468,
+  "AddressString": "001988fc",
+  "Name": "Projectile::Initialize",
+  "Type": "void",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001988fc void Projectile::Initialize()"
+},
+{
   "Address": 1716600,
   "AddressString": "001a3178",
   "Name": "Projectile::NewProjectile",
@@ -1428,6 +1879,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001a3178 int32_t Projectile::NewProjectile(int32_t arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q5)"
+},
+{
+  "Address": 1730188,
+  "AddressString": "001a668c",
+  "Name": "Projectile::initializeProjectile",
+  "Type": "int32_t",
+  "Other": "u32 projId, u32 atlasId, uint32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001a668c int32_t Projectile::initializeProjectile(u32 projId, u32 atlasId, uint32_t arg3)"
 },
 {
   "Address": 1749920,
@@ -1444,12 +1906,12 @@
   "Address": 1836948,
   "AddressString": "001c0794",
   "Name": "Projectile::Update",
-  "Type": "int32_t",
+  "Type": "float",
   "Other": "Projectile* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001c0794 int32_t Projectile::Update(Projectile* arg1)"
+  "ToStringValue": "0x001c0794 float Projectile::Update(Projectile* arg1)"
 },
 {
   "Address": 1860256,
@@ -1463,15 +1925,26 @@
   "ToStringValue": "0x001c62a0 void ClearProjectile(Projectile* projectile)"
 },
 {
+  "Address": 1867504,
+  "AddressString": "001c7ef0",
+  "Name": "SpriteText::setRotation",
+  "Type": "int32_t",
+  "Other": "SpriteText* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001c7ef0 int32_t SpriteText::setRotation(SpriteText* arg1, int32_t* arg2)"
+},
+{
   "Address": 1867532,
   "AddressString": "001c7f0c",
   "Name": "SpriteText::setRotation",
   "Type": "int32_t",
-  "Other": "void* arg1",
+  "Other": "SpriteText* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001c7f0c int32_t SpriteText::setRotation(void* arg1)"
+  "ToStringValue": "0x001c7f0c int32_t SpriteText::setRotation(SpriteText* arg1)"
 },
 {
   "Address": 1867696,
@@ -1518,15 +1991,37 @@
   "ToStringValue": "0x001c8718 void SpriteText::setHorizontalAlign(void* arg1, int32_t arg2)"
 },
 {
+  "Address": 1869792,
+  "AddressString": "001c87e0",
+  "Name": "SpriteText::Draw",
+  "Type": "uint32_t",
+  "Other": "SpriteText* spriteText, SpriteBatch* spriteBatch, int32_t arg3 @ q1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001c87e0 uint32_t SpriteText::Draw(SpriteText* spriteText, SpriteBatch* spriteBatch, int32_t arg3 @ q1)"
+},
+{
   "Address": 1870804,
   "AddressString": "001c8bd4",
   "Name": "SpriteText::setText2",
   "Type": "void*",
-  "Other": "void* arg1, int32_t* arg2",
+  "Other": "SpriteText* arg1, int32_t* arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001c8bd4 void* SpriteText::setText2(void* arg1, int32_t* arg2)"
+  "ToStringValue": "0x001c8bd4 void* SpriteText::setText2(SpriteText* arg1, int32_t* arg2)"
+},
+{
+  "Address": 1871028,
+  "AddressString": "001c8cb4",
+  "Name": "SpriteText::setColor",
+  "Type": "void",
+  "Other": "void* arg1, char* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001c8cb4 void SpriteText::setColor(void* arg1, char* arg2)"
 },
 {
   "Address": 1871064,
@@ -1540,6 +2035,17 @@
   "ToStringValue": "0x001c8cd8 void SpriteText::setScale(void* arg1, Vector2* vec)"
 },
 {
+  "Address": 1871264,
+  "AddressString": "001c8da0",
+  "Name": "SpriteText::SpriteText",
+  "Type": "SpriteText*",
+  "Other": "SpriteText* arg1, String* str, int32_t* arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001c8da0 SpriteText* SpriteText::SpriteText(SpriteText* arg1, String* str, int32_t* arg3)"
+},
+{
   "Address": 1875472,
   "AddressString": "001c9e10",
   "Name": "Statistics::logStat",
@@ -1549,6 +2055,28 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001c9e10 void Statistics::logStat(int32_t arg1, int32_t arg2, int32_t* arg3)"
+},
+{
+  "Address": 1881392,
+  "AddressString": "001cb530",
+  "Name": "TextWidget::TextWidget",
+  "Type": "TextWidget*",
+  "Other": "TextWidget* arg1, SpriteText* spriteText, int32_t* arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001cb530 TextWidget* TextWidget::TextWidget(TextWidget* arg1, SpriteText* spriteText, int32_t* arg3)"
+},
+{
+  "Address": 1882720,
+  "AddressString": "001cba60",
+  "Name": "TouchTrack::currentLocation",
+  "Type": "void",
+  "Other": "int32_t* arg1, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001cba60 void TouchTrack::currentLocation(int32_t* arg1, void* arg2)"
 },
 {
   "Address": 1895404,
@@ -1606,17 +2134,6 @@
   "ToStringValue": "0x001d8228 int32_t ExtractState::Draw(ExtractState* arg1)"
 },
 {
-  "Address": 1934192,
-  "AddressString": "001d8370",
-  "Name": "LoadSplashSprites",
-  "Type": "int32_t",
-  "Other": "int32_t arg1 @ r4",
-  "IsFunction": true,
-  "IsCodeVariable": true,
-  "IsUserDefined": true,
-  "ToStringValue": "0x001d8370 int32_t LoadSplashSprites(int32_t arg1 @ r4)"
-},
-{
   "Address": 1934204,
   "AddressString": "001d837c",
   "Name": "ExtractState::OnLoad",
@@ -1654,22 +2171,22 @@
   "AddressString": "001d8be8",
   "Name": "SpriteBatch::DecreaseLayer",
   "Type": "void",
-  "Other": "void* arg1",
+  "Other": "SpriteBatch* sb",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001d8be8 void SpriteBatch::DecreaseLayer(void* arg1)"
+  "ToStringValue": "0x001d8be8 void SpriteBatch::DecreaseLayer(SpriteBatch* sb)"
 },
 {
   "Address": 1936376,
   "AddressString": "001d8bf8",
   "Name": "SpriteBatch::IncreaseLayer",
   "Type": "void",
-  "Other": "void* arg1",
+  "Other": "SpriteBatch* sb",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001d8bf8 void SpriteBatch::IncreaseLayer(void* arg1)"
+  "ToStringValue": "0x001d8bf8 void SpriteBatch::IncreaseLayer(SpriteBatch* sb)"
 },
 {
   "Address": 1936488,
@@ -1681,6 +2198,28 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001d8c68 void SpriteBatch::setCameraZoomFactor(SpriteBatch* sb, float cameraZoom @ q0)"
+},
+{
+  "Address": 1936668,
+  "AddressString": "001d8d1c",
+  "Name": "SpriteBatch::GetCachedInternalSprite",
+  "Type": "Texture*",
+  "Other": "SpriteBatch* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001d8d1c Texture* SpriteBatch::GetCachedInternalSprite(SpriteBatch* arg1)"
+},
+{
+  "Address": 1937340,
+  "AddressString": "001d8fbc",
+  "Name": "SpriteBatch::Draw",
+  "Type": "void",
+  "Other": "SpriteBatch* arg1, uint32_t arg2, int32_t* arg3, u32 arg4, int32_t arg5, int32_t arg6",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001d8fbc void SpriteBatch::Draw(SpriteBatch* arg1, uint32_t arg2, int32_t* arg3, u32 arg4, int32_t arg5, int32_t arg6)"
 },
 {
   "Address": 1937604,
@@ -1698,11 +2237,22 @@
   "AddressString": "001d9630",
   "Name": "SpriteBatch::Draw2",
   "Type": "void",
-  "Other": "SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, float Y, float X, int32_t* arg7",
+  "Other": "SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, Colour* colour, float X, Vector2* scale",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001d9630 void SpriteBatch::Draw2(SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, float Y, float X, int32_t* arg7)"
+  "ToStringValue": "0x001d9630 void SpriteBatch::Draw2(SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, Colour* colour, float X, Vector2* scale)"
+},
+{
+  "Address": 1939292,
+  "AddressString": "001d975c",
+  "Name": "SpriteBatch::Draw",
+  "Type": "u32",
+  "Other": "SpriteBatch* spriteBatch, Texture* texture, int32_t* arg3, int32_t* arg4, char* arg5, int32_t* arg6, int32_t* arg7",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001d975c u32 SpriteBatch::Draw(SpriteBatch* spriteBatch, Texture* texture, int32_t* arg3, int32_t* arg4, char* arg5, int32_t* arg6, int32_t* arg7)"
 },
 {
   "Address": 1940036,
@@ -1793,15 +2343,345 @@
   "ToStringValue": "0x001dc890 void* Underground::LoadContent()"
 },
 {
-  "Address": 1978332,
-  "AddressString": "001e2fdc",
-  "Name": "WidgetGroup::WidgetGroup",
-  "Type": "void*",
-  "Other": "void*** arg1",
+  "Address": 1970264,
+  "AddressString": "001e1058",
+  "Name": "WidgetGroup::HandleInput",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001e2fdc void* WidgetGroup::WidgetGroup(void*** arg1)"
+  "ToStringValue": "0x001e1058 int32_t WidgetGroup::HandleInput(WidgetGroup* group)"
+},
+{
+  "Address": 1970396,
+  "AddressString": "001e10dc",
+  "Name": "WidgetGroup::isAnimating",
+  "Type": "int32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e10dc int32_t WidgetGroup::isAnimating(void* arg1)"
+},
+{
+  "Address": 1970524,
+  "AddressString": "001e115c",
+  "Name": "WidgetGroup::setPosition",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e115c int32_t WidgetGroup::setPosition(int32_t* arg1, int32_t* arg2)"
+},
+{
+  "Address": 1972324,
+  "AddressString": "001e1864",
+  "Name": "WidgetGroup::enableGraphic",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e1864 int32_t WidgetGroup::enableGraphic(WidgetGroup* group)"
+},
+{
+  "Address": 1972424,
+  "AddressString": "001e18c8",
+  "Name": "WidgetGroup::enableTouches",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e18c8 int32_t WidgetGroup::enableTouches(WidgetGroup* group)"
+},
+{
+  "Address": 1973228,
+  "AddressString": "001e1bec",
+  "Name": "WidgetGroup::disableGraphic",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e1bec int32_t WidgetGroup::disableGraphic(WidgetGroup* group)"
+},
+{
+  "Address": 1973328,
+  "AddressString": "001e1c50",
+  "Name": "WidgetGroup::disableTouches",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e1c50 int32_t WidgetGroup::disableTouches(WidgetGroup* group)"
+},
+{
+  "Address": 1973428,
+  "AddressString": "001e1cb4",
+  "Name": "WidgetGroup::SetInterceptTap",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e1cb4 int32_t WidgetGroup::SetInterceptTap(WidgetGroup* group, int32_t arg2)"
+},
+{
+  "Address": 1973528,
+  "AddressString": "001e1d18",
+  "Name": "WidgetGroup::getHitRectangle",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e1d18 int32_t WidgetGroup::getHitRectangle(WidgetGroup* group, void* arg2)"
+},
+{
+  "Address": 1974992,
+  "AddressString": "001e22d0",
+  "Name": "WidgetGroup::setExitAnimation",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e22d0 int32_t WidgetGroup::setExitAnimation(WidgetGroup* group, int32_t* arg2)"
+},
+{
+  "Address": 1975068,
+  "AddressString": "001e231c",
+  "Name": "WidgetGroup::setEnterAnimation",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e231c int32_t WidgetGroup::setEnterAnimation(WidgetGroup* group, int32_t* arg2)"
+},
+{
+  "Address": 1975148,
+  "AddressString": "001e236c",
+  "Name": "WidgetGroup::addWidgetAtPosition",
+  "Type": "void",
+  "Other": "WidgetGroup* group, Widget* widget, int64_t* arg3, int32_t arg4, int32_t arg5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e236c void WidgetGroup::addWidgetAtPosition(WidgetGroup* group, Widget* widget, int64_t* arg3, int32_t arg4, int32_t arg5)"
+},
+{
+  "Address": 1975844,
+  "AddressString": "001e2624",
+  "Name": "WidgetGroup::IgnoreMouseInOutLogic",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2624 int32_t WidgetGroup::IgnoreMouseInOutLogic(WidgetGroup* group, int32_t arg2)"
+},
+{
+  "Address": 1975952,
+  "AddressString": "001e2690",
+  "Name": "WidgetGroup::Draw",
+  "Type": "SpriteBatch*",
+  "Other": "WidgetGroup* group, SpriteBatch* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2690 SpriteBatch* WidgetGroup::Draw(WidgetGroup* group, SpriteBatch* arg2)"
+},
+{
+  "Address": 1976064,
+  "AddressString": "001e2700",
+  "Name": "WidgetGroup::show",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2700 int32_t WidgetGroup::show(WidgetGroup* group)"
+},
+{
+  "Address": 1976096,
+  "AddressString": "001e2720",
+  "Name": "WidgetGroup::Clone",
+  "Type": "WidgetGroup*",
+  "Other": "WidgetGroup* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2720 WidgetGroup* WidgetGroup::Clone(WidgetGroup* arg1)"
+},
+{
+  "Address": 1976452,
+  "AddressString": "001e2884",
+  "Name": "WidgetGroup::setColor",
+  "Type": "void",
+  "Other": "void* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2884 void WidgetGroup::setColor(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 1977136,
+  "AddressString": "001e2b30",
+  "Name": "WidgetGroup::click",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2b30 int32_t WidgetGroup::click(WidgetGroup* group)"
+},
+{
+  "Address": 1977236,
+  "AddressString": "001e2b94",
+  "Name": "WidgetGroup::enter",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2b94 int32_t WidgetGroup::enter(WidgetGroup* group)"
+},
+{
+  "Address": 1977268,
+  "AddressString": "001e2bb4",
+  "Name": "WidgetGroup::Update",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2bb4 int32_t WidgetGroup::Update(int32_t* arg1)"
+},
+{
+  "Address": 1977376,
+  "AddressString": "001e2c20",
+  "Name": "WidgetGroup::select",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2c20 int32_t WidgetGroup::select(WidgetGroup* group)"
+},
+{
+  "Address": 1977476,
+  "AddressString": "001e2c84",
+  "Name": "WidgetGroup::MouseIn",
+  "Type": "uint32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2c84 uint32_t WidgetGroup::MouseIn(WidgetGroup* group)"
+},
+{
+  "Address": 1977632,
+  "AddressString": "001e2d20",
+  "Name": "WidgetGroup::MouseOut",
+  "Type": "uint32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2d20 uint32_t WidgetGroup::MouseOut(WidgetGroup* group)"
+},
+{
+  "Address": 1977788,
+  "AddressString": "001e2dbc",
+  "Name": "WidgetGroup::deselect",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2dbc int32_t WidgetGroup::deselect(WidgetGroup* group)"
+},
+{
+  "Address": 1977920,
+  "AddressString": "001e2e40",
+  "Name": "WidgetGroup::setScale",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2e40 int32_t WidgetGroup::setScale(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 1978000,
+  "AddressString": "001e2e90",
+  "Name": "WidgetGroup::setRotation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2e90 int32_t WidgetGroup::setRotation(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 1978080,
+  "AddressString": "001e2ee0",
+  "Name": "WidgetGroup::addWidget",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* arg1, Widget* arg2, int32_t arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2ee0 int32_t WidgetGroup::addWidget(WidgetGroup* arg1, Widget* arg2, int32_t arg3, int32_t arg4)"
+},
+{
+  "Address": 1978196,
+  "AddressString": "001e2f54",
+  "Name": "WidgetGroup::isTouched",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2f54 int32_t WidgetGroup::isTouched(WidgetGroup* group)"
+},
+{
+  "Address": 1978332,
+  "AddressString": "001e2fdc",
+  "Name": "WidgetGroup::WidgetGroup",
+  "Type": "WidgetGroup*",
+  "Other": "WidgetGroup* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e2fdc WidgetGroup* WidgetGroup::WidgetGroup(WidgetGroup* arg1)"
+},
+{
+  "Address": 1978580,
+  "AddressString": "001e30d4",
+  "Name": "WidgetGroup::~WidgetGroup",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e30d4 int32_t WidgetGroup::~WidgetGroup(WidgetGroup* group)"
+},
+{
+  "Address": 1978604,
+  "AddressString": "001e30ec",
+  "Name": "WidgetGroup::~WidgetGroup",
+  "Type": "int32_t",
+  "Other": "WidgetGroup* group",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e30ec int32_t WidgetGroup::~WidgetGroup(WidgetGroup* group)"
 },
 {
   "Address": 1979940,
@@ -1863,22 +2743,33 @@
   "AddressString": "001e41cc",
   "Name": "BaseDrawable::SetTexture",
   "Type": "int32_t",
-  "Other": "BaseDrawable* drawable, String* str_2",
+  "Other": "BaseDrawable* drawable, StringWrapper* str_2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001e41cc int32_t BaseDrawable::SetTexture(BaseDrawable* drawable, String* str_2)"
+  "ToStringValue": "0x001e41cc int32_t BaseDrawable::SetTexture(BaseDrawable* drawable, StringWrapper* str_2)"
 },
 {
   "Address": 1983476,
   "AddressString": "001e43f4",
   "Name": "BaseDrawable::OnDeviceBufferChange",
   "Type": "int32_t*",
-  "Other": "Sprite* sprite, int32_t arg2",
+  "Other": "BaseDrawable* drawable, int32_t arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001e43f4 int32_t* BaseDrawable::OnDeviceBufferChange(Sprite* sprite, int32_t arg2)"
+  "ToStringValue": "0x001e43f4 int32_t* BaseDrawable::OnDeviceBufferChange(BaseDrawable* drawable, int32_t arg2)"
+},
+{
+  "Address": 1983552,
+  "AddressString": "001e4440",
+  "Name": "BaseDrawable::setColor",
+  "Type": "int32_t",
+  "Other": "BaseDrawable* drawable, int32_t* arg2, int32_t arg3, Colour arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001e4440 int32_t BaseDrawable::setColor(BaseDrawable* drawable, int32_t* arg2, int32_t arg3, Colour arg4)"
 },
 {
   "Address": 1983672,
@@ -1936,15 +2827,26 @@
   "ToStringValue": "0x001eb0a8 void* FindGameMenu::JoinGame(void* arg1)"
 },
 {
+  "Address": 2021900,
+  "AddressString": "001eda0c",
+  "Name": "InputManager::GetLastTrack",
+  "Type": "int32_t*",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001eda0c int32_t* InputManager::GetLastTrack(void* arg1)"
+},
+{
   "Address": 2024976,
   "AddressString": "001ee610",
   "Name": "InputManager::InputManager",
   "Type": "void*",
-  "Other": "void** arg1",
+  "Other": "InputManager* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001ee610 void* InputManager::InputManager(void** arg1)"
+  "ToStringValue": "0x001ee610 void* InputManager::InputManager(InputManager* arg1)"
 },
 {
   "Address": 2026372,
@@ -2046,6 +2948,17 @@
   "ToStringValue": "0x001f3d7c uint32_t ResourceFile::readUTF16Char(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)"
 },
 {
+  "Address": 2047396,
+  "AddressString": "001f3da4",
+  "Name": "ResourceFile::readStringByteSize",
+  "Type": "int32_t",
+  "Other": "int32_t** arg1, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001f3da4 int32_t ResourceFile::readStringByteSize(int32_t** arg1, void* arg2)"
+},
+{
   "Address": 2049292,
   "AddressString": "001f450c",
   "Name": "ResourceFile::isValid",
@@ -2083,11 +2996,11 @@
   "AddressString": "001f5708",
   "Name": "SpriteWidget::setTexture",
   "Type": "uint32_t",
-  "Other": "void* SpriteWidget, String* str",
+  "Other": "SpriteWidget* spriteWidget, String* str",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001f5708 uint32_t SpriteWidget::setTexture(void* SpriteWidget, String* str)"
+  "ToStringValue": "0x001f5708 uint32_t SpriteWidget::setTexture(SpriteWidget* spriteWidget, String* str)"
 },
 {
   "Address": 2054216,
@@ -2110,6 +3023,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001f598c int32_t SpriteWidget::setupRollovers(u32 arg1)"
+},
+{
+  "Address": 2056332,
+  "AddressString": "001f608c",
+  "Name": "SpriteWidget::SpriteWidget",
+  "Type": "SpriteWidget*",
+  "Other": "SpriteWidget* arg1, void* arg2, int32_t* arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001f608c SpriteWidget* SpriteWidget::SpriteWidget(SpriteWidget* arg1, void* arg2, int32_t* arg3)"
 },
 {
   "Address": 2057092,
@@ -2178,6 +3102,28 @@
   "ToStringValue": "0x001f80b0 int32_t LoadSomeContent()"
 },
 {
+  "Address": 2069408,
+  "AddressString": "001f93a0",
+  "Name": "TextureAtlas::Initialize",
+  "Type": "int32_t",
+  "Other": "TextureAtlas* atlas, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001f93a0 int32_t TextureAtlas::Initialize(TextureAtlas* atlas, int32_t* arg2)"
+},
+{
+  "Address": 2072472,
+  "AddressString": "001f9f98",
+  "Name": "TextureAtlas::LoadRegion",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, int32_t arg2, void* arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001f9f98 int32_t TextureAtlas::LoadRegion(int32_t* arg1, int32_t arg2, void* arg3, int32_t arg4)"
+},
+{
   "Address": 2073964,
   "AddressString": "001fa56c",
   "Name": "TextureAtlas::LoadPageAndBind",
@@ -2189,6 +3135,17 @@
   "ToStringValue": "0x001fa56c Texture* TextureAtlas::LoadPageAndBind(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4)"
 },
 {
+  "Address": 2074180,
+  "AddressString": "001fa644",
+  "Name": "TextureAtlas::InitializeBinary",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, void* arg2 @ r5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001fa644 int32_t TextureAtlas::InitializeBinary(int32_t* arg1, void* arg2 @ r5)"
+},
+{
   "Address": 2075724,
   "AddressString": "001fac4c",
   "Name": "TextureAtlas::GetRegionFromName",
@@ -2198,6 +3155,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x001fac4c uint8_t* TextureAtlas::GetRegionFromName(TerrariaAtlas* atlas, String* str)"
+},
+{
+  "Address": 2075848,
+  "AddressString": "001facc8",
+  "Name": "AtlasGenerator::GetRegion",
+  "Type": "Texture*",
+  "Other": "TerrariaAtlas* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001facc8 Texture* AtlasGenerator::GetRegion(TerrariaAtlas* arg1, int32_t arg2)"
 },
 {
   "Address": 2075880,
@@ -2214,12 +3182,23 @@
   "Address": 2076052,
   "AddressString": "001fad94",
   "Name": "TextureAtlas::LoadPage",
-  "Type": "void*",
+  "Type": "Texture*",
   "Other": "int32_t arg1, int32_t arg2, int32_t arg3",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001fad94 void* TextureAtlas::LoadPage(int32_t arg1, int32_t arg2, int32_t arg3)"
+  "ToStringValue": "0x001fad94 Texture* TextureAtlas::LoadPage(int32_t arg1, int32_t arg2, int32_t arg3)"
+},
+{
+  "Address": 2076280,
+  "AddressString": "001fae78",
+  "Name": "TextureAtlas::TextureAtlas",
+  "Type": "TextureAtlas*",
+  "Other": "TextureAtlas* altas, int32_t arg2 @ r8, int32_t arg3 @ r11",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001fae78 TextureAtlas* TextureAtlas::TextureAtlas(TextureAtlas* altas, int32_t arg2 @ r8, int32_t arg3 @ r11)"
 },
 {
   "Address": 2083196,
@@ -2236,45 +3215,100 @@
   "Address": 2084040,
   "AddressString": "001fccc8",
   "Name": "WidgetLoader::loadWidget",
-  "Type": "void***",
+  "Type": "Widget*",
   "Other": "void* arg1, int32_t arg2 @ r5",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x001fccc8 void*** WidgetLoader::loadWidget(void* arg1, int32_t arg2 @ r5)"
+  "ToStringValue": "0x001fccc8 Widget* WidgetLoader::loadWidget(void* arg1, int32_t arg2 @ r5)"
+},
+{
+  "Address": 2090184,
+  "AddressString": "001fe4c8",
+  "Name": "WidgetLoader::loadListView",
+  "Type": "ListView*",
+  "Other": "void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001fe4c8 ListView* WidgetLoader::loadListView(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)"
+},
+{
+  "Address": 2091424,
+  "AddressString": "001fe9a0",
+  "Name": "WidgetLoader::loadAnimations",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2, int32_t arg3, void* arg4 @ r10, int96_t arg5 @ q5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x001fe9a0 int32_t WidgetLoader::loadAnimations(void* arg1, int32_t arg2, int32_t arg3, void* arg4 @ r10, int96_t arg5 @ q5)"
 },
 {
   "Address": 2105848,
   "AddressString": "002021f8",
   "Name": "WidgetLoader::load",
   "Type": "int32_t",
-  "Other": "int32_t* arg1, void* arg2 @ r4, int32_t arg3 @ r5",
+  "Other": "int32_t* arg1, void* xmlFile @ r4, int32_t arg3 @ r5",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x002021f8 int32_t WidgetLoader::load(int32_t* arg1, void* arg2 @ r4, int32_t arg3 @ r5)"
+  "ToStringValue": "0x002021f8 int32_t WidgetLoader::load(int32_t* arg1, void* xmlFile @ r4, int32_t arg3 @ r5)"
+},
+{
+  "Address": 2107956,
+  "AddressString": "00202a34",
+  "Name": "WidgetLoader::loadFirst",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00202a34 int32_t WidgetLoader::loadFirst()"
+},
+{
+  "Address": 2110292,
+  "AddressString": "00203354",
+  "Name": "AtlasMetaData::GetEntry",
+  "Type": "int32_t",
+  "Other": "AtlasMetaData* metaData, u32 textureId",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00203354 int32_t AtlasMetaData::GetEntry(AtlasMetaData* metaData, u32 textureId)"
+},
+{
+  "Address": 2110380,
+  "AddressString": "002033ac",
+  "Name": "AtlasMetaData::AtlasMetaData",
+  "Type": "AtlasMetaData*",
+  "Other": "AtlasMetaData* data, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002033ac AtlasMetaData* AtlasMetaData::AtlasMetaData(AtlasMetaData* data, int32_t arg2)"
 },
 {
   "Address": 2117540,
   "AddressString": "00204fa4",
   "Name": "ContentLoader::LoadTexture",
   "Type": "void*",
-  "Other": "ContentLoader* loader, String* str, u32 num1, String* str2, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7",
+  "Other": "ContentLoader* loader, String* textureName, bool flag, bool flag2, bool flag3",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00204fa4 void* ContentLoader::LoadTexture(ContentLoader* loader, String* str, u32 num1, String* str2, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7)"
+  "ToStringValue": "0x00204fa4 void* ContentLoader::LoadTexture(ContentLoader* loader, String* textureName, bool flag, bool flag2, bool flag3)"
 },
 {
-  "Address": 2120252,
-  "AddressString": "00205a3c",
-  "Name": "ContentLoader::loadGlyphSet",
-  "Type": "int32_t*",
-  "Other": "ContentLoader* arg1, int32_t* arg2",
+  "Address": 2122136,
+  "AddressString": "00206198",
+  "Name": "ContentLoader::CreateTexture",
+  "Type": "Texture*",
+  "Other": "ContentLoader* loader, u32 width, u32 height, u8* imageData, u32 num1, u32 num2, u32 num3, u32 num4",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00205a3c int32_t* ContentLoader::loadGlyphSet(ContentLoader* arg1, int32_t* arg2)"
+  "ToStringValue": "0x00206198 Texture* ContentLoader::CreateTexture(ContentLoader* loader, u32 width, u32 height, u8* imageData, u32 num1, u32 num2, u32 num3, u32 num4)"
 },
 {
   "Address": 2128868,
@@ -2297,6 +3331,28 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0020eb9c int32_t MinimapHelper::Run(MiniMapHelper* helper)"
+},
+{
+  "Address": 2159284,
+  "AddressString": "0020f2b4",
+  "Name": "TerrariaAtlas::Initialize",
+  "Type": "int32_t",
+  "Other": "TerrariaAtlas* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0020f2b4 int32_t TerrariaAtlas::Initialize(TerrariaAtlas* arg1, int32_t* arg2)"
+},
+{
+  "Address": 2161440,
+  "AddressString": "0020fb20",
+  "Name": "TerrariaAtlas::GetRegion",
+  "Type": "int32_t",
+  "Other": "void* data, TerrariaAtlas* atlas, u32 textureId",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0020fb20 int32_t TerrariaAtlas::GetRegion(void* data, TerrariaAtlas* atlas, u32 textureId)"
 },
 {
   "Address": 2161488,
@@ -2354,6 +3410,39 @@
   "ToStringValue": "0x00210738 int32_t TerrariaAtlas::~TerrariaAtlas2(TerrariaAtlas_VTable** arg1)"
 },
 {
+  "Address": 2167172,
+  "AddressString": "00211184",
+  "Name": "AtlasGenerator::InsertInPage",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2, int32_t* arg3, int32_t* arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00211184 int32_t AtlasGenerator::InsertInPage(void* arg1, int32_t arg2, int32_t* arg3, int32_t* arg4)"
+},
+{
+  "Address": 2168512,
+  "AddressString": "002116c0",
+  "Name": "AtlasGenerator::CreatePageForHashValues",
+  "Type": "int32_t*",
+  "Other": "void* arg1, uint32_t arg2, uint32_t arg3, AtlasPage* arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002116c0 int32_t* AtlasGenerator::CreatePageForHashValues(void* arg1, uint32_t arg2, uint32_t arg3, AtlasPage* arg4)"
+},
+{
+  "Address": 2169496,
+  "AddressString": "00211a98",
+  "Name": "AtlasGenerator::InsertInPage",
+  "Type": "int32_t*",
+  "Other": "void* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00211a98 int32_t* AtlasGenerator::InsertInPage(void* arg1, int32_t* arg2)"
+},
+{
   "Address": 2199084,
   "AddressString": "00218e2c",
   "Name": "FlowSchemeNode::getNeighbour",
@@ -2363,6 +3452,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00218e2c int32_t FlowSchemeNode::getNeighbour(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 2200008,
+  "AddressString": "002191c8",
+  "Name": "GraphicsDevice::endScissor",
+  "Type": "int32_t",
+  "Other": "GraphicsDevice* device",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002191c8 int32_t GraphicsDevice::endScissor(GraphicsDevice* device)"
 },
 {
   "Address": 2200160,
@@ -2380,11 +3480,11 @@
   "AddressString": "00219354",
   "Name": "Texture2D::BindNewTexture",
   "Type": "int32_t",
-  "Other": "Texture* arg1, bool arg2, bool arg3, int32_t arg4",
+  "Other": "Texture* arg1, bool arg2, bool arg3, bool flag4",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00219354 int32_t Texture2D::BindNewTexture(Texture* arg1, bool arg2, bool arg3, int32_t arg4)"
+  "ToStringValue": "0x00219354 int32_t Texture2D::BindNewTexture(Texture* arg1, bool arg2, bool arg3, bool flag4)"
 },
 {
   "Address": 2200524,
@@ -2396,6 +3496,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x002193cc int32_t GraphicsDevice::QueryTexture(SpriteBatch* sb, Texture* texture, int32_t arg3)"
+},
+{
+  "Address": 2201108,
+  "AddressString": "00219614",
+  "Name": "GraphicsDevice::beginScissor",
+  "Type": "int32_t",
+  "Other": "GraphicsDevice* device, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00219614 int32_t GraphicsDevice::beginScissor(GraphicsDevice* device, int32_t arg2)"
 },
 {
   "Address": 2201688,
@@ -2600,11 +3711,11 @@
   "AddressString": "0021f544",
   "Name": "XNASpriteBatch::DrawString",
   "Type": "int32_t",
-  "Other": "XNASpriteBatch* arg1, String* str, Vector2* pos, Colour colour, void* arg5",
+  "Other": "XNASpriteBatch* arg1, StringWrapper* str, Vector2* pos, Colour colour, void* arg5, void* arg6, void* arg7, void* arg8, void* arg9",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0021f544 int32_t XNASpriteBatch::DrawString(XNASpriteBatch* arg1, String* str, Vector2* pos, Colour colour, void* arg5)"
+  "ToStringValue": "0x0021f544 int32_t XNASpriteBatch::DrawString(XNASpriteBatch* arg1, StringWrapper* str, Vector2* pos, Colour colour, void* arg5, void* arg6, void* arg7, void* arg8, void* arg9)"
 },
 {
   "Address": 2226716,
@@ -2632,12 +3743,23 @@
   "Address": 2227180,
   "AddressString": "0021fbec",
   "Name": "XNASpriteBatch::MeasureString",
-  "Type": "int32_t",
-  "Other": "int32_t* arg1, XNASpriteBatch* arg2, void* arg3",
+  "Type": "void*",
+  "Other": "Vector2* size, XNASpriteBatch* arg2, StringWrapper* str",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0021fbec int32_t XNASpriteBatch::MeasureString(int32_t* arg1, XNASpriteBatch* arg2, void* arg3)"
+  "ToStringValue": "0x0021fbec void* XNASpriteBatch::MeasureString(Vector2* size, XNASpriteBatch* arg2, StringWrapper* str)"
+},
+{
+  "Address": 2227596,
+  "AddressString": "0021fd8c",
+  "Name": "XNASpriteBatch::CreateSpriteText",
+  "Type": "SpriteText*",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0021fd8c SpriteText* XNASpriteBatch::CreateSpriteText()"
 },
 {
   "Address": 2228420,
@@ -2794,6 +3916,17 @@
   "ToStringValue": "0x00230568 void** HelperFunctions::tokenize(int32_t* arg1, int32_t* arg2, int32_t* arg3, int32_t arg4)"
 },
 {
+  "Address": 2306832,
+  "AddressString": "00233310",
+  "Name": "MaxRectsBinPack::Clear",
+  "Type": "int32_t",
+  "Other": "MaxRectsBinPack* instance",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00233310 int32_t MaxRectsBinPack::Clear(MaxRectsBinPack* instance)"
+},
+{
   "Address": 2315476,
   "AddressString": "002354d4",
   "Name": "PlatformHelpers::GetXmlPostfixes",
@@ -2896,12 +4029,12 @@
   "Address": 2354204,
   "AddressString": "0023ec1c",
   "Name": "WorldMapMenu::UpdateOpened",
-  "Type": "int32_t",
-  "Other": "void* arg1",
+  "Type": "uint32_t",
+  "Other": "BaseMenuState* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0023ec1c int32_t WorldMapMenu::UpdateOpened(void* arg1)"
+  "ToStringValue": "0x0023ec1c uint32_t WorldMapMenu::UpdateOpened(BaseMenuState* arg1)"
 },
 {
   "Address": 2355108,
@@ -3003,15 +4136,37 @@
   "ToStringValue": "0x002481c8 BaseMenuState* OptionsMenu::OptionsMenu(BaseMenuState menu @ r0)"
 },
 {
-  "Address": 2417904,
-  "AddressString": "0024e4f0",
-  "Name": "InitBackgroundDirt",
-  "Type": "int32_t*",
-  "Other": "void*** arg1, BaseMenu* menu, int32_t arg3 @ r4",
+  "Address": 2408884,
+  "AddressString": "0024c1b4",
+  "Name": "BasicEaseAnimation::BasicEaseAnimation",
+  "Type": "void",
+  "Other": "void*** arg1, int32_t arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0024e4f0 int32_t* InitBackgroundDirt(void*** arg1, BaseMenu* menu, int32_t arg3 @ r4)"
+  "ToStringValue": "0x0024c1b4 void BasicEaseAnimation::BasicEaseAnimation(void*** arg1, int32_t arg2)"
+},
+{
+  "Address": 2417904,
+  "AddressString": "0024e4f0",
+  "Name": "InitBackgroundDirt",
+  "Type": "int32_t**",
+  "Other": "void* instance, BaseMenu* menu, int32_t arg3 @ r4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0024e4f0 int32_t** InitBackgroundDirt(void* instance, BaseMenu* menu, int32_t arg3 @ r4)"
+},
+{
+  "Address": 2427564,
+  "AddressString": "00250aac",
+  "Name": "BaseWidgetAnimation::BaseWidgetAnimation",
+  "Type": "void",
+  "Other": "void*** arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00250aac void BaseWidgetAnimation::BaseWidgetAnimation(void*** arg1, int32_t arg2)"
 },
 {
   "Address": 2459884,
@@ -3047,15 +4202,15 @@
   "ToStringValue": "0x0025cfa0 void NPC::setFireFlyChance()"
 },
 {
-  "Address": 2512728,
-  "AddressString": "00265758",
+  "Address": 2512740,
+  "AddressString": "00265764",
   "Name": "TerrariaInitializer::Run",
   "Type": "int32_t",
-  "Other": "",
+  "Other": "int32_t* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00265758 int32_t TerrariaInitializer::Run()"
+  "ToStringValue": "0x00265764 int32_t TerrariaInitializer::Run(int32_t* arg1)"
 },
 {
   "Address": 2523600,
@@ -3122,6 +4277,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x002946cc String* LoadString(String* arg1, String* dest, char* raw)"
+},
+{
+  "Address": 2708252,
+  "AddressString": "0029531c",
+  "Name": "UI::Initialize",
+  "Type": "void",
+  "Other": "void* arg1, char arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0029531c void UI::Initialize(void* arg1, char arg2)"
 },
 {
   "Address": 2708596,
@@ -3194,11 +4360,11 @@
   "AddressString": "002980d0",
   "Name": "UI::MeasureString",
   "Type": "int32_t",
-  "Other": "int32_t* arg1, void* arg2",
+  "Other": "Vector2* arg1, String* str",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x002980d0 int32_t UI::MeasureString(int32_t* arg1, void* arg2)"
+  "ToStringValue": "0x002980d0 int32_t UI::MeasureString(Vector2* arg1, String* str)"
 },
 {
   "Address": 2719968,
@@ -3227,11 +4393,11 @@
   "AddressString": "00299240",
   "Name": "UI::DrawStringScaled",
   "Type": "int32_t",
-  "Other": "String* arg1, Vector2* arg2, Colour arg3, void* arg4",
+  "Other": "StringWrapper* arg1, Vector2* arg2, Colour arg3, void* arg4, void arg5",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00299240 int32_t UI::DrawStringScaled(String* arg1, Vector2* arg2, Colour arg3, void* arg4)"
+  "ToStringValue": "0x00299240 int32_t UI::DrawStringScaled(StringWrapper* arg1, Vector2* arg2, Colour arg3, void* arg4, void arg5)"
 },
 {
   "Address": 2725728,
@@ -3344,6 +4510,50 @@
   "ToStringValue": "0x0029fb08 uint32_t UI::setPlayer2(void* arg1, u32 arg2)"
 },
 {
+  "Address": 2781384,
+  "AddressString": "002a70c8",
+  "Name": "FSUSER_OpenFile",
+  "Type": "s32",
+  "Other": "u32* handle, u32* handleOut, u32 zero_unknown, u32 unknown_unused, u32 archive_handleLow, u32 archive_handleHigh, u32 fileLowPath_type, u8* fileLowPath_data, u32 fileLowPath_size, u32 openFlags, u32 attributes",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002a70c8 s32 FSUSER_OpenFile(u32* handle, u32* handleOut, u32 zero_unknown, u32 unknown_unused, u32 archive_handleLow, u32 archive_handleHigh, u32 fileLowPath_type, u8* fileLowPath_data, u32 fileLowPath_size, u32 openFlags, u32 attributes)"
+},
+{
+  "Address": 2781736,
+  "AddressString": "002a7228",
+  "Name": "FSFILE_Read",
+  "Type": "s32",
+  "Other": "u32* handle, u32* bytesRead, u32 offset_lower, u32 offset_upper, void* buffer, u32 size",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002a7228 s32 FSFILE_Read(u32* handle, u32* bytesRead, u32 offset_lower, u32 offset_upper, void* buffer, u32 size)"
+},
+{
+  "Address": 2781824,
+  "AddressString": "002a7280",
+  "Name": "FSFILE_Close",
+  "Type": "s32",
+  "Other": "u32* handle",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002a7280 s32 FSFILE_Close(u32* handle)"
+},
+{
+  "Address": 2786300,
+  "AddressString": "002a83fc",
+  "Name": "scissorToggle",
+  "Type": "void*",
+  "Other": "bool scissor",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002a83fc void* scissorToggle(bool scissor)"
+},
+{
   "Address": 2820172,
   "AddressString": "002b084c",
   "Name": "_cfguExit2",
@@ -3381,22 +4591,22 @@
   "AddressString": "002fb6c8",
   "Name": "delete[]",
   "Type": "int32_t",
-  "Other": "int32_t* arg1",
+  "Other": "u32 arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x002fb6c8 int32_t delete[](int32_t* arg1)"
+  "ToStringValue": "0x002fb6c8 int32_t delete[](u32 arg1)"
 },
 {
   "Address": 3127720,
   "AddressString": "002fb9a8",
   "Name": "SetStringTypeString",
   "Type": "String*",
-  "Other": "String* strType, char* rawStr, void* arg3",
+  "Other": "StringWrapper* strType, char* rawStr, void* arg3",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x002fb9a8 String* SetStringTypeString(String* strType, char* rawStr, void* arg3)"
+  "ToStringValue": "0x002fb9a8 String* SetStringTypeString(StringWrapper* strType, char* rawStr, void* arg3)"
 },
 {
   "Address": 3127844,
@@ -3425,11 +4635,11 @@
   "AddressString": "002fba8c",
   "Name": "delete",
   "Type": "int32_t",
-  "Other": "int32_t* arg1",
+  "Other": "u32 arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x002fba8c int32_t delete(int32_t* arg1)"
+  "ToStringValue": "0x002fba8c int32_t delete(u32 arg1)"
 },
 {
   "Address": 3129254,
@@ -3496,6 +4706,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x002fe388 int32_t __aeabi_idivmod(int32_t arg1, uint32_t arg2)"
+},
+{
+  "Address": 3140260,
+  "AddressString": "002feaa4",
+  "Name": "increaseStringRef",
+  "Type": "void",
+  "Other": "u32* refCount",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x002feaa4 void increaseStringRef(u32* refCount)"
 },
 {
   "Address": 3148556,
@@ -3971,6 +5192,17 @@
   "ToStringValue": "0x003c77c0 bool Item::Prefix(Item* item, s32 prefix, int128_t arg3 @ q4)"
 },
 {
+  "Address": 3968376,
+  "AddressString": "003c8d78",
+  "Name": "Item::DrawAll",
+  "Type": "uint32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x003c8d78 uint32_t Item::DrawAll(void* arg1)"
+},
+{
   "Address": 3970676,
   "AddressString": "003c9674",
   "Name": "Item::NewItem",
@@ -3980,6 +5212,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x003c9674 u32 Item::NewItem(u32 X, u32 Y, s32 width, s32 height, u32 id, u32 stack, int32_t arg7, s32 prefix, int32_t arg9)"
+},
+{
+  "Address": 3971652,
+  "AddressString": "003c9a44",
+  "Name": "Item::GetColor",
+  "Type": "Colour",
+  "Other": "Item* item, Colour arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x003c9a44 Colour Item::GetColor(Item* item, Colour arg2)"
 },
 {
   "Address": 3972652,
@@ -4277,6 +5520,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x003dd27c int32_t Main::~Main()"
+},
+{
+  "Address": 4057468,
+  "AddressString": "003de97c",
+  "Name": "Star::SpawnStars",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x003de97c int32_t Star::SpawnStars()"
 },
 {
   "Address": 4063680,
@@ -4579,12 +5833,12 @@
   "Address": 4382856,
   "AddressString": "0042e088",
   "Name": "Player::Init",
-  "Type": "void*",
+  "Type": "uint8_t*",
   "Other": "Player* player",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0042e088 void* Player::Init(Player* player)"
+  "ToStringValue": "0x0042e088 uint8_t* Player::Init(Player* player)"
 },
 {
   "Address": 4388292,
@@ -4613,11 +5867,11 @@
   "AddressString": "00433c6c",
   "Name": "Player::DrawInfo",
   "Type": "uint32_t",
-  "Other": "Player* player, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5",
+  "Other": "Player* player, void* arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00433c6c uint32_t Player::DrawInfo(Player* player, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)"
+  "ToStringValue": "0x00433c6c uint32_t Player::DrawInfo(Player* player, void* arg2)"
 },
 {
   "Address": 4416292,
@@ -4668,11 +5922,33 @@
   "AddressString": "004427e0",
   "Name": "Player::Player",
   "Type": "void*",
-  "Other": "void*** arg1",
+  "Other": "Player* player",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x004427e0 void* Player::Player(void*** arg1)"
+  "ToStringValue": "0x004427e0 void* Player::Player(Player* player)"
+},
+{
+  "Address": 4472104,
+  "AddressString": "00443d28",
+  "Name": "Player::~Player",
+  "Type": "int32_t",
+  "Other": "Player* player",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00443d28 int32_t Player::~Player(Player* player)"
+},
+{
+  "Address": 4472120,
+  "AddressString": "00443d38",
+  "Name": "Player::~Player",
+  "Type": "void*",
+  "Other": "Player* player",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00443d38 void* Player::~Player(Player* player)"
 },
 {
   "Address": 4488156,
@@ -4719,15 +5995,26 @@
   "ToStringValue": "0x0045a148 void Recipe::AddRecipe(void* arg1, void* arg2, void* arg3, void* arg4)"
 },
 {
+  "Address": 4569564,
+  "AddressString": "0045b9dc",
+  "Name": "Sprite::GetTexture",
+  "Type": "Texture*",
+  "Other": "Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045b9dc Texture* Sprite::GetTexture(Sprite* sprite)"
+},
+{
   "Address": 4569572,
   "AddressString": "0045b9e4",
   "Name": "Sprite::SetTexture2",
-  "Type": "int32_t",
+  "Type": "Texture*",
   "Other": "Sprite* sprite, Texture* texture",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0045b9e4 int32_t Sprite::SetTexture2(Sprite* sprite, Texture* texture)"
+  "ToStringValue": "0x0045b9e4 Texture* Sprite::SetTexture2(Sprite* sprite, Texture* texture)"
 },
 {
   "Address": 4569684,
@@ -4741,6 +6028,28 @@
   "ToStringValue": "0x0045ba54 int32_t Sprite::SetTexture(Sprite* sprite, String* str)"
 },
 {
+  "Address": 4570076,
+  "AddressString": "0045bbdc",
+  "Name": "Sprite::getPosition",
+  "Type": "void",
+  "Other": "Vector2* pos, Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bbdc void Sprite::getPosition(Vector2* pos, Sprite* sprite)"
+},
+{
+  "Address": 4570092,
+  "AddressString": "0045bbec",
+  "Name": "Sprite::setRotation",
+  "Type": "void",
+  "Other": "Sprite* sprite, Vector3* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bbec void Sprite::setRotation(Sprite* sprite, Vector3* arg2)"
+},
+{
   "Address": 4570180,
   "AddressString": "0045bc44",
   "Name": "Sprite::OnContextLoss",
@@ -4752,6 +6061,127 @@
   "ToStringValue": "0x0045bc44 int32_t Sprite::OnContextLoss(Sprite* sprite)"
 },
 {
+  "Address": 4570264,
+  "AddressString": "0045bc98",
+  "Name": "Sprite::setLocalRotation",
+  "Type": "void*",
+  "Other": "Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bc98 void* Sprite::setLocalRotation(Sprite* sprite)"
+},
+{
+  "Address": 4570304,
+  "AddressString": "0045bcc0",
+  "Name": "Sprite::GetTextureRectangle",
+  "Type": "int32_t*",
+  "Other": "int32_t* arg1, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bcc0 int32_t* Sprite::GetTextureRectangle(int32_t* arg1, void* arg2)"
+},
+{
+  "Address": 4570404,
+  "AddressString": "0045bd24",
+  "Name": "Sprite::setTextureRectangle",
+  "Type": "int32_t",
+  "Other": "Sprite* sprite, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bd24 int32_t Sprite::setTextureRectangle(Sprite* sprite, int32_t* arg2)"
+},
+{
+  "Address": 4570600,
+  "AddressString": "0045bde8",
+  "Name": "Sprite::disablePremultipliedAlpha",
+  "Type": "void",
+  "Other": "Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bde8 void Sprite::disablePremultipliedAlpha(Sprite* sprite)"
+},
+{
+  "Address": 4570612,
+  "AddressString": "0045bdf4",
+  "Name": "Sprite::Draw",
+  "Type": "int32_t",
+  "Other": "Sprite* sprite, SpriteBatch* spriteBatch",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045bdf4 int32_t Sprite::Draw(Sprite* sprite, SpriteBatch* spriteBatch)"
+},
+{
+  "Address": 4571168,
+  "AddressString": "0045c020",
+  "Name": "Sprite::reload",
+  "Type": "Texture*",
+  "Other": "Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c020 Texture* Sprite::reload(Sprite* sprite)"
+},
+{
+  "Address": 4571628,
+  "AddressString": "0045c1ec",
+  "Name": "Sprite::getSize",
+  "Type": "void",
+  "Other": "Vector2* size, Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c1ec void Sprite::getSize(Vector2* size, Sprite* sprite)"
+},
+{
+  "Address": 4571644,
+  "AddressString": "0045c1fc",
+  "Name": "Sprite::setSize",
+  "Type": "int32_t",
+  "Other": "Sprite* sprite, Vector2* size",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c1fc int32_t Sprite::setSize(Sprite* sprite, Vector2* size)"
+},
+{
+  "Address": 4571664,
+  "AddressString": "0045c210",
+  "Name": "Sprite::getColor",
+  "Type": "void",
+  "Other": "Colour* colour, Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c210 void Sprite::getColor(Colour* colour, Sprite* sprite)"
+},
+{
+  "Address": 4571676,
+  "AddressString": "0045c21c",
+  "Name": "Sprite::getScale",
+  "Type": "int32_t",
+  "Other": "Vector2* scale, Sprite* sprite, int32_t arg3 @ q1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c21c int32_t Sprite::getScale(Vector2* scale, Sprite* sprite, int32_t arg3 @ q1)"
+},
+{
+  "Address": 4571756,
+  "AddressString": "0045c26c",
+  "Name": "Sprite::setColor",
+  "Type": "void",
+  "Other": "BaseDrawable* arg1, int32_t* arg2, char arg3, int128_t arg4 @ q0",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c26c void Sprite::setColor(BaseDrawable* arg1, int32_t* arg2, char arg3, int128_t arg4 @ q0)"
+},
+{
   "Address": 4571924,
   "AddressString": "0045c314",
   "Name": "BaseDrawable::setColor2",
@@ -4761,6 +6191,39 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0045c314 void BaseDrawable::setColor2(Sprite* arg1, char* arg2)"
+},
+{
+  "Address": 4572004,
+  "AddressString": "0045c364",
+  "Name": "Sprite::setScale",
+  "Type": "int32_t",
+  "Other": "Sprite* sprite, Vector2* scale",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c364 int32_t Sprite::setScale(Sprite* sprite, Vector2* scale)"
+},
+{
+  "Address": 4572184,
+  "AddressString": "0045c418",
+  "Name": "Sprite::getOffset",
+  "Type": "void",
+  "Other": "Vector2* pos, Sprite* sprite",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c418 void Sprite::getOffset(Vector2* pos, Sprite* sprite)"
+},
+{
+  "Address": 4572200,
+  "AddressString": "0045c428",
+  "Name": "Sprite::setOffset",
+  "Type": "void",
+  "Other": "Sprite* sprite, Vector2* pos",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045c428 void Sprite::setOffset(Sprite* sprite, Vector2* pos)"
 },
 {
   "Address": 4572300,
@@ -4818,6 +6281,105 @@
   "ToStringValue": "0x0045ede0 int32_t Waters::DrawStyle(void* arg1, float arg2 @ r7, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)"
 },
 {
+  "Address": 4586952,
+  "AddressString": "0045fdc8",
+  "Name": "Widget::MouseClick",
+  "Type": "void**",
+  "Other": "int32_t arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045fdc8 void** Widget::MouseClick(int32_t arg1)"
+},
+{
+  "Address": 4587084,
+  "AddressString": "0045fe4c",
+  "Name": "Widget::HandleInput",
+  "Type": "uint32_t",
+  "Other": "Widget* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045fe4c uint32_t Widget::HandleInput(Widget* arg1)"
+},
+{
+  "Address": 4587476,
+  "AddressString": "0045ffd4",
+  "Name": "Widget::isAnimating",
+  "Type": "int32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0045ffd4 int32_t Widget::isAnimating(void* arg1)"
+},
+{
+  "Address": 4587788,
+  "AddressString": "0046010c",
+  "Name": "Widget::setPosition",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046010c int32_t Widget::setPosition(int32_t* arg1, int32_t* arg2)"
+},
+{
+  "Address": 4587868,
+  "AddressString": "0046015c",
+  "Name": "Widget::addAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046015c int32_t Widget::addAnimation(void* arg1, int32_t arg2, int32_t arg3)"
+},
+{
+  "Address": 4588484,
+  "AddressString": "004603c4",
+  "Name": "Widget::setAnimation",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, int64_t* arg2, int64_t* arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004603c4 int32_t Widget::setAnimation(int32_t* arg1, int64_t* arg2, int64_t* arg3, int32_t arg4)"
+},
+{
+  "Address": 4588668,
+  "AddressString": "0046047c",
+  "Name": "Widget::enableGraphic",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046047c void Widget::enableGraphic(void* arg1)"
+},
+{
+  "Address": 4588680,
+  "AddressString": "00460488",
+  "Name": "Widget::enableTouches",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00460488 void Widget::enableTouches(void* arg1)"
+},
+{
+  "Address": 4588872,
+  "AddressString": "00460548",
+  "Name": "Widget::FireTouchEvent",
+  "Type": "void",
+  "Other": "int64_t* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00460548 void Widget::FireTouchEvent(int64_t* arg1, int32_t arg2)"
+},
+{
   "Address": 4589972,
   "AddressString": "00460994",
   "Name": "Widget::PlayClickSound",
@@ -4829,15 +6391,323 @@
   "ToStringValue": "0x00460994 void Widget::PlayClickSound(int32_t arg1)"
 },
 {
-  "Address": 4599480,
-  "AddressString": "00462eb8",
-  "Name": "Widget::Widget",
-  "Type": "void*",
-  "Other": "void*** arg1",
+  "Address": 4590028,
+  "AddressString": "004609cc",
+  "Name": "Widget::disableGraphic",
+  "Type": "void",
+  "Other": "void* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00462eb8 void* Widget::Widget(void*** arg1)"
+  "ToStringValue": "0x004609cc void Widget::disableGraphic(void* arg1)"
+},
+{
+  "Address": 4590040,
+  "AddressString": "004609d8",
+  "Name": "Widget::disableTouches",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004609d8 void Widget::disableTouches(void* arg1)"
+},
+{
+  "Address": 4590232,
+  "AddressString": "00460a98",
+  "Name": "Widget::setEditorScale",
+  "Type": "void",
+  "Other": "Widget* widget, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00460a98 void Widget::setEditorScale(Widget* widget, int32_t* arg2)"
+},
+{
+  "Address": 4590796,
+  "AddressString": "00460ccc",
+  "Name": "Widget::SetInterceptTap",
+  "Type": "void",
+  "Other": "void* arg1, char arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00460ccc void Widget::SetInterceptTap(void* arg1, char arg2)"
+},
+{
+  "Address": 4590804,
+  "AddressString": "00460cd4",
+  "Name": "Widget::deleteAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00460cd4 int32_t Widget::deleteAnimation(void* arg1, int32_t* arg2)"
+},
+{
+  "Address": 4591692,
+  "AddressString": "0046104c",
+  "Name": "Widget::setExitAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046104c int32_t Widget::setExitAnimation(void* arg1, int32_t* arg2)"
+},
+{
+  "Address": 4592028,
+  "AddressString": "0046119c",
+  "Name": "Widget::setExitAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046119c int32_t Widget::setExitAnimation(void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4)"
+},
+{
+  "Address": 4592480,
+  "AddressString": "00461360",
+  "Name": "Widget::setEnterAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461360 int32_t Widget::setEnterAnimation(void* arg1, int32_t* arg2)"
+},
+{
+  "Address": 4592800,
+  "AddressString": "004614a0",
+  "Name": "Widget::setEnterAnimation",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004614a0 int32_t Widget::setEnterAnimation(void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4)"
+},
+{
+  "Address": 4593280,
+  "AddressString": "00461680",
+  "Name": "Widget::RespondToTouchTrack",
+  "Type": "uint32_t",
+  "Other": "int32_t* arg1, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461680 uint32_t Widget::RespondToTouchTrack(int32_t* arg1, void* arg2)"
+},
+{
+  "Address": 4594024,
+  "AddressString": "00461968",
+  "Name": "Widget::IgnoreMouseInOutLogic",
+  "Type": "void",
+  "Other": "void* arg1, char arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461968 void Widget::IgnoreMouseInOutLogic(void* arg1, char arg2)"
+},
+{
+  "Address": 4594064,
+  "AddressString": "00461990",
+  "Name": "Widget::Draw",
+  "Type": "uint32_t",
+  "Other": "Widget* arg1, SpriteBatch* sb",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461990 uint32_t Widget::Draw(Widget* arg1, SpriteBatch* sb)"
+},
+{
+  "Address": 4594236,
+  "AddressString": "00461a3c",
+  "Name": "Widget::exit",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461a3c int32_t Widget::exit(int32_t* arg1)"
+},
+{
+  "Address": 4594512,
+  "AddressString": "00461b50",
+  "Name": "Widget::hide",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461b50 int32_t Widget::hide(int32_t* arg1)"
+},
+{
+  "Address": 4594808,
+  "AddressString": "00461c78",
+  "Name": "Widget::show",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461c78 int32_t Widget::show(int32_t* arg1)"
+},
+{
+  "Address": 4595100,
+  "AddressString": "00461d9c",
+  "Name": "Widget::click",
+  "Type": "uint32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461d9c uint32_t Widget::click(int32_t* arg1)"
+},
+{
+  "Address": 4595152,
+  "AddressString": "00461dd0",
+  "Name": "Widget::enter",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461dd0 int32_t Widget::enter(int32_t* arg1)"
+},
+{
+  "Address": 4595428,
+  "AddressString": "00461ee4",
+  "Name": "Widget::flash",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461ee4 int32_t Widget::flash(int32_t* arg1)"
+},
+{
+  "Address": 4595476,
+  "AddressString": "00461f14",
+  "Name": "Widget::Update",
+  "Type": "uint32_t",
+  "Other": "int32_t* arg1, int32_t arg2 @ q4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00461f14 uint32_t Widget::Update(int32_t* arg1, int32_t arg2 @ q4)"
+},
+{
+  "Address": 4596176,
+  "AddressString": "004621d0",
+  "Name": "Widget::select",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004621d0 void Widget::select(void* arg1)"
+},
+{
+  "Address": 4596236,
+  "AddressString": "0046220c",
+  "Name": "Widget::MouseIn",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046220c void Widget::MouseIn(void* arg1)"
+},
+{
+  "Address": 4596316,
+  "AddressString": "0046225c",
+  "Name": "Widget::MouseOut",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046225c void Widget::MouseOut(void* arg1)"
+},
+{
+  "Address": 4596412,
+  "AddressString": "004622bc",
+  "Name": "Widget::deselect",
+  "Type": "void",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004622bc void Widget::deselect(void* arg1)"
+},
+{
+  "Address": 4596444,
+  "AddressString": "004622dc",
+  "Name": "Widget::getState",
+  "Type": "uint32_t",
+  "Other": "Widget* widget, int32_t arg2 @ r4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004622dc uint32_t Widget::getState(Widget* widget, int32_t arg2 @ r4)"
+},
+{
+  "Address": 4596796,
+  "AddressString": "0046243c",
+  "Name": "Widget::isTouched",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046243c int32_t Widget::isTouched(int32_t* arg1)"
+},
+{
+  "Address": 4597068,
+  "AddressString": "0046254c",
+  "Name": "Widget::isVisible",
+  "Type": "int32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0046254c int32_t Widget::isVisible(void* arg1)"
+},
+{
+  "Address": 4599480,
+  "AddressString": "00462eb8",
+  "Name": "Widget::Widget",
+  "Type": "Widget*",
+  "Other": "Widget* widget",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00462eb8 Widget* Widget::Widget(Widget* widget)"
+},
+{
+  "Address": 4600788,
+  "AddressString": "004633d4",
+  "Name": "Widget::~Widget",
+  "Type": "int32_t",
+  "Other": "Widget_VTable** arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004633d4 int32_t Widget::~Widget(Widget_VTable** arg1)"
+},
+{
+  "Address": 4600804,
+  "AddressString": "004633e4",
+  "Name": "Widget::~Widget",
+  "Type": "int32_t",
+  "Other": "Widget_VTable** arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x004633e4 int32_t Widget::~Widget(Widget_VTable** arg1)"
 },
 {
   "Address": 4602768,
@@ -4939,6 +6809,17 @@
   "ToStringValue": "0x00472db4 int32_t MiniMap::drawIconsNPCs(void* arg1, int32_t arg2)"
 },
 {
+  "Address": 4669064,
+  "AddressString": "00473e88",
+  "Name": "CreateMiniMap",
+  "Type": "int32_t",
+  "Other": "void* arg1, uint32_t arg2, int32_t arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00473e88 int32_t CreateMiniMap(void* arg1, uint32_t arg2, int32_t arg3, int32_t arg4)"
+},
+{
   "Address": 4670680,
   "AddressString": "004744d8",
   "Name": "MiniMap::calculateNpcHeadPosition",
@@ -4965,11 +6846,11 @@
   "AddressString": "00474fa0",
   "Name": "MiniMap::CreateMap",
   "Type": "int32_t",
-  "Other": "MiniMap* map, int32_t arg2",
+  "Other": "MiniMap* map, bool exportMap",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00474fa0 int32_t MiniMap::CreateMap(MiniMap* map, int32_t arg2)"
+  "ToStringValue": "0x00474fa0 int32_t MiniMap::CreateMap(MiniMap* map, bool exportMap)"
 },
 {
   "Address": 4677236,
@@ -5082,6 +6963,17 @@
   "ToStringValue": "0x0047ace4 int32_t XMLFile::getAttribute(int32_t arg1, void* arg2, int32_t* arg3)"
 },
 {
+  "Address": 4699488,
+  "AddressString": "0047b560",
+  "Name": "XMLFile::readVector2f",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1, void* arg2, int32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0047b560 int32_t XMLFile::readVector2f(int32_t* arg1, void* arg2, int32_t arg3)"
+},
+{
   "Address": 4703896,
   "AddressString": "0047c698",
   "Name": "XMLFile::gotoNode",
@@ -5135,6 +7027,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0047c940 int32_t XMLFile::gotoStart(void* arg1)"
+},
+{
+  "Address": 4704684,
+  "AddressString": "0047c9ac",
+  "Name": "XMLFile::readFloat",
+  "Type": "int32_t",
+  "Other": "void* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0047c9ac int32_t XMLFile::readFloat(void* arg1)"
 },
 {
   "Address": 4704828,
@@ -5273,22 +7176,22 @@
   "AddressString": "00482d44",
   "Name": "GlyphSet::ReadGlyphs",
   "Type": "uint32_t",
-  "Other": "int32_t* arg1, void* arg2",
+  "Other": "GlyphSet* glyphSet, Texture* texture",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00482d44 uint32_t GlyphSet::ReadGlyphs(int32_t* arg1, void* arg2)"
+  "ToStringValue": "0x00482d44 uint32_t GlyphSet::ReadGlyphs(GlyphSet* glyphSet, Texture* texture)"
 },
 {
   "Address": 4730676,
   "AddressString": "00482f34",
   "Name": "GlyphSet::LoadFromFile",
   "Type": "uint32_t",
-  "Other": "int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6",
+  "Other": "GlyphSet* arg1, Texture* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00482f34 uint32_t GlyphSet::LoadFromFile(int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6)"
+  "ToStringValue": "0x00482f34 uint32_t GlyphSet::LoadFromFile(GlyphSet* arg1, Texture* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6)"
 },
 {
   "Address": 4731364,
@@ -5324,17 +7227,6 @@
   "ToStringValue": "0x00483b54 int32_t GlyphSet::AddGlyph(int32_t* arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8)"
 },
 {
-  "Address": 4734336,
-  "AddressString": "00483d80",
-  "Name": "GlyphSet::GlyphSet",
-  "Type": "int32_t*",
-  "Other": "int32_t* arg1, Texture* arg2",
-  "IsFunction": true,
-  "IsCodeVariable": true,
-  "IsUserDefined": true,
-  "ToStringValue": "0x00483d80 int32_t* GlyphSet::GlyphSet(int32_t* arg1, Texture* arg2)"
-},
-{
   "Address": 4735600,
   "AddressString": "00484270",
   "Name": "ItemText::Init",
@@ -5346,15 +7238,246 @@
   "ToStringValue": "0x00484270 void ItemText::Init(char* arg1)"
 },
 {
-  "Address": 4775984,
-  "AddressString": "0048e030",
-  "Name": "DrawItemSlot",
-  "Type": "int32_t*",
-  "Other": "Draw_Unk2* arg1, int32_t* arg2, s32 num1, String* str1, int32_t arg5",
+  "Address": 4758144,
+  "AddressString": "00489a80",
+  "Name": "ListView::HandleInput",
+  "Type": "void*",
+  "Other": "int32_t* arg1",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0048e030 int32_t* DrawItemSlot(Draw_Unk2* arg1, int32_t* arg2, s32 num1, String* str1, int32_t arg5)"
+  "ToStringValue": "0x00489a80 void* ListView::HandleInput(int32_t* arg1)"
+},
+{
+  "Address": 4758984,
+  "AddressString": "00489dc8",
+  "Name": "ListView::updateInput",
+  "Type": "uint32_t",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00489dc8 uint32_t ListView::updateInput(ListView* listView)"
+},
+{
+  "Address": 4760828,
+  "AddressString": "0048a4fc",
+  "Name": "ListView::AddCallbacks",
+  "Type": "int32_t*",
+  "Other": "ListView* listView, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048a4fc int32_t* ListView::AddCallbacks(ListView* listView, void* arg2)"
+},
+{
+  "Address": 4762956,
+  "AddressString": "0048ad4c",
+  "Name": "ListView::recalcMaxMin",
+  "Type": "float",
+  "Other": "Draw_Unk2* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048ad4c float ListView::recalcMaxMin(Draw_Unk2* arg1)"
+},
+{
+  "Address": 4763864,
+  "AddressString": "0048b0d8",
+  "Name": "ListView::moveSelection",
+  "Type": "int32_t*",
+  "Other": "void* arg1, int32_t* arg2, int32_t arg3 @ q4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048b0d8 int32_t* ListView::moveSelection(void* arg1, int32_t* arg2, int32_t arg3 @ q4)"
+},
+{
+  "Address": 4766096,
+  "AddressString": "0048b990",
+  "Name": "ListView::RemoveCallbacks",
+  "Type": "int32_t",
+  "Other": "ListView* listView, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048b990 int32_t ListView::RemoveCallbacks(ListView* listView, void* arg2)"
+},
+{
+  "Address": 4766604,
+  "AddressString": "0048bb8c",
+  "Name": "ListView::getHitRectangle",
+  "Type": "int32_t",
+  "Other": "ListView* listView, void* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048bb8c int32_t ListView::getHitRectangle(ListView* listView, void* arg2)"
+},
+{
+  "Address": 4767396,
+  "AddressString": "0048bea4",
+  "Name": "ListView::setArrowSprites",
+  "Type": "int32_t",
+  "Other": "ListView* listView, void* arg2, void* arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048bea4 int32_t ListView::setArrowSprites(ListView* listView, void* arg2, void* arg3)"
+},
+{
+  "Address": 4768552,
+  "AddressString": "0048c328",
+  "Name": "ListView::addAnimatingItem",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t* arg2, int32_t arg3 @ q4, int32_t arg4, int32_t arg5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048c328 int32_t ListView::addAnimatingItem(void* arg1, int32_t* arg2, int32_t arg3 @ q4, int32_t arg4, int32_t arg5)"
+},
+{
+  "Address": 4770488,
+  "AddressString": "0048cab8",
+  "Name": "ListView::updateArrowWidgets",
+  "Type": "int32_t",
+  "Other": "int32_t* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048cab8 int32_t ListView::updateArrowWidgets(int32_t* arg1)"
+},
+{
+  "Address": 4771452,
+  "AddressString": "0048ce7c",
+  "Name": "ListView::updateItemPositions",
+  "Type": "uint32_t",
+  "Other": "ListView* listView, float pos @ r1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048ce7c uint32_t ListView::updateItemPositions(ListView* listView, float pos @ r1)"
+},
+{
+  "Address": 4773920,
+  "AddressString": "0048d820",
+  "Name": "ListView::Draw",
+  "Type": "SpriteWidget*",
+  "Other": "ListView* listView, SpriteBatch* arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048d820 SpriteWidget* ListView::Draw(ListView* listView, SpriteBatch* arg2)"
+},
+{
+  "Address": 4774536,
+  "AddressString": "0048da88",
+  "Name": "ListView::exit",
+  "Type": "SpriteWidget*",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048da88 SpriteWidget* ListView::exit(ListView* listView)"
+},
+{
+  "Address": 4774604,
+  "AddressString": "0048dacc",
+  "Name": "ListView::hide",
+  "Type": "void",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048dacc void ListView::hide(ListView* listView)"
+},
+{
+  "Address": 4774752,
+  "AddressString": "0048db60",
+  "Name": "ListView::show",
+  "Type": "int32_t",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048db60 int32_t ListView::show(ListView* listView)"
+},
+{
+  "Address": 4774992,
+  "AddressString": "0048dc50",
+  "Name": "ListView::enter",
+  "Type": "SpriteWidget*",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048dc50 SpriteWidget* ListView::enter(ListView* listView)"
+},
+{
+  "Address": 4775288,
+  "AddressString": "0048dd78",
+  "Name": "ListView::Update",
+  "Type": "uint32_t",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048dd78 uint32_t ListView::Update(ListView* listView)"
+},
+{
+  "Address": 4775984,
+  "AddressString": "0048e030",
+  "Name": "ListView::AddItem",
+  "Type": "int32_t*",
+  "Other": "ListView* listView, Widget* widget, s32 num1, String* str1, int32_t arg5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048e030 int32_t* ListView::AddItem(ListView* listView, Widget* widget, s32 num1, String* str1, int32_t arg5)"
+},
+{
+  "Address": 4777168,
+  "AddressString": "0048e4d0",
+  "Name": "ListView::isTouched",
+  "Type": "int32_t",
+  "Other": "ListView* listView",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048e4d0 int32_t ListView::isTouched(ListView* listView)"
+},
+{
+  "Address": 4777204,
+  "AddressString": "0048e4f4",
+  "Name": "ListView::ListView",
+  "Type": "ListView*",
+  "Other": "ListView* listView, int32_t* arg2, int32_t arg3, int32_t arg4, int32_t arg5",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048e4f4 ListView* ListView::ListView(ListView* listView, int32_t* arg2, int32_t arg3, int32_t arg4, int32_t arg5)"
+},
+{
+  "Address": 4780248,
+  "AddressString": "0048f0d8",
+  "Name": "MainMenu::OnActivate",
+  "Type": "int32_t",
+  "Other": "BaseMenuState* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048f0d8 int32_t MainMenu::OnActivate(BaseMenuState* arg1)"
+},
+{
+  "Address": 4780948,
+  "AddressString": "0048f394",
+  "Name": "MainMenu::HandleInput",
+  "Type": "int32_t",
+  "Other": "BaseMenuState* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048f394 int32_t MainMenu::HandleInput(BaseMenuState* arg1)"
 },
 {
   "Address": 4782468,
@@ -5368,6 +7491,28 @@
   "ToStringValue": "0x0048f984 int32_t MainMenu::Play()"
 },
 {
+  "Address": 4782712,
+  "AddressString": "0048fa78",
+  "Name": "State::OnLoad",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2 @ r4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0048fa78 int32_t State::OnLoad(void* arg1, int32_t arg2 @ r4)"
+},
+{
+  "Address": 4784752,
+  "AddressString": "00490270",
+  "Name": "MainMenu::Update",
+  "Type": "uint32_t",
+  "Other": "BaseMenuState* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00490270 uint32_t MainMenu::Update(BaseMenuState* arg1)"
+},
+{
   "Address": 4786824,
   "AddressString": "00490a88",
   "Name": "MainMenu::MainMenu",
@@ -5377,6 +7522,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00490a88 BaseMenuState* MainMenu::MainMenu(BaseMenuState* arg1)"
+},
+{
+  "Address": 4812592,
+  "AddressString": "00496f30",
+  "Name": "RainPool::DrawRain",
+  "Type": "int32_t*",
+  "Other": "int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00496f30 int32_t* RainPool::DrawRain(int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4)"
 },
 {
   "Address": 4814000,
@@ -5599,6 +7755,28 @@
   "ToStringValue": "0x00503f28 void* tinyxml2::XMLNode::XMLNode(struct tinyxml2_XMLNode_VTable** arg1, int32_t arg2)"
 },
 {
+  "Address": 5262884,
+  "AddressString": "00504e24",
+  "Name": "AtlasPage::SetMinMaxHashes",
+  "Type": "uint32_t*",
+  "Other": "AtlasPage* atlasPage, uint32_t arg2, uint32_t arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00504e24 uint32_t* AtlasPage::SetMinMaxHashes(AtlasPage* atlasPage, uint32_t arg2, uint32_t arg3)"
+},
+{
+  "Address": 5264920,
+  "AddressString": "00505618",
+  "Name": "AtlasPage::AtlasPage",
+  "Type": "void*",
+  "Other": "AtlasPage* atlasPage, u32 X, u32 Y, u32 pixleFormat",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00505618 void* AtlasPage::AtlasPage(AtlasPage* atlasPage, u32 X, u32 Y, u32 pixleFormat)"
+},
+{
   "Address": 5268336,
   "AddressString": "00506370",
   "Name": "Collision::SwitchTiles",
@@ -5676,6 +7854,28 @@
   "ToStringValue": "0x0050fc9c void* GameState::GameState(GameState* gameState)"
 },
 {
+  "Address": 5310080,
+  "AddressString": "00510680",
+  "Name": "BaseMenuState::OnActive",
+  "Type": "int32_t",
+  "Other": "BaseMenuState* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00510680 int32_t BaseMenuState::OnActive(BaseMenuState* arg1)"
+},
+{
+  "Address": 5310984,
+  "AddressString": "00510a08",
+  "Name": "CreditsMenu::Draw",
+  "Type": "int32_t",
+  "Other": "BaseMenuState* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00510a08 int32_t CreditsMenu::Draw(BaseMenuState* arg1)"
+},
+{
   "Address": 5310988,
   "AddressString": "00510a0c",
   "Name": "BaseMenuState::Draw",
@@ -5709,6 +7909,17 @@
   "ToStringValue": "0x00510b80 BaseMenuState* BaseMenuState::BaseMenuState(BaseMenuState* menuState, String* str, int32_t* arg3, uint32_t arg4, int32_t arg5)"
 },
 {
+  "Address": 5319048,
+  "AddressString": "00512988",
+  "Name": "DrawLoadingBar",
+  "Type": "void",
+  "Other": "int32_t* arg1, int32_t* arg2, int32_t arg3, int32_t* arg4, int64_t arg5 @ q4, int32_t arg6",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00512988 void DrawLoadingBar(int32_t* arg1, int32_t* arg2, int32_t arg3, int32_t* arg4, int64_t arg5 @ q4, int32_t arg6)"
+},
+{
   "Address": 5320008,
   "AddressString": "00512d48",
   "Name": "Texture2D::loadTexture",
@@ -5724,11 +7935,11 @@
   "AddressString": "005134fc",
   "Name": "Texture2D::makePowerOfTwo",
   "Type": "int32_t*",
-  "Other": "void* arg1",
+  "Other": "Texture* texture",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x005134fc int32_t* Texture2D::makePowerOfTwo(void* arg1)"
+  "ToStringValue": "0x005134fc int32_t* Texture2D::makePowerOfTwo(Texture* texture)"
 },
 {
   "Address": 5323332,
@@ -5746,11 +7957,22 @@
   "AddressString": "00513e1c",
   "Name": "Texture2D::SetDataNoBindCheck",
   "Type": "int32_t",
-  "Other": "Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, int32_t arg6",
+  "Other": "Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, bool flag",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00513e1c int32_t Texture2D::SetDataNoBindCheck(Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, int32_t arg6)"
+  "ToStringValue": "0x00513e1c int32_t Texture2D::SetDataNoBindCheck(Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, bool flag)"
+},
+{
+  "Address": 5324576,
+  "AddressString": "00513f20",
+  "Name": "Texture2D::convertToNormalSpace",
+  "Type": "void",
+  "Other": "int32_t* arg1, void* arg2, int32_t* arg3",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00513f20 void Texture2D::convertToNormalSpace(int32_t* arg1, void* arg2, int32_t* arg3)"
 },
 {
   "Address": 5324624,
@@ -5768,11 +7990,11 @@
   "AddressString": "005140a4",
   "Name": "Texture2D::getPixel",
   "Type": "void",
-  "Other": "Colour* colour, Texture* texture, int32_t arg3, int32_t arg4, int32_t arg5 @ r6, int32_t arg6 @ r12",
+  "Other": "Colour* colour, Texture* texture, u16 X, u16 Y, int32_t arg5 @ r6, int32_t arg6 @ r12",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x005140a4 void Texture2D::getPixel(Colour* colour, Texture* texture, int32_t arg3, int32_t arg4, int32_t arg5 @ r6, int32_t arg6 @ r12)"
+  "ToStringValue": "0x005140a4 void Texture2D::getPixel(Colour* colour, Texture* texture, u16 X, u16 Y, int32_t arg5 @ r6, int32_t arg6 @ r12)"
 },
 {
   "Address": 5326040,
@@ -5786,6 +8008,17 @@
   "ToStringValue": "0x005144d8 Texture* Texture2D::Texture2D(Texture* arg1, String* arg2)"
 },
 {
+  "Address": 5326392,
+  "AddressString": "00514638",
+  "Name": "Texture2D::Texture2D2",
+  "Type": "Texture*",
+  "Other": "Texture* arg1, u32 width, u32 height, u8* imageData, u16 pixelFormat, bool flag_1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00514638 Texture* Texture2D::Texture2D2(Texture* arg1, u32 width, u32 height, u8* imageData, u16 pixelFormat, bool flag_1)"
+},
+{
   "Address": 5338664,
   "AddressString": "00517628",
   "Name": "?::PlayWorld",
@@ -5795,6 +8028,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00517628 int32_t ?::PlayWorld(int32_t* arg1)"
+},
+{
+  "Address": 5340224,
+  "AddressString": "00517c40",
+  "Name": "WorldView::Initialize",
+  "Type": "int32_t*",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00517c40 int32_t* WorldView::Initialize()"
 },
 {
   "Address": 5342940,
@@ -5841,6 +8085,17 @@
   "ToStringValue": "0x0051e0e8 int32_t WorldView::DrawMinimapVisibility(void* arg1, int32_t arg2 @ r7)"
 },
 {
+  "Address": 5377940,
+  "AddressString": "00520f94",
+  "Name": "WorldView::DrawWoF",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2 @ r10, int32_t arg3 @ r11",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00520f94 int32_t WorldView::DrawWoF(void* arg1, int32_t arg2 @ r10, int32_t arg3 @ r11)"
+},
+{
   "Address": 5382640,
   "AddressString": "005221f0",
   "Name": "WorldView::DrawWires",
@@ -5872,6 +8127,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x00523aac uint32_t FullVersion::GetIsFullVersion(void* arg1)"
+},
+{
+  "Address": 5389772,
+  "AddressString": "00523dcc",
+  "Name": "BaseDrawable::GetTextureName",
+  "Type": "String*",
+  "Other": "BaseDrawable* drawable",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00523dcc String* BaseDrawable::GetTextureName(BaseDrawable* drawable)"
 },
 {
   "Address": 5390376,
@@ -5916,6 +8182,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0052dd9c int32_t NPC::getHeadTextureId(void* arg1)"
+},
+{
+  "Address": 5434632,
+  "AddressString": "0052ed08",
+  "Name": "Item::GetTextureId",
+  "Type": "int32_t",
+  "Other": "Item* arg1",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0052ed08 int32_t Item::GetTextureId(Item* arg1)"
 },
 {
   "Address": 5444584,
@@ -6008,13 +8285,13 @@
 {
   "Address": 5585640,
   "AddressString": "00553ae8",
-  "Name": "ClearAll",
+  "Name": "_INIT_149",
   "Type": "uint32_t",
   "Other": "",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00553ae8 uint32_t ClearAll()"
+  "ToStringValue": "0x00553ae8 uint32_t _INIT_149()"
 },
 {
   "Address": 5655696,
@@ -6032,11 +8309,11 @@
   "AddressString": "00565068",
   "Name": "png_free",
   "Type": "void",
-  "Other": "void* arg1, int32_t* arg2",
+  "Other": "void* arg1, u32 arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x00565068 void png_free(void* arg1, int32_t* arg2)"
+  "ToStringValue": "0x00565068 void png_free(void* arg1, u32 arg2)"
 },
 {
   "Address": 5674224,
@@ -6087,11 +8364,11 @@
   "AddressString": "0056aa44",
   "Name": "png_malloc",
   "Type": "void",
-  "Other": "char* arg1, uint32_t arg2",
+  "Other": "char* arg1, u32 arg2",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0056aa44 void png_malloc(char* arg1, uint32_t arg2)"
+  "ToStringValue": "0x0056aa44 void png_malloc(char* arg1, u32 arg2)"
 },
 {
   "Address": 5689832,
@@ -6120,11 +8397,11 @@
   "AddressString": "0056f110",
   "Name": "png_set_quantize",
   "Type": "int32_t",
-  "Other": "uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, int32_t* arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25",
+  "Other": "uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, u32 arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25",
   "IsFunction": true,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x0056f110 int32_t png_set_quantize(uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, int32_t* arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25)"
+  "ToStringValue": "0x0056f110 int32_t png_set_quantize(uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, u32 arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25)"
 },
 {
   "Address": 5703776,
@@ -6147,6 +8424,28 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x0057a018 void O::Event\u003CWidget*\u003E::fire(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 5743868,
+  "AddressString": "0057a4fc",
+  "Name": "O::Event\u003CWidget*\u003E::detach",
+  "Type": "int32_t",
+  "Other": "void* arg1, int32_t arg2",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0057a4fc int32_t O::Event\u003CWidget*\u003E::detach(void* arg1, int32_t arg2)"
+},
+{
+  "Address": 5913524,
+  "AddressString": "005a3bb4",
+  "Name": "InputManager::InputManager_Check",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": true,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005a3bb4 int32_t InputManager::InputManager_Check()"
 },
 {
   "Address": 5913800,
@@ -6182,6 +8481,61 @@
   "ToStringValue": "0x005afe80 int32_t* QueryInstruction::ToString(int32_t* arg1, int32_t* arg2)"
 },
 {
+  "Address": 6040180,
+  "AddressString": "005c2a74",
+  "Name": "0.45",
+  "Type": "float",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005c2a74 float 0.45"
+},
+{
+  "Address": 6119016,
+  "AddressString": "005d5e68",
+  "Name": "ItemWidget_vtable",
+  "Type": "WidgetGroup_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d5e68 WidgetGroup_VTable ItemWidget_vtable"
+},
+{
+  "Address": 6119284,
+  "AddressString": "005d5f74",
+  "Name": "UIAtlas_vtable",
+  "Type": "TextureAtlas_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d5f74 TextureAtlas_VTable UIAtlas_vtable"
+},
+{
+  "Address": 6119472,
+  "AddressString": "005d6030",
+  "Name": "SpriteText_vtable",
+  "Type": "SpriteText_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d6030 SpriteText_VTable SpriteText_vtable"
+},
+{
+  "Address": 6119576,
+  "AddressString": "005d6098",
+  "Name": "TextWidget_vtable",
+  "Type": "Widget_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d6098 Widget_VTable TextWidget_vtable"
+},
+{
   "Address": 6119960,
   "AddressString": "005d6218",
   "Name": "CreditsMenu_State_vtable",
@@ -6215,6 +8569,17 @@
   "ToStringValue": "0x005d6390 void* FullVersion_vtable"
 },
 {
+  "Address": 6120556,
+  "AddressString": "005d646c",
+  "Name": "PixelShader_vtable",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d646c int32_t PixelShader_vtable"
+},
+{
   "Address": 6120636,
   "AddressString": "005d64bc",
   "Name": "ExtractState_vtable",
@@ -6237,6 +8602,17 @@
   "ToStringValue": "0x005d64f4 SpriteBatch_VTable SpriteBatch_vtable"
 },
 {
+  "Address": 6120780,
+  "AddressString": "005d654c",
+  "Name": "WidgetGroup_vtable",
+  "Type": "WidgetGroup_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d654c WidgetGroup_VTable WidgetGroup_vtable"
+},
+{
   "Address": 6121024,
   "AddressString": "005d6640",
   "Name": "BaseDrawable_vtable",
@@ -6248,6 +8624,17 @@
   "ToStringValue": "0x005d6640 BaseDrawable_VTable BaseDrawable_vtable"
 },
 {
+  "Address": 6121296,
+  "AddressString": "005d6750",
+  "Name": "InputManager_vtable",
+  "Type": "InputManager_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d6750 InputManager_VTable InputManager_vtable"
+},
+{
   "Address": 6121532,
   "AddressString": "005d683c",
   "Name": "OptionsMenuBottom_State_vtable",
@@ -6257,6 +8644,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x005d683c void* OptionsMenuBottom_State_vtable"
+},
+{
+  "Address": 6121636,
+  "AddressString": "005d68a4",
+  "Name": "SpriteWidget_vtable",
+  "Type": "Widget_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d68a4 Widget_VTable SpriteWidget_vtable"
 },
 {
   "Address": 6121880,
@@ -6279,6 +8677,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x005d6a68 TextureAtlas_VTable TextureAtlas_vtable"
+},
+{
+  "Address": 6122160,
+  "AddressString": "005d6ab0",
+  "Name": "VertexShader_vtable",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d6ab0 int32_t VertexShader_vtable"
 },
 {
   "Address": 6123092,
@@ -6358,6 +8767,61 @@
   "ToStringValue": "0x005d79a4 BaseMenu_VTable OptionsMenu_Menu_vtable"
 },
 {
+  "Address": 6126612,
+  "AddressString": "005d7c14",
+  "Name": "BasicEaseAnimation_vtable",
+  "Type": "void*",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d7c14 void* BasicEaseAnimation_vtable"
+},
+{
+  "Address": 6126812,
+  "AddressString": "005d7cdc",
+  "Name": "BackgroundDirt_vtable",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d7cdc int32_t BackgroundDirt_vtable"
+},
+{
+  "Address": 6127012,
+  "AddressString": "005d7da4",
+  "Name": "BaseWidgetAnimation_vtable",
+  "Type": "void*",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d7da4 void* BaseWidgetAnimation_vtable"
+},
+{
+  "Address": 6128824,
+  "AddressString": "005d84b8",
+  "Name": "PositionTextureShader_vtable",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d84b8 int32_t PositionTextureShader_vtable"
+},
+{
+  "Address": 6129896,
+  "AddressString": "005d88e8",
+  "Name": "PositionColorTextureShader_vtable",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d88e8 int32_t PositionColorTextureShader_vtable"
+},
+{
   "Address": 6130304,
   "AddressString": "005d8a80",
   "Name": "State_vtable",
@@ -6369,15 +8833,37 @@
   "ToStringValue": "0x005d8a80 State_VTable State_vtable"
 },
 {
-  "Address": 6130632,
-  "AddressString": "005d8bc8",
-  "Name": "Sprite_vtable",
-  "Type": "BaseDrawable_VTable",
+  "Address": 6130608,
+  "AddressString": "005d8bb0",
+  "Name": "Shader_vtable",
+  "Type": "void*",
   "Other": "",
   "IsFunction": false,
   "IsCodeVariable": true,
   "IsUserDefined": true,
-  "ToStringValue": "0x005d8bc8 BaseDrawable_VTable Sprite_vtable"
+  "ToStringValue": "0x005d8bb0 void* Shader_vtable"
+},
+{
+  "Address": 6130632,
+  "AddressString": "005d8bc8",
+  "Name": "Sprite_vtable",
+  "Type": "Sprite_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d8bc8 Sprite_VTable Sprite_vtable"
+},
+{
+  "Address": 6130752,
+  "AddressString": "005d8c40",
+  "Name": "Widget_vtable",
+  "Type": "Widget_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d8c40 Widget_VTable Widget_vtable"
 },
 {
   "Address": 6131052,
@@ -6389,6 +8875,17 @@
   "IsCodeVariable": true,
   "IsUserDefined": true,
   "ToStringValue": "0x005d8d6c BaseMenu_VTable BaseMenu_Menu_vtable"
+},
+{
+  "Address": 6131196,
+  "AddressString": "005d8dfc",
+  "Name": "ListView_vtable",
+  "Type": "WidgetGroup_VTable",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": true,
+  "IsUserDefined": true,
+  "ToStringValue": "0x005d8dfc WidgetGroup_VTable ListView_vtable"
 },
 {
   "Address": 6131444,
@@ -7425,6 +9922,39 @@
   "ToStringValue": "0x00633b3c int32_t SpriteBatch::globalSpriteBatch"
 },
 {
+  "Address": 6503864,
+  "AddressString": "00633db8",
+  "Name": "heapStart",
+  "Type": "u32",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00633db8 u32 heapStart"
+},
+{
+  "Address": 6504056,
+  "AddressString": "00633e78",
+  "Name": "ListView::delayTime",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00633e78 int32_t ListView::delayTime"
+},
+{
+  "Address": 6504204,
+  "AddressString": "00633f0c",
+  "Name": "Widget::onWidgetPlayClickSound",
+  "Type": "void*",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00633f0c void* Widget::onWidgetPlayClickSound"
+},
+{
   "Address": 6504296,
   "AddressString": "00633f68",
   "Name": "WidgetLoader::WidgetScale",
@@ -7436,15 +9966,114 @@
   "ToStringValue": "0x00633f68 Vector2 WidgetLoader::WidgetScale"
 },
 {
+  "Address": 6505116,
+  "AddressString": "0063429c",
+  "Name": "fs_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0063429c int32_t fs_handle"
+},
+{
   "Address": 6507468,
   "AddressString": "00634bcc",
-  "Name": "cfgu_RefCount",
+  "Name": "cfg_refCount",
   "Type": "u32",
   "Other": "",
   "IsFunction": false,
   "IsCodeVariable": false,
   "IsUserDefined": true,
-  "ToStringValue": "0x00634bcc u32 cfgu_RefCount"
+  "ToStringValue": "0x00634bcc u32 cfg_refCount"
+},
+{
+  "Address": 6507472,
+  "AddressString": "00634bd0",
+  "Name": "cfg:u_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00634bd0 int32_t cfg:u_handle"
+},
+{
+  "Address": 6507552,
+  "AddressString": "00634c20",
+  "Name": "dsp_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00634c20 int32_t dsp_handle"
+},
+{
+  "Address": 6507632,
+  "AddressString": "00634c70",
+  "Name": "hidActive",
+  "Type": "bool",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00634c70 bool hidActive"
+},
+{
+  "Address": 6510092,
+  "AddressString": "0063560c",
+  "Name": "hid:USER_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x0063560c int32_t hid:USER_handle"
+},
+{
+  "Address": 6510212,
+  "AddressString": "00635684",
+  "Name": "ndm_refCount",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00635684 int32_t ndm_refCount"
+},
+{
+  "Address": 6514192,
+  "AddressString": "00636610",
+  "Name": "cfg:i_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00636610 int32_t cfg:i_handle"
+},
+{
+  "Address": 6514228,
+  "AddressString": "00636634",
+  "Name": "ndm_handle",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00636634 int32_t ndm_handle"
+},
+{
+  "Address": 6525572,
+  "AddressString": "00639284",
+  "Name": "ir_handle",
+  "Type": "void*",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x00639284 void* ir_handle"
 },
 {
   "Address": 8101732,
@@ -7500,6 +10129,39 @@
   "IsCodeVariable": false,
   "IsUserDefined": true,
   "ToStringValue": "0x007bc1d8 void* Gore::gore"
+},
+{
+  "Address": 8110884,
+  "AddressString": "007bc324",
+  "Name": "Item::headType",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x007bc324 int32_t Item::headType"
+},
+{
+  "Address": 8110896,
+  "AddressString": "007bc330",
+  "Name": "Item::bodyType",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x007bc330 int32_t Item::bodyType"
+},
+{
+  "Address": 8110908,
+  "AddressString": "007bc33c",
+  "Name": "Item::legType",
+  "Type": "int32_t",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x007bc33c int32_t Item::legType"
 },
 {
   "Address": 8132564,
@@ -8085,6 +10747,17 @@
   "ToStringValue": "0x008b4080 Player* player[0x4]"
 },
 {
+  "Address": 9210168,
+  "AddressString": "008c8938",
+  "Name": "scissor",
+  "Type": "u32",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x008c8938 u32 scissor"
+},
+{
   "Address": 9259832,
   "AddressString": "008d4b38",
   "Name": "UIAtlas::Instance",
@@ -8105,6 +10778,17 @@
   "IsCodeVariable": false,
   "IsUserDefined": true,
   "ToStringValue": "0x008d4bdc CameraZoomer CameraZoomer::Instance"
+},
+{
+  "Address": 9260056,
+  "AddressString": "008d4c18",
+  "Name": "InputManager::Instance",
+  "Type": "InputManager",
+  "Other": "",
+  "IsFunction": false,
+  "IsCodeVariable": false,
+  "IsUserDefined": true,
+  "ToStringValue": "0x008d4c18 InputManager InputManager::Instance"
 },
 {
   "Address": 9260792,
@@ -8153,13 +10837,13 @@
 {
   "Address": 9262564,
   "AddressString": "008d55e4",
-  "Name": "ui",
+  "Name": "UI::Instance",
   "Type": "UI",
   "Other": "",
   "IsFunction": false,
   "IsCodeVariable": false,
   "IsUserDefined": true,
-  "ToStringValue": "0x008d55e4 UI ui"
+  "ToStringValue": "0x008d55e4 UI UI::Instance"
 },
 {
   "Address": 9274272,

@@ -56,12 +56,14 @@ Note that you will need 2 separate `.cia` file, one for the base game and one fo
 
 If this does not work, then idk.
 
-[OTX tool](https://gbatemp.net/threads/otx-tool-terraria-texture-tool.458493/) can be used to convert otx files to pngs.
+[OTX Viwer](http://crawdad105.com/otxViewer/) can be used to view and convert to and from OTX files.
 
 [ctr_WaveConverter32](https://github.com/realhumii/ctr_WaveConverter32) can be used to convert normal files to .bcwav files (not sure about the other way around).
 
 If you do not want to dump the cartage but want the code, you can dump the ram (which is better anyways since it gives more to work with) either using Rosalina, [ctn Firmware](https://github.com/crawdad105/ctn-Firmware) (which can dump any arbitrary section of memory), or some other way.
 
+# [OTX Files](otxFile.md)
+See [otxFile.md](otxFile.md)
 
 # Memory
 <details>
@@ -86,7 +88,6 @@ The heap is almost always at `0x080000000` and i think the address space always 
 \*`0x04900000`, may change sizes depending on if its a new or old 3DS (i think this is for the New 3DS XL).<br/>
 
 Note: For some reason .rodata/.bss have a size of `0x002B3000` while another section at the same location has a size of `0x0028C000`, im not sure whats going on here, maybe .bss is not the same section as .data but idk.<br/>
-Note for modders: a lot of memory after `0x008DC000` is free, this is where 3ModLoader starts allocating.
 
 </details>
 <br/>

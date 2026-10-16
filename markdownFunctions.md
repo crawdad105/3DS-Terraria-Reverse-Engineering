@@ -2,7 +2,7 @@
 | - | - | - |
 | `0x001006de` | `void ForEach(void* elms, u32 count, u32 elmSize, void (__convention("cdecl")* foo)(void*))` | Runs `foo` for every element in `elms`. |
 | `0x00101042` | `u32 Utf16_strlen(u16* utf16_str)` | `strlen()` for a utf16 string.,`strcmp()` for a utf16 string.,Inits the 3DSs `cfg:u` service. |
-| `0x00101a3e` | `int32_t delete2(int32_t* arg1)` |  |
+| `0x00101a3e` | `int32_t delete2(u32 arg1)` |  |
 | `0x00101ae8` | `uint32_t memcmp(int32_t* arg1, char* rawStr, int32_t arg3)` |  |
 | `0x00101b5c` | `u32 wmemcmp(u16* str1, u16* str2, u32 length)` |  |
 | `0x00102800` | `int32_t* __dynamic_cast(int32_t* arg1, void* arg2, void* arg3)` | *Verify |
@@ -14,12 +14,18 @@
 | `0x0010fd28` | `SpriteInfo* SpriteBatch::Begin(SpriteBatch* sb, bool zoomEnable)` |  |
 | `0x0010fda0` | `void Achievements::TriggerSystem::TriggerSystem(int32_t* arg1)` | Expands the mobile function `Achievements::TriggerSystem::ClearTriggers` |
 | `0x0010fdbc` | `CameraZoomer* CameraZoomer::CameraZoomer(CameraZoomer* arg1)` | Seems to match somewhat to the mobile function. |
+| `0x001103ec` | `int32_t* ShaderManager::LoadShaders(void* arg1, int32_t arg2 @ r9)` |  |
+| `0x00110b1c` | `void ShaderManager::getShader(void* const arg1, int32_t arg2)` |  |
+| `0x00110b84` | `void* ShaderManager::ShaderManager(void** arg1)` |  |
 | `0x00110de8` | `void PlatformDevice::PlatformDevice(int32_t* arg1)` |  |
 | `0x00111a80` | `void* UI::SetDefaultSettings(void* arg1)` |  |
-| `0x00113ce4` | `int32_t _cfguInit()` |  |
+| `0x00113ce4` | `int32_t init_cfg:u()` |  |
+| `0x00113e54` | `int32_t hidInit()` | https://xem.github.io/3DShomebrew/documentation/doxygen/hid_8c_source.html#:~:text=22%C2%A0Result-,hidInit,-(u32*%20sharedMem |
 | `0x00115198` | `void CreateColour(Colour* c, u32 R, u32 G, u32 B, u32 A)` | Creates a colour struct. |
 | `0x00115228` | `void State::State(State* state)` |  |
 | `0x00115240` | `int32_t* Timer::Timer(int32_t* arg1)` |  |
+| `0x0011540c` | `int32_t Sprite::setPosition(Sprite* sprite, Vector2* pos)` |  |
+| `0x00115420` | `void* Sprite::regenerateMatrix(void* arg1)` | Does not match the mobile function, but call sites are similar.  |
 | `0x00115470` | `Sprite* Sprite::Sprite(Sprite* sprite, String* str)` |  |
 | `0x00115548` | `MiniMap* MiniMap::MiniMap(MiniMap* miniMap)` |  |
 | `0x001157c8` | `void NetPlayer::NetPlayer(int32_t arg1)` |  |
@@ -30,60 +36,82 @@
 | `0x00119528` | `int32_t SpriteBatch::InitializeVertexBuffer(void* arg1)` |  |
 | `0x00119698` | `void* BaseDrawable::BaseDrawable(BaseDrawable* arg1)` |  |
 | `0x00119830` | `int32_t* ItemTextPool::ItemTextPool(void* arg1, int32_t arg2)` |  |
+| `0x00119d40` | `void** ColorizeShader::ColorizeShader(void*** arg1, StringWrapper* arg2, int32_t arg3)` |  |
 | `0x00119dbc` | `int32_t GraphicsDevice::SetTextureSlot(GraphicsDevice* device)` |  |
 | `0x00119dcc` | `void* GraphicsDevice::GraphicsDevice(GraphicsDevice* arg1)` |  |
+| `0x0011a590` | `void** PositionColorShader::PositionColorShader(void*** arg1, StringWrapper* arg2, int32_t arg3)` |  |
+| `0x0011a5f4` | `int32_t** PositionTextureShader::PositionTextureShader(void*** arg1, StringWrapper* arg2, int32_t arg3)` |  |
+| `0x0011a638` | `int32_t** PositionColorTextureShader::PositionColorTextureShader((void*** arg1, StringWrapper* arg2, int32_t arg3)` |  |
+| `0x0011d28c` | `uint32_t hidExit(int32_t* arg1)` |  |
+| `0x0011d3c8` | `int32_t init_ndm:u()` |  |
 | `0x0011ec7c` | `void Item::Init(Item* item)` | Clears some item properties. |
 | `0x0011ee54` | `int32_t Sprite::reload(Sprite* sprite, String* str)` |  |
 | `0x0011effc` | `void* Waters::Waters(void* arg1, int32_t arg2)` |  |
 | `0x0011f0c0` | `void* Lighting::Lighting(int32_t* arg1, int32_t arg2)` |  |
 | `0x0011f19c` | `void* RainPool::RainPool(void* arg1)` |  |
+| `0x0011f2c4` | `int32_t* new[]2(u32 arg1, int32_t arg2)` |  |
 | `0x0012104c` | `int32_t GraphicsDevice::GraphicsDevice_Check()` | Wrapper for `GraphicsDevice::GraphicsDevice` |
-| `0x00122868` | `int32_t GraphicsDevice::AddCallback(GraphicsDevice* device, SpriteBatch* sb)` |  |
-| `0x00122ac4` | `int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* arg4)` |  |
+| `0x00122868` | `int32_t GraphicsDevice::AddCallback(GraphicsDevice* device, BaseDrawable* drawable)` |  |
+| `0x00122ac4` | `int32_t GraphicsDevice::QueryBuffer(GraphicsDevice* arg1, int32_t* arg2, int32_t arg3, uint8_t* __offset(_GraphicsDevice, 0x5c) arg4)` |  |
+| `0x00123448` | `s32 FSUSER_OpenArchive(u32* handle, u64* archive, u32 archive_id, u32 archive_lowPath_type, u32 archive_lowPath_data, u32 archive_lowPath_size)` |  |
+| `0x001234a8` | `s32 FSUSER_CloseArchive(u32* handle, u32* arg2, u32 handleLow, u32 handleHeight)` |  |
 | `0x00124c98` | `void FinalDraw(int32_t arg1, int32_t arg2, int32_t arg3, void* arg4)` | Seems to match the call location of the mobile function `glDrawElements`, not sure if the 3DS version actually used this. Because its 3DS rendering this could be hard to decipher. |
+| `0x00125990` | `s32 HIDUSER_GetHandles(u32* outMemHandle, u32* eventpad0, u32* eventpad1, u32* eventaccel, u32* eventgyro, u32* eventdebugpad)` | https://xem.github.io/3DShomebrew/documentation/doxygen/hid_8c_source.html#:~:text=185%C2%A0Result-,HIDUSER_GetHandles,-(Handle*%20outMemHandle |
 | `0x00127418` | `void Rain::Rain(int64_t* arg1)` |  |
+| `0x00127448` | `void* Shader::Shader(void*** arg1, StringWrapper* str, int32_t arg3)` |  |
 | `0x00128164` | `char* ItemText::ItemText(ItemText* itemText, int32_t arg2 @ r4)` |  |
-| `0x0012820c` | `void Texture2D::convertToTextureSpace(float* arg1, void* arg2, int32_t* arg3)` |  |
+| `0x0012820c` | `void Texture2D::convertToTextureSpace(Vector4* rect, Texture* texture, Vector4* rectIn)` |  |
+| `0x0012ca04` | `void* PixelShader::PixelShader(int32_t** arg1, int32_t arg2)` |  |
 | `0x0012cb80` | `int32_t StateManager::RemoveState(GameStateManager* gsm, int32_t arg2)` | *Verify, might not be correct. |
 | `0x0012cdd8` | `void* StateManager::~StateManager(StateManager_VTable** arg1)` |  |
+| `0x0012cfd0` | `void* VertexShader::VertexShader(int32_t** arg1, int32_t arg2, char arg3)` |  |
 | `0x0012d2a0` | `void* GameStateManager::GameStateManager(GameStateManager* gsm, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
-| `0x001326a0` | `int32_t free(int32_t* arg1)` |  |
+| `0x0013173c` | `int32_t srvGetServiceHandleDirect(u32* handle, char* str, u32 length, int32_t arg4)` | Not exact by very close. |
+| `0x001326a0` | `int32_t free(u32 size)` |  |
 | `0x001364bc` | `int32_t GameStateManager::GameStateManager_Check()` |  |
+| `0x0013722c` | `int32_t svcBreak()` | Found by accident while running custom code. A debugger can catch this exception, but if no debugger is present the 3ds crashes. |
 | `0x00137280` | `void nanosleep(int32_t arg1)` |  |
 | `0x0013737c` | `void* Localization::InitIconMap(void* arg1)` |  |
 | `0x001379d8` | `int32_t* HelperFunctions::stringToWString(int32_t* arg1, int32_t* arg2)` | *Verify |
 | `0x00137c24` | `void ShowPopup(String* string)` | Might be 3DS specific popup code. |
-| `0x00138d30` | `void* UI::UI(UI* ui, int32_t arg2 @ r4)` |  |
+| `0x00138d30` | `UI* UI::UI(UI* ui)` |  |
 | `0x0013b8cc` | `void Item::Item(Item* item)` | Clears some item properties. |
 | `0x0013ba8c` | `int32_t Main::IsTutorial()` |  |
 | `0x0013bac4` | `void Main::PlaySound(s32 soundId)` | Plays a sound with a given id. |
+| `0x0013ce54` | `void copyServiceName(u32* ptr, u32* str)` | Not sure if the name is correct but it copies 8 bytes. |
 | `0x0013f940` | `int32_t FastRandom::Next(int32_t* arg1, int32_t arg2)` | In place of FastRandom::Next() from mobile it seems. |
 | `0x0013f9b4` | `s32 RandomNumberRange(int128_t* seed, s32 min, s32 max)` |  |
 | `0x00140a20` | `int32_t* Localization::GetText(int32_t* arg1, void* arg2, String* arg3, void* arg4)` |  |
 | `0x00141490` | `bool HelperFunctions::loadResourceFile(int32_t arg1, int32_t arg2, u32* fileSize, int32_t arg4)` |  |
 | `0x00141558` | `int32_t HelperFunctions::readLine(void* arg1, int32_t* arg2, int32_t arg3, String* arg4)` |  |
-| `0x00143670` | `int32_t malloc(uint32_t arg1)` |  |
+| `0x00143670` | `void* malloc(u32 size)` |  |
+| `0x00143680` | `int32_t* allocateMemory(u32 size, int32_t arg2, int32_t arg3, char arg4)` |  |
 | `0x00143ef4` | `Player* Player::GetPlayer()` |  |
 | `0x00143f10` | `int32_t Netplay::IsSinglePlayer()` |  |
 | `0x00145c94` | `void* new(uint32_t arg1)` | The value for the parameter does not seem to match with a specific type. |
 | `0x001481fc` | `int32_t NetMessage::SendMessage()` |  |
 | `0x001482dc` | `int32_t NetMessage::CreateMessage0(int32_t arg1)` |  |
-| `0x00148aac` | `void* SpriteText::setText(void* arg1, int32_t* arg2)` |  |
+| `0x00148aac` | `uint8_t* SpriteText::setText(SpriteText* spriteText, int32_t* arg2)` |  |
+| `0x00149038` | `String* TextWidget::setText(TextWidget* textWidget, int32_t* arg2)` |  |
 | `0x00149a68` | `int32_t ResourceFile::size(void* arg1)` |  |
-| `0x00149d00` | `int32_t* ResourceFile::close(int32_t* arg1)` |  |
+| `0x00149d00` | `int32_t* ResourceFile::close(u32 arg1)` |  |
 | `0x00149d74` | `bool ResourceFile::readData(void* arg1, char* arg2, u32 fileSize, int32_t arg4)` | *Verify, definitely not the same compared to mobile but calling seems the same. |
 | `0x0014a24c` | `ContentLoader* ContentLoader::ContentLoader(ContentLoader* arg1)` | Clears some data relating to what seems to be an image loader. |
 | `0x0014a99c` | `int32_t* HelperFunctions::replaceSubString(int32_t* arg1, int32_t* arg2, int32_t* arg3, int32_t* arg4, int32_t arg5)` | *Verify |
 | `0x0014b3e0` | `int32_t EE::String::Null(int32_t** arg1)` |  |
 | `0x0014b594` | `void EE::String::~String(String* str)` |  |
 | `0x0014b5bc` | `String* EE::String::operator=(String* str, String* arg2, void* arg3)` |  |
+| `0x0014df1c` | `int32_t Stopwatch::Stop(void* arg1)` |  |
+| `0x0014df74` | `int32_t Stopwatch::Start(u64* time)` |  |
 | `0x0014df8c` | `int32_t** Stopwatch::Stopwatch(int32_t** arg1)` |  |
-| `0x0014e384` | `int32_t* new[](uint32_t arg1)` | *Verify |
+| `0x0014dfd0` | `int32_t FreeStringType5()` |  |
+| `0x0014e384` | `int32_t* new[](u32 arg1)` | *Verify |
 | `0x0014f7b8` | `void* FreeStringType2(String* str)` |  |
-| `0x00150230` | `void* SpriteText::setPosition(void* arg1)` |  |
-| `0x001502a0` | `int32_t SpriteText::setBounds(void* arg1, int32_t* arg2)` |  |
-| `0x00150330` | `void* SpriteText::regenerateMatrix(void* arg1)` |  |
-| `0x00150390` | `int32_t SpriteText::getStringDimension(int32_t* arg1, void* arg2, int32_t* arg3)` |  |
+| `0x00150230` | `uint8_t* SpriteText::setPosition(SpriteText* arg1)` |  |
+| `0x001502a0` | `int32_t SpriteText::setBounds(SpriteText* arg1, int32_t* arg2)` |  |
+| `0x00150330` | `uint8_t* SpriteText::regenerateMatrix(SpriteText* spriteText)` |  |
+| `0x00150390` | `void* SpriteText::getStringDimension(Vector2* size, SpriteText* spriteText, String* str_utf16)` |  |
+| `0x001513d8` | `void* HSSSoundManager::playEffect(void* arg1, int32_t* arg2, char arg3, int32_t arg4)` |  |
 | `0x00151f48` | `void* LocalNetworkGamer::SendData2(int32_t arg1, void* arg2, int32_t arg3, u32 arg4, int32_t arg5, void* arg6)` |  |
 | `0x00151fa8` | `void LocalNetworkGamer::SendData(int32_t arg1, void* arg2, int32_t arg3, void* arg4)` |  |
 | `0x00152090` | `String* EE::String::String(String* str1, char* rawStr)` |  |
@@ -94,13 +122,16 @@
 | `0x00156f44` | `int32_t CriticalSection::Enter(int32_t* arg1)` |  |
 | `0x00156f48` | `int32_t GraphicsDevice::Unlock(GraphicsDevice* device)` | *Verify |
 | `0x00156f50` | `void CriticalSection::Leave(int32_t* arg1)` |  |
+| `0x00156f70` | `void* HSSSoundManager(int32_t* arg1)` |  |
+| `0x00157228` | `int32_t HelperFunctions::stringEndsWith(int32_t* arg1, int32_t* arg2)` | *Verify |
 | `0x001572d8` | `int32_t O::Thread::Sleep(int32_t arg1)` |  |
 | `0x00157330` | `int32_t EE::MemoryFile::Write(int32_t* arg1, char* arg2, u32 arg3, void* arg4)` |  |
 | `0x00157de4` | `int32_t* BaseMenu::waitForBackgroundThread(void* arg1)` |  |
 | `0x0015d054` | `uint32_t O::Runnable::WaitForCompletion(int32_t* arg1)` |  |
 | `0x0015d71c` | `u32 MurmurHash3(String* string, u32 seed)` |  |
 | `0x0015d8a8` | `int32_t Network::SendData(void* arg1, char* arg2, u32 arg3, int32_t* arg4)` |  |
-| `0x0015dcf4` | `int32_t GlyphSet::GetGlyph(void* arg1, int32_t arg2)` |  |
+| `0x0015dcf4` | `int32_t GlyphSet::GetGlyph(GlyphSet* glyphSet, u32 num)` |  |
+| `0x0016c0c8` | `int32_t memset(char* arg1, int32_t arg2)` |  |
 | `0x00173914` | `int32_t setjmp(int32_t* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5, int32_t arg4 @ r6, int32_t arg5 @ r7, int32_t arg6 @ r8, int32_t arg7 @ r9, int32_t arg8 @ r10, int32_t arg9 @ r11)` |  |
 | `0x001749dc` | `void* showKeyboard(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)` | Might eventually call the 3ds keyboard menu. |
 | `0x0017d97c` | `int32_t pngLoad(void* arg1, int32_t* arg2, int32_t* arg3, int32_t** arg4, int32_t* arg5, int16_t* arg6)` |  |
@@ -111,7 +142,15 @@
 | `0x0017fc94` | `int32_t* Background::DrawBack(void* arg1)` |  |
 | `0x00180054` | `void DrawBackground(void* arg1, u32 backgroundType, int32_t arg3, Colour colour1 @ r9, int32_t arg5 @ r11, int32_t arg6, int32_t arg7)` | Draws a background. |
 | `0x001809c8` | `uint32_t WorldView::DrawCursor(void* arg1)` |  |
-| `0x001872b0` | `void* ItemWidget::ItemWidget(void*** arg1, String* str1, String* str2)` |  |
+| `0x00185eb8` | `int32_t ItemWidget::SetupSpritesAndStackText(ItemWidget* arg1)` |  |
+| `0x00186ae4` | `uint32_t ItemWidget::Draw(ItemWidget* arg1, SpriteBatch* arg2)` |  |
+| `0x00186c8c` | `uint32_t ItemWidget::Update(ItemWidget* widget)` |  |
+| `0x00186da4` | `int32_t ItemWidget::MouseIn(ItemWidget* widget)` |  |
+| `0x00186e28` | `uint32_t ItemWidget::MouseOut(ItemWidget* widget)` |  |
+| `0x00186e68` | `int32_t ItemWidget::setRotation_2(int32_t arg1, int32_t* arg2)` | Does not exist on mobile. |
+| `0x00186e70` | `int32_t* ItemWidget::setRotation(ItemWidget* widget, int32_t* arg2)` |  |
+| `0x00187050` | `float ItemWidget::DrawStars(ItemWidget* widget)` |  |
+| `0x001872b0` | `ItemWidget* ItemWidget::ItemWidget(ItemWidget* arg1, String* str1, String* str2)` | Seems to expand the mobile function `ItemWidget::Init`. |
 | `0x00187c9c` | `int32_t NetMessage::syncPlayer(int32_t arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)` |  |
 | `0x001886d8` | `int32_t NetMessage::syncPlayers()` |  |
 | `0x00188844` | `int32_t NetMessage::SendItemInfo(int32_t arg1, int32_t arg2, int32_t arg3)` |  |
@@ -129,32 +168,43 @@
 | `0x0019400c` | `int32_t NetMessage::SendPlayerWasKilled(int32_t arg1, int16_t arg2, int16_t arg3, int16_t arg4, int32_t arg5, int32_t arg6)` |  |
 | `0x0019408c` | `int32_t NetMessage::SendAnnounceSpawning(int32_t arg1)` |  |
 | `0x00194ba0` | `int32_t NetMessage::SendPlayerIDSessionMapping(void* arg1)` |  |
+| `0x001963f4` | `TextureAtlas* UIAtlas::UIAtlas(TextureAtlas* arg1)` |  |
+| `0x001988fc` | `void Projectile::Initialize()` | Kind of expands the mobile function `Projectile::initializeProjectile`, its present at the end but not all of the calls it seems. |
 | `0x001a3178` | `int32_t Projectile::NewProjectile(int32_t arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q5)` |  |
+| `0x001a668c` | `int32_t Projectile::initializeProjectile(u32 projId, u32 atlasId, uint32_t arg3)` |  |
 | `0x001ab3a0` | `uint32_t Projectile::Kill(Projectile* projectile, int128_t arg2 @ q0)` | Equivalent to `Terraria.Projectile.Kill()`. |
-| `0x001c0794` | `int32_t Projectile::Update(Projectile* arg1)` |  |
+| `0x001c0794` | `float Projectile::Update(Projectile* arg1)` |  |
 | `0x001c62a0` | `void ClearProjectile(Projectile* projectile)` | Clears some projectiles properties. |
-| `0x001c7f0c` | `int32_t SpriteText::setRotation(void* arg1)` |  |
+| `0x001c7ef0` | `int32_t SpriteText::setRotation(SpriteText* arg1, int32_t* arg2)` |  |
+| `0x001c7f0c` | `int32_t SpriteText::setRotation(SpriteText* arg1)` |  |
 | `0x001c7fb0` | `int32_t SpriteText::checkFontName(int32_t arg1, int32_t* arg2)` |  |
 | `0x001c8650` | `void SpriteText::setEdgeBehaviour(void* arg1, int32_t arg2)` |  |
 | `0x001c86bc` | `void SpriteText::setVerticalAlign(void* arg1, int32_t arg2)` |  |
 | `0x001c8718` | `void SpriteText::setHorizontalAlign(void* arg1, int32_t arg2)` |  |
-| `0x001c8bd4` | `void* SpriteText::setText2(void* arg1, int32_t* arg2)` |  |
+| `0x001c87e0` | `uint32_t SpriteText::Draw(SpriteText* spriteText, SpriteBatch* spriteBatch, int32_t arg3 @ q1)` |  |
+| `0x001c8bd4` | `void* SpriteText::setText2(SpriteText* arg1, int32_t* arg2)` |  |
+| `0x001c8cb4` | `void SpriteText::setColor(void* arg1, char* arg2)` |  |
 | `0x001c8cd8` | `void SpriteText::setScale(void* arg1, Vector2* vec)` | Expands mobile function `SpriteText::setTextScale`. |
+| `0x001c8da0` | `SpriteText* SpriteText::SpriteText(SpriteText* arg1, String* str, int32_t* arg3)` |  |
 | `0x001c9e10` | `void Statistics::logStat(int32_t arg1, int32_t arg2, int32_t* arg3)` |  |
+| `0x001cb530` | `TextWidget* TextWidget::TextWidget(TextWidget* arg1, SpriteText* spriteText, int32_t* arg3)` |  |
+| `0x001cba60` | `void TouchTrack::currentLocation(int32_t* arg1, void* arg2)` |  |
 | `0x001cebec` | `BaseMenuState* CreditsMenu::CreditsMenu(BaseMenuState* arg1, uint8_t arg2)` |  |
 | `0x001d1564` | `void FullVersion::FullVersion(void*** arg1)` |  |
 | `0x001d802c` | `void SoundEffect::Load(int32_t* arg1, String* str)` | Converts `str` to be a `.wav` file name. |
 | `0x001d809c` | `int32_t ExtractState::OnActivate()` |  |
 | `0x001d8228` | `int32_t ExtractState::Draw(ExtractState* arg1)` | No call references, seems to be stored at `0x005d64e8`. |
-| `0x001d8370` | `int32_t LoadSplashSprites(int32_t arg1 @ r4)` |  |
 | `0x001d837c` | `int32_t ExtractState::OnLoad(ExtractState* arg1)` |  |
 | `0x001d8754` | `float ExtractState::Update(ExtractState* state, float arg2 @ q4)` |  |
 | `0x001d8b18` | `ExtractState* ExtractState::ExtractState(ExtractState* arg1)` |  |
-| `0x001d8be8` | `void SpriteBatch::DecreaseLayer(void* arg1)` |  |
-| `0x001d8bf8` | `void SpriteBatch::IncreaseLayer(void* arg1)` |  |
+| `0x001d8be8` | `void SpriteBatch::DecreaseLayer(SpriteBatch* sb)` |  |
+| `0x001d8bf8` | `void SpriteBatch::IncreaseLayer(SpriteBatch* sb)` |  |
 | `0x001d8c68` | `void SpriteBatch::setCameraZoomFactor(SpriteBatch* sb, float cameraZoom @ q0)` |  |
+| `0x001d8d1c` | `Texture* SpriteBatch::GetCachedInternalSprite(SpriteBatch* arg1)` | Does not match the mobile function, but call sites are the same.  |
+| `0x001d8fbc` | `void SpriteBatch::Draw(SpriteBatch* arg1, uint32_t arg2, int32_t* arg3, u32 arg4, int32_t arg5, int32_t arg6)` |  |
 | `0x001d90c4` | `uint32_t SpriteBatch::Draw3(SpriteBatch* arg1, Texture* texture, Vector2* pos, Vector4* vec, int64_t arg5 @ q6, u32 arg6, int32_t arg7, int32_t* arg8)` |  |
-| `0x001d9630` | `void SpriteBatch::Draw2(SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, float Y, float X, int32_t* arg7)` |  |
+| `0x001d9630` | `void SpriteBatch::Draw2(SpriteBatch* arg1, Texture* texture, Vector2* vec2, Vector4* vec1, Colour* colour, float X, Vector2* scale)` |  |
+| `0x001d975c` | `u32 SpriteBatch::Draw(SpriteBatch* spriteBatch, Texture* texture, int32_t* arg3, int32_t* arg4, char* arg5, int32_t* arg6, int32_t* arg7)` |  |
 | `0x001d9a44` | `void SpriteBatch::Draw(SpriteBatch* arg1, Texture* texture, Vector4* vec, Vector4* vec2, Colour* colour, void* arg6)` | There are a bunch of different functions with this name but difference parameters. |
 | `0x001d9af4` | `SpriteBatch* SpriteBatch::Global()` |  |
 | `0x001da168` | `int32_t SpriteSheet<_sheetSprites>::DrawScaled(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
@@ -163,20 +213,52 @@
 | `0x001dc760` | `int32_t* XNASpriteBatch::Draw3(int32_t arg1, Vector2* arg2, int32_t* arg3, char* arg4, int32_t arg5, int32_t arg6, int32_t arg7)` |  |
 | `0x001dc858` | `uint32_t Underground::UpdateOnce()` |  |
 | `0x001dc890` | `void* Underground::LoadContent()` |  |
-| `0x001e2fdc` | `void* WidgetGroup::WidgetGroup(void*** arg1)` |  |
+| `0x001e1058` | `int32_t WidgetGroup::HandleInput(WidgetGroup* group)` |  |
+| `0x001e10dc` | `int32_t WidgetGroup::isAnimating(void* arg1)` |  |
+| `0x001e115c` | `int32_t WidgetGroup::setPosition(int32_t* arg1, int32_t* arg2)` |  |
+| `0x001e1864` | `int32_t WidgetGroup::enableGraphic(WidgetGroup* group)` |  |
+| `0x001e18c8` | `int32_t WidgetGroup::enableTouches(WidgetGroup* group)` |  |
+| `0x001e1bec` | `int32_t WidgetGroup::disableGraphic(WidgetGroup* group)` |  |
+| `0x001e1c50` | `int32_t WidgetGroup::disableTouches(WidgetGroup* group)` |  |
+| `0x001e1cb4` | `int32_t WidgetGroup::SetInterceptTap(WidgetGroup* group, int32_t arg2)` |  |
+| `0x001e1d18` | `int32_t WidgetGroup::getHitRectangle(WidgetGroup* group, void* arg2)` |  |
+| `0x001e22d0` | `int32_t WidgetGroup::setExitAnimation(WidgetGroup* group, int32_t* arg2)` |  |
+| `0x001e231c` | `int32_t WidgetGroup::setEnterAnimation(WidgetGroup* group, int32_t* arg2)` |  |
+| `0x001e236c` | `void WidgetGroup::addWidgetAtPosition(WidgetGroup* group, Widget* widget, int64_t* arg3, int32_t arg4, int32_t arg5)` |  |
+| `0x001e2624` | `int32_t WidgetGroup::IgnoreMouseInOutLogic(WidgetGroup* group, int32_t arg2)` |  |
+| `0x001e2690` | `SpriteBatch* WidgetGroup::Draw(WidgetGroup* group, SpriteBatch* arg2)` |  |
+| `0x001e2700` | `int32_t WidgetGroup::show(WidgetGroup* group)` |  |
+| `0x001e2720` | `WidgetGroup* WidgetGroup::Clone(WidgetGroup* arg1)` |  |
+| `0x001e2884` | `void WidgetGroup::setColor(void* arg1, int32_t arg2)` |  |
+| `0x001e2b30` | `int32_t WidgetGroup::click(WidgetGroup* group)` |  |
+| `0x001e2b94` | `int32_t WidgetGroup::enter(WidgetGroup* group)` |  |
+| `0x001e2bb4` | `int32_t WidgetGroup::Update(int32_t* arg1)` |  |
+| `0x001e2c20` | `int32_t WidgetGroup::select(WidgetGroup* group)` |  |
+| `0x001e2c84` | `uint32_t WidgetGroup::MouseIn(WidgetGroup* group)` |  |
+| `0x001e2d20` | `uint32_t WidgetGroup::MouseOut(WidgetGroup* group)` |  |
+| `0x001e2dbc` | `int32_t WidgetGroup::deselect(WidgetGroup* group)` |  |
+| `0x001e2e40` | `int32_t WidgetGroup::setScale(void* arg1, int32_t arg2)` |  |
+| `0x001e2e90` | `int32_t WidgetGroup::setRotation(void* arg1, int32_t arg2)` |  |
+| `0x001e2ee0` | `int32_t WidgetGroup::addWidget(WidgetGroup* arg1, Widget* arg2, int32_t arg3, int32_t arg4)` |  |
+| `0x001e2f54` | `int32_t WidgetGroup::isTouched(WidgetGroup* group)` |  |
+| `0x001e2fdc` | `WidgetGroup* WidgetGroup::WidgetGroup(WidgetGroup* arg1)` |  |
+| `0x001e30d4` | `int32_t WidgetGroup::~WidgetGroup(WidgetGroup* group)` |  |
+| `0x001e30ec` | `int32_t WidgetGroup::~WidgetGroup(WidgetGroup* group)` |  |
 | `0x001e3624` | `void Achievements::TriggerSystem::ReadProfile(int32_t arg1, int32_t arg2)` |  |
 | `0x001e366c` | `void* Achievements::TriggerSystem::UpdateAchievements(void* arg1)` |  |
 | `0x001e39e0` | `uint32_t Achievements::AchievementSystem::AwardAllUnlocked(char* arg1)` | No call references, no variable reference. Might be named wrong, function at  |
 | `0x001e3b28` | `uint32_t Achievements::AchievementSystem::Award(char* arg1, uint32_t arg2)` |  |
 | `0x001e4058` | `Texture* BaseDrawable::SetTexture2(BaseDrawable* drawable, Texture* texture)` |  |
-| `0x001e41cc` | `int32_t BaseDrawable::SetTexture(BaseDrawable* drawable, String* str_2)` |  |
-| `0x001e43f4` | `int32_t* BaseDrawable::OnDeviceBufferChange(Sprite* sprite, int32_t arg2)` |  |
+| `0x001e41cc` | `int32_t BaseDrawable::SetTexture(BaseDrawable* drawable, StringWrapper* str_2)` |  |
+| `0x001e43f4` | `int32_t* BaseDrawable::OnDeviceBufferChange(BaseDrawable* drawable, int32_t arg2)` |  |
+| `0x001e4440` | `int32_t BaseDrawable::setColor(BaseDrawable* drawable, int32_t* arg2, int32_t arg3, Colour arg4)` |  |
 | `0x001e44b8` | `void BaseDrawable::setColor(Sprite* sprite, Colour* colour)` |  |
 | `0x001e452c` | `BaseDrawable* BaseDrawable::~BaseDrawable(BaseDrawable* arg1)` |  |
 | `0x001e7eb8` | `int32_t CameraZoomer::SetZoomDirect()` |  |
 | `0x001e7ec8` | `float CameraZoomer::ApplyZoomToScreenPos(Vector2* pos, CameraZoomer* cameraZoomer, Vector2* scale)` |  |
 | `0x001eb0a8` | `void* FindGameMenu::JoinGame(void* arg1)` |  |
-| `0x001ee610` | `void* InputManager::InputManager(void** arg1)` |  |
+| `0x001eda0c` | `int32_t* InputManager::GetLastTrack(void* arg1)` |  |
+| `0x001ee610` | `void* InputManager::InputManager(InputManager* arg1)` |  |
 | `0x001eeb84` | `char* WorldView::onStopGame(int32_t arg1)` | Expands mobile function `ItemTextPool::Clear`. |
 | `0x001ef508` | `String* GetIconName(String* name, u32 iconType)` | Gets a terraria icon name with a given `iconType`. |
 | `0x001ef9f8` | `int32_t Localization::LoadEntries(void* arg1)` | No call references, no variable reference. Seems to get skipped/placed inline in `Localization::SetLanguage`. |
@@ -186,38 +268,57 @@
 | `0x001f07bc` | `int32_t Localization::GetLanguageSpecificFont(int32_t arg1, void* arg2, int32_t* arg3)` |  |
 | `0x001f0c14` | `int32_t Localization::HasKey(void* arg1, int32_t* arg2, int32_t arg3, int32_t arg4)` | No call references, no variable reference.,No call references, no variable reference. On mobile its called in `NPC::ShowTownSpawnMessage`. |
 | `0x001f3d7c` | `uint32_t ResourceFile::readUTF16Char(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)` | *Verify |
+| `0x001f3da4` | `int32_t ResourceFile::readStringByteSize(int32_t** arg1, void* arg2)` |  |
 | `0x001f450c` | `int32_t ResourceFile::isValid(void* arg1)` |  |
 | `0x001f453c` | `int32_t ResourceFile::readInt(void* arg1, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
 | `0x001f558c` | `BaseMenuState* OptionsMenuBottom(BaseMenuState* arg1)` |  |
-| `0x001f5708` | `uint32_t SpriteWidget::setTexture(void* SpriteWidget, String* str)` |  |
+| `0x001f5708` | `uint32_t SpriteWidget::setTexture(SpriteWidget* spriteWidget, String* str)` |  |
 | `0x001f5848` | `int32_t* SpriteWidget::DeleteSprites(void* arg1)` |  |
 | `0x001f598c` | `int32_t SpriteWidget::setupRollovers(u32 arg1)` |  |
+| `0x001f608c` | `SpriteWidget* SpriteWidget::SpriteWidget(SpriteWidget* arg1, void* arg2, int32_t* arg3)` |  |
 | `0x001f6384` | `void StateManager::AbortUpdate(void* arg1)` |  |
 | `0x001f63a4` | `int32_t StateManager::HandleInput(void* arg1)` |  |
 | `0x001f6ca0` | `int32_t StateManager::ProcessCommands(void* arg1)` |  |
 | `0x001f6f14` | `int32_t StateManager::Draw(StateManager* arg1)` |  |
 | `0x001f6fe0` | `uint32_t StateManager::Update(void* arg1)` |  |
 | `0x001f80b0` | `int32_t LoadSomeContent()` |  |
+| `0x001f93a0` | `int32_t TextureAtlas::Initialize(TextureAtlas* atlas, int32_t* arg2)` |  |
+| `0x001f9f98` | `int32_t TextureAtlas::LoadRegion(int32_t* arg1, int32_t arg2, void* arg3, int32_t arg4)` |  |
 | `0x001fa56c` | `Texture* TextureAtlas::LoadPageAndBind(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
+| `0x001fa644` | `int32_t TextureAtlas::InitializeBinary(int32_t* arg1, void* arg2 @ r5)` |  |
 | `0x001fac4c` | `uint8_t* TextureAtlas::GetRegionFromName(TerrariaAtlas* atlas, String* str)` |  |
+| `0x001facc8` | `Texture* AtlasGenerator::GetRegion(TerrariaAtlas* arg1, int32_t arg2)` |  |
 | `0x001face8` | `int32_t TextureAtlas::GetIndexFromStrippedName(TerrariaAtlas* atlas, String* arg2)` |  |
-| `0x001fad94` | `void* TextureAtlas::LoadPage(int32_t arg1, int32_t arg2, int32_t arg3)` |  |
+| `0x001fad94` | `Texture* TextureAtlas::LoadPage(int32_t arg1, int32_t arg2, int32_t arg3)` |  |
+| `0x001fae78` | `TextureAtlas* TextureAtlas::TextureAtlas(TextureAtlas* altas, int32_t arg2 @ r8, int32_t arg3 @ r11)` |  |
 | `0x001fc97c` | `int32_t* WidgetLoader::loadSprite(void* arg1)` |  |
-| `0x001fccc8` | `void*** WidgetLoader::loadWidget(void* arg1, int32_t arg2 @ r5)` |  |
-| `0x002021f8` | `int32_t WidgetLoader::load(int32_t* arg1, void* arg2 @ r4, int32_t arg3 @ r5)` |  |
-| `0x00204fa4` | `void* ContentLoader::LoadTexture(ContentLoader* loader, String* str, u32 num1, String* str2, int32_t arg5 @ r5, int64_t arg6 @ q0, bool arg7)` | This is different from on mobile, textures are not loaded the same way. |
-| `0x00205a3c` | `int32_t* ContentLoader::loadGlyphSet(ContentLoader* arg1, int32_t* arg2)` |  |
+| `0x001fccc8` | `Widget* WidgetLoader::loadWidget(void* arg1, int32_t arg2 @ r5)` |  |
+| `0x001fe4c8` | `ListView* WidgetLoader::loadListView(void* arg1, int32_t arg2 @ r4, int32_t arg3 @ r5)` |  |
+| `0x001fe9a0` | `int32_t WidgetLoader::loadAnimations(void* arg1, int32_t arg2, int32_t arg3, void* arg4 @ r10, int96_t arg5 @ q5)` |  |
+| `0x002021f8` | `int32_t WidgetLoader::load(int32_t* arg1, void* xmlFile @ r4, int32_t arg3 @ r5)` |  |
+| `0x00202a34` | `int32_t WidgetLoader::loadFirst()` |  |
+| `0x00203354` | `int32_t AtlasMetaData::GetEntry(AtlasMetaData* metaData, u32 textureId)` |  |
+| `0x002033ac` | `AtlasMetaData* AtlasMetaData::AtlasMetaData(AtlasMetaData* data, int32_t arg2)` |  |
+| `0x00204fa4` | `void* ContentLoader::LoadTexture(ContentLoader* loader, String* textureName, bool flag, bool flag2, bool flag3)` | This is different from on mobile, textures are not loaded the same way. |
+| `0x00206198` | `Texture* ContentLoader::CreateTexture(ContentLoader* loader, u32 width, u32 height, u8* imageData, u32 num1, u32 num2, u32 num3, u32 num4)` |  |
 | `0x00207be4` | `int32_t ContentLoader::InvalidateAllTextures(int32_t* arg1 @ r6)` | No call references, no variable reference. On mobile this is called by `AndroidInterface::fjOnSurfaceDestroyed`. |
 | `0x0020eb9c` | `int32_t MinimapHelper::Run(MiniMapHelper* helper)` |  |
+| `0x0020f2b4` | `int32_t TerrariaAtlas::Initialize(TerrariaAtlas* arg1, int32_t* arg2)` | Does not exist on mobile i think. |
+| `0x0020fb20` | `int32_t TerrariaAtlas::GetRegion(void* data, TerrariaAtlas* atlas, u32 textureId)` |  |
 | `0x0020fb50` | `int32_t TerrariaAtlas::GetFileExtension(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
 | `0x0020fb7c` | `int32_t TerrariaAtlas::GetConversionForPage()` |  |
 | `0x00210590` | `int32_t* TerrariaAtlas::GetFirstFrameContentEnclosingBoundingRectangle(int64_t* arg1)` |  |
 | `0x00210720` | `int32_t TerrariaAtlas::~TerrariaAtlas(TerrariaAtlas_VTable** arg1)` |  |
 | `0x00210738` | `int32_t TerrariaAtlas::~TerrariaAtlas2(TerrariaAtlas_VTable** arg1)` |  |
+| `0x00211184` | `int32_t AtlasGenerator::InsertInPage(void* arg1, int32_t arg2, int32_t* arg3, int32_t* arg4)` |  |
+| `0x002116c0` | `int32_t* AtlasGenerator::CreatePageForHashValues(void* arg1, uint32_t arg2, uint32_t arg3, AtlasPage* arg4)` |  |
+| `0x00211a98` | `int32_t* AtlasGenerator::InsertInPage(void* arg1, int32_t* arg2)` |  |
 | `0x00218e2c` | `int32_t FlowSchemeNode::getNeighbour(void* arg1, int32_t arg2)` |  |
+| `0x002191c8` | `int32_t GraphicsDevice::endScissor(GraphicsDevice* device)` |  |
 | `0x00219260` | `void GraphicsDevice::RemoveQuery(GraphicsDevice* device, int32_t arg2)` |  |
-| `0x00219354` | `int32_t Texture2D::BindNewTexture(Texture* arg1, bool arg2, bool arg3, int32_t arg4)` |  |
+| `0x00219354` | `int32_t Texture2D::BindNewTexture(Texture* arg1, bool arg2, bool arg3, bool flag4)` |  |
 | `0x002193cc` | `int32_t GraphicsDevice::QueryTexture(SpriteBatch* sb, Texture* texture, int32_t arg3)` |  |
+| `0x00219614` | `int32_t GraphicsDevice::beginScissor(GraphicsDevice* device, int32_t arg2)` |  |
 | `0x00219858` | `int32_t GraphicsDevice::RemoveCallback(GraphicsDevice* device, int32_t arg2)` |  |
 | `0x00219978` | `int32_t GraphicsDevice::GetZBufferState(GraphicsDevice* device)` |  |
 | `0x00219988` | `int32_t GraphicsDevice::SetZBufferState(GraphicsDevice* device)` |  |
@@ -236,10 +337,11 @@
 | `0x0021dc90` | `uint32_t NetworkSession::Update(void* arg1)` |  |
 | `0x0021de68` | `void NetworkSession::EndGame(void* arg1)` |  |
 | `0x0021de74` | `void NetworkSession::StartGame(void* arg1)` |  |
-| `0x0021f544` | `int32_t XNASpriteBatch::DrawString(XNASpriteBatch* arg1, String* str, Vector2* pos, Colour colour, void* arg5)` |  |
+| `0x0021f544` | `int32_t XNASpriteBatch::DrawString(XNASpriteBatch* arg1, StringWrapper* str, Vector2* pos, Colour colour, void* arg5, void* arg6, void* arg7, void* arg8, void* arg9)` |  |
 | `0x0021fa1c` | `SpriteBatch* XNASpriteBatch::Initialize(XNASpriteBatch* arg)` | Matches the mobile functions but not called in the same places. Also expands `SpriteBatch::SetGlobalSpriteBatch`. |
 | `0x0021fa80` | `SpriteBatch* XNASpriteBatch::Unitialize(XNASpriteBatch* arg1)` |  |
-| `0x0021fbec` | `int32_t XNASpriteBatch::MeasureString(int32_t* arg1, XNASpriteBatch* arg2, void* arg3)` |  |
+| `0x0021fbec` | `void* XNASpriteBatch::MeasureString(Vector2* size, XNASpriteBatch* arg2, StringWrapper* str)` |  |
+| `0x0021fd8c` | `SpriteText* XNASpriteBatch::CreateSpriteText()` |  |
 | `0x002200c4` | `void XNASpriteBatch::XNAToOctarineOrigin(int32_t arg1, Texture* texutre, void* arg3, int32_t* arg4)` | *Verify |
 | `0x0022019c` | `int32_t XNASpriteBatch::End(XNASpriteBatch* drawer)` |  |
 | `0x00220590` | `int32_t* XNASpriteBatch::Draw2(XNASpriteBatch* arg1, Texture* arg2, Vector2* arg3, void* arg4, char* arg5, int32_t* arg6, int32_t* arg7, int32_t arg8)` |  |
@@ -254,6 +356,7 @@
 | `0x0022efe8` | `int32_t HelperFunctions::nearestPowerOfTwoGreater(int32_t arg1)` |  |
 | `0x0022f008` | `int32_t HelperFunctions::insertStringPreFileExtension(int32_t arg1, int32_t* arg2, int32_t* arg3, u32 arg4 @ r4)` | *Verify |
 | `0x00230568` | `void** HelperFunctions::tokenize(int32_t* arg1, int32_t* arg2, int32_t* arg3, int32_t arg4)` | *Verify |
+| `0x00233310` | `int32_t MaxRectsBinPack::Clear(MaxRectsBinPack* instance)` |  |
 | `0x002354d4` | `int32_t PlatformHelpers::GetXmlPostfixes(int32_t* arg1)` |  |
 | `0x00236f30` | `uint32_t PauseMenu::BackToGame(void* arg1, int32_t arg2 @ r4)` |  |
 | `0x00237b3c` | `void LoadSound(SoundEffect* sound, String* str, int32_t arg3)` | Loads a sound. |
@@ -263,7 +366,7 @@
 | `0x002382bc` | `int32_t StateFullEngine::AddState(void* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r4, int32_t arg6, int32_t arg7)` |  |
 | `0x0023ba04` | `int32_t LoadAtlas(int32_t arg1, int32_t* arg2, TerrariaAtlas* atlas)` | Probably loads an atlas, it is unknown if it has a mobile version counterpart. |
 | `0x0023bfe4` | `int32_t TabCrafting::GetTextureRegionIdentifierForNeededLiquid(char** arg1, int32_t arg2, int32_t arg3)` |  |
-| `0x0023ec1c` | `int32_t WorldMapMenu::UpdateOpened(void* arg1)` |  |
+| `0x0023ec1c` | `uint32_t WorldMapMenu::UpdateOpened(BaseMenuState* arg1)` |  |
 | `0x0023efa4` | `int32_t MiniMap::AdjustMapScale(void* arg1, int32_t arg2)` |  |
 | `0x002435ac` | `int32_t GameStateManager::Initialize_2(void* arg1 @ r4)` | *Verify, No call references, no variable reference. This does not match the mobile function. |
 | `0x002435d8` | `int32_t GameStateManager::Initialize(GameStateManager* arg1)` |  |
@@ -272,27 +375,30 @@
 | `0x00246298` | `int32_t GameStateManager::draw(GameStateManager* arg1)` | Seems to draw everything. There a a bunch of `nop`s so patching might be easy.  Does not match the mobile function. |
 | `0x002465e0` | `int32_t GameStateManager::update(GameStateManager* gsm)` |  |
 | `0x002481c8` | `BaseMenuState* OptionsMenu::OptionsMenu(BaseMenuState menu @ r0)` |  |
-| `0x0024e4f0` | `int32_t* InitBackgroundDirt(void*** arg1, BaseMenu* menu, int32_t arg3 @ r4)` | Probably a 3ds specific function. |
+| `0x0024c1b4` | `void BasicEaseAnimation::BasicEaseAnimation(void*** arg1, int32_t arg2)` |  |
+| `0x0024e4f0` | `int32_t** InitBackgroundDirt(void* instance, BaseMenu* menu, int32_t arg3 @ r4)` | Probably a 3ds specific function. |
+| `0x00250aac` | `void BaseWidgetAnimation::BaseWidgetAnimation(void*** arg1, int32_t arg2)` |  |
 | `0x002588ec` | `void ReleaseNPC(s32 X, s32 Y, s32 npcId, u32 style, s32 who)` | Equivalent to `Terraria.NPC.ReleaseNPC()`. |
 | `0x0025c97c` | `u32 NPC::SpawnFriendlyNPC(int32_t* arg1)` |  |
 | `0x0025cfa0` | `void NPC::setFireFlyChance()` |  |
-| `0x00265758` | `int32_t TerrariaInitializer::Run()` | No call references, no variable reference. Probably close to the entry point. |
+| `0x00265764` | `int32_t TerrariaInitializer::Run(int32_t* arg1)` |  |
 | `0x002681d0` | `int32_t O::Runnable::IsDoneOrInterupted(void* arg1)` |  |
 | `0x0026ba00` | `uint32_t ControllerFlowScheme::move(void* arg1, int32_t arg2)` |  |
 | `0x00274ab8` | `char** CharacterCreateMenu::onKeyboardInputDone(int32_t arg1, int32_t* arg2, int32_t arg3 @ r4)` | No call references, seems to be stored at `0x005d83cc`. |
 | `0x0027a0cc` | `void KillFrostLegionEnemy(int32_t arg1, NPC* npc)` |  |
 | `0x002945e0` | `String* EE::String::Format(String* destStr, char* formatStr, void* args)` |  |
 | `0x002946cc` | `String* LoadString(String* arg1, String* dest, char* raw)` |  |
+| `0x0029531c` | `void UI::Initialize(void* arg1, char arg2)` |  |
 | `0x00295474` | `void UI::Initialize(void* arg1)` |  |
 | `0x0029550c` | `int32_t UI::UpdateOnce()` |  |
 | `0x002956a8` | `uint32_t UI::JoinSession(void* arg1, u32 arg2)` |  |
 | `0x002956d8` | `int32_t Load_texture_touchzoom(int32_t arg1 @ r4)` | Loads "UI/texture_touchzoom.png" but this file (the string) exists nowhere in the cartridge dump. |
 | `0x002969f8` | `void UI::LeaveSession(void* arg1)` |  |
 | `0x00297c84` | `void UI::DrawInterface(void* arg1)` |  |
-| `0x002980d0` | `int32_t UI::MeasureString(int32_t* arg1, void* arg2)` |  |
+| `0x002980d0` | `int32_t UI::MeasureString(Vector2* arg1, String* str)` |  |
 | `0x002980e0` | `int32_t UI::UpdateNpcChat(PlayerParentPlaceholder* arg1, int32_t arg2 @ r4)` |  |
 | `0x002990b4` | `int32_t UI::CloseInventory()` |  |
-| `0x00299240` | `int32_t UI::DrawStringScaled(String* arg1, Vector2* arg2, Colour arg3, void* arg4)` |  |
+| `0x00299240` | `int32_t UI::DrawStringScaled(StringWrapper* arg1, Vector2* arg2, Colour arg3, void* arg4, void arg5)` |  |
 | `0x00299760` | `Colour UI::UpdateCursorColor(int64_t arg1 @ q4)` |  |
 | `0x0029ce40` | `uint32_t UI::DrawMultiplayerHeadIndicator(void* arg1, void* arg2, int64_t arg3 @ q1)` |  |
 | `0x0029d304` | `int32_t UI::Draw(BaseMenuState* arg1)` |  |
@@ -303,20 +409,25 @@
 | `0x0029f858` | `s32 TownNPCFromId(void* arg1, s32 npcId)` | Gets a town NPC id from the given `npcId` |
 | `0x0029f9d4` | `int32_t* UI::setPlayer(void* arg1, void* arg2)` |  |
 | `0x0029fb08` | `uint32_t UI::setPlayer2(void* arg1, u32 arg2)` |  |
+| `0x002a70c8` | `s32 FSUSER_OpenFile(u32* handle, u32* handleOut, u32 zero_unknown, u32 unknown_unused, u32 archive_handleLow, u32 archive_handleHigh, u32 fileLowPath_type, u8* fileLowPath_data, u32 fileLowPath_size, u32 openFlags, u32 attributes)` | Do not trust the parameters on this function, they have been matched to look right but they are not. |
+| `0x002a7228` | `s32 FSFILE_Read(u32* handle, u32* bytesRead, u32 offset_lower, u32 offset_upper, void* buffer, u32 size)` |  |
+| `0x002a7280` | `s32 FSFILE_Close(u32* handle)` |  |
+| `0x002a83fc` | `void* scissorToggle(bool scissor)` | On mobile this is equivalent to `glEnable(0xc11)` and `glDisable(0xc11)`. |
 | `0x002b084c` | `void _cfguExit2(int32_t arg1)` | Exist out of the `cfg:u` service. |
 | `0x002b2148` | `int32_t _cfguExit()` | Exist out of the `cfg:u` service. |
 | `0x002fb5e0` | `u32 StringLength(char* raw)` |  |
-| `0x002fb6c8` | `int32_t delete[](int32_t* arg1)` | *Verify |
-| `0x002fb9a8` | `String* SetStringTypeString(String* strType, char* rawStr, void* arg3)` |  |
+| `0x002fb6c8` | `int32_t delete[](u32 arg1)` | *Verify |
+| `0x002fb9a8` | `String* SetStringTypeString(StringWrapper* strType, char* rawStr, void* arg3)` |  |
 | `0x002fba24` | `String* FreeStringType4_2(String* str)` |  |
 | `0x002fba2c` | `String* FreeStringType4(String* str)` |  |
-| `0x002fba8c` | `int32_t delete(int32_t* arg1)` |  |
+| `0x002fba8c` | `int32_t delete(u32 arg1)` |  |
 | `0x002fbfa6` | `char* Memcpy_aligned2(char* dest, char* src, u32 length, void* arg4)` |  |
 | `0x002fd558` | `String* EE::String::operator=2(String* str1, String* str2)` |  |
 | `0x002fd91c` | `void memcpy(char* dest, char* src, u32 length, void* arg4, void* arg5 @ r12)` |  |
 | `0x002fd9bc` | `void* FreeString3_2(String* str)` |  |
 | `0x002fd9c4` | `void* FreeStringType3(String* str)` |  |
 | `0x002fe388` | `int32_t __aeabi_idivmod(int32_t arg1, uint32_t arg2)` |  |
+| `0x002feaa4` | `void increaseStringRef(u32* refCount)` |  |
 | `0x00300b0c` | `bool CheckOnce(bool* flag)` | Returns `true` if `flag` was `false` then sets `flag` to `true`, otherwise (if `flag` is `true`) returns `false`.,Seems to be in place of `__cxa_guard_release()` on mobile. |
 | `0x00300e10` | `int32_t memset(char* arg1, int32_t arg2)` |  |
 | `0x00303768` | `int32_t sprintf(int16_t* arg1, int32_t arg2, int16_t* arg3)` |  |
@@ -360,7 +471,9 @@
 | `0x003c73a4` | `int32_t Item::CanBePlacedInAmmoSlot(void* arg1)` |  |
 | `0x003c76f4` | `u32 MergeItems(Item* item1, Item* item2)` | Merges 2 items into a single stack. |
 | `0x003c77c0` | `bool Item::Prefix(Item* item, s32 prefix, int128_t arg3 @ q4)` | Equivalent to `Terraria.Item.Prefix()`. |
+| `0x003c8d78` | `uint32_t Item::DrawAll(void* arg1)` |  |
 | `0x003c9674` | `u32 Item::NewItem(u32 X, u32 Y, s32 width, s32 height, u32 id, u32 stack, int32_t arg7, s32 prefix, int32_t arg9)` | Equivalent to `Terraria.Item.NewItem()`. |
+| `0x003c9a44` | `Colour Item::GetColor(Item* item, Colour arg2)` |  |
 | `0x003c9e2c` | `u32 GetValueSell(u32 platinum, u32 gold, u32 silver, u32 copper)` | Equivalent to `Terraria.Item.sellPrice()`. |
 | `0x003c9f24` | `uint32_t Item::FindOwner(Item* arg1, int32_t arg2, int64_t arg3 @ q0)` |  |
 | `0x003ca190` | `u32 GetValueBuy(u32 platinum, u32 gold, u32 silver, u32 copper)` | Equivalent to `Terraria.Item.buyPrice()`. |
@@ -388,6 +501,7 @@
 | `0x003dce4c` | `int32_t Main::Main_2()` |  |
 | `0x003dce64` | `Main* Main::Main(Main* main)` |  |
 | `0x003dd27c` | `int32_t Main::~Main()` |  |
+| `0x003de97c` | `int32_t Star::SpawnStars()` |  |
 | `0x003e01c0` | `int32_t Tile::InitLookupTables()` |  |
 | `0x003e585c` | `void Tile::kill(Tile* t, int32_t arg2, int32_t arg3, int32_t arg4)` |  |
 | `0x003e59b4` | `void Tile::InitAnim()` |  |
@@ -415,30 +529,86 @@
 | `0x0042ab9c` | `int32_t Player::GetCurrentlyMinedTileDamage(Player* player)` |  |
 | `0x0042ac10` | `int32_t Player::SetCurrentlyMinedTileDamage(void* arg1, int32_t arg2)` |  |
 | `0x0042d5d8` | `uint32_t Player::Hurt(Player* arg1, float arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
-| `0x0042e088` | `void* Player::Init(Player* player)` |  |
+| `0x0042e088` | `uint8_t* Player::Init(Player* player)` |  |
 | `0x0042f5c4` | `void Player::Spawn(Player* player, int32_t arg2 @ r4)` |  |
 | `0x0042fe14` | `void Player::KillMe(Player* player_1, int32_t arg2 @ r7, int32_t arg3 @ r11, int32_t arg4, int32_t arg5, int64_t arg6)` |  |
-| `0x00433c6c` | `uint32_t Player::DrawInfo(Player* player, void* arg2, int32_t arg3 @ r4, int32_t arg4 @ r5)` |  |
+| `0x00433c6c` | `uint32_t Player::DrawInfo(Player* player, void* arg2)` |  |
 | `0x00436324` | `int32_t Player::Teleport(void* arg1, int32_t* arg2, int32_t arg3)` |  |
 | `0x0044212c` | `int32_t Player::ItemSpace(Player* arg1, Item* item)` |  |
 | `0x00442438` | `int32_t Player::RandColor(int32_t arg1)` |  |
 | `0x0044259c` | `int32_t Player::Randomize(void* arg1)` |  |
-| `0x004427e0` | `void* Player::Player(void*** arg1)` |  |
+| `0x004427e0` | `void* Player::Player(Player* player)` |  |
+| `0x00443d28` | `int32_t Player::~Player(Player* player)` |  |
+| `0x00443d38` | `void* Player::~Player(Player* player)` |  |
 | `0x00447bdc` | `void Recipe::SetupRecipes()` | Equivalent to `Terraria.Recipe.SetupRecipes()`. |
 | `0x0045305c` | `void SetupRecipes2(Item* arg1 @ r5, Item* arg2 @ r6, Item* arg3 @ r7, char* arg4 @ r10)` | Section 2 of `SetupRecipes`. |
 | `0x00459044` | `void SetupRecipes3(void* arg1 @ r4, Item* arg2 @ r5, Item* arg3 @ r6, Item* arg4 @ r7, char* arg5 @ r8, int16_t arg6 @ r9, int32_t arg7 @ r10, int32_t arg8, int32_t arg9, int32_t arg10, int32_t arg11, int32_t arg12, int32_t arg13, int32_t arg14, int32_t arg15, int32_t arg16)` | Section 3 of `SetupRecipes`. |
 | `0x0045a148` | `void Recipe::AddRecipe(void* arg1, void* arg2, void* arg3, void* arg4)` | Somewhat equivalent to `Terraria.Recipe.addRecipe()`, but different. |
-| `0x0045b9e4` | `int32_t Sprite::SetTexture2(Sprite* sprite, Texture* texture)` |  |
+| `0x0045b9dc` | `Texture* Sprite::GetTexture(Sprite* sprite)` |  |
+| `0x0045b9e4` | `Texture* Sprite::SetTexture2(Sprite* sprite, Texture* texture)` |  |
 | `0x0045ba54` | `int32_t Sprite::SetTexture(Sprite* sprite, String* str)` |  |
+| `0x0045bbdc` | `void Sprite::getPosition(Vector2* pos, Sprite* sprite)` |  |
+| `0x0045bbec` | `void Sprite::setRotation(Sprite* sprite, Vector3* arg2)` |  |
 | `0x0045bc44` | `int32_t Sprite::OnContextLoss(Sprite* sprite)` |  |
+| `0x0045bc98` | `void* Sprite::setLocalRotation(Sprite* sprite)` |  |
+| `0x0045bcc0` | `int32_t* Sprite::GetTextureRectangle(int32_t* arg1, void* arg2)` |  |
+| `0x0045bd24` | `int32_t Sprite::setTextureRectangle(Sprite* sprite, int32_t* arg2)` |  |
+| `0x0045bde8` | `void Sprite::disablePremultipliedAlpha(Sprite* sprite)` |  |
+| `0x0045bdf4` | `int32_t Sprite::Draw(Sprite* sprite, SpriteBatch* spriteBatch)` |  |
+| `0x0045c020` | `Texture* Sprite::reload(Sprite* sprite)` |  |
+| `0x0045c1ec` | `void Sprite::getSize(Vector2* size, Sprite* sprite)` |  |
+| `0x0045c1fc` | `int32_t Sprite::setSize(Sprite* sprite, Vector2* size)` |  |
+| `0x0045c210` | `void Sprite::getColor(Colour* colour, Sprite* sprite)` |  |
+| `0x0045c21c` | `int32_t Sprite::getScale(Vector2* scale, Sprite* sprite, int32_t arg3 @ q1)` |  |
+| `0x0045c26c` | `void Sprite::setColor(BaseDrawable* arg1, int32_t* arg2, char arg3, int128_t arg4 @ q0)` |  |
 | `0x0045c314` | `void BaseDrawable::setColor2(Sprite* arg1, char* arg2)` |  |
+| `0x0045c364` | `int32_t Sprite::setScale(Sprite* sprite, Vector2* scale)` |  |
+| `0x0045c418` | `void Sprite::getOffset(Vector2* pos, Sprite* sprite)` |  |
+| `0x0045c428` | `void Sprite::setOffset(Sprite* sprite, Vector2* pos)` |  |
 | `0x0045c48c` | `void Sprite::~Sprite2(Sprite* sprite)` |  |
 | `0x0045c4a8` | `void Sprite::~Sprite(Sprite* sprite)` |  |
 | `0x0045e548` | `int32_t Waters::FindWaterfalls(void* arg1)` |  |
 | `0x0045ea60` | `int32_t Waters::Draw(int32_t* arg1, int32_t arg2)` |  |
 | `0x0045ede0` | `int32_t Waters::DrawStyle(void* arg1, float arg2 @ r7, int32_t arg3, int32_t arg4, int32_t arg5, int32_t arg6)` |  |
+| `0x0045fdc8` | `void** Widget::MouseClick(int32_t arg1)` |  |
+| `0x0045fe4c` | `uint32_t Widget::HandleInput(Widget* arg1)` |  |
+| `0x0045ffd4` | `int32_t Widget::isAnimating(void* arg1)` |  |
+| `0x0046010c` | `int32_t Widget::setPosition(int32_t* arg1, int32_t* arg2)` |  |
+| `0x0046015c` | `int32_t Widget::addAnimation(void* arg1, int32_t arg2, int32_t arg3)` |  |
+| `0x004603c4` | `int32_t Widget::setAnimation(int32_t* arg1, int64_t* arg2, int64_t* arg3, int32_t arg4)` |  |
+| `0x0046047c` | `void Widget::enableGraphic(void* arg1)` |  |
+| `0x00460488` | `void Widget::enableTouches(void* arg1)` |  |
+| `0x00460548` | `void Widget::FireTouchEvent(int64_t* arg1, int32_t arg2)` |  |
 | `0x00460994` | `void Widget::PlayClickSound(int32_t arg1)` |  |
-| `0x00462eb8` | `void* Widget::Widget(void*** arg1)` |  |
+| `0x004609cc` | `void Widget::disableGraphic(void* arg1)` |  |
+| `0x004609d8` | `void Widget::disableTouches(void* arg1)` |  |
+| `0x00460a98` | `void Widget::setEditorScale(Widget* widget, int32_t* arg2)` |  |
+| `0x00460ccc` | `void Widget::SetInterceptTap(void* arg1, char arg2)` |  |
+| `0x00460cd4` | `int32_t Widget::deleteAnimation(void* arg1, int32_t* arg2)` |  |
+| `0x0046104c` | `int32_t Widget::setExitAnimation(void* arg1, int32_t* arg2)` |  |
+| `0x0046119c` | `int32_t Widget::setExitAnimation(void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4)` |  |
+| `0x00461360` | `int32_t Widget::setEnterAnimation(void* arg1, int32_t* arg2)` |  |
+| `0x004614a0` | `int32_t Widget::setEnterAnimation(void* arg1, int32_t* arg2, int32_t* arg3, char arg4, int64_t arg5 @ q4)` |  |
+| `0x00461680` | `uint32_t Widget::RespondToTouchTrack(int32_t* arg1, void* arg2)` |  |
+| `0x00461968` | `void Widget::IgnoreMouseInOutLogic(void* arg1, char arg2)` |  |
+| `0x00461990` | `uint32_t Widget::Draw(Widget* arg1, SpriteBatch* sb)` |  |
+| `0x00461a3c` | `int32_t Widget::exit(int32_t* arg1)` |  |
+| `0x00461b50` | `int32_t Widget::hide(int32_t* arg1)` |  |
+| `0x00461c78` | `int32_t Widget::show(int32_t* arg1)` |  |
+| `0x00461d9c` | `uint32_t Widget::click(int32_t* arg1)` |  |
+| `0x00461dd0` | `int32_t Widget::enter(int32_t* arg1)` |  |
+| `0x00461ee4` | `int32_t Widget::flash(int32_t* arg1)` |  |
+| `0x00461f14` | `uint32_t Widget::Update(int32_t* arg1, int32_t arg2 @ q4)` |  |
+| `0x004621d0` | `void Widget::select(void* arg1)` |  |
+| `0x0046220c` | `void Widget::MouseIn(void* arg1)` |  |
+| `0x0046225c` | `void Widget::MouseOut(void* arg1)` |  |
+| `0x004622bc` | `void Widget::deselect(void* arg1)` |  |
+| `0x004622dc` | `uint32_t Widget::getState(Widget* widget, int32_t arg2 @ r4)` |  |
+| `0x0046243c` | `int32_t Widget::isTouched(int32_t* arg1)` |  |
+| `0x0046254c` | `int32_t Widget::isVisible(void* arg1)` |  |
+| `0x00462eb8` | `Widget* Widget::Widget(Widget* widget)` |  |
+| `0x004633d4` | `int32_t Widget::~Widget(Widget_VTable** arg1)` |  |
+| `0x004633e4` | `int32_t Widget::~Widget(Widget_VTable** arg1)` |  |
 | `0x00463b90` | `SpriteBatch* Console::initInstance(void* arg1)` |  |
 | `0x00464fb4` | `void SetNpcCatchable()` | Sets the array of catchable NPCs. |
 | `0x00467b40` | `int32_t Tile::InitAnim_2()` |  |
@@ -448,9 +618,10 @@
 | `0x00472c28` | `void MiniMap::onStartGame(MiniMap* miniMap)` |  |
 | `0x00472cf4` | `void MiniMap::SetMapScale(MiniMap* arg1, float scale @ s0)` |  |
 | `0x00472db4` | `int32_t MiniMap::drawIconsNPCs(void* arg1, int32_t arg2)` |  |
+| `0x00473e88` | `int32_t CreateMiniMap(void* arg1, uint32_t arg2, int32_t arg3, int32_t arg4)` | No variable or functions reference, maybe used for testing? Different from `MiniMap::CreateMap`. |
 | `0x004744d8` | `int32_t MiniMap::calculateNpcHeadPosition(void* arg1, void* arg2, int32_t arg3 @ q1)` |  |
 | `0x00474594` | `int32_t MiniMap::getMinimapDrawColor(void* arg1)` | Expands mobile function `Color::LinearColorBlend`. |
-| `0x00474fa0` | `int32_t MiniMap::CreateMap(MiniMap* map, int32_t arg2)` |  |
+| `0x00474fa0` | `int32_t MiniMap::CreateMap(MiniMap* map, bool exportMap)` |  |
 | `0x00475e74` | `void* Netplay::Disconnect()` |  |
 | `0x004766bc` | `int32_t Netplay::StartServer()` |  |
 | `0x004768f4` | `int32_t Netplay::CreateSession()` |  |
@@ -461,11 +632,13 @@
 | `0x00479730` | `uint32_t Network::Update(void* arg1)` |  |
 | `0x0047a67c` | `int32_t XMLFile::readString(int32_t arg1, void* arg2, int32_t* arg3)` |  |
 | `0x0047ace4` | `int32_t XMLFile::getAttribute(int32_t arg1, void* arg2, int32_t* arg3)` | *Verify |
+| `0x0047b560` | `int32_t XMLFile::readVector2f(int32_t* arg1, void* arg2, int32_t arg3)` |  |
 | `0x0047c698` | `int32_t XMLFile::gotoNode(void* arg1, int32_t arg2)` |  |
 | `0x0047c714` | `int32_t* XMLFile::hasChild(void* arg1, int32_t* arg2)` |  |
 | `0x0047c740` | `int32_t XMLFile::readBool(void* arg1)` |  |
 | `0x0047c8d0` | `int32_t XMLFile::gotoChild(void* arg1, int32_t* arg2)` |  |
 | `0x0047c940` | `int32_t XMLFile::gotoStart(void* arg1)` |  |
+| `0x0047c9ac` | `int32_t XMLFile::readFloat(void* arg1)` |  |
 | `0x0047ca3c` | `void* XMLFile::XMLFile(void*** arg1, int32_t arg2)` |  |
 | `0x0047d728` | `int32_t BaseMenu::HandleInput(BaseMenu* arg1)` |  |
 | `0x0047e068` | `int32_t BaseMenu::applyGamepadInput(BaseMenu* menu, int32_t arg2, int32_t arg3)` |  |
@@ -478,16 +651,39 @@
 | `0x0047f40c` | `void ChatLine::NewText(String* arg1, u8 a, u8 b, u8 c, u8 d)` |  |
 | `0x00481fcc` | `int32_t DustPool::TeleportEffect(void* arg1, int32_t* arg2, int32_t arg3)` |  |
 | `0x004824cc` | `int32_t DustPool::DrawDust(int32_t arg1, void* arg2)` |  |
-| `0x00482d44` | `uint32_t GlyphSet::ReadGlyphs(int32_t* arg1, void* arg2)` |  |
-| `0x00482f34` | `uint32_t GlyphSet::LoadFromFile(int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6)` | No call references, no variable reference. On mobile its called in `GlyphSet::GlyphSet`. Also expands mobile function `GlyphSet::ClearBorderColor`. |
+| `0x00482d44` | `uint32_t GlyphSet::ReadGlyphs(GlyphSet* glyphSet, Texture* texture)` |  |
+| `0x00482f34` | `uint32_t GlyphSet::LoadFromFile(GlyphSet* arg1, Texture* arg2, int32_t arg3, int32_t arg4, int32_t arg5 @ r6)` | No call references, no variable reference. On mobile its called in `GlyphSet::GlyphSet`. Also expands mobile function `GlyphSet::ClearBorderColor`. |
 | `0x004831e4` | `Texture* GlyphSet::LoadGlyphsetTexture()` |  |
 | `0x0048337c` | `int32_t GlyphSet::GenerateFromDataFile(int32_t arg1, int32_t arg2, int32_t* arg3 @ r4, int32_t* arg4 @ r11)` |  |
 | `0x00483b54` | `int32_t GlyphSet::AddGlyph(int32_t* arg1, int32_t arg2, int32_t arg3, int96_t arg4 @ q4, int32_t arg5, int32_t arg6, int32_t arg7, int32_t arg8)` |  |
-| `0x00483d80` | `int32_t* GlyphSet::GlyphSet(int32_t* arg1, Texture* arg2)` |  |
 | `0x00484270` | `void ItemText::Init(char* arg1)` |  |
-| `0x0048e030` | `int32_t* DrawItemSlot(Draw_Unk2* arg1, int32_t* arg2, s32 num1, String* str1, int32_t arg5)` |  |
+| `0x00489a80` | `void* ListView::HandleInput(int32_t* arg1)` |  |
+| `0x00489dc8` | `uint32_t ListView::updateInput(ListView* listView)` |  |
+| `0x0048a4fc` | `int32_t* ListView::AddCallbacks(ListView* listView, void* arg2)` |  |
+| `0x0048ad4c` | `float ListView::recalcMaxMin(Draw_Unk2* arg1)` |  |
+| `0x0048b0d8` | `int32_t* ListView::moveSelection(void* arg1, int32_t* arg2, int32_t arg3 @ q4)` |  |
+| `0x0048b990` | `int32_t ListView::RemoveCallbacks(ListView* listView, void* arg2)` |  |
+| `0x0048bb8c` | `int32_t ListView::getHitRectangle(ListView* listView, void* arg2)` |  |
+| `0x0048bea4` | `int32_t ListView::setArrowSprites(ListView* listView, void* arg2, void* arg3)` |  |
+| `0x0048c328` | `int32_t ListView::addAnimatingItem(void* arg1, int32_t* arg2, int32_t arg3 @ q4, int32_t arg4, int32_t arg5)` |  |
+| `0x0048cab8` | `int32_t ListView::updateArrowWidgets(int32_t* arg1)` |  |
+| `0x0048ce7c` | `uint32_t ListView::updateItemPositions(ListView* listView, float pos @ r1)` |  |
+| `0x0048d820` | `SpriteWidget* ListView::Draw(ListView* listView, SpriteBatch* arg2)` |  |
+| `0x0048da88` | `SpriteWidget* ListView::exit(ListView* listView)` |  |
+| `0x0048dacc` | `void ListView::hide(ListView* listView)` |  |
+| `0x0048db60` | `int32_t ListView::show(ListView* listView)` |  |
+| `0x0048dc50` | `SpriteWidget* ListView::enter(ListView* listView)` |  |
+| `0x0048dd78` | `uint32_t ListView::Update(ListView* listView)` | Expands the mobile function `ListView::updateScrollState`. |
+| `0x0048e030` | `int32_t* ListView::AddItem(ListView* listView, Widget* widget, s32 num1, String* str1, int32_t arg5)` |  |
+| `0x0048e4d0` | `int32_t ListView::isTouched(ListView* listView)` |  |
+| `0x0048e4f4` | `ListView* ListView::ListView(ListView* listView, int32_t* arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
+| `0x0048f0d8` | `int32_t MainMenu::OnActivate(BaseMenuState* arg1)` |  |
+| `0x0048f394` | `int32_t MainMenu::HandleInput(BaseMenuState* arg1)` |  |
 | `0x0048f984` | `int32_t MainMenu::Play()` | No call references, no variable reference. |
+| `0x0048fa78` | `int32_t State::OnLoad(void* arg1, int32_t arg2 @ r4)` |  |
+| `0x00490270` | `uint32_t MainMenu::Update(BaseMenuState* arg1)` |  |
 | `0x00490a88` | `BaseMenuState* MainMenu::MainMenu(BaseMenuState* arg1)` |  |
+| `0x00496f30` | `int32_t* RainPool::DrawRain(int32_t* arg1, void* arg2, int32_t arg3, int32_t arg4)` |  |
 | `0x004974b0` | `void TileAnim::Init(void*** arg1, int16_t arg2, char arg3, int32_t arg4, int32_t arg5, int32_t arg6)` |  |
 | `0x00497810` | `void TileInfo::Init(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4, char arg5, char arg6, char arg7, int16_t arg8, char arg9, int16_t arg10, char arg11, char arg12)` |  |
 | `0x00498510` | `int32_t MainMenu::Tutorial(int32_t arg1 @ r4, int32_t arg2 @ r5)` |  |
@@ -508,6 +704,8 @@
 | `0x004fe1e8` | `void WorldGen::loadWorld(FileReader* reader)` |  |
 | `0x00502f34` | `void** tinyxml2::XMLDocument::XMLDocument(struct tinyxml2_XMLNode_VTable** arg1, char arg2, char arg3)` |  |
 | `0x00503f28` | `void* tinyxml2::XMLNode::XMLNode(struct tinyxml2_XMLNode_VTable** arg1, int32_t arg2)` |  |
+| `0x00504e24` | `uint32_t* AtlasPage::SetMinMaxHashes(AtlasPage* atlasPage, uint32_t arg2, uint32_t arg3)` |  |
+| `0x00505618` | `void* AtlasPage::AtlasPage(AtlasPage* atlasPage, u32 X, u32 Y, u32 pixleFormat)` |  |
 | `0x00506370` | `int32_t Collision::SwitchTiles(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4 @ r7, int32_t* arg5 @ r9, int96_t arg6 @ q0, int32_t arg7)` |  |
 | `0x005068a8` | `int32_t Collision::WetCollision(int32_t* arg1, int32_t arg2, int32_t arg3)` |  |
 | `0x0050d93c` | `int32_t GameState::OnActivate()` |  |
@@ -515,28 +713,37 @@
 | `0x0050f170` | `void* GameState::Draw(GameState* arg1)` | Stored in a vtable, called in `StateManager::Draw` at `0x001f6fbc` via `blx r1`. |
 | `0x0050f554` | `bool GameState::Update(void* arg1)` |  |
 | `0x0050fc9c` | `void* GameState::GameState(GameState* gameState)` |  |
+| `0x00510680` | `int32_t BaseMenuState::OnActive(BaseMenuState* arg1)` |  |
+| `0x00510a08` | `int32_t CreditsMenu::Draw(BaseMenuState* arg1)` |  |
 | `0x00510a0c` | `uint32_t BaseMenuState::Draw(BaseMenuState* arg1)` |  |
 | `0x00510b38` | `int32_t BaseMenuState::Update(BaseMenuState* menuState)` |  |
 | `0x00510b80` | `BaseMenuState* BaseMenuState::BaseMenuState(BaseMenuState* menuState, String* str, int32_t* arg3, uint32_t arg4, int32_t arg5)` | Seems to be an intermediate stage for `BaseMenu::BaseMenu`. |
+| `0x00512988` | `void DrawLoadingBar(int32_t* arg1, int32_t* arg2, int32_t arg3, int32_t* arg4, int64_t arg5 @ q4, int32_t arg6)` |  |
 | `0x00512d48` | `int32_t Texture2D::loadTexture(Texture* arg1, String* str)` |  |
-| `0x005134fc` | `int32_t* Texture2D::makePowerOfTwo(void* arg1)` | Expands the mobile function `Texture2D::ConvertRGB888toRGBA8888` |
+| `0x005134fc` | `int32_t* Texture2D::makePowerOfTwo(Texture* texture)` | Expands the mobile function `Texture2D::ConvertRGB888toRGBA8888` |
 | `0x00513a44` | `int32_t Texture2D::UpdateTextureData(Texture* arg1, u32 arg2, u32 arg3, u8* arg4, int64_t arg5)` |  |
-| `0x00513e1c` | `int32_t Texture2D::SetDataNoBindCheck(Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, int32_t arg6)` |  |
+| `0x00513e1c` | `int32_t Texture2D::SetDataNoBindCheck(Texture* tex, u32 width, u32 height, u8* newImageData, u16 imageFormat, bool flag)` |  |
+| `0x00513f20` | `void Texture2D::convertToNormalSpace(int32_t* arg1, void* arg2, int32_t* arg3)` |  |
 | `0x00513f50` | `int32_t Texture2D::IsBound(Texture* arg1)` |  |
-| `0x005140a4` | `void Texture2D::getPixel(Colour* colour, Texture* texture, int32_t arg3, int32_t arg4, int32_t arg5 @ r6, int32_t arg6 @ r12)` | Does not match the mobile function, but seems to do the same thing.  |
+| `0x005140a4` | `void Texture2D::getPixel(Colour* colour, Texture* texture, u16 X, u16 Y, int32_t arg5 @ r6, int32_t arg6 @ r12)` | Does not match the mobile function, but seems to do the same thing.  |
 | `0x005144d8` | `Texture* Texture2D::Texture2D(Texture* arg1, String* arg2)` |  |
+| `0x00514638` | `Texture* Texture2D::Texture2D2(Texture* arg1, u32 width, u32 height, u8* imageData, u16 pixelFormat, bool flag_1)` |  |
 | `0x00517628` | `int32_t ?::PlayWorld(int32_t* arg1)` | On mobile its either `WorldSizeMenu::PlayWorld` or `WorldMenu::PlayWorld` |
+| `0x00517c40` | `int32_t* WorldView::Initialize()` |  |
 | `0x005186dc` | `uint32_t WorldView::DrawItemText(int32_t arg1, int32_t arg2 @ r9)` |  |
 | `0x0051894c` | `uint32_t WorldView::DrawNPCHouse(void* arg1)` |  |
 | `0x00519594` | `int32_t WorldView::CalculateView(void* arg1, int32_t arg2, int32_t* arg3, int32_t* arg4, int32_t arg5 @ q4)` |  |
 | `0x0051e0e8` | `int32_t WorldView::DrawMinimapVisibility(void* arg1, int32_t arg2 @ r7)` |  |
+| `0x00520f94` | `int32_t WorldView::DrawWoF(void* arg1, int32_t arg2 @ r10, int32_t arg3 @ r11)` |  |
 | `0x005221f0` | `int32_t WorldView::DrawWires(void* arg1 @ r5)` |  |
 | `0x00522648` | `void WorldView::DrawWorld(void* arg1)` |  |
 | `0x00523aac` | `uint32_t FullVersion::GetIsFullVersion(void* arg1)` | Only called from `Achievements::AchievementSystem::Award`, on mobile its called from a million other places. |
+| `0x00523dcc` | `String* BaseDrawable::GetTextureName(BaseDrawable* drawable)` |  |
 | `0x00524028` | `int32_t InputManager::IsButtonPressed(void* arg1, int32_t arg2)` |  |
 | `0x00524c4c` | `s32 ShopItemSlotCount()` | Returns the number of slots in a store. (ItemCount + 5) |
 | `0x005252ec` | `bool StringCompare(String* str1, char* rawString)` |  |
 | `0x0052dd9c` | `int32_t NPC::getHeadTextureId(void* arg1)` |  |
+| `0x0052ed08` | `int32_t Item::GetTextureId(Item* arg1)` |  |
 | `0x005313e8` | `int32_t Tile::left(int32_t arg1, int32_t count)` |  |
 | `0x00531448` | `int32_t Tile::right(int32_t arg1, int32_t count)` |  |
 | `0x00532a94` | `bool PlayerHasQuestFish(int32_t arg1, Player* arg2)` | Calls `PlayerHasItem()` with `GetQuestFishId()`. |
@@ -545,19 +752,21 @@
 | `0x00538644` | `int32_t MenuBackground::~MenuBackground2(int32_t arg1)` |  |
 | `0x00538b48` | `int32_t BaseMenu::Draw2_2(int32_t arg1)` |  |
 | `0x00550944` | `uint32_t _INIT_140()` | No call references, the name is from the mobile version. |
-| `0x00553ae8` | `uint32_t ClearAll()` | Clears a bunch of stuff like, audio, Chests, Items and more. |
+| `0x00553ae8` | `uint32_t _INIT_149()` | Clears a bunch of stuff like, audio, Chests, Items and more.,Name from mobile versions. "ClearAll" makes more sense. |
 | `0x00564c90` | `int32_t png_error(char* arg1, void* arg2, int32_t arg3 @ r6, int32_t arg4 @ r10)` |  |
-| `0x00565068` | `void png_free(void* arg1, int32_t* arg2)` |  |
+| `0x00565068` | `void png_free(void* arg1, u32 arg2)` |  |
 | `0x005694f0` | `int32_t png_image_begin_read_from_memory(int32_t* arg1, int32_t arg2, int32_t arg3)` |  |
 | `0x0056970c` | `int32_t png_image_error(int32_t* arg1, char* arg2)` |  |
 | `0x00569774` | `void png_image_finish_read(int32_t* arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)` |  |
 | `0x00569988` | `void png_image_free(int32_t* arg1)` |  |
-| `0x0056aa44` | `void png_malloc(char* arg1, uint32_t arg2)` |  |
+| `0x0056aa44` | `void png_malloc(char* arg1, u32 arg2)` |  |
 | `0x0056d1e8` | `int32_t png_safe_execute(int32_t* arg1, int32_t arg2, int32_t arg3)` |  |
 | `0x0056d2d8` | `int32_t png_safecat(char* arg1, int32_t arg2, int32_t arg3, char* arg4)` |  |
-| `0x0056f110` | `int32_t png_set_quantize(uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, int32_t* arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25)` | No call references, no variable reference. |
+| `0x0056f110` | `int32_t png_set_quantize(uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4, char* arg5 @ r4, int32_t arg6 @ r5, int32_t arg7 @ r6, int32_t arg8 @ r7, int32_t* arg9 @ r8, int32_t* arg10 @ r9, int32_t arg11 @ r10, void* arg12 @ r12, u32 arg13, int32_t arg14, void* arg15, int32_t arg16, int32_t arg17, int32_t arg18, int32_t arg19, int32_t arg20, int32_t arg21, int32_t arg22, int32_t arg23, int32_t arg24, int32_t arg25)` | No call references, no variable reference. |
 | `0x00570860` | `int32_t png_warning(void* arg1, char* arg2)` |  |
 | `0x0057a018` | `void O::Event<Widget*>::fire(void* arg1, int32_t arg2)` |  |
+| `0x0057a4fc` | `int32_t O::Event<Widget*>::detach(void* arg1, int32_t arg2)` |  |
+| `0x005a3bb4` | `int32_t InputManager::InputManager_Check()` |  |
 | `0x005a3cc8` | `ContentLoader* ContentLoader::ContentLoader_Check()` | Returns `&imageLoader`, may also call `ClearImageLoader()`. |
 | `0x005a3d38` | `int32_t TerrariaAtlas::TerrariaAtlas_Check()` |  |
-| `0x005afe80` | `int32_t* QueryInstruction::ToString(int32_t* arg1, int32_t* arg2)` | *Verify, probably 3ds specific GPU instructions, do it does not match the mobile function. |
+| `0x005afe80` | `int32_t* QueryInstruction::ToString(int32_t* arg1, int32_t* arg2)` | *Verify. Does not match the mobile function, probably 3ds specific GPU instructions. |

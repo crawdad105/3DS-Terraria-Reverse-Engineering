@@ -29,12 +29,12 @@ Most of them are not for storing normal images, because of this Terraria only ut
 [Rohul1997's OTX Tool](https://gbatemp.net/threads/otx-tool-terraria-texture-tool.458493/) directly translates these values, 
 which is where this information is from.
 
-|Terraria Value|3DS Value|
-|-|-|
-|1|0|
-|2|4|
-|8|12|
-|9|13|
+|Terraria Value|3DS Value|Name|
+|-|-|-|
+|1|0|`RGBA8888`|
+|2|4|`RGBA4444`|
+|8|12|`ETC1`|
+|9|13|`ETC1A4`|
 
 Unless non-'colour' maps are wanted, the only other formats that store normal image colours are `RGB888`, `RGB5551` and `RGB565`. However because Terraria does not use them, finding the corresponding "Terraria Value" for the "3DS Value" would likely require searching through the code, if it exists at all.
 
@@ -46,9 +46,9 @@ This does depend on the pixel format as `ETC1` and `ETC1A4` losslessly compresse
 The image's data is a sequential list of 8 by 8 pixel chunks.
 These chunks contain a list of pixels in a [Z-order curve](https://en.wikipedia.org/wiki/Z-order_curve).
 Once you decode the chunks they can be placed sequential from left to right, top to bottom and each pixel in the chunk can be unraveled to reconstruct the image.
-`ETC1` and `ETC1A4` are slightly different, although the chunk data is z-ordered because 1 ETC1 "block" is 8 pixels its only 1 layer of z-ordered.
+`ETC1` and `ETC1A4` are slightly different, although the chunk data is z-ordered, because 1 ETC1 block is 4x4 pixels its only 1 layer of z-ordered.
 
-Image from wikipedia showing the 8 by 8 pixel chunks. This is exactly the arrangement the raw images use. `ETC1` and `ETC1A4` can be though of as just the first 2 by 2 section. <br/>
+Image from wikipedia showing the 8 by 8 pixel chunks. This is exactly the arrangement the raw images use. `ETC1` and `ETC1A4` can be though of as just the first 2 by 2 section where one unit (in the image) corresponds to a 4x4 chunk. <br/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Moser%E2%80%93de_Bruijn_addition.svg" width="200">
 
 ### `ETC1` / `ETC1A4`

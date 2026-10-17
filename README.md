@@ -21,9 +21,9 @@ The files within [/ExportExtractor](ExportExtractor) are used to extract the dat
 It generates [data.json](data.json), [userDefinedData.json](userDefinedData.json), [markdownFunctions.md](markdownFunctions.md), [markdownVariables.md](markdownVariables.md) and [extracted.txt](extracted.txt).
 [descriptions.txt](descriptions.txt) has description data for variables and functions, it is used when generating [markdownFunctions.md](markdownFunctions.md) and [markdownVariables.md](markdownVariables.md).
 
-# Useful sits
-["Floating Point to Hex Converter"](https://gregstoll.com/~gregstoll/floattohex/)
-["Assembly Disassembler"](https://inventivehq.com/tools/security/machine-code-disassembler)
+# Useful sites
+[Floating Point to Hex Converter](https://gregstoll.com/~gregstoll/floattohex/)<br/>
+[Assembly Disassembler](https://inventivehq.com/tools/security/machine-code-disassembler)
 
 # Comparing code
 Code was compared to Terraria Versions around 1.2.4.1 but may contain code from some 1.3 versions and old mobile versions.<br/>

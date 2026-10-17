@@ -40,9 +40,12 @@ This can be parsed using [ExtractDumpNames.dll](ExportExtractor/ExtractDumpNames
 
 # Modding
 There is not much information about 3DS Terraria modding it seems (other them people wanting to port modern Terraria or Calamity for some reason).
-There is some effort to mod it however.<br/>
+There is some effort to mod it however.
+
 [Working vein miner](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (the impressive part is they got UI elements drawn, it can be downloaded on [GameBanana](https://gamebanana.com/mods/704537), but may only work on the European versions (not the one this repo is about)).<br/>
-[Rom hack that change the music](https://www.gamebrew.org/wiki/Terratale_3DS)<br/>
+[Undertale Rom Hack](https://www.gamebrew.org/wiki/Terratale_3DS)<br/>
+[Minecraft Music In Terraria](https://github.com/3DSAspect/Terraria3DS-Minecraft-Soundtrack)<br/>
+[Debug Mod](https://github.com/xphoze/Terraria3dsMenu) (**Entirely made using Claude**, i do not support this use of AI however it would be unfair not mention it)<br/>
 [Inventory Editor](https://www.reddit.com/r/Terraria/comments/1votqoj/successfully_modded_terraria_for_3ds/) (not really a mod)<br/>
 There are also some cheats exist through [Checkpoint](https://github.com/JourneyOver/CTRPF-AR-CHEAT-CODES/blob/master/Cheats/Terraria%20(USA)/000400000016A900.txt)
 but these are not live mods.
